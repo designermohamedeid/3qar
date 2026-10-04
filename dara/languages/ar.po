@@ -67,7 +67,7 @@ msgid "Grid"
 msgstr "شبكة"
 
 #: archive-dara_property.php:56 page-templates/contact.php:55
-#: single-dara_project.php:200 single-dara_property.php:170
+#: single-dara_project.php:200 single-dara_property.php:177
 msgid "Map"
 msgstr "خريطة"
 
@@ -144,7 +144,7 @@ msgid "Call us"
 msgstr "اتصل بنا"
 
 #: footer.php:108 page-templates/contact.php:28 single-dara_agent.php:57
-#: single-dara_property.php:219 template-parts/cards/agent.php:44
+#: single-dara_property.php:226 template-parts/cards/agent.php:44
 #: template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr "واتساب"
@@ -283,7 +283,7 @@ msgstr "العقارات المميزة فقط"
 msgid "Purpose"
 msgstr "الغرض"
 
-#: inc/blocks.php:55 inc/blocks.php:295 template-parts/home/featured.php:39
+#: inc/blocks.php:55 inc/blocks.php:306 template-parts/home/featured.php:39
 #: template-parts/home/hero.php:70 template-parts/property/filters.php:28
 msgid "All"
 msgstr "الكل"
@@ -357,12 +357,12 @@ msgstr "عنوان الشارة"
 msgid "Badge text"
 msgstr "نص الشارة"
 
-#: inc/blocks.php:117 inc/blocks.php:152 inc/customizer.php:86
+#: inc/blocks.php:117 inc/blocks.php:162 inc/customizer.php:86
 #: inc/customizer.php:100
 msgid "Button text"
 msgstr "نص الزر"
 
-#: inc/blocks.php:118 inc/blocks.php:153 inc/customizer.php:87
+#: inc/blocks.php:118 inc/blocks.php:163 inc/customizer.php:87
 #: inc/customizer.php:101
 msgid "Button link"
 msgstr "رابط الزر"
@@ -383,85 +383,100 @@ msgstr "أحدث المقالات"
 msgid "Latest blog posts as cards."
 msgstr "أحدث مقالات المدونة كبطاقات."
 
-#: inc/blocks.php:145
+#: inc/blocks.php:145 inc/customizer.php:132
+#: template-parts/property/mortgage.php:35
+msgid "Mortgage calculator"
+msgstr "حاسبة التمويل العقاري"
+
+#: inc/blocks.php:146
+msgid ""
+"Estimate the monthly installment from price, down payment, term and profit "
+"rate."
+msgstr "احسب القسط الشهري من السعر والدفعة الأولى والمدة ونسبة الربح."
+
+#: inc/blocks.php:151
+msgid "Default property price"
+msgstr "سعر العقار الافتراضي"
+
+#: inc/blocks.php:155
 msgid "Call to action"
 msgstr "دعوة لإجراء"
 
-#: inc/blocks.php:146
+#: inc/blocks.php:156
 msgid "Colored band with buttons."
 msgstr "شريط ملوّن مع أزرار."
 
-#: inc/blocks.php:229 inc/blocks.php:391
+#: inc/blocks.php:240 inc/blocks.php:402
 msgid "Dara real estate"
 msgstr "دارة العقارية"
 
-#: inc/blocks.php:278
+#: inc/blocks.php:289
 #, php-format
 msgid "%s: nothing to show yet. Add content first."
 msgstr "%s: لا يوجد محتوى لعرضه بعد. أضف المحتوى أولاً."
 
-#: inc/blocks.php:347
+#: inc/blocks.php:358
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: inc/blocks.php:348
+#: inc/blocks.php:359
 msgid "Empty fields use the values from Appearance > Customize > Dara theme."
 msgstr "الحقول الفارغة تستخدم القيم من المظهر ← تخصيص ← قالب دارة."
 
-#: inc/blocks.php:349
+#: inc/blocks.php:360
 msgid "Choose image"
 msgstr "اختر صورة"
 
-#: inc/blocks.php:350
+#: inc/blocks.php:361
 msgid "Replace image"
 msgstr "استبدال الصورة"
 
-#: inc/blocks.php:351
+#: inc/blocks.php:362
 msgid "Remove"
 msgstr "حذف"
 
-#: inc/blocks.php:352
+#: inc/blocks.php:363
 msgid "Add item"
 msgstr "إضافة عنصر"
 
-#: inc/blocks.php:353
+#: inc/blocks.php:364
 msgid "Item"
 msgstr "عنصر"
 
-#: inc/blocks.php:354
+#: inc/blocks.php:365
 msgid "Move up"
 msgstr "تحريك لأعلى"
 
-#: inc/blocks.php:355
+#: inc/blocks.php:366
 msgid "Move down"
 msgstr "تحريك لأسفل"
 
-#: inc/blocks.php:395
+#: inc/blocks.php:406
 msgid "Real estate home page"
 msgstr "صفحة رئيسية عقارية"
 
-#: inc/blocks.php:396
+#: inc/blocks.php:407
 msgid ""
 "Hero with search, properties, types, projects, services, why us, posts and "
 "call to action."
 msgstr ""
 "واجهة مع بحث، عقارات، أنواع، مشاريع، خدمات، لماذا نحن، مقالات ودعوة لإجراء."
 
-#: inc/blocks.php:404
+#: inc/blocks.php:415
 msgid "Listings landing page"
 msgstr "صفحة هبوط للعقارات"
 
-#: inc/blocks.php:405
+#: inc/blocks.php:416
 msgid ""
 "Hero with search, properties for sale, properties for rent and a call to "
 "action."
 msgstr "واجهة مع بحث، عقارات للبيع، عقارات للإيجار ودعوة لإجراء."
 
-#: inc/blocks.php:407
+#: inc/blocks.php:418
 msgid "Properties for sale"
 msgstr "عقارات للبيع"
 
-#: inc/blocks.php:407
+#: inc/blocks.php:418
 msgid "Properties for rent"
 msgstr "عقارات للإيجار"
 
@@ -640,23 +655,69 @@ msgstr "حقوق النشر"
 msgid "You can use {year} and {site}."
 msgstr "يمكنك استخدام {year} و {site}."
 
-#: inc/customizer.php:132
+#: inc/customizer.php:134
+msgid "Show on properties for sale"
+msgstr "إظهارها في العقارات المعروضة للبيع"
+
+#: inc/customizer.php:135
+msgid "Calculation method"
+msgstr "طريقة الحساب"
+
+#: inc/customizer.php:135
+msgid ""
+"Declining balance is the standard mortgage formula. Flat rate (murabaha) "
+"applies the profit rate to the full amount for every year."
+msgstr ""
+"الرصيد المتناقص هو معادلة التمويل العقاري المعتادة. النسبة الثابتة "
+"(المرابحة) تحسب نسبة الربح على كامل المبلغ لكل سنة."
+
+#: inc/customizer.php:135
+msgid "Declining balance"
+msgstr "الرصيد المتناقص"
+
+#: inc/customizer.php:135
+msgid "Flat rate (murabaha)"
+msgstr "نسبة ثابتة (مرابحة)"
+
+#: inc/customizer.php:136
+#, php-format
+msgid "Default annual profit rate (%)"
+msgstr "نسبة الربح السنوية الافتراضية (%)"
+
+#: inc/customizer.php:137
+#, php-format
+msgid "Default down payment (%)"
+msgstr "الدفعة الأولى الافتراضية (%)"
+
+#: inc/customizer.php:138
+msgid "Default term (years)"
+msgstr "مدة التمويل الافتراضية (سنوات)"
+
+#: inc/customizer.php:139
+msgid "Maximum term (years)"
+msgstr "أقصى مدة تمويل (سنوات)"
+
+#: inc/customizer.php:140
+msgid "Disclaimer"
+msgstr "تنويه"
+
+#: inc/customizer.php:144
 msgid "Performance & maps"
 msgstr "الأداء والخرائط"
 
-#: inc/customizer.php:134
+#: inc/customizer.php:146
 msgid "Disable WordPress emoji script"
 msgstr "تعطيل سكربت الإيموجي في ووردبريس"
 
-#: inc/customizer.php:135
+#: inc/customizer.php:147
 msgid "Load block CSS only on pages that use blocks"
 msgstr "تحميل CSS المكوّنات فقط في الصفحات التي تستخدمها"
 
-#: inc/customizer.php:136
+#: inc/customizer.php:148
 msgid "Map tiles URL"
 msgstr "رابط بلاطات الخريطة"
 
-#: inc/customizer.php:136
+#: inc/customizer.php:148
 msgid ""
 "Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
 "Stadia...) with your key."
@@ -664,11 +725,11 @@ msgstr ""
 "الافتراضي: OpenStreetMap. للمواقع ذات الزيارات الكبيرة استخدم مزود خرائط "
 "(MapTiler أو Stadia...) بمفتاحك الخاص."
 
-#: inc/customizer.php:137
+#: inc/customizer.php:149
 msgid "Map attribution"
 msgstr "نص حقوق الخريطة"
 
-#: inc/customizer.php:163
+#: inc/customizer.php:179
 msgid "Dara theme"
 msgstr "قالب دارة"
 
@@ -677,7 +738,7 @@ msgstr "قالب دارة"
 msgid "Show sub menu of %s"
 msgstr "إظهار القائمة الفرعية لـ %s"
 
-#: inc/menus.php:50 inc/template-tags.php:343
+#: inc/menus.php:50 inc/template-tags.php:351
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -850,7 +911,7 @@ msgstr "رقم ترخيص على كل إعلان"
 msgid "Talk to an advisor"
 msgstr "تحدث مع مستشار"
 
-#: inc/template-tags.php:82 inc/template-tags.php:283
+#: inc/template-tags.php:82 inc/template-tags.php:291
 msgid "Blog"
 msgstr "المدونة"
 
@@ -885,29 +946,36 @@ msgstr "أحدث العقارات والمشاريع تصلك أولاً."
 msgid "© {year} {site}. All rights reserved."
 msgstr "© {year} {site}. جميع الحقوق محفوظة."
 
-#: inc/template-tags.php:287
+#: inc/template-tags.php:119
+msgid ""
+"Estimate only. The final installment depends on the bank, your salary and "
+"your obligations."
+msgstr ""
+"الأرقام تقديرية، والقسط النهائي يعتمد على جهة التمويل والراتب والالتزامات."
+
+#: inc/template-tags.php:295
 #, php-format
 msgid "Search: %s"
 msgstr "نتائج البحث: %s"
 
-#: inc/template-tags.php:290
+#: inc/template-tags.php:298
 msgid "Page not found"
 msgstr "الصفحة غير موجودة"
 
-#: inc/template-tags.php:326
+#: inc/template-tags.php:334
 #, php-format
 msgid "in %s"
 msgstr "في %s"
 
-#: inc/template-tags.php:336 inc/template-tags.php:366
+#: inc/template-tags.php:344 inc/template-tags.php:374
 msgid "Breadcrumbs"
 msgstr "مسار التنقل"
 
-#: inc/template-tags.php:380
+#: inc/template-tags.php:388
 msgid "Previous page"
 msgstr "الصفحة السابقة"
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:389
 msgid "Next page"
 msgstr "الصفحة التالية"
 
@@ -1000,7 +1068,7 @@ msgstr "ابحث"
 msgid "Sidebar"
 msgstr "الشريط الجانبي"
 
-#: single-dara_agent.php:48 single-dara_property.php:208
+#: single-dara_agent.php:48 single-dara_property.php:215
 #: template-parts/cards/agent.php:36
 #, php-format
 msgid "FAL %s"
@@ -1228,35 +1296,35 @@ msgstr "تشغيل الفيديو"
 msgid "Watch the video"
 msgstr "شاهد الفيديو"
 
-#: single-dara_property.php:168
+#: single-dara_property.php:175
 msgid "Location & nearby"
 msgstr "الموقع وما حوله"
 
-#: single-dara_property.php:171
+#: single-dara_property.php:178
 msgid "Get directions"
 msgstr "الاتجاهات"
 
-#: single-dara_property.php:216 template-parts/cards/agent.php:41
+#: single-dara_property.php:223 template-parts/cards/agent.php:41
 msgid "Call"
 msgstr "اتصال"
 
-#: single-dara_property.php:226
+#: single-dara_property.php:233
 msgid "License information"
 msgstr "بيانات الترخيص"
 
-#: single-dara_property.php:228
+#: single-dara_property.php:235
 msgid "Ad license number"
 msgstr "رقم ترخيص الإعلان"
 
-#: single-dara_property.php:231
+#: single-dara_property.php:238
 msgid "Office FAL license"
 msgstr "رخصة فال للمنشأة"
 
-#: single-dara_property.php:233
+#: single-dara_property.php:240
 msgid "Listed on"
 msgstr "تاريخ الإضافة"
 
-#: single-dara_property.php:252
+#: single-dara_property.php:259
 msgid "Similar properties"
 msgstr "عقارات مشابهة"
 
@@ -1429,3 +1497,73 @@ msgstr "المميزات"
 #: template-parts/property/filters.php:95
 msgid "Show results"
 msgstr "عرض النتائج"
+
+#: template-parts/property/mortgage.php:31
+msgid ""
+"I would like a financing consultation. Price: {price}, down payment: {down},"
+" term: {years} years, estimated monthly installment: {monthly}."
+msgstr ""
+"أرغب في استشارة تمويلية. السعر: {price}، الدفعة الأولى: {down}، المدة: "
+"{years} سنة، القسط الشهري التقديري: {monthly}."
+
+#: template-parts/property/mortgage.php:36
+msgid "Estimated monthly installment (flat rate)"
+msgstr "القسط الشهري التقديري (نسبة ثابتة)"
+
+#: template-parts/property/mortgage.php:36
+msgid "Estimated monthly installment (declining balance)"
+msgstr "القسط الشهري التقديري (رصيد متناقص)"
+
+#: template-parts/property/mortgage.php:43
+#, php-format
+msgid "Property price (%s)"
+msgstr "سعر العقار (%s)"
+
+#: template-parts/property/mortgage.php:48
+#: template-parts/property/mortgage.php:75
+msgid "Down payment"
+msgstr "الدفعة الأولى"
+
+#: template-parts/property/mortgage.php:54
+msgid "Term"
+msgstr "مدة التمويل"
+
+#: template-parts/property/mortgage.php:59
+#, php-format
+msgid "Annual profit rate (%)"
+msgstr "نسبة الربح السنوية (%)"
+
+#: template-parts/property/mortgage.php:65
+msgid "Monthly installment"
+msgstr "القسط الشهري"
+
+#: template-parts/property/mortgage.php:76
+msgid "Financing amount"
+msgstr "مبلغ التمويل"
+
+#: template-parts/property/mortgage.php:77
+msgid "Total profit"
+msgstr "إجمالي الأرباح"
+
+#: template-parts/property/mortgage.php:78
+msgid "Total cost"
+msgstr "التكلفة الإجمالية"
+
+#: template-parts/property/mortgage.php:81
+msgid "Request a financing consultation"
+msgstr "اطلب استشارة تمويلية"
+
+#: template-parts/property/mortgage.php:54
+#: template-parts/property/mortgage.php:55
+#: template-parts/property/mortgage.php:55
+#: template-parts/property/mortgage.php:55
+#: template-parts/property/mortgage.php:55
+#, php-format
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s سنة"
+msgstr[1] "سنة واحدة"
+msgstr[2] "سنتان"
+msgstr[3] "%s سنوات"
+msgstr[4] "%s سنة"
+msgstr[5] "%s سنة"

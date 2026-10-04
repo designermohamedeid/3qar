@@ -43,6 +43,8 @@
 				return el(c.ToggleControl, { key: control.key, label: control.label, checked: !!value, onChange: set });
 			case "number":
 				return el(c.RangeControl, { key: control.key, label: control.label, value: value, min: control.min || 1, max: control.max || 12, allowReset: true, onChange: set });
+			case "amount":
+				return el(c.TextControl, { key: control.key, label: control.label, type: "number", min: 0, value: value === undefined ? "" : value, onChange: function (v) { set(v === "" ? undefined : Number(v)); } });
 			case "select":
 				return el(c.SelectControl, { key: control.key, label: control.label, value: value || "", options: control.options, onChange: set });
 			case "textarea":

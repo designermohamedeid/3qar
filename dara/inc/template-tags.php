@@ -109,6 +109,14 @@ function dara_defaults() {
 		'newsletter_text'     => __( 'Get the newest properties and projects first.', 'dara' ),
 		/* translators: Keep {year} and {site}. */
 		'copyright'           => __( '© {year} {site}. All rights reserved.', 'dara' ),
+		// Mortgage calculator.
+		'mortgage_show'       => true,
+		'mortgage_method'     => 'amortized',
+		'mortgage_rate'       => '5.5',
+		'mortgage_down'       => 10,
+		'mortgage_years'      => 25,
+		'mortgage_max_years'  => 30,
+		'mortgage_note'       => __( 'Estimate only. The final installment depends on the bank, your salary and your obligations.', 'dara' ),
 		// Performance.
 		'perf_emoji'          => true,
 		'perf_block_css'      => true,
@@ -539,4 +547,37 @@ function dara_first_block( $post = null ) {
 		}
 	}
 	return '';
+}
+
+/**
+ * Mortgage calculation (mirrors the JS in main.js).
+ *
+ * @param float  $price  Property price.
+ * @param float  $down   Down payment percent.
+ * @param int    $years  Term in years.
+ * @param float  $rate   Annual profit rate percent.
+ * @param string $method amortized|flat.
+ * @return array monthly, loan, down, profit, total
+ */
+function dara_mortgage_calc( $price, $down, $years, $rate, $method = 'amortized' ) {
+	$price  = max( 0, (float) $price );
+	$downv  = $price * min( 100, max( 0, (float) $down ) ) / 100;
+	$loan   = $price - $downv;
+	$n      = max( 1, (int) $years ) * 12;
+	$r      = max( 0, (float) $rate ) / 100;
+	if ( 'flat' === $method ) {
+		$profit  = $loan * $r * ( $n / 12 );
+		$monthly = ( $loan + $profit ) / $n;
+	} else {
+		$m       = $r / 12;
+		$monthly = $m > 0 ? $loan * $m / ( 1 - pow( 1 + $m, -$n ) ) : $loan / $n;
+		$profit  = $monthly * $n - $loan;
+	}
+	return array(
+		'monthly' => $monthly,
+		'loan'    => $loan,
+		'down'    => $downv,
+		'profit'  => max( 0, $profit ),
+		'total'   => $downv + $loan + max( 0, $profit ),
+	);
 }

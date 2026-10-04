@@ -61,6 +61,9 @@ function dara_page_bundles() {
 	if ( is_front_page() || ( is_singular() && dara_has_dara_blocks( get_queried_object_id() ) ) ) {
 		$bundles[] = 'home';
 	}
+	if ( is_singular() && has_block( 'dara/mortgage', get_queried_object_id() ) ) {
+		$bundles[] = 'property';
+	}
 	if ( is_singular() && has_block( 'dara/agents', get_queried_object_id() ) ) {
 		$bundles[] = 'agents';
 	}

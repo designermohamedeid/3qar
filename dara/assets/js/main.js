@@ -318,6 +318,70 @@
 		if (e.target.closest("[data-print]")) { window.print(); }
 	});
 
+	/* ---------- Mortgage calculator ---------- */
+	$$("[data-mortgage]").forEach(function (box) {
+		var form = $("form", box);
+		var method = box.getAttribute("data-method");
+		var cur = ($("[data-currency]", box) || {}).textContent || "";
+		var nf;
+		try { nf = new Intl.NumberFormat((doc.documentElement.lang || "en") + "-u-nu-latn", { maximumFractionDigits: 0 }); } catch (err) { nf = new Intl.NumberFormat("en", { maximumFractionDigits: 0 }); }
+		var fmt = function (n) { return nf.format(Math.round(n)); };
+		var out = function (key, text) { $$('[data-out="' + key + '"]', box).forEach(function (o) { o.textContent = text; }); };
+		var yearsInput = form.elements.years;
+		var yearLabel = function (n) {
+			var key = n === 1 ? "one" : n === 2 ? "two" : (n >= 3 && n <= 10 ? "few" : "many");
+			return (yearsInput.getAttribute("data-unit-" + key) || "%s").replace("%s", nf.format(n));
+		};
+		var last = null;
+		function calc() {
+			var price = Math.max(0, parseFloat(form.elements.price.value) || 0);
+			var downPct = Math.min(90, Math.max(0, parseFloat(form.elements.down.value) || 0));
+			var years = Math.max(1, parseInt(yearsInput.value, 10) || 1);
+			var rate = Math.max(0, parseFloat(form.elements.rate.value) || 0) / 100;
+			var down = price * downPct / 100, loan = price - down, n = years * 12, monthly, profit;
+			if (method === "flat") {
+				profit = loan * rate * years;
+				monthly = (loan + profit) / n;
+			} else {
+				var m = rate / 12;
+				monthly = m > 0 ? loan * m / (1 - Math.pow(1 + m, -n)) : loan / n;
+				profit = monthly * n - loan;
+			}
+			profit = Math.max(0, profit);
+			var total = down + loan + profit;
+			out("down-pct", nf.format(downPct) + "%");
+			out("years", yearLabel(years));
+			out("monthly", fmt(monthly));
+			out("down", fmt(down) + " " + cur);
+			out("loan", fmt(loan) + " " + cur);
+			out("profit", fmt(profit) + " " + cur);
+			out("total", fmt(total) + " " + cur);
+			["down", "loan", "profit"].forEach(function (k) {
+				var bar = $('[data-bar="' + k + '"]', box);
+				if (bar) { bar.style.width = (total > 0 ? (100 * ({ down: down, loan: loan, profit: profit })[k] / total) : 0) + "%"; }
+			});
+			last = { price: fmt(price) + " " + cur, down: fmt(down) + " " + cur + " (" + nf.format(downPct) + "%)", years: nf.format(years), monthly: fmt(monthly) + " " + cur };
+		}
+		form.addEventListener("input", calc);
+		form.addEventListener("submit", function (e) { e.preventDefault(); });
+		calc();
+
+		// "Request a consultation": prefill the page's lead form with the numbers.
+		var apply = $("[data-mortgage-apply]", box);
+		if (apply) {
+			apply.addEventListener("click", function (e) {
+				var target = $("#lead-form textarea[name=lead_message]");
+				if (!target || !last) { return; }
+				e.preventDefault();
+				target.value = (box.getAttribute("data-msg") || "").replace(/\{(\w+)\}/g, function (m, k) { return last[k] || ""; });
+				var formEl = target.closest("form");
+				formEl.scrollIntoView({ behavior: "smooth", block: "center" });
+				var nameInput = $("input[name=lead_name]", formEl);
+				setTimeout(function () { (nameInput || target).focus({ preventScroll: true }); }, 400);
+			});
+		}
+	});
+
 	/* ---------- Favorites (localStorage) ---------- */
 	var FAV_KEY = "dara_favs";
 	function getFavs() {

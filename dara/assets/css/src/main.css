@@ -662,3 +662,38 @@ a.page-numbers:hover{border-color:var(--primary);color:var(--primary)}
 .block-page{font-size:17px;line-height:1.9}
 .dara-block-empty{padding:24px;border:2px dashed var(--line);border-radius:var(--radius);color:var(--muted);text-align:center}
 body:not(.has-overlay-header) .dara-block--hero .hero{padding-top:0}
+
+/* ===== Mortgage calculator ===== */
+.mortgage{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.mortgage__head{display:flex;align-items:center;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line);background:var(--surface)}
+.mortgage__icon{width:44px;height:44px;border-radius:12px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.mortgage__title{margin:0;font-size:22px}
+.mortgage__sub{margin:0;font-size:14px;color:var(--muted)}
+.mortgage__body{display:flex;flex-wrap:wrap}
+.mortgage__form{flex:1 1 300px;padding:24px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.mortgage__field{display:flex;flex-direction:column;gap:8px}
+.mortgage__label{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:15px;font-weight:600;color:var(--ink)}
+.mortgage__label output{font-weight:700;color:var(--primary)}
+.mortgage__field input[type=number]{min-height:48px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 14px;font-size:17px;color:var(--ink);background:#fff}
+.mortgage__field input[type=number]:focus{outline:0;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-50)}
+.mortgage__field input[type=range]{width:100%;accent-color:var(--primary);min-height:28px;cursor:pointer}
+.mortgage__hint{font-size:13px;color:var(--muted)}
+.mortgage__result{flex:1 1 300px;padding:24px;background:var(--primary-50);display:flex;flex-direction:column;gap:14px;min-width:0}
+.mortgage__result-label{font-size:14px;color:var(--text)}
+.mortgage__monthly{margin:-6px 0 0;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.mortgage__monthly strong{font-size:clamp(32px,4.5vw,44px);line-height:1.15;color:var(--primary-700)}
+.mortgage__monthly span{color:var(--text)}
+.mortgage__bar{display:flex;height:12px;border-radius:999px;overflow:hidden;background:#fff}
+.mortgage__bar span{display:block;height:100%;transition:width .25s}
+.mortgage .is-down{background:var(--accent-light)}
+.mortgage .is-loan{background:var(--primary)}
+.mortgage .is-profit{background:#C98A2B}
+.mortgage__list{margin:0;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.mortgage__list>div{display:flex;justify-content:space-between;gap:12px}
+.mortgage__list dt{display:flex;align-items:center;gap:8px;color:var(--text)}
+.mortgage__list dt i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.mortgage__list dd{margin:0;font-weight:600;color:var(--ink)}
+.mortgage__list .is-total{padding-top:8px;border-top:1px solid rgba(11,110,95,.18);background:none}
+.mortgage__list .is-total dt,.mortgage__list .is-total dd{font-weight:700;color:var(--ink)}
+.mortgage__note{margin:0;font-size:12px;line-height:1.6;color:var(--muted)}
+.dara-block--mortgage .mortgage{max-width:1000px;margin-inline:auto}

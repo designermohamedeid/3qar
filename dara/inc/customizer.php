@@ -128,6 +128,18 @@ function dara_customizer_map() {
 				'copyright'       => array( 'text', __( 'Copyright', 'dara' ), __( 'You can use {year} and {site}.', 'dara' ) ),
 			),
 		),
+		'dara_mortgage' => array(
+			__( 'Mortgage calculator', 'dara' ),
+			array(
+				'mortgage_show'      => array( 'checkbox', __( 'Show on properties for sale', 'dara' ) ),
+				'mortgage_method'    => array( 'select', __( 'Calculation method', 'dara' ), __( 'Declining balance is the standard mortgage formula. Flat rate (murabaha) applies the profit rate to the full amount for every year.', 'dara' ), array( 'amortized' => __( 'Declining balance', 'dara' ), 'flat' => __( 'Flat rate (murabaha)', 'dara' ) ) ),
+				'mortgage_rate'      => array( 'float', __( 'Default annual profit rate (%)', 'dara' ) ),
+				'mortgage_down'      => array( 'number', __( 'Default down payment (%)', 'dara' ) ),
+				'mortgage_years'     => array( 'number', __( 'Default term (years)', 'dara' ) ),
+				'mortgage_max_years' => array( 'number', __( 'Maximum term (years)', 'dara' ) ),
+				'mortgage_note'      => array( 'textarea', __( 'Disclaimer', 'dara' ) ),
+			),
+		),
 		'dara_perf'     => array(
 			__( 'Performance & maps', 'dara' ),
 			array(
@@ -158,6 +170,10 @@ function dara_customize_register( $wpc ) {
 		'checkbox' => function ( $v ) {
 			return (bool) $v;
 		},
+		'float'    => function ( $v ) {
+			return is_numeric( $v ) ? (string) max( 0, min( 100, (float) $v ) ) : '';
+		},
+		'select'   => 'sanitize_key',
 	);
 
 	$wpc->add_panel( 'dara', array( 'title' => __( 'Dara theme', 'dara' ), 'priority' => 25 ) );
@@ -180,6 +196,14 @@ function dara_customize_register( $wpc ) {
 			if ( 'image' === $field[0] ) {
 				$args['mime_type'] = 'image';
 				$wpc->add_control( new WP_Customize_Media_Control( $wpc, $key, $args ) );
+			} elseif ( 'select' === $field[0] ) {
+				$args['type']    = 'select';
+				$args['choices'] = $field[3];
+				$wpc->add_control( $key, $args );
+			} elseif ( 'float' === $field[0] ) {
+				$args['type']        = 'number';
+				$args['input_attrs'] = array( 'min' => 0, 'max' => 100, 'step' => 0.01 );
+				$wpc->add_control( $key, $args );
 			} elseif ( 'color' === $field[0] ) {
 				$wpc->add_control( new WP_Customize_Color_Control( $wpc, $key, $args ) );
 			} else {

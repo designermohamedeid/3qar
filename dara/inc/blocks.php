@@ -141,6 +141,16 @@ function dara_blocks_config() {
 				'blog_count'   => array( 'number', $count, array( 1, 12 ) ),
 			),
 		),
+		'mortgage'       => array(
+			'title'       => __( 'Mortgage calculator', 'dara' ),
+			'description' => __( 'Estimate the monthly installment from price, down payment, term and profit rate.', 'dara' ),
+			'icon'        => 'calculator',
+			'requires'    => '',
+			'controls'    => array(
+				'mortgage_title' => array( 'text', $title ),
+				'mortgage_price' => array( 'amount', __( 'Default property price', 'dara' ) ),
+			),
+		),
 		'cta'            => array(
 			'title'       => __( 'Call to action', 'dara' ),
 			'description' => __( 'Colored band with buttons.', 'dara' ),
@@ -181,6 +191,7 @@ function dara_register_blocks() {
 					$attributes[ $key ] = array( 'type' => 'boolean', 'default' => (bool) $control[2] );
 					break;
 				case 'number':
+				case 'amount':
 				case 'image':
 					$attributes[ $key ] = array( 'type' => 'number' );
 					break;

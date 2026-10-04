@@ -163,6 +163,13 @@ while ( have_posts() ) :
 					</section>
 				<?php endif; ?>
 
+				<?php
+				$dara_price_raw = (float) get_post_meta( $dara_id, '_dara_price', true );
+				if ( dara_mod( 'mortgage_show' ) && 'rent' !== $dara_purpose && $dara_price_raw > 0 ) {
+					get_template_part( 'template-parts/property/mortgage', null, array( 'price' => $dara_price_raw ) );
+				}
+				?>
+
 				<?php if ( ( is_numeric( $dara_lat ) && is_numeric( $dara_lng ) ) || $dara_nearby ) : ?>
 					<section class="sp-section">
 						<h2><?php esc_html_e( 'Location & nearby', 'dara' ); ?></h2>
