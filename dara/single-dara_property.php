@@ -189,12 +189,18 @@ while ( have_posts() ) :
 							if ( $dara_agent['photo'] ) {
 								echo wp_get_attachment_image( $dara_agent['photo'], 'thumbnail', false, array( 'alt' => '', 'loading' => 'lazy' ) );
 							} else {
-								dara_the_icon( 'user', 26 );
+								echo esc_html( dara_initials( $dara_agent['name'] ) );
 							}
 							?>
 						</span>
 						<span class="agent__info">
-							<strong><?php echo esc_html( $dara_agent['name'] ); ?></strong>
+							<strong>
+								<?php if ( ! empty( $dara_agent['url'] ) ) : ?>
+									<a href="<?php echo esc_url( $dara_agent['url'] ); ?>"><?php echo esc_html( $dara_agent['name'] ); ?></a>
+								<?php else : ?>
+									<?php echo esc_html( $dara_agent['name'] ); ?>
+								<?php endif; ?>
+							</strong>
 							<small>
 								<?php
 								echo esc_html( $dara_agent['role'] );

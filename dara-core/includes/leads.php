@@ -102,7 +102,7 @@ function dara_core_handle_lead() {
 	}
 
 	$related = isset( $post['lead_post'] ) ? absint( $post['lead_post'] ) : 0;
-	if ( $related && ! in_array( get_post_type( $related ), array( 'dara_property', 'dara_project' ), true ) ) {
+	if ( $related && ! in_array( get_post_type( $related ), array( 'dara_property', 'dara_project', 'dara_agent' ), true ) ) {
 		$related = 0;
 	}
 
@@ -148,7 +148,7 @@ function dara_core_handle_lead() {
 	if ( $lead_id && ! is_wp_error( $lead_id ) ) {
 		$to = array( dara_setting( 'lead_email' ) );
 		if ( $related ) {
-			$agent = dara_get_agent( $related );
+			$agent = 'dara_agent' === get_post_type( $related ) ? array( 'email' => get_post_meta( $related, '_dara_email', true ) ) : dara_get_agent( $related );
 			if ( ! empty( $agent['email'] ) ) {
 				$to[] = $agent['email'];
 			}

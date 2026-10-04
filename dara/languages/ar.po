@@ -26,6 +26,10 @@ msgstr "العودة للرئيسية"
 msgid "Browse properties"
 msgstr "تصفح العقارات"
 
+#: archive-dara_agent.php:11
+msgid "Licensed agents ready to help you buy, sell or rent."
+msgstr "مسوّقون معتمدون جاهزون لمساعدتك في الشراء أو البيع أو الإيجار."
+
 #: archive-dara_property.php:32
 msgid "Filters"
 msgstr "الفلاتر"
@@ -139,7 +143,8 @@ msgstr "السجل التجاري: %s"
 msgid "Call us"
 msgstr "اتصل بنا"
 
-#: footer.php:108 page-templates/contact.php:28 single-dara_property.php:213
+#: footer.php:108 page-templates/contact.php:28 single-dara_agent.php:57
+#: single-dara_property.php:219 template-parts/cards/agent.php:44
 #: template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr "واتساب"
@@ -387,7 +392,7 @@ msgid "International format without +, e.g. 9665XXXXXXXX"
 msgstr "بالصيغة الدولية بدون +، مثال: 9665XXXXXXXX"
 
 #: inc/customizer.php:109 page-templates/contact.php:31
-#: page-templates/contact.php:47
+#: page-templates/contact.php:47 single-dara_agent.php:60
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -711,20 +716,23 @@ msgid "Send us a message"
 msgstr "أرسل لنا رسالة"
 
 #: page-templates/contact.php:45 page-templates/list-property.php:32
-#: single-dara_project.php:212 template-parts/forms/viewing.php:14
+#: single-dara_agent.php:113 single-dara_project.php:212
+#: template-parts/forms/viewing.php:14
 msgid "Name"
 msgstr "الاسم"
 
 #: page-templates/contact.php:46 page-templates/list-property.php:33
-#: single-dara_project.php:213 template-parts/forms/viewing.php:15
+#: single-dara_agent.php:114 single-dara_project.php:213
+#: template-parts/forms/viewing.php:15
 msgid "Mobile number"
 msgstr "رقم الجوال"
 
-#: page-templates/contact.php:48 template-parts/forms/viewing.php:17
+#: page-templates/contact.php:48 single-dara_agent.php:115
+#: template-parts/forms/viewing.php:17
 msgid "Message"
 msgstr "الرسالة"
 
-#: page-templates/contact.php:50
+#: page-templates/contact.php:50 single-dara_agent.php:116
 msgid "Send message"
 msgstr "إرسال الرسالة"
 
@@ -792,6 +800,41 @@ msgstr "ابحث"
 #: sidebar.php:14
 msgid "Sidebar"
 msgstr "الشريط الجانبي"
+
+#: single-dara_agent.php:48 single-dara_property.php:208
+#: template-parts/cards/agent.php:36
+#, php-format
+msgid "FAL %s"
+msgstr "فال %s"
+
+#: single-dara_agent.php:71
+msgid "About the agent"
+msgstr "نبذة عن المسوّق"
+
+#: single-dara_agent.php:99
+msgid "Pages"
+msgstr "الصفحات"
+
+#: single-dara_agent.php:103
+msgid "No properties listed yet."
+msgstr "لا توجد عقارات معروضة بعد."
+
+#: single-dara_agent.php:110
+#, php-format
+msgid "Message %s"
+msgstr "راسل %s"
+
+#: single-dara_agent.php:78 template-parts/cards/agent.php:34
+#: template-parts/home/types.php:25
+#, php-format
+msgid "%s property"
+msgid_plural "%s properties"
+msgstr[0] "%s عقار"
+msgstr[1] "عقار واحد"
+msgstr[2] "عقاران"
+msgstr[3] "%s عقارات"
+msgstr[4] "%s عقاراً"
+msgstr[5] "%s عقار"
 
 #: single-dara_project.php:32
 msgid "Available"
@@ -994,32 +1037,27 @@ msgstr "الموقع وما حوله"
 msgid "Get directions"
 msgstr "الاتجاهات"
 
-#: single-dara_property.php:202
-#, php-format
-msgid "FAL %s"
-msgstr "فال %s"
-
-#: single-dara_property.php:210
+#: single-dara_property.php:216 template-parts/cards/agent.php:41
 msgid "Call"
 msgstr "اتصال"
 
-#: single-dara_property.php:220
+#: single-dara_property.php:226
 msgid "License information"
 msgstr "بيانات الترخيص"
 
-#: single-dara_property.php:222
+#: single-dara_property.php:228
 msgid "Ad license number"
 msgstr "رقم ترخيص الإعلان"
 
-#: single-dara_property.php:225
+#: single-dara_property.php:231
 msgid "Office FAL license"
 msgstr "رخصة فال للمنشأة"
 
-#: single-dara_property.php:227
+#: single-dara_property.php:233
 msgid "Listed on"
 msgstr "تاريخ الإضافة"
 
-#: single-dara_property.php:246
+#: single-dara_property.php:252
 msgid "Similar properties"
 msgstr "عقارات مشابهة"
 
@@ -1161,17 +1199,6 @@ msgstr "كل المشاريع"
 #: template-parts/home/services.php:25
 msgid "Learn more"
 msgstr "اعرف المزيد"
-
-#: template-parts/home/types.php:25
-#, php-format
-msgid "%s property"
-msgid_plural "%s properties"
-msgstr[0] "%s عقار"
-msgstr[1] "عقار واحد"
-msgstr[2] "عقاران"
-msgstr[3] "%s عقارات"
-msgstr[4] "%s عقاراً"
-msgstr[5] "%s عقار"
 
 #: template-parts/property/filters.php:18
 #: template-parts/property/filters.php:21

@@ -3,7 +3,7 @@
 set -e
 cd "$(dirname "$0")"
 python3 build-css.py
-for f in core home listing property project content; do
+for f in core home listing property project content agents; do
 	npx --no-install cleancss -O1 -o "assets/css/$f.min.css" "assets/css/$f.css"
 done
 npx --no-install terser assets/js/main.js -c -m -o assets/js/main.min.js

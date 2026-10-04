@@ -213,6 +213,8 @@ function dara_get_agent( $post_id = 0 ) {
 			'email'    => get_post_meta( $agent_id, '_dara_email', true ),
 			'fal'      => get_post_meta( $agent_id, '_dara_fal', true ),
 			'photo'    => (int) get_post_thumbnail_id( $agent_id ),
+			'url'      => get_permalink( $agent_id ),
+			'id'       => $agent_id,
 		);
 	} else {
 		$agent = array(
@@ -223,6 +225,8 @@ function dara_get_agent( $post_id = 0 ) {
 			'email'    => '',
 			'fal'      => dara_setting( 'office_fal' ),
 			'photo'    => 0,
+			'url'      => '',
+			'id'       => 0,
 		);
 	}
 	return apply_filters( 'dara_agent', $agent, $post_id );
@@ -256,4 +260,39 @@ function dara_lead_types() {
 		'contact' => __( 'Contact', 'dara-core' ),
 		'newsletter' => __( 'Newsletter', 'dara-core' ),
 	);
+}
+
+/**
+ * Initials for avatar placeholders ("Mohamed Eid" -> "ME", "محمد العتيبي" -> "م ع").
+ *
+ * @param string $name Name.
+ * @return string
+ */
+function dara_initials( $name ) {
+	$words = preg_split( '/\s+/u', trim( (string) $name ) );
+	$out   = array();
+	foreach ( array_slice( array_filter( $words ), 0, 2 ) as $w ) {
+		$w     = preg_replace( '/^ال(?=\p{Arabic}{2,})/u', '', $w ); // Skip the Arabic article.
+		$out[] = mb_substr( $w, 0, 1 );
+	}
+	return implode( preg_match( '/\p{Arabic}/u', $name ) ? ' ' : '', $out );
+}
+
+/**
+ * Number of published properties assigned to an agent.
+ *
+ * @param int $agent_id Agent ID.
+ * @return int
+ */
+function dara_agent_listing_count( $agent_id ) {
+	$q = new WP_Query(
+		array(
+			'post_type'      => 'dara_property',
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+			'meta_key'       => '_dara_agent', // phpcs:ignore WordPress.DB.SlowDBQuery
+			'meta_value'     => (int) $agent_id, // phpcs:ignore WordPress.DB.SlowDBQuery
+		)
+	);
+	return (int) $q->found_posts;
 }

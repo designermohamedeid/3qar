@@ -133,6 +133,63 @@ msgstr "رقم واتساب الافتراضي"
 msgid "International format without +"
 msgstr "بالصيغة الدولية بدون +"
 
+#: includes/demo.php:19 includes/demo.php:20 includes/demo.php:35
+msgid "Demo content"
+msgstr "المحتوى التجريبي"
+
+#: includes/demo.php:38
+msgid "Demo content imported. Visit your site to see it."
+msgstr "تم استيراد المحتوى التجريبي. زُر موقعك لمشاهدته."
+
+#: includes/demo.php:38
+msgid "View site"
+msgstr "عرض الموقع"
+
+#: includes/demo.php:40
+msgid "Demo content removed."
+msgstr "تم حذف المحتوى التجريبي."
+
+#: includes/demo.php:43
+msgid ""
+"Fill your site with sample properties, projects, agents, blog posts, pages, "
+"menus and home page settings so it looks like the theme demo. You can remove"
+" all of it later with one click; your own content is never touched."
+msgstr ""
+"املأ موقعك بعقارات ومشاريع ومسوّقين ومقالات وصفحات وقوائم وإعدادات رئيسية "
+"تجريبية ليبدو مثل ديمو القالب. يمكنك حذف كل ذلك لاحقاً بضغطة واحدة دون "
+"المساس بمحتواك."
+
+#: includes/demo.php:49
+msgid "Remove demo content"
+msgstr "حذف المحتوى التجريبي"
+
+#: includes/demo.php:55
+msgid "Content language"
+msgstr "لغة المحتوى"
+
+#: includes/demo.php:60
+msgid "Set the demo home page and blog page in Settings > Reading"
+msgstr "تعيين الصفحة الرئيسية وصفحة المدونة التجريبية في الإعدادات ← القراءة"
+
+#: includes/demo.php:61
+msgid "Create and assign menus"
+msgstr "إنشاء القوائم وتعيينها"
+
+#: includes/demo.php:62 includes/demo.php:539
+msgid "Import demo content"
+msgstr "استيراد المحتوى التجريبي"
+
+#: includes/demo.php:163 includes/demo.php:458
+msgid "Not allowed."
+msgstr "غير مسموح."
+
+#: includes/demo.php:537
+msgid ""
+"Start faster: import the demo properties, projects and pages, then replace "
+"them with your own."
+msgstr ""
+"ابدأ أسرع: استورد العقارات والمشاريع والصفحات التجريبية ثم استبدلها بمحتواك."
+
 #: includes/fields.php:26
 msgid "Property details"
 msgstr "تفاصيل العقار"
@@ -466,27 +523,27 @@ msgstr "م²"
 msgid "Age"
 msgstr "عمر العقار"
 
-#: includes/helpers.php:220
+#: includes/helpers.php:222
 msgid "Sales team"
 msgstr "فريق المبيعات"
 
-#: includes/helpers.php:253
+#: includes/helpers.php:257
 msgid "Viewing request"
 msgstr "طلب معاينة"
 
-#: includes/helpers.php:254
+#: includes/helpers.php:258
 msgid "Project interest"
 msgstr "اهتمام بمشروع"
 
-#: includes/helpers.php:255
+#: includes/helpers.php:259
 msgid "List a property"
 msgstr "عرض عقار"
 
-#: includes/helpers.php:256
+#: includes/helpers.php:260
 msgid "Contact"
 msgstr "تواصل"
 
-#: includes/helpers.php:257
+#: includes/helpers.php:261
 msgid "Newsletter"
 msgstr "النشرة البريدية"
 

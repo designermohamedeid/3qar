@@ -70,7 +70,10 @@ function dara_page_bundles() {
 	if ( is_singular( 'dara_project' ) ) {
 		$bundles[] = 'project';
 	}
-	if ( ! is_front_page() && ( is_singular() || is_home() || is_archive() || is_search() || is_404() ) && ! is_post_type_archive( array( 'dara_property', 'dara_project' ) ) && ! is_tax( array( 'property_type', 'property_city' ) ) ) {
+	if ( is_post_type_archive( 'dara_agent' ) || is_singular( 'dara_agent' ) ) {
+		$bundles[] = 'agents';
+	}
+	if ( ! is_front_page() && ( is_singular() || is_home() || is_archive() || is_search() || is_404() ) && ! is_post_type_archive( array( 'dara_property', 'dara_project', 'dara_agent' ) ) && ! is_tax( array( 'property_type', 'property_city' ) ) ) {
 		$bundles[] = 'content';
 	} elseif ( is_front_page() && 'page' === get_option( 'show_on_front' ) && '' !== trim( (string) get_post_field( 'post_content', get_option( 'page_on_front' ) ) ) ) {
 		$bundles[] = 'content';

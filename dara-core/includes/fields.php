@@ -136,7 +136,7 @@ function dara_core_register_meta() {
 				array(
 					'type'              => 'string',
 					'single'            => true,
-					'show_in_rest'      => 'dara_agent' !== $post_type,
+					'show_in_rest'      => true,
 					'sanitize_callback' => function ( $value ) use ( $field ) {
 						return dara_core_sanitize_field( $value, $field );
 					},

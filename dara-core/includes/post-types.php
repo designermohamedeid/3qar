@@ -71,13 +71,13 @@ function dara_core_register_post_types() {
 	register_post_type(
 		'dara_agent',
 		array(
-			'labels'             => dara_core_labels( __( 'Agents', 'dara-core' ), __( 'Agent', 'dara-core' ), array( 'featured_image' => __( 'Photo', 'dara-core' ) ) ),
-			'public'             => false,
-			'show_ui'            => true,
-			'show_in_menu'       => 'edit.php?post_type=dara_property',
-			'show_in_rest'       => false,
-			'supports'           => array( 'title', 'excerpt', 'thumbnail' ),
-			'publicly_queryable' => false,
+			'labels'        => dara_core_labels( __( 'Agents', 'dara-core' ), __( 'Agent', 'dara-core' ), array( 'featured_image' => __( 'Photo', 'dara-core' ) ) ),
+			'public'        => true,
+			'has_archive'   => true,
+			'show_in_menu'  => 'edit.php?post_type=dara_property',
+			'show_in_rest'  => true,
+			'rewrite'       => array( 'slug' => 'agents', 'with_front' => false ),
+			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 		)
 	);
 

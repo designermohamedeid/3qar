@@ -63,3 +63,6 @@
 .lightbox__next{inset-inline-end:16px;top:50%;transform:translateY(-50%)}
 [dir=rtl] .lightbox__prev,[dir=rtl] .lightbox__next{transform:translateY(-50%) scaleX(-1)}
 .lightbox__count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:14px}
+.agent__avatar{font-weight:700;font-size:18px}
+.agent__info a{color:var(--ink)}
+.agent__info a:hover{color:var(--primary)}

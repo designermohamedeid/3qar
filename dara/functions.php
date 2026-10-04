@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DARA_VERSION', '1.0.0' );
+define( 'DARA_VERSION', '1.1.0' );
 define( 'DARA_DIR', get_template_directory() );
 define( 'DARA_URI', get_template_directory_uri() );
 

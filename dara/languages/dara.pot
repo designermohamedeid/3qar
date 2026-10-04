@@ -24,6 +24,10 @@ msgstr ""
 msgid "Browse properties"
 msgstr ""
 
+#: archive-dara_agent.php:11
+msgid "Licensed agents ready to help you buy, sell or rent."
+msgstr ""
+
 #: archive-dara_property.php:32
 msgid "Filters"
 msgstr ""
@@ -129,7 +133,8 @@ msgstr ""
 msgid "Call us"
 msgstr ""
 
-#: footer.php:108 page-templates/contact.php:28 single-dara_property.php:213
+#: footer.php:108 page-templates/contact.php:28 single-dara_agent.php:57
+#: single-dara_property.php:219 template-parts/cards/agent.php:44
 #: template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr ""
@@ -373,7 +378,7 @@ msgid "International format without +, e.g. 9665XXXXXXXX"
 msgstr ""
 
 #: inc/customizer.php:109 page-templates/contact.php:31
-#: page-templates/contact.php:47
+#: page-templates/contact.php:47 single-dara_agent.php:60
 msgid "Email"
 msgstr ""
 
@@ -686,20 +691,23 @@ msgid "Send us a message"
 msgstr ""
 
 #: page-templates/contact.php:45 page-templates/list-property.php:32
-#: single-dara_project.php:212 template-parts/forms/viewing.php:14
+#: single-dara_agent.php:113 single-dara_project.php:212
+#: template-parts/forms/viewing.php:14
 msgid "Name"
 msgstr ""
 
 #: page-templates/contact.php:46 page-templates/list-property.php:33
-#: single-dara_project.php:213 template-parts/forms/viewing.php:15
+#: single-dara_agent.php:114 single-dara_project.php:213
+#: template-parts/forms/viewing.php:15
 msgid "Mobile number"
 msgstr ""
 
-#: page-templates/contact.php:48 template-parts/forms/viewing.php:17
+#: page-templates/contact.php:48 single-dara_agent.php:115
+#: template-parts/forms/viewing.php:17
 msgid "Message"
 msgstr ""
 
-#: page-templates/contact.php:50
+#: page-templates/contact.php:50 single-dara_agent.php:116
 msgid "Send message"
 msgstr ""
 
@@ -767,6 +775,37 @@ msgstr ""
 #: sidebar.php:14
 msgid "Sidebar"
 msgstr ""
+
+#: single-dara_agent.php:48 single-dara_property.php:208
+#: template-parts/cards/agent.php:36
+#, php-format
+msgid "FAL %s"
+msgstr ""
+
+#: single-dara_agent.php:71
+msgid "About the agent"
+msgstr ""
+
+#: single-dara_agent.php:99
+msgid "Pages"
+msgstr ""
+
+#: single-dara_agent.php:103
+msgid "No properties listed yet."
+msgstr ""
+
+#: single-dara_agent.php:110
+#, php-format
+msgid "Message %s"
+msgstr ""
+
+#: single-dara_agent.php:78 template-parts/cards/agent.php:34
+#: template-parts/home/types.php:25
+#, php-format
+msgid "%s property"
+msgid_plural "%s properties"
+msgstr[0] ""
+msgstr[1] ""
 
 #: single-dara_project.php:32
 msgid "Available"
@@ -969,32 +1008,27 @@ msgstr ""
 msgid "Get directions"
 msgstr ""
 
-#: single-dara_property.php:202
-#, php-format
-msgid "FAL %s"
-msgstr ""
-
-#: single-dara_property.php:210
+#: single-dara_property.php:216 template-parts/cards/agent.php:41
 msgid "Call"
 msgstr ""
 
-#: single-dara_property.php:220
+#: single-dara_property.php:226
 msgid "License information"
 msgstr ""
 
-#: single-dara_property.php:222
+#: single-dara_property.php:228
 msgid "Ad license number"
 msgstr ""
 
-#: single-dara_property.php:225
+#: single-dara_property.php:231
 msgid "Office FAL license"
 msgstr ""
 
-#: single-dara_property.php:227
+#: single-dara_property.php:233
 msgid "Listed on"
 msgstr ""
 
-#: single-dara_property.php:246
+#: single-dara_property.php:252
 msgid "Similar properties"
 msgstr ""
 
@@ -1132,13 +1166,6 @@ msgstr ""
 #: template-parts/home/services.php:25
 msgid "Learn more"
 msgstr ""
-
-#: template-parts/home/types.php:25
-#, php-format
-msgid "%s property"
-msgid_plural "%s properties"
-msgstr[0] ""
-msgstr[1] ""
 
 #: template-parts/property/filters.php:18
 #: template-parts/property/filters.php:21
