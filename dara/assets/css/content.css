@@ -1,0 +1,66 @@
+/* Dara – content (generated from src/main.css by build-css.py) */
+.with-sidebar{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.content-area{flex:999 1 560px;min-width:0}
+.sidebar{flex:1 1 280px}
+.widget{margin-bottom:32px}
+.widget__title{font-size:18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.widget ul{list-style:none;margin:0;padding:0}
+.widget li{padding:8px 0;border-bottom:1px dashed var(--line)}
+.archive-desc{margin-bottom:28px;color:var(--muted)}
+.article{padding-block:24px var(--section)}
+.article__head{margin-bottom:24px}
+.article__title{font-size:clamp(28px,4vw,42px);margin:8px 0 0}
+.article__thumb{margin-block:0 36px}
+.article__thumb img{width:100%;border-radius:var(--radius-xl)}
+.article__foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags a{padding:4px 12px;border-radius:999px;background:var(--surface);color:var(--text);font-size:14px}
+.post-navigation{margin-top:32px}
+.post-navigation .nav-links{justify-content:space-between}
+.post-navigation .nav-links>div{flex:1 1 45%}
+.post-navigation a{display:flex;flex-direction:column;padding:16px 20px;border:1px solid var(--line);border-radius:var(--radius);color:var(--ink);font-weight:600}
+.post-navigation small{color:var(--muted);font-weight:400}
+.post-navigation .nav-next{text-align:end}
+.entry-content{font-size:17px;line-height:1.95}
+.entry-content>*+*{margin-top:1.1em}
+.entry-content h2{font-size:26px;margin-top:1.6em}
+.entry-content h3{font-size:21px;margin-top:1.4em}
+.entry-content a{text-decoration:underline;text-underline-offset:3px}
+.entry-content img{border-radius:var(--radius)}
+.entry-content blockquote{margin-inline:0;padding:18px 24px;border-inline-start:4px solid var(--primary);background:var(--surface);border-radius:var(--radius-sm);font-size:18px;color:var(--ink)}
+.entry-content table{width:100%;border-collapse:collapse}
+.entry-content th,.entry-content td{border:1px solid var(--line);padding:10px 14px}
+.entry-content ul,.entry-content ol{padding-inline-start:1.4em}
+.entry-content .alignwide{max-width:1100px;margin-inline:calc(50% - min(550px,50vw - var(--gutter)))}
+.entry-content .alignfull{margin-inline:calc(50% - 50vw);max-width:100vw}
+.entry-content--full>*{max-width:none}
+.alignleft{float:left;margin-inline-end:1.5em}
+.alignright{float:right;margin-inline-start:1.5em}
+.aligncenter{margin-inline:auto}
+.wp-caption-text,figcaption{font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
+.comments{margin-top:56px}
+.comment-list{list-style:none;margin:0;padding:0}
+.comment-list .children{list-style:none;padding-inline-start:32px}
+.comment-body{padding:18px 0;border-bottom:1px solid var(--line)}
+.comment-author{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink)}
+.comment-author img{border-radius:50%}
+.comment-author .says{display:none}
+.comment-metadata{font-size:13px}
+.comment-metadata a{color:var(--muted)}
+.comment-form{display:grid;gap:14px}
+.comment-form label{display:block;margin-bottom:4px;color:var(--ink)}
+.comment-form input:not([type=checkbox]):not([type=submit]),.comment-form textarea{width:100%;border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 14px}
+.comment-form-cookies-consent{display:flex;gap:8px;align-items:flex-start}
+.contact{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.contact__info{flex:1 1 320px;display:flex;flex-direction:column;gap:20px}
+.contact .form{flex:2 1 460px}
+.contact-cards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.contact-cards li{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:var(--radius-lg)}
+.contact-cards__icon{width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.contact-cards small{display:block;font-size:13px;color:var(--muted)}
+.contact-cards a,.contact-cards span>span{color:var(--ink);font-weight:600}
+.contact .social a{color:var(--ink);background:var(--surface)}
+.error-404{text-align:center;max-width:640px}
+.error-404__code{margin:0;font-size:clamp(80px,14vw,140px);font-weight:700;line-height:1;color:var(--primary)}
+.error-404 .search-form{max-width:440px;margin:24px auto}
+.error-404__links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}

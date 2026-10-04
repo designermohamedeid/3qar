@@ -1,0 +1,1222 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Dara Real Estate 1.0.0\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: dara\n"
+
+#: 404.php:14
+msgid "This page could not be found"
+msgstr "لم نتمكن من العثور على هذه الصفحة"
+
+#: 404.php:15
+msgid ""
+"It may have been moved or removed. Try searching or browse our properties."
+msgstr "ربما تم نقلها أو حذفها. جرّب البحث أو تصفح عقاراتنا."
+
+#: 404.php:18
+msgid "Back to home"
+msgstr "العودة للرئيسية"
+
+#: 404.php:20
+msgid "Browse properties"
+msgstr "تصفح العقارات"
+
+#: archive-dara_property.php:32
+msgid "Filters"
+msgstr "الفلاتر"
+
+#: archive-dara_property.php:44
+msgid "Sort by"
+msgstr "ترتيب حسب"
+
+#: archive-dara_property.php:46
+msgid "Newest"
+msgstr "الأحدث"
+
+#: archive-dara_property.php:47
+msgid "Price: low to high"
+msgstr "السعر: من الأقل"
+
+#: archive-dara_property.php:48
+msgid "Price: high to low"
+msgstr "السعر: من الأعلى"
+
+#: archive-dara_property.php:49
+msgid "Largest area"
+msgstr "الأكبر مساحة"
+
+#: archive-dara_property.php:52
+msgid "Apply"
+msgstr "تطبيق"
+
+#: archive-dara_property.php:54
+msgid "View"
+msgstr "طريقة العرض"
+
+#: archive-dara_property.php:55
+msgid "Grid"
+msgstr "شبكة"
+
+#: archive-dara_property.php:56 page-templates/contact.php:55
+#: single-dara_project.php:200 single-dara_property.php:170
+msgid "Map"
+msgstr "خريطة"
+
+#: archive-dara_property.php:89
+msgid "No properties match your search"
+msgstr "لا توجد عقارات مطابقة لبحثك"
+
+#: archive-dara_property.php:90
+msgid "Try removing some filters or searching another area."
+msgstr "جرّب إزالة بعض الفلاتر أو البحث في منطقة أخرى."
+
+#: archive-dara_property.php:91
+msgid "See all properties"
+msgstr "عرض كل العقارات"
+
+#: archive-dara_property.php:26
+#, php-format
+msgid "%s property found"
+msgid_plural "%s properties found"
+msgstr[0] "لا توجد عقارات"
+msgstr[1] "عقار واحد"
+msgstr[2] "عقاران"
+msgstr[3] "%s عقارات"
+msgstr[4] "%s عقاراً"
+msgstr[5] "%s عقار"
+
+#: comments.php:20
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "لا توجد تعليقات"
+msgstr[1] "تعليق واحد"
+msgstr[2] "تعليقان"
+msgstr[3] "%s تعليقات"
+msgstr[4] "%s تعليقاً"
+msgstr[5] "%s تعليق"
+
+#: footer.php:24
+msgid "Quick links"
+msgstr "روابط سريعة"
+
+#: footer.php:48 template-parts/home/featured.php:31
+msgid "Property types"
+msgstr "أنواع العقارات"
+
+#: footer.php:59
+msgid "Newsletter"
+msgstr "النشرة البريدية"
+
+#: footer.php:63
+msgid "Email address"
+msgstr "البريد الإلكتروني"
+
+#: footer.php:64
+msgid "Your email"
+msgstr "بريدك الإلكتروني"
+
+#: footer.php:65
+msgid "Subscribe"
+msgstr "اشترك"
+
+#: footer.php:88
+#, php-format
+msgid "FAL license: %s"
+msgstr "رخصة فال: %s"
+
+#: footer.php:92
+#, php-format
+msgid "CR: %s"
+msgstr "السجل التجاري: %s"
+
+#: footer.php:105 page-templates/contact.php:25
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#: footer.php:108 page-templates/contact.php:28 single-dara_property.php:213
+#: template-parts/home/cta.php:20
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#: header.php:21
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+#: header.php:27 inc/setup.php:46
+msgid "Main menu"
+msgstr "القائمة الرئيسية"
+
+#: header.php:39
+msgid "Favorites"
+msgstr "المفضلة"
+
+#: header.php:44
+msgid "Open menu"
+msgstr "فتح القائمة"
+
+#: header.php:50
+msgid "Menu"
+msgstr "القائمة"
+
+#: header.php:53
+msgid "Close menu"
+msgstr "إغلاق القائمة"
+
+#: header.php:55
+msgid "Mobile menu"
+msgstr "قائمة الجوال"
+
+#: inc/assets.php:37
+msgid "Saved to favorites"
+msgstr "تمت الإضافة إلى المفضلة"
+
+#: inc/assets.php:38
+msgid "Removed from favorites"
+msgstr "تمت الإزالة من المفضلة"
+
+#: inc/assets.php:39
+msgid "Link copied"
+msgstr "تم نسخ الرابط"
+
+#: inc/assets.php:40
+msgid "You have no saved properties yet."
+msgstr "لا توجد عقارات محفوظة بعد."
+
+#: inc/assets.php:41
+msgid "Close"
+msgstr "إغلاق"
+
+#: inc/assets.php:42 single.php:45
+msgid "Previous"
+msgstr "السابق"
+
+#: inc/assets.php:43 single.php:46
+msgid "Next"
+msgstr "التالي"
+
+#: inc/compat.php:21
+msgid ""
+"The Dara theme needs the \"Dara Core\" plugin for properties, projects, "
+"search and lead forms. Please install and activate it."
+msgstr ""
+"يحتاج قالب دارة إلى إضافة \"Dara Core\" لتشغيل العقارات والمشاريع والبحث "
+"ونماذج الطلبات. يرجى تثبيتها وتفعيلها."
+
+#: inc/customizer.php:16
+msgid "Show this section"
+msgstr "إظهار هذا القسم"
+
+#: inc/customizer.php:17
+msgid "One item per line."
+msgstr "عنصر في كل سطر."
+
+#: inc/customizer.php:20
+msgid "Brand & header"
+msgstr "الهوية والهيدر"
+
+#: inc/customizer.php:22
+msgid "Primary color"
+msgstr "اللون الأساسي"
+
+#: inc/customizer.php:23
+msgid "Headings / dark color"
+msgstr "لون العناوين / الداكن"
+
+#: inc/customizer.php:24
+msgid "Header button text"
+msgstr "نص زر الهيدر"
+
+#: inc/customizer.php:25
+msgid "Header button link"
+msgstr "رابط زر الهيدر"
+
+#: inc/customizer.php:25
+msgid "e.g. your \"List your property\" page."
+msgstr "مثال: صفحة \"أضف عقارك\"."
+
+#: inc/customizer.php:29
+msgid "Home: hero & search"
+msgstr "الرئيسية: الواجهة والبحث"
+
+#: inc/customizer.php:31
+msgid "Background image"
+msgstr "صورة الخلفية"
+
+#: inc/customizer.php:31
+msgid "Recommended 1920×1080, compressed (WebP/JPEG under 250 KB)."
+msgstr "المقاس المقترح 1920×1080 مضغوطة (WebP/JPEG أقل من 250 كيلوبايت)."
+
+#: inc/customizer.php:32 inc/customizer.php:42 inc/customizer.php:52
+#: inc/customizer.php:60 inc/customizer.php:70 inc/customizer.php:80
+#: inc/customizer.php:94
+msgid "Small label"
+msgstr "العنوان الصغير"
+
+#: inc/customizer.php:33 inc/customizer.php:43 inc/customizer.php:53
+#: inc/customizer.php:61 inc/customizer.php:71 inc/customizer.php:81
+#: inc/customizer.php:95
+msgid "Title"
+msgstr "العنوان"
+
+#: inc/customizer.php:34 inc/customizer.php:62 inc/customizer.php:82
+msgid "Text"
+msgstr "النص"
+
+#: inc/customizer.php:35
+msgid "Popular searches"
+msgstr "عمليات البحث الشائعة"
+
+#: inc/customizer.php:35
+msgid ""
+"One per line: Label | URL. Leave empty to show your top cities "
+"automatically."
+msgstr "سطر لكل عنصر: الاسم | الرابط. اتركه فارغاً لعرض أكثر المدن تلقائياً."
+
+#: inc/customizer.php:39
+msgid "Home: featured properties"
+msgstr "الرئيسية: العقارات المميزة"
+
+#: inc/customizer.php:44
+msgid "Number of properties"
+msgstr "عدد العقارات"
+
+#: inc/customizer.php:45
+msgid "Only properties marked \"Featured\""
+msgstr "العقارات المميزة فقط"
+
+#: inc/customizer.php:49
+msgid "Home: property types"
+msgstr "الرئيسية: أنواع العقارات"
+
+#: inc/customizer.php:57
+msgid "Home: projects"
+msgstr "الرئيسية: المشاريع"
+
+#: inc/customizer.php:63
+msgid "Number of projects"
+msgstr "عدد المشاريع"
+
+#: inc/customizer.php:67
+msgid "Home: services"
+msgstr "الرئيسية: الخدمات"
+
+#: inc/customizer.php:72
+msgid "Services"
+msgstr "الخدمات"
+
+#: inc/customizer.php:72
+msgid ""
+"One per line: icon | title | text | link. Icons: megaphone, key, chart, "
+"clipboard, home, building, shield, calendar, user."
+msgstr ""
+"سطر لكل خدمة: الأيقونة | العنوان | النص | الرابط. الأيقونات: megaphone, key,"
+" chart, clipboard, home, building, shield, calendar, user."
+
+#: inc/customizer.php:76
+msgid "Home: why us"
+msgstr "الرئيسية: لماذا نحن"
+
+#: inc/customizer.php:79
+msgid "Image"
+msgstr "الصورة"
+
+#: inc/customizer.php:83
+msgid "Points"
+msgstr "النقاط"
+
+#: inc/customizer.php:84
+msgid "Badge title"
+msgstr "عنوان الشارة"
+
+#: inc/customizer.php:85
+msgid "Badge text"
+msgstr "نص الشارة"
+
+#: inc/customizer.php:86 inc/customizer.php:100
+msgid "Button text"
+msgstr "نص الزر"
+
+#: inc/customizer.php:87 inc/customizer.php:101
+msgid "Button link"
+msgstr "رابط الزر"
+
+#: inc/customizer.php:91
+msgid "Home: blog & call to action"
+msgstr "الرئيسية: المدونة والدعوة لإجراء"
+
+#: inc/customizer.php:93
+msgid "Show latest posts"
+msgstr "إظهار أحدث المقالات"
+
+#: inc/customizer.php:96
+msgid "Number of posts"
+msgstr "عدد المقالات"
+
+#: inc/customizer.php:97
+msgid "Show call to action"
+msgstr "إظهار قسم الدعوة لإجراء"
+
+#: inc/customizer.php:98
+msgid "Call to action title"
+msgstr "عنوان الدعوة لإجراء"
+
+#: inc/customizer.php:99
+msgid "Call to action text"
+msgstr "نص الدعوة لإجراء"
+
+#: inc/customizer.php:105
+msgid "Contact & social"
+msgstr "التواصل والشبكات الاجتماعية"
+
+#: inc/customizer.php:107
+msgid "Phone"
+msgstr "الهاتف"
+
+#: inc/customizer.php:108
+msgid "WhatsApp number"
+msgstr "رقم واتساب"
+
+#: inc/customizer.php:108
+msgid "International format without +, e.g. 9665XXXXXXXX"
+msgstr "بالصيغة الدولية بدون +، مثال: 9665XXXXXXXX"
+
+#: inc/customizer.php:109 page-templates/contact.php:31
+#: page-templates/contact.php:47
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: inc/customizer.php:110
+msgid "Address"
+msgstr "العنوان"
+
+#: inc/customizer.php:111
+msgid "Office latitude"
+msgstr "خط عرض المكتب"
+
+#: inc/customizer.php:112
+msgid "Office longitude"
+msgstr "خط طول المكتب"
+
+#: inc/customizer.php:123
+msgid "Footer"
+msgstr "الفوتر"
+
+#: inc/customizer.php:125
+msgid "About text"
+msgstr "نص تعريفي"
+
+#: inc/customizer.php:126
+msgid "Show newsletter"
+msgstr "إظهار النشرة البريدية"
+
+#: inc/customizer.php:127
+msgid "Newsletter text"
+msgstr "نص النشرة البريدية"
+
+#: inc/customizer.php:128
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+#: inc/customizer.php:128
+msgid "You can use {year} and {site}."
+msgstr "يمكنك استخدام {year} و {site}."
+
+#: inc/customizer.php:132
+msgid "Performance & maps"
+msgstr "الأداء والخرائط"
+
+#: inc/customizer.php:134
+msgid "Disable WordPress emoji script"
+msgstr "تعطيل سكربت الإيموجي في ووردبريس"
+
+#: inc/customizer.php:135
+msgid "Load block CSS only on pages that use blocks"
+msgstr "تحميل CSS المكوّنات فقط في الصفحات التي تستخدمها"
+
+#: inc/customizer.php:136
+msgid "Map tiles URL"
+msgstr "رابط بلاطات الخريطة"
+
+#: inc/customizer.php:136
+msgid ""
+"Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
+"Stadia...) with your key."
+msgstr ""
+"الافتراضي: OpenStreetMap. للمواقع ذات الزيارات الكبيرة استخدم مزود خرائط "
+"(MapTiler أو Stadia...) بمفتاحك الخاص."
+
+#: inc/customizer.php:137
+msgid "Map attribution"
+msgstr "نص حقوق الخريطة"
+
+#: inc/customizer.php:163
+msgid "Dara theme"
+msgstr "قالب دارة"
+
+#: inc/menus.php:23
+#, php-format
+msgid "Show sub menu of %s"
+msgstr "إظهار القائمة الفرعية لـ %s"
+
+#: inc/menus.php:50 inc/template-tags.php:336
+msgid "Home"
+msgstr "الرئيسية"
+
+#: inc/menus.php:52
+msgid "Properties"
+msgstr "العقارات"
+
+#: inc/menus.php:53
+msgid "Projects"
+msgstr "المشاريع"
+
+#: inc/setup.php:36
+msgid "Primary"
+msgstr "الأساسي"
+
+#: inc/setup.php:37
+msgid "Ink"
+msgstr "الداكن"
+
+#: inc/setup.php:38
+msgid "Surface"
+msgstr "خلفية فاتحة"
+
+#: inc/setup.php:39
+msgid "White"
+msgstr "أبيض"
+
+#: inc/setup.php:47
+msgid "Footer: quick links"
+msgstr "الفوتر: روابط سريعة"
+
+#: inc/setup.php:72
+msgid "Blog sidebar"
+msgstr "الشريط الجانبي للمدونة"
+
+#: inc/template-tags.php:24 inc/template-tags.php:89
+msgid "List your property"
+msgstr "أضف عقارك"
+
+#: inc/template-tags.php:28
+msgid "Properties for sale, rent and new developments"
+msgstr "منصة عقارية للبيع والإيجار ومشاريع المطوّرين"
+
+#: inc/template-tags.php:29
+msgid "Find your next property with confidence"
+msgstr "اعثر على عقارك القادم بثقة ووضوح"
+
+#: inc/template-tags.php:30
+msgid ""
+"Verified listings with full details, clear prices and licensed agents who "
+"stay with you until the contract is signed."
+msgstr ""
+"عقارات موثّقة بتفاصيل كاملة، أسعار واضحة، ومسوّقون معتمدون يرافقونك حتى "
+"توقيع العقد."
+
+#: inc/template-tags.php:34
+msgid "Hand-picked"
+msgstr "عقارات مختارة"
+
+#: inc/template-tags.php:35
+msgid "Latest featured properties"
+msgstr "أحدث العقارات المميزة"
+
+#: inc/template-tags.php:40
+msgid "Browse by type"
+msgstr "تصفّح حسب النوع"
+
+#: inc/template-tags.php:41
+msgid "What are you looking for?"
+msgstr "ما الذي تبحث عنه؟"
+
+#: inc/template-tags.php:44
+msgid "Developer projects"
+msgstr "مشاريع المطوّرين"
+
+#: inc/template-tags.php:45
+msgid "New off-plan and under-construction projects"
+msgstr "مشاريع جديدة على الخارطة وقيد الإنشاء"
+
+#: inc/template-tags.php:46
+msgid ""
+"Follow construction progress, see available units and payment plans, and "
+"register your interest directly."
+msgstr ""
+"تابع نسبة الإنجاز، واطّلع على الوحدات المتاحة وخطط الدفع، وسجّل اهتمامك "
+"مباشرة."
+
+#: inc/template-tags.php:50
+msgid "Our services"
+msgstr "خدماتنا"
+
+#: inc/template-tags.php:51
+msgid "Everything your property needs, in one place"
+msgstr "كل ما يحتاجه عقارك في مكان واحد"
+
+#: inc/template-tags.php:55
+msgid "Real estate marketing"
+msgstr "التسويق العقاري"
+
+#: inc/template-tags.php:55
+msgid ""
+"Professional photography and digital campaigns that reach the right buyer "
+"fast."
+msgstr "تصوير احترافي وحملات رقمية تصل بعقارك للمشتري المناسب بأسرع وقت."
+
+#: inc/template-tags.php:56
+msgid "Property management"
+msgstr "إدارة الأملاك"
+
+#: inc/template-tags.php:56
+msgid ""
+"Rent collection, maintenance and renewals with clear periodic reports for "
+"owners."
+msgstr "تحصيل الإيجارات والصيانة وتجديد العقود مع تقارير دورية واضحة للمالك."
+
+#: inc/template-tags.php:57
+msgid "Financing solutions"
+msgstr "الحلول التمويلية"
+
+#: inc/template-tags.php:57
+msgid ""
+"We compare mortgage offers and guide you through the process until approval."
+msgstr "نقارن لك عروض التمويل العقاري ونرافقك في الإجراءات حتى الموافقة."
+
+#: inc/template-tags.php:58
+msgid "Property valuation"
+msgstr "التقييم العقاري"
+
+#: inc/template-tags.php:58
+msgid "Certified valuation of the fair market value before you buy or sell."
+msgstr "تقييم معتمد يحدد القيمة السوقية العادلة قبل البيع أو الشراء."
+
+#: inc/template-tags.php:64
+msgid "Why us?"
+msgstr "لماذا نحن؟"
+
+#: inc/template-tags.php:65
+msgid "A clear real estate experience from search to handover"
+msgstr "تجربة عقارية واضحة من البحث حتى الاستلام"
+
+#: inc/template-tags.php:66
+msgid ""
+"We show every detail you need to decide with confidence, and arrange the "
+"viewing, negotiation and paperwork for you."
+msgstr ""
+"نعرض كل التفاصيل التي تحتاجها لتقرر بثقة، ونرتّب لك المعاينة والتفاوض "
+"والتوثيق."
+
+#: inc/template-tags.php:70
+msgid "Listings inspected and verified"
+msgstr "عقارات تمت معاينتها والتحقق من بياناتها"
+
+#: inc/template-tags.php:71
+msgid "Published prices with no hidden fees"
+msgstr "أسعار معلنة بدون رسوم مخفية"
+
+#: inc/template-tags.php:72
+msgid "A dedicated agent on phone and WhatsApp"
+msgstr "مسوّق مخصص يرد عليك عبر الهاتف وواتساب"
+
+#: inc/template-tags.php:73
+msgid "Help with financing, documentation and transfer"
+msgstr "مرافقة في التمويل والتوثيق ونقل الملكية"
+
+#: inc/template-tags.php:76
+msgid "Licensed listings"
+msgstr "إعلانات مرخّصة"
+
+#: inc/template-tags.php:77
+msgid "A license number on every ad"
+msgstr "رقم ترخيص على كل إعلان"
+
+#: inc/template-tags.php:78
+msgid "Talk to an advisor"
+msgstr "تحدث مع مستشار"
+
+#: inc/template-tags.php:82 inc/template-tags.php:276
+msgid "Blog"
+msgstr "المدونة"
+
+#: inc/template-tags.php:83
+msgid "Your guide to the property market"
+msgstr "دليلك في السوق العقاري"
+
+#: inc/template-tags.php:87
+msgid "Own a property you want to sell or rent?"
+msgstr "تملك عقاراً وتريد بيعه أو تأجيره؟"
+
+#: inc/template-tags.php:88
+msgid ""
+"Send us the details and an agent will contact you within one business day to"
+" arrange photos and pricing."
+msgstr ""
+"أرسل بيانات عقارك وسيتواصل معك مسوّق خلال يوم عمل لترتيب التصوير والتسعير."
+
+#: inc/template-tags.php:107
+msgid ""
+"We help you buy, sell, rent and manage property, and present developer "
+"projects transparently from the first visit to the signed contract."
+msgstr ""
+"نساعدك في بيع وشراء وتأجير العقارات وإدارتها، ونقدّم مشاريع المطوّرين "
+"بشفافية من أول زيارة حتى توقيع العقد."
+
+#: inc/template-tags.php:109
+msgid "Get the newest properties and projects first."
+msgstr "أحدث العقارات والمشاريع تصلك أولاً."
+
+#: inc/template-tags.php:111
+msgid "© {year} {site}. All rights reserved."
+msgstr "© {year} {site}. جميع الحقوق محفوظة."
+
+#: inc/template-tags.php:280
+#, php-format
+msgid "Search: %s"
+msgstr "نتائج البحث: %s"
+
+#: inc/template-tags.php:283
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+#: inc/template-tags.php:319
+#, php-format
+msgid "in %s"
+msgstr "في %s"
+
+#: inc/template-tags.php:329 inc/template-tags.php:359
+msgid "Breadcrumbs"
+msgstr "مسار التنقل"
+
+#: inc/template-tags.php:373
+msgid "Previous page"
+msgstr "الصفحة السابقة"
+
+#: inc/template-tags.php:374
+msgid "Next page"
+msgstr "الصفحة التالية"
+
+#: page-templates/contact.php:34
+msgid "Office"
+msgstr "المكتب"
+
+#: page-templates/contact.php:41
+msgid "Send us a message"
+msgstr "أرسل لنا رسالة"
+
+#: page-templates/contact.php:45 page-templates/list-property.php:32
+#: single-dara_project.php:212 template-parts/forms/viewing.php:14
+msgid "Name"
+msgstr "الاسم"
+
+#: page-templates/contact.php:46 page-templates/list-property.php:33
+#: single-dara_project.php:213 template-parts/forms/viewing.php:15
+msgid "Mobile number"
+msgstr "رقم الجوال"
+
+#: page-templates/contact.php:48 template-parts/forms/viewing.php:17
+msgid "Message"
+msgstr "الرسالة"
+
+#: page-templates/contact.php:50
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+#: page-templates/favorites.php:18
+msgid "Please enable JavaScript to see your saved properties."
+msgstr "يرجى تفعيل JavaScript لعرض العقارات المحفوظة."
+
+#: page-templates/list-property.php:35
+msgid "I want to"
+msgstr "أرغب في"
+
+#: page-templates/list-property.php:37 page-templates/list-property.php:37
+msgid "Sell"
+msgstr "البيع"
+
+#: page-templates/list-property.php:38 page-templates/list-property.php:38
+msgid "Rent out"
+msgstr "التأجير"
+
+#: page-templates/list-property.php:39 page-templates/list-property.php:39
+msgid "Management"
+msgstr "إدارة الأملاك"
+
+#: page-templates/list-property.php:42 template-parts/home/hero.php:68
+#: template-parts/property/filters.php:51
+msgid "Property type"
+msgstr "نوع العقار"
+
+#: page-templates/list-property.php:49
+msgid "Other"
+msgstr "أخرى"
+
+#: page-templates/list-property.php:52 template-parts/property/filters.php:35
+msgid "City / district"
+msgstr "المدينة / الحي"
+
+#: page-templates/list-property.php:53
+msgid "Expected price (optional)"
+msgstr "السعر المتوقع (اختياري)"
+
+#: page-templates/list-property.php:54
+msgid "Details"
+msgstr "التفاصيل"
+
+#: page-templates/list-property.php:54
+msgid "Area, rooms, age, special features…"
+msgstr "المساحة، عدد الغرف، عمر العقار، المميزات…"
+
+#: page-templates/list-property.php:56
+msgid "Send property details"
+msgstr "إرسال بيانات العقار"
+
+#: searchform.php:12
+msgid "Search for:"
+msgstr "البحث عن:"
+
+#: searchform.php:13
+msgid "Search…"
+msgstr "ابحث…"
+
+#: searchform.php:14 template-parts/home/hero.php:103
+msgid "Search"
+msgstr "ابحث"
+
+#: sidebar.php:14
+msgid "Sidebar"
+msgstr "الشريط الجانبي"
+
+#: single-dara_project.php:32
+msgid "Available"
+msgstr "متاحة"
+
+#: single-dara_project.php:33
+msgid "Reserved"
+msgstr "محجوزة"
+
+#: single-dara_project.php:34
+msgid "Sold"
+msgstr "مباعة"
+
+#: single-dara_project.php:37
+msgid "Completed"
+msgstr "مكتمل"
+
+#: single-dara_project.php:38
+msgid "In progress"
+msgstr "جارٍ العمل"
+
+#: single-dara_project.php:39
+msgid "Upcoming"
+msgstr "قادم"
+
+#: single-dara_project.php:55
+msgid "Licensed off-plan sales"
+msgstr "بيع على الخارطة مرخّص"
+
+#: single-dara_project.php:63
+#, php-format
+msgid "Developed by %s"
+msgstr "تطوير %s"
+
+#: single-dara_project.php:68 single-dara_project.php:206
+msgid "Register your interest"
+msgstr "سجّل اهتمامك"
+
+#: single-dara_project.php:70
+msgid "Download brochure"
+msgstr "تحميل البروشور"
+
+#: single-dara_project.php:79 template-parts/cards/project.php:41
+msgid "Prices from"
+msgstr "تبدأ الأسعار من"
+
+#: single-dara_project.php:82 single-dara_project.php:94
+msgid "Units"
+msgstr "الوحدات"
+
+#: single-dara_project.php:85
+msgid "Delivery"
+msgstr "التسليم"
+
+#: single-dara_project.php:88 single-dara_project.php:88
+#: template-parts/cards/project.php:46 template-parts/cards/project.php:47
+msgid "Completion"
+msgstr "نسبة الإنجاز"
+
+#: single-dara_project.php:92
+msgid "Project sections"
+msgstr "أقسام المشروع"
+
+#: single-dara_project.php:93
+msgid "Overview"
+msgstr "نظرة عامة"
+
+#: single-dara_project.php:95 single-dara_project.php:171
+msgid "Payment plan"
+msgstr "خطة الدفع"
+
+#: single-dara_project.php:96
+msgid "Progress"
+msgstr "مراحل التنفيذ"
+
+#: single-dara_project.php:97 single-dara_project.php:199
+#: template-parts/home/hero.php:57
+msgid "Location"
+msgstr "الموقع"
+
+#: single-dara_project.php:102
+msgid "About the project"
+msgstr "عن المشروع"
+
+#: single-dara_project.php:115 single-dara_property.php:75
+#, php-format
+msgid "Open photo %1$s of %2$s"
+msgstr "فتح الصورة %1$s من %2$s"
+
+#: single-dara_project.php:134
+msgid "Available units"
+msgstr "الوحدات المتاحة"
+
+#: single-dara_project.php:144
+msgid "Model"
+msgstr "النموذج"
+
+#: single-dara_project.php:145
+msgid "Type"
+msgstr "النوع"
+
+#: single-dara_project.php:146 template-parts/cards/property.php:26
+msgid "Area"
+msgstr "المساحة"
+
+#: single-dara_project.php:147 template-parts/cards/property.php:24
+#: template-parts/home/hero.php:95 template-parts/property/filters.php:67
+msgid "Bedrooms"
+msgstr "غرف النوم"
+
+#: single-dara_project.php:148 template-parts/home/hero.php:79
+msgid "Price"
+msgstr "السعر"
+
+#: single-dara_project.php:149
+msgid "Status"
+msgstr "الحالة"
+
+#: single-dara_project.php:157 template-parts/cards/property.php:55
+msgid "m²"
+msgstr "م²"
+
+#: single-dara_project.php:182
+msgid "Construction progress"
+msgstr "مراحل التنفيذ"
+
+#: single-dara_project.php:207
+msgid ""
+"Get updated prices, available units and booking priority before launch."
+msgstr "احصل على الأسعار المحدّثة والوحدات المتاحة وأولوية الحجز قبل الإطلاق."
+
+#: single-dara_project.php:218
+msgid "Unit type"
+msgstr "نوع الوحدة"
+
+#: single-dara_project.php:226
+msgid "Send"
+msgstr "إرسال"
+
+#: single-dara_property.php:30
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr "مرحباً، أرغب في الاستفسار عن: %1$s %2$s"
+
+#: single-dara_property.php:51 template-parts/cards/property.php:37
+msgid "Featured"
+msgstr "مميز"
+
+#: single-dara_property.php:65 single.php:40
+msgid "Share"
+msgstr "مشاركة"
+
+#: single-dara_property.php:66
+msgid "Save"
+msgstr "حفظ"
+
+#: single-dara_property.php:67
+msgid "Print"
+msgstr "طباعة"
+
+#: single-dara_property.php:90
+#, php-format
+msgid "All photos (%s)"
+msgstr "كل الصور (%s)"
+
+#: single-dara_property.php:111
+msgid "Description"
+msgstr "الوصف"
+
+#: single-dara_property.php:118
+msgid "Features & amenities"
+msgstr "المميزات والمرافق"
+
+#: single-dara_property.php:129
+msgid "Floor plans"
+msgstr "المخططات"
+
+#: single-dara_property.php:134
+#, php-format
+msgid "Plan %s"
+msgstr "مخطط %s"
+
+#: single-dara_property.php:148
+msgid "Video tour"
+msgstr "جولة بالفيديو"
+
+#: single-dara_property.php:155
+msgid "Play video"
+msgstr "تشغيل الفيديو"
+
+#: single-dara_property.php:161
+msgid "Watch the video"
+msgstr "شاهد الفيديو"
+
+#: single-dara_property.php:168
+msgid "Location & nearby"
+msgstr "الموقع وما حوله"
+
+#: single-dara_property.php:171
+msgid "Get directions"
+msgstr "الاتجاهات"
+
+#: single-dara_property.php:202
+#, php-format
+msgid "FAL %s"
+msgstr "فال %s"
+
+#: single-dara_property.php:210
+msgid "Call"
+msgstr "اتصال"
+
+#: single-dara_property.php:220
+msgid "License information"
+msgstr "بيانات الترخيص"
+
+#: single-dara_property.php:222
+msgid "Ad license number"
+msgstr "رقم ترخيص الإعلان"
+
+#: single-dara_property.php:225
+msgid "Office FAL license"
+msgstr "رخصة فال للمنشأة"
+
+#: single-dara_property.php:227
+msgid "Listed on"
+msgstr "تاريخ الإضافة"
+
+#: single-dara_property.php:246
+msgid "Similar properties"
+msgstr "عقارات مشابهة"
+
+#: single.php:24
+#, php-format
+msgid "%s min read"
+msgstr "قراءة %s دقائق"
+
+#: template-parts/cards/project.php:20
+#, php-format
+msgid "Delivery: %s"
+msgstr "التسليم: %s"
+
+#: template-parts/cards/project.php:18
+#, php-format
+msgid "%s unit"
+msgid_plural "%s units"
+msgstr[0] "%s وحدة"
+msgstr[1] "وحدة واحدة"
+msgstr[2] "وحدتان"
+msgstr[3] "%s وحدات"
+msgstr[4] "%s وحدة"
+msgstr[5] "%s وحدة"
+
+#: template-parts/cards/property.php:25
+msgid "Bathrooms"
+msgstr "دورات المياه"
+
+#: template-parts/cards/property.php:40
+#, php-format
+msgid "Save %s to favorites"
+msgstr "حفظ %s في المفضلة"
+
+#: template-parts/content-none.php:12
+msgid "Nothing found"
+msgstr "لا توجد نتائج"
+
+#: template-parts/content-none.php:13
+msgid "No results matched your search. Try different words."
+msgstr "لا توجد نتائج مطابقة. جرّب كلمات أخرى."
+
+#: template-parts/content-none.php:13
+msgid "There is nothing here yet."
+msgstr "لا يوجد محتوى هنا بعد."
+
+#: template-parts/forms/viewing.php:11
+msgid "Request a viewing"
+msgstr "اطلب معاينة"
+
+#: template-parts/forms/viewing.php:16
+msgid "Preferred date"
+msgstr "الموعد المفضل"
+
+#: template-parts/forms/viewing.php:17
+msgid "I would like to view this property."
+msgstr "أرغب في معاينة هذا العقار."
+
+#: template-parts/forms/viewing.php:18
+msgid "Send request"
+msgstr "إرسال الطلب"
+
+#: template-parts/home/blog.php:28
+msgid "All articles"
+msgstr "كل المقالات"
+
+#: template-parts/home/featured.php:32 template-parts/home/hero.php:70
+#: template-parts/property/filters.php:28
+msgid "All"
+msgstr "الكل"
+
+#: template-parts/home/featured.php:49
+msgid "View all properties"
+msgstr "عرض كل العقارات"
+
+#: template-parts/home/hero.php:20 template-parts/home/hero.php:26
+msgid "Any price"
+msgstr "أي سعر"
+
+#: template-parts/home/hero.php:21
+msgid "Up to 1 million"
+msgstr "حتى مليون"
+
+#: template-parts/home/hero.php:22
+msgid "1 – 3 million"
+msgstr "1 – 3 مليون"
+
+#: template-parts/home/hero.php:23
+msgid "Over 3 million"
+msgstr "أكثر من 3 مليون"
+
+#: template-parts/home/hero.php:27
+msgid "Up to 50,000"
+msgstr "حتى 50,000"
+
+#: template-parts/home/hero.php:28
+msgid "50,000 – 100,000"
+msgstr "50,000 – 100,000"
+
+#: template-parts/home/hero.php:29
+msgid "Over 100,000"
+msgstr "أكثر من 100,000"
+
+#: template-parts/home/hero.php:49
+msgid "Search type"
+msgstr "نوع البحث"
+
+#: template-parts/home/hero.php:50
+msgid "Buy"
+msgstr "شراء"
+
+#: template-parts/home/hero.php:51 template-parts/property/filters.php:30
+msgid "Rent"
+msgstr "إيجار"
+
+#: template-parts/home/hero.php:52
+msgid "New projects"
+msgstr "مشاريع جديدة"
+
+#: template-parts/home/hero.php:58
+msgid "City or district"
+msgstr "المدينة أو الحي"
+
+#: template-parts/home/hero.php:87
+msgid "Yearly rent"
+msgstr "الإيجار السنوي"
+
+#: template-parts/home/hero.php:97 template-parts/property/filters.php:69
+msgid "Any"
+msgstr "الكل"
+
+#: template-parts/home/hero.php:108
+msgid "Popular:"
+msgstr "الأكثر بحثاً:"
+
+#: template-parts/home/projects.php:25
+msgid "All projects"
+msgstr "كل المشاريع"
+
+#: template-parts/home/services.php:25
+msgid "Learn more"
+msgstr "اعرف المزيد"
+
+#: template-parts/home/types.php:25
+#, php-format
+msgid "%s property"
+msgid_plural "%s properties"
+msgstr[0] "%s عقار"
+msgstr[1] "عقار واحد"
+msgstr[2] "عقاران"
+msgstr[3] "%s عقارات"
+msgstr[4] "%s عقاراً"
+msgstr[5] "%s عقار"
+
+#: template-parts/property/filters.php:18
+#: template-parts/property/filters.php:21
+msgid "Filter results"
+msgstr "فلترة النتائج"
+
+#: template-parts/property/filters.php:22
+msgid "Clear all"
+msgstr "مسح الكل"
+
+#: template-parts/property/filters.php:26
+msgid "Purpose"
+msgstr "الغرض"
+
+#: template-parts/property/filters.php:29
+msgid "Sale"
+msgstr "بيع"
+
+#: template-parts/property/filters.php:59
+#, php-format
+msgid "Price (%s)"
+msgstr "السعر (%s)"
+
+#: template-parts/property/filters.php:61
+#: template-parts/property/filters.php:78
+msgid "From"
+msgstr "من"
+
+#: template-parts/property/filters.php:62
+#: template-parts/property/filters.php:79
+msgid "To"
+msgstr "إلى"
+
+#: template-parts/property/filters.php:62
+msgid "No limit"
+msgstr "بلا حد"
+
+#: template-parts/property/filters.php:76
+msgid "Area (m²)"
+msgstr "المساحة (م²)"
+
+#: template-parts/property/filters.php:85
+msgid "Features"
+msgstr "المميزات"
+
+#: template-parts/property/filters.php:95
+msgid "Show results"
+msgstr "عرض النتائج"

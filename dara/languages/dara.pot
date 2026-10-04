@@ -1,0 +1,1189 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Dara Real Estate 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: dara\n"
+
+#: 404.php:14
+msgid "This page could not be found"
+msgstr ""
+
+#: 404.php:15
+msgid ""
+"It may have been moved or removed. Try searching or browse our properties."
+msgstr ""
+
+#: 404.php:18
+msgid "Back to home"
+msgstr ""
+
+#: 404.php:20
+msgid "Browse properties"
+msgstr ""
+
+#: archive-dara_property.php:32
+msgid "Filters"
+msgstr ""
+
+#: archive-dara_property.php:44
+msgid "Sort by"
+msgstr ""
+
+#: archive-dara_property.php:46
+msgid "Newest"
+msgstr ""
+
+#: archive-dara_property.php:47
+msgid "Price: low to high"
+msgstr ""
+
+#: archive-dara_property.php:48
+msgid "Price: high to low"
+msgstr ""
+
+#: archive-dara_property.php:49
+msgid "Largest area"
+msgstr ""
+
+#: archive-dara_property.php:52
+msgid "Apply"
+msgstr ""
+
+#: archive-dara_property.php:54
+msgid "View"
+msgstr ""
+
+#: archive-dara_property.php:55
+msgid "Grid"
+msgstr ""
+
+#: archive-dara_property.php:56 page-templates/contact.php:55
+#: single-dara_project.php:200 single-dara_property.php:170
+msgid "Map"
+msgstr ""
+
+#: archive-dara_property.php:89
+msgid "No properties match your search"
+msgstr ""
+
+#: archive-dara_property.php:90
+msgid "Try removing some filters or searching another area."
+msgstr ""
+
+#: archive-dara_property.php:91
+msgid "See all properties"
+msgstr ""
+
+#: archive-dara_property.php:26
+#, php-format
+msgid "%s property found"
+msgid_plural "%s properties found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:20
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: footer.php:24
+msgid "Quick links"
+msgstr ""
+
+#: footer.php:48 template-parts/home/featured.php:31
+msgid "Property types"
+msgstr ""
+
+#: footer.php:59
+msgid "Newsletter"
+msgstr ""
+
+#: footer.php:63
+msgid "Email address"
+msgstr ""
+
+#: footer.php:64
+msgid "Your email"
+msgstr ""
+
+#: footer.php:65
+msgid "Subscribe"
+msgstr ""
+
+#: footer.php:88
+#, php-format
+msgid "FAL license: %s"
+msgstr ""
+
+#: footer.php:92
+#, php-format
+msgid "CR: %s"
+msgstr ""
+
+#: footer.php:105 page-templates/contact.php:25
+msgid "Call us"
+msgstr ""
+
+#: footer.php:108 page-templates/contact.php:28 single-dara_property.php:213
+#: template-parts/home/cta.php:20
+msgid "WhatsApp"
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:27 inc/setup.php:46
+msgid "Main menu"
+msgstr ""
+
+#: header.php:39
+msgid "Favorites"
+msgstr ""
+
+#: header.php:44
+msgid "Open menu"
+msgstr ""
+
+#: header.php:50
+msgid "Menu"
+msgstr ""
+
+#: header.php:53
+msgid "Close menu"
+msgstr ""
+
+#: header.php:55
+msgid "Mobile menu"
+msgstr ""
+
+#: inc/assets.php:37
+msgid "Saved to favorites"
+msgstr ""
+
+#: inc/assets.php:38
+msgid "Removed from favorites"
+msgstr ""
+
+#: inc/assets.php:39
+msgid "Link copied"
+msgstr ""
+
+#: inc/assets.php:40
+msgid "You have no saved properties yet."
+msgstr ""
+
+#: inc/assets.php:41
+msgid "Close"
+msgstr ""
+
+#: inc/assets.php:42 single.php:45
+msgid "Previous"
+msgstr ""
+
+#: inc/assets.php:43 single.php:46
+msgid "Next"
+msgstr ""
+
+#: inc/compat.php:21
+msgid ""
+"The Dara theme needs the \"Dara Core\" plugin for properties, projects, "
+"search and lead forms. Please install and activate it."
+msgstr ""
+
+#: inc/customizer.php:16
+msgid "Show this section"
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "One item per line."
+msgstr ""
+
+#: inc/customizer.php:20
+msgid "Brand & header"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Primary color"
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "Headings / dark color"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "Header button text"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "Header button link"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "e.g. your \"List your property\" page."
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "Home: hero & search"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Background image"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Recommended 1920×1080, compressed (WebP/JPEG under 250 KB)."
+msgstr ""
+
+#: inc/customizer.php:32 inc/customizer.php:42 inc/customizer.php:52
+#: inc/customizer.php:60 inc/customizer.php:70 inc/customizer.php:80
+#: inc/customizer.php:94
+msgid "Small label"
+msgstr ""
+
+#: inc/customizer.php:33 inc/customizer.php:43 inc/customizer.php:53
+#: inc/customizer.php:61 inc/customizer.php:71 inc/customizer.php:81
+#: inc/customizer.php:95
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:34 inc/customizer.php:62 inc/customizer.php:82
+msgid "Text"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "Popular searches"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid ""
+"One per line: Label | URL. Leave empty to show your top cities "
+"automatically."
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Home: featured properties"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Number of properties"
+msgstr ""
+
+#: inc/customizer.php:45
+msgid "Only properties marked \"Featured\""
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Home: property types"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Home: projects"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Number of projects"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Home: services"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Services"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid ""
+"One per line: icon | title | text | link. Icons: megaphone, key, chart, "
+"clipboard, home, building, shield, calendar, user."
+msgstr ""
+
+#: inc/customizer.php:76
+msgid "Home: why us"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Image"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Points"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Badge title"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Badge text"
+msgstr ""
+
+#: inc/customizer.php:86 inc/customizer.php:100
+msgid "Button text"
+msgstr ""
+
+#: inc/customizer.php:87 inc/customizer.php:101
+msgid "Button link"
+msgstr ""
+
+#: inc/customizer.php:91
+msgid "Home: blog & call to action"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "Show latest posts"
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "Number of posts"
+msgstr ""
+
+#: inc/customizer.php:97
+msgid "Show call to action"
+msgstr ""
+
+#: inc/customizer.php:98
+msgid "Call to action title"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "Call to action text"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "Contact & social"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Phone"
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "WhatsApp number"
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "International format without +, e.g. 9665XXXXXXXX"
+msgstr ""
+
+#: inc/customizer.php:109 page-templates/contact.php:31
+#: page-templates/contact.php:47
+msgid "Email"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "Address"
+msgstr ""
+
+#: inc/customizer.php:111
+msgid "Office latitude"
+msgstr ""
+
+#: inc/customizer.php:112
+msgid "Office longitude"
+msgstr ""
+
+#: inc/customizer.php:123
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "About text"
+msgstr ""
+
+#: inc/customizer.php:126
+msgid "Show newsletter"
+msgstr ""
+
+#: inc/customizer.php:127
+msgid "Newsletter text"
+msgstr ""
+
+#: inc/customizer.php:128
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer.php:128
+msgid "You can use {year} and {site}."
+msgstr ""
+
+#: inc/customizer.php:132
+msgid "Performance & maps"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid "Disable WordPress emoji script"
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Load block CSS only on pages that use blocks"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Map tiles URL"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid ""
+"Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
+"Stadia...) with your key."
+msgstr ""
+
+#: inc/customizer.php:137
+msgid "Map attribution"
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "Dara theme"
+msgstr ""
+
+#: inc/menus.php:23
+#, php-format
+msgid "Show sub menu of %s"
+msgstr ""
+
+#: inc/menus.php:50 inc/template-tags.php:336
+msgid "Home"
+msgstr ""
+
+#: inc/menus.php:52
+msgid "Properties"
+msgstr ""
+
+#: inc/menus.php:53
+msgid "Projects"
+msgstr ""
+
+#: inc/setup.php:36
+msgid "Primary"
+msgstr ""
+
+#: inc/setup.php:37
+msgid "Ink"
+msgstr ""
+
+#: inc/setup.php:38
+msgid "Surface"
+msgstr ""
+
+#: inc/setup.php:39
+msgid "White"
+msgstr ""
+
+#: inc/setup.php:47
+msgid "Footer: quick links"
+msgstr ""
+
+#: inc/setup.php:72
+msgid "Blog sidebar"
+msgstr ""
+
+#: inc/template-tags.php:24 inc/template-tags.php:89
+msgid "List your property"
+msgstr ""
+
+#: inc/template-tags.php:28
+msgid "Properties for sale, rent and new developments"
+msgstr ""
+
+#: inc/template-tags.php:29
+msgid "Find your next property with confidence"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgid ""
+"Verified listings with full details, clear prices and licensed agents who "
+"stay with you until the contract is signed."
+msgstr ""
+
+#: inc/template-tags.php:34
+msgid "Hand-picked"
+msgstr ""
+
+#: inc/template-tags.php:35
+msgid "Latest featured properties"
+msgstr ""
+
+#: inc/template-tags.php:40
+msgid "Browse by type"
+msgstr ""
+
+#: inc/template-tags.php:41
+msgid "What are you looking for?"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgid "Developer projects"
+msgstr ""
+
+#: inc/template-tags.php:45
+msgid "New off-plan and under-construction projects"
+msgstr ""
+
+#: inc/template-tags.php:46
+msgid ""
+"Follow construction progress, see available units and payment plans, and "
+"register your interest directly."
+msgstr ""
+
+#: inc/template-tags.php:50
+msgid "Our services"
+msgstr ""
+
+#: inc/template-tags.php:51
+msgid "Everything your property needs, in one place"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgid "Real estate marketing"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgid ""
+"Professional photography and digital campaigns that reach the right buyer "
+"fast."
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Property management"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid ""
+"Rent collection, maintenance and renewals with clear periodic reports for "
+"owners."
+msgstr ""
+
+#: inc/template-tags.php:57
+msgid "Financing solutions"
+msgstr ""
+
+#: inc/template-tags.php:57
+msgid ""
+"We compare mortgage offers and guide you through the process until approval."
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "Property valuation"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "Certified valuation of the fair market value before you buy or sell."
+msgstr ""
+
+#: inc/template-tags.php:64
+msgid "Why us?"
+msgstr ""
+
+#: inc/template-tags.php:65
+msgid "A clear real estate experience from search to handover"
+msgstr ""
+
+#: inc/template-tags.php:66
+msgid ""
+"We show every detail you need to decide with confidence, and arrange the "
+"viewing, negotiation and paperwork for you."
+msgstr ""
+
+#: inc/template-tags.php:70
+msgid "Listings inspected and verified"
+msgstr ""
+
+#: inc/template-tags.php:71
+msgid "Published prices with no hidden fees"
+msgstr ""
+
+#: inc/template-tags.php:72
+msgid "A dedicated agent on phone and WhatsApp"
+msgstr ""
+
+#: inc/template-tags.php:73
+msgid "Help with financing, documentation and transfer"
+msgstr ""
+
+#: inc/template-tags.php:76
+msgid "Licensed listings"
+msgstr ""
+
+#: inc/template-tags.php:77
+msgid "A license number on every ad"
+msgstr ""
+
+#: inc/template-tags.php:78
+msgid "Talk to an advisor"
+msgstr ""
+
+#: inc/template-tags.php:82 inc/template-tags.php:276
+msgid "Blog"
+msgstr ""
+
+#: inc/template-tags.php:83
+msgid "Your guide to the property market"
+msgstr ""
+
+#: inc/template-tags.php:87
+msgid "Own a property you want to sell or rent?"
+msgstr ""
+
+#: inc/template-tags.php:88
+msgid ""
+"Send us the details and an agent will contact you within one business day to"
+" arrange photos and pricing."
+msgstr ""
+
+#: inc/template-tags.php:107
+msgid ""
+"We help you buy, sell, rent and manage property, and present developer "
+"projects transparently from the first visit to the signed contract."
+msgstr ""
+
+#: inc/template-tags.php:109
+msgid "Get the newest properties and projects first."
+msgstr ""
+
+#: inc/template-tags.php:111
+msgid "© {year} {site}. All rights reserved."
+msgstr ""
+
+#: inc/template-tags.php:280
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: inc/template-tags.php:283
+msgid "Page not found"
+msgstr ""
+
+#: inc/template-tags.php:319
+#, php-format
+msgid "in %s"
+msgstr ""
+
+#: inc/template-tags.php:329 inc/template-tags.php:359
+msgid "Breadcrumbs"
+msgstr ""
+
+#: inc/template-tags.php:373
+msgid "Previous page"
+msgstr ""
+
+#: inc/template-tags.php:374
+msgid "Next page"
+msgstr ""
+
+#: page-templates/contact.php:34
+msgid "Office"
+msgstr ""
+
+#: page-templates/contact.php:41
+msgid "Send us a message"
+msgstr ""
+
+#: page-templates/contact.php:45 page-templates/list-property.php:32
+#: single-dara_project.php:212 template-parts/forms/viewing.php:14
+msgid "Name"
+msgstr ""
+
+#: page-templates/contact.php:46 page-templates/list-property.php:33
+#: single-dara_project.php:213 template-parts/forms/viewing.php:15
+msgid "Mobile number"
+msgstr ""
+
+#: page-templates/contact.php:48 template-parts/forms/viewing.php:17
+msgid "Message"
+msgstr ""
+
+#: page-templates/contact.php:50
+msgid "Send message"
+msgstr ""
+
+#: page-templates/favorites.php:18
+msgid "Please enable JavaScript to see your saved properties."
+msgstr ""
+
+#: page-templates/list-property.php:35
+msgid "I want to"
+msgstr ""
+
+#: page-templates/list-property.php:37 page-templates/list-property.php:37
+msgid "Sell"
+msgstr ""
+
+#: page-templates/list-property.php:38 page-templates/list-property.php:38
+msgid "Rent out"
+msgstr ""
+
+#: page-templates/list-property.php:39 page-templates/list-property.php:39
+msgid "Management"
+msgstr ""
+
+#: page-templates/list-property.php:42 template-parts/home/hero.php:68
+#: template-parts/property/filters.php:51
+msgid "Property type"
+msgstr ""
+
+#: page-templates/list-property.php:49
+msgid "Other"
+msgstr ""
+
+#: page-templates/list-property.php:52 template-parts/property/filters.php:35
+msgid "City / district"
+msgstr ""
+
+#: page-templates/list-property.php:53
+msgid "Expected price (optional)"
+msgstr ""
+
+#: page-templates/list-property.php:54
+msgid "Details"
+msgstr ""
+
+#: page-templates/list-property.php:54
+msgid "Area, rooms, age, special features…"
+msgstr ""
+
+#: page-templates/list-property.php:56
+msgid "Send property details"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search…"
+msgstr ""
+
+#: searchform.php:14 template-parts/home/hero.php:103
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:14
+msgid "Sidebar"
+msgstr ""
+
+#: single-dara_project.php:32
+msgid "Available"
+msgstr ""
+
+#: single-dara_project.php:33
+msgid "Reserved"
+msgstr ""
+
+#: single-dara_project.php:34
+msgid "Sold"
+msgstr ""
+
+#: single-dara_project.php:37
+msgid "Completed"
+msgstr ""
+
+#: single-dara_project.php:38
+msgid "In progress"
+msgstr ""
+
+#: single-dara_project.php:39
+msgid "Upcoming"
+msgstr ""
+
+#: single-dara_project.php:55
+msgid "Licensed off-plan sales"
+msgstr ""
+
+#: single-dara_project.php:63
+#, php-format
+msgid "Developed by %s"
+msgstr ""
+
+#: single-dara_project.php:68 single-dara_project.php:206
+msgid "Register your interest"
+msgstr ""
+
+#: single-dara_project.php:70
+msgid "Download brochure"
+msgstr ""
+
+#: single-dara_project.php:79 template-parts/cards/project.php:41
+msgid "Prices from"
+msgstr ""
+
+#: single-dara_project.php:82 single-dara_project.php:94
+msgid "Units"
+msgstr ""
+
+#: single-dara_project.php:85
+msgid "Delivery"
+msgstr ""
+
+#: single-dara_project.php:88 single-dara_project.php:88
+#: template-parts/cards/project.php:46 template-parts/cards/project.php:47
+msgid "Completion"
+msgstr ""
+
+#: single-dara_project.php:92
+msgid "Project sections"
+msgstr ""
+
+#: single-dara_project.php:93
+msgid "Overview"
+msgstr ""
+
+#: single-dara_project.php:95 single-dara_project.php:171
+msgid "Payment plan"
+msgstr ""
+
+#: single-dara_project.php:96
+msgid "Progress"
+msgstr ""
+
+#: single-dara_project.php:97 single-dara_project.php:199
+#: template-parts/home/hero.php:57
+msgid "Location"
+msgstr ""
+
+#: single-dara_project.php:102
+msgid "About the project"
+msgstr ""
+
+#: single-dara_project.php:115 single-dara_property.php:75
+#, php-format
+msgid "Open photo %1$s of %2$s"
+msgstr ""
+
+#: single-dara_project.php:134
+msgid "Available units"
+msgstr ""
+
+#: single-dara_project.php:144
+msgid "Model"
+msgstr ""
+
+#: single-dara_project.php:145
+msgid "Type"
+msgstr ""
+
+#: single-dara_project.php:146 template-parts/cards/property.php:26
+msgid "Area"
+msgstr ""
+
+#: single-dara_project.php:147 template-parts/cards/property.php:24
+#: template-parts/home/hero.php:95 template-parts/property/filters.php:67
+msgid "Bedrooms"
+msgstr ""
+
+#: single-dara_project.php:148 template-parts/home/hero.php:79
+msgid "Price"
+msgstr ""
+
+#: single-dara_project.php:149
+msgid "Status"
+msgstr ""
+
+#: single-dara_project.php:157 template-parts/cards/property.php:55
+msgid "m²"
+msgstr ""
+
+#: single-dara_project.php:182
+msgid "Construction progress"
+msgstr ""
+
+#: single-dara_project.php:207
+msgid ""
+"Get updated prices, available units and booking priority before launch."
+msgstr ""
+
+#: single-dara_project.php:218
+msgid "Unit type"
+msgstr ""
+
+#: single-dara_project.php:226
+msgid "Send"
+msgstr ""
+
+#: single-dara_property.php:30
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr ""
+
+#: single-dara_property.php:51 template-parts/cards/property.php:37
+msgid "Featured"
+msgstr ""
+
+#: single-dara_property.php:65 single.php:40
+msgid "Share"
+msgstr ""
+
+#: single-dara_property.php:66
+msgid "Save"
+msgstr ""
+
+#: single-dara_property.php:67
+msgid "Print"
+msgstr ""
+
+#: single-dara_property.php:90
+#, php-format
+msgid "All photos (%s)"
+msgstr ""
+
+#: single-dara_property.php:111
+msgid "Description"
+msgstr ""
+
+#: single-dara_property.php:118
+msgid "Features & amenities"
+msgstr ""
+
+#: single-dara_property.php:129
+msgid "Floor plans"
+msgstr ""
+
+#: single-dara_property.php:134
+#, php-format
+msgid "Plan %s"
+msgstr ""
+
+#: single-dara_property.php:148
+msgid "Video tour"
+msgstr ""
+
+#: single-dara_property.php:155
+msgid "Play video"
+msgstr ""
+
+#: single-dara_property.php:161
+msgid "Watch the video"
+msgstr ""
+
+#: single-dara_property.php:168
+msgid "Location & nearby"
+msgstr ""
+
+#: single-dara_property.php:171
+msgid "Get directions"
+msgstr ""
+
+#: single-dara_property.php:202
+#, php-format
+msgid "FAL %s"
+msgstr ""
+
+#: single-dara_property.php:210
+msgid "Call"
+msgstr ""
+
+#: single-dara_property.php:220
+msgid "License information"
+msgstr ""
+
+#: single-dara_property.php:222
+msgid "Ad license number"
+msgstr ""
+
+#: single-dara_property.php:225
+msgid "Office FAL license"
+msgstr ""
+
+#: single-dara_property.php:227
+msgid "Listed on"
+msgstr ""
+
+#: single-dara_property.php:246
+msgid "Similar properties"
+msgstr ""
+
+#: single.php:24
+#, php-format
+msgid "%s min read"
+msgstr ""
+
+#: template-parts/cards/project.php:20
+#, php-format
+msgid "Delivery: %s"
+msgstr ""
+
+#: template-parts/cards/project.php:18
+#, php-format
+msgid "%s unit"
+msgid_plural "%s units"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/cards/property.php:25
+msgid "Bathrooms"
+msgstr ""
+
+#: template-parts/cards/property.php:40
+#, php-format
+msgid "Save %s to favorites"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "No results matched your search. Try different words."
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "There is nothing here yet."
+msgstr ""
+
+#: template-parts/forms/viewing.php:11
+msgid "Request a viewing"
+msgstr ""
+
+#: template-parts/forms/viewing.php:16
+msgid "Preferred date"
+msgstr ""
+
+#: template-parts/forms/viewing.php:17
+msgid "I would like to view this property."
+msgstr ""
+
+#: template-parts/forms/viewing.php:18
+msgid "Send request"
+msgstr ""
+
+#: template-parts/home/blog.php:28
+msgid "All articles"
+msgstr ""
+
+#: template-parts/home/featured.php:32 template-parts/home/hero.php:70
+#: template-parts/property/filters.php:28
+msgid "All"
+msgstr ""
+
+#: template-parts/home/featured.php:49
+msgid "View all properties"
+msgstr ""
+
+#: template-parts/home/hero.php:20 template-parts/home/hero.php:26
+msgid "Any price"
+msgstr ""
+
+#: template-parts/home/hero.php:21
+msgid "Up to 1 million"
+msgstr ""
+
+#: template-parts/home/hero.php:22
+msgid "1 – 3 million"
+msgstr ""
+
+#: template-parts/home/hero.php:23
+msgid "Over 3 million"
+msgstr ""
+
+#: template-parts/home/hero.php:27
+msgid "Up to 50,000"
+msgstr ""
+
+#: template-parts/home/hero.php:28
+msgid "50,000 – 100,000"
+msgstr ""
+
+#: template-parts/home/hero.php:29
+msgid "Over 100,000"
+msgstr ""
+
+#: template-parts/home/hero.php:49
+msgid "Search type"
+msgstr ""
+
+#: template-parts/home/hero.php:50
+msgid "Buy"
+msgstr ""
+
+#: template-parts/home/hero.php:51 template-parts/property/filters.php:30
+msgid "Rent"
+msgstr ""
+
+#: template-parts/home/hero.php:52
+msgid "New projects"
+msgstr ""
+
+#: template-parts/home/hero.php:58
+msgid "City or district"
+msgstr ""
+
+#: template-parts/home/hero.php:87
+msgid "Yearly rent"
+msgstr ""
+
+#: template-parts/home/hero.php:97 template-parts/property/filters.php:69
+msgid "Any"
+msgstr ""
+
+#: template-parts/home/hero.php:108
+msgid "Popular:"
+msgstr ""
+
+#: template-parts/home/projects.php:25
+msgid "All projects"
+msgstr ""
+
+#: template-parts/home/services.php:25
+msgid "Learn more"
+msgstr ""
+
+#: template-parts/home/types.php:25
+#, php-format
+msgid "%s property"
+msgid_plural "%s properties"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/property/filters.php:18
+#: template-parts/property/filters.php:21
+msgid "Filter results"
+msgstr ""
+
+#: template-parts/property/filters.php:22
+msgid "Clear all"
+msgstr ""
+
+#: template-parts/property/filters.php:26
+msgid "Purpose"
+msgstr ""
+
+#: template-parts/property/filters.php:29
+msgid "Sale"
+msgstr ""
+
+#: template-parts/property/filters.php:59
+#, php-format
+msgid "Price (%s)"
+msgstr ""
+
+#: template-parts/property/filters.php:61
+#: template-parts/property/filters.php:78
+msgid "From"
+msgstr ""
+
+#: template-parts/property/filters.php:62
+#: template-parts/property/filters.php:79
+msgid "To"
+msgstr ""
+
+#: template-parts/property/filters.php:62
+msgid "No limit"
+msgstr ""
+
+#: template-parts/property/filters.php:76
+msgid "Area (m²)"
+msgstr ""
+
+#: template-parts/property/filters.php:85
+msgid "Features"
+msgstr ""
+
+#: template-parts/property/filters.php:95
+msgid "Show results"
+msgstr ""

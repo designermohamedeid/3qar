@@ -1,0 +1,16 @@
+/*
+Theme Name: Dara Real Estate
+Theme URI: https://github.com/designermohamedeid/3qar
+Author: Mohamed Eid
+Description: Fast, modern bilingual (Arabic RTL / English LTR) real estate theme for brokers and developers: advanced property search with map view, property and project pages, agents, lead forms and structured data. No jQuery, no CSS framework, self-hosted fonts. Requires the "Dara Core" plugin for properties and projects.
+Version: 1.0.0
+Requires at least: 6.3
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: dara
+Tags: rtl-language-support, translation-ready, custom-logo, custom-menu, featured-images, theme-options, threaded-comments, block-styles, wide-blocks, real-estate
+*/
+
+/* Styles are in assets/css/main.css (loaded by inc/assets.php). */
