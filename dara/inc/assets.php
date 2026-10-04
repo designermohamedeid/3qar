@@ -58,8 +58,11 @@ add_action( 'wp_enqueue_scripts', 'dara_assets' );
  */
 function dara_page_bundles() {
 	$bundles = array();
-	if ( is_front_page() ) {
+	if ( is_front_page() || ( is_singular() && dara_has_dara_blocks( get_queried_object_id() ) ) ) {
 		$bundles[] = 'home';
+	}
+	if ( is_singular() && has_block( 'dara/agents', get_queried_object_id() ) ) {
+		$bundles[] = 'agents';
 	}
 	if ( is_post_type_archive( 'dara_property' ) || is_tax( array( 'property_type', 'property_city' ) ) ) {
 		$bundles[] = 'listing';
@@ -139,7 +142,15 @@ function dara_preload() {
 	}
 
 	$hero = 0;
-	if ( is_front_page() ) {
+	if ( is_singular() && 'dara/hero' === dara_first_block( get_queried_object_id() ) ) {
+		$blocks = parse_blocks( get_post_field( 'post_content', get_queried_object_id() ) );
+		foreach ( $blocks as $block ) {
+			if ( 'dara/hero' === $block['blockName'] ) {
+				$hero = ! empty( $block['attrs']['hero_image'] ) ? (int) $block['attrs']['hero_image'] : (int) dara_mod( 'hero_image' );
+				break;
+			}
+		}
+	} elseif ( is_front_page() ) {
 		$hero = (int) dara_mod( 'hero_image' );
 	} elseif ( is_singular( 'dara_project' ) ) {
 		$hero = (int) get_post_thumbnail_id();

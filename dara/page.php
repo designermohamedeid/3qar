@@ -8,6 +8,19 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
+
+if ( dara_has_dara_blocks() ) {
+	// Page built with Dara blocks: full width sections, no title bar.
+	while ( have_posts() ) {
+		the_post();
+		echo '<div class="block-page">';
+		the_content();
+		echo '</div>';
+	}
+	get_footer();
+	return;
+}
+
 get_template_part( 'template-parts/page-title' );
 
 while ( have_posts() ) :

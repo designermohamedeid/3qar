@@ -7,14 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$dara_items = dara_mod_lines( 'services_items', 4 );
+$dara_items = dara_part_lines( $args, 'services_items', 4 );
 if ( ! $dara_items ) {
 	return;
 }
 ?>
 <section class="section">
 	<div class="container">
-		<?php dara_section_head( dara_mod( 'services_eyebrow' ), dara_mod( 'services_title' ), '', 'section-head--center' ); ?>
+		<?php dara_section_head( dara_part_opt( $args, 'services_eyebrow' ), dara_part_opt( $args, 'services_title' ), '', 'section-head--center' ); ?>
 		<div class="grid grid--services">
 			<?php foreach ( $dara_items as $dara_item ) : ?>
 				<div class="service">

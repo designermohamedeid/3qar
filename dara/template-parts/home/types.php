@@ -14,7 +14,7 @@ if ( ! $dara_types || is_wp_error( $dara_types ) ) {
 ?>
 <section class="section section--tight">
 	<div class="container">
-		<?php dara_section_head( dara_mod( 'types_eyebrow' ), dara_mod( 'types_title' ) ); ?>
+		<?php dara_section_head( dara_part_opt( $args, 'types_eyebrow' ), dara_part_opt( $args, 'types_title' ) ); ?>
 		<div class="grid grid--tiles">
 			<?php foreach ( $dara_types as $dara_type ) : ?>
 				<?php $dara_icon = get_term_meta( $dara_type->term_id, 'dara_icon', true ); ?>

@@ -3,3 +3,6 @@
 body{font-family:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;font-size:17px;line-height:1.95;color:#3D4A5C}
 h1,h2,h3,h4{color:#0E1A2B;line-height:1.35}
 a{color:#0B6E5F}
+/* Dara blocks preview at full width in the editor. */
+.wp-block[data-type^="dara/"]{max-width:none!important;margin-inline:0!important}
+.wp-block[data-type^="dara/"] .hero{padding-top:0;min-height:560px}

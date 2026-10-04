@@ -7,10 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$dara_hero  = (int) dara_mod( 'hero_image' );
+$dara_hero  = (int) dara_part_opt( $args, 'hero_image' );
 $dara_types = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) ) : array();
 $dara_city_terms = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_city', 'hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC', 'number' => 40 ) ) : array();
-$dara_popular = dara_mod_lines( 'hero_popular', 2 );
+$dara_popular = dara_part_lines( $args, 'hero_popular', 2 );
 if ( ! $dara_popular && $dara_city_terms && ! is_wp_error( $dara_city_terms ) ) {
 	foreach ( array_slice( $dara_city_terms, 0, 5 ) as $dara_term ) {
 		$dara_popular[] = array( $dara_term->name, get_term_link( $dara_term ) );
@@ -36,16 +36,16 @@ $dara_rent_ranges = array(
 	}
 	?>
 	<div class="container hero__inner">
-		<?php if ( dara_mod( 'hero_eyebrow' ) ) : ?>
-			<span class="hero__eyebrow"><?php echo esc_html( dara_mod( 'hero_eyebrow' ) ); ?></span>
+		<?php if ( dara_part_opt( $args, 'hero_eyebrow' ) ) : ?>
+			<span class="hero__eyebrow"><?php echo esc_html( dara_part_opt( $args, 'hero_eyebrow' ) ); ?></span>
 		<?php endif; ?>
-		<h1 class="hero__title"><?php echo esc_html( dara_mod( 'hero_title' ) ); ?></h1>
-		<?php if ( dara_mod( 'hero_text' ) ) : ?>
-			<p class="hero__text"><?php echo esc_html( dara_mod( 'hero_text' ) ); ?></p>
+		<h1 class="hero__title"><?php echo esc_html( dara_part_opt( $args, 'hero_title' ) ); ?></h1>
+		<?php if ( dara_part_opt( $args, 'hero_text' ) ) : ?>
+			<p class="hero__text"><?php echo esc_html( dara_part_opt( $args, 'hero_text' ) ); ?></p>
 		<?php endif; ?>
 
-		<?php if ( dara_has_core() ) : ?>
-			<div class="search-box" data-search>
+		<?php if ( dara_has_core() && ( ! isset( $args['show_search'] ) || $args['show_search'] ) ) : ?>
+			<div class="search-box" data-search<?php echo ! empty( $args['search_tab'] ) ? ' data-default="' . esc_attr( $args['search_tab'] ) . '"' : ''; ?>>
 				<div class="search-box__tabs" role="tablist" aria-label="<?php esc_attr_e( 'Search type', 'dara' ); ?>">
 					<button type="button" role="tab" aria-selected="true" data-purpose="sale"><?php esc_html_e( 'Buy', 'dara' ); ?></button>
 					<button type="button" role="tab" aria-selected="false" data-purpose="rent"><?php esc_html_e( 'Rent', 'dara' ); ?></button>

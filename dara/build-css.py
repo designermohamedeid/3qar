@@ -36,6 +36,8 @@ def split_rules(css):
 
 
 def bucket_of(selector):
+    if selector.startswith('.block-page') or selector.startswith('.dara-block-empty'):
+        return 'core'
     for name, pattern in BUCKETS:
         if re.search(pattern, selector):
             return name

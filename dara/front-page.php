@@ -9,6 +9,18 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+// Home page built with Dara blocks: render the page content full width.
+if ( 'page' === get_option( 'show_on_front' ) && dara_has_dara_blocks( get_queried_object_id() ) ) {
+	while ( have_posts() ) {
+		the_post();
+		echo '<div class="block-page">';
+		the_content();
+		echo '</div>';
+	}
+	get_footer();
+	return;
+}
+
 get_template_part( 'template-parts/home/hero' );
 
 /**

@@ -144,7 +144,14 @@ function dara_has_core() {
  * @return bool
  */
 function dara_header_is_overlay() {
-	return is_front_page() || is_singular( 'dara_project' );
+	if ( is_singular( 'dara_project' ) ) {
+		return true;
+	}
+	$id = get_queried_object_id();
+	if ( is_front_page() && ! ( 'page' === get_option( 'show_on_front' ) && dara_has_dara_blocks( $id ) ) ) {
+		return true; // Customizer home starts with the hero.
+	}
+	return is_singular( 'page' ) && 'dara/hero' === dara_first_block( $id );
 }
 
 /**
@@ -469,4 +476,67 @@ function dara_list_property_url( $mod = 'header_cta_url' ) {
 	}
 	$url = dara_template_url( 'page-templates/list-property.php' );
 	return $url ? $url : dara_listings_url();
+}
+
+/**
+ * Section option: block attribute when given, Customizer value otherwise.
+ *
+ * @param array|null $args Template part args.
+ * @param string     $key  Option key.
+ * @return mixed
+ */
+function dara_part_opt( $args, $key ) {
+	if ( is_array( $args ) && array_key_exists( $key, $args ) && null !== $args[ $key ] ) {
+		return $args[ $key ];
+	}
+	return dara_mod( $key );
+}
+
+/**
+ * "a | b | c" lines from a block attribute or a theme mod.
+ *
+ * @param array|null $args    Template part args.
+ * @param string     $key     Option key.
+ * @param int        $columns Columns.
+ * @return array[]
+ */
+function dara_part_lines( $args, $key, $columns = 1 ) {
+	$rows = array();
+	foreach ( preg_split( '/\r\n|\r|\n/', (string) dara_part_opt( $args, $key ) ) as $line ) {
+		$line = trim( $line );
+		if ( '' !== $line ) {
+			$rows[] = array_pad( array_map( 'trim', explode( '|', $line ) ), $columns, '' );
+		}
+	}
+	return $rows;
+}
+
+/**
+ * Whether a post's content uses Dara blocks.
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return bool
+ */
+function dara_has_dara_blocks( $post = null ) {
+	$post = get_post( $post );
+	return $post && false !== strpos( $post->post_content, '<!-- wp:dara/' );
+}
+
+/**
+ * Name of the first block in a post.
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return string
+ */
+function dara_first_block( $post = null ) {
+	$post = get_post( $post );
+	if ( ! $post || ! has_blocks( $post ) ) {
+		return '';
+	}
+	foreach ( parse_blocks( $post->post_content ) as $block ) {
+		if ( ! empty( $block['blockName'] ) ) {
+			return $block['blockName'];
+		}
+	}
+	return '';
 }

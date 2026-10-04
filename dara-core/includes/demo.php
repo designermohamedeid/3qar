@@ -341,7 +341,7 @@ function dara_demo_import() {
 
 	// Pages.
 	$pages = array(
-		'home'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'الرئيسية', 'Home' ), 'post_name' => 'home' ) ),
+		'home'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'الرئيسية', 'Home' ), 'post_name' => 'home', 'post_content' => function_exists( 'dara_home_pattern_content' ) ? dara_home_pattern_content() : '' ) ),
 		'blog'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'المدونة', 'Blog' ), 'post_name' => 'blog' ) ),
 		'contact'  => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'تواصل معنا', 'Contact us' ), 'post_name' => 'contact', 'post_content' => $t( '<p>يسعدنا تواصلكم معنا، فريقنا متاح من الأحد إلى الخميس.</p>', '<p>We would love to hear from you. Our team is available Sunday to Thursday.</p>' ) ), array( '_wp_page_template' => 'page-templates/contact.php' ) ),
 		'list'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'أضف عقارك', 'List your property' ), 'post_name' => 'list-your-property', 'post_content' => $t( '<p>أرسل بيانات عقارك وسيتواصل معك مسوّق خلال يوم عمل.</p>', '<p>Send us your property details and an agent will contact you within one business day.</p>' ) ), array( '_wp_page_template' => 'page-templates/list-property.php' ) ),

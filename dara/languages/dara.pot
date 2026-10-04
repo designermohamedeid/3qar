@@ -99,7 +99,7 @@ msgstr[1] ""
 msgid "Quick links"
 msgstr ""
 
-#: footer.php:48 template-parts/home/featured.php:31
+#: footer.php:48 inc/blocks.php:62 template-parts/home/featured.php:38
 msgid "Property types"
 msgstr ""
 
@@ -195,6 +195,265 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: inc/blocks.php:23 inc/customizer.php:32 inc/customizer.php:42
+#: inc/customizer.php:52 inc/customizer.php:60 inc/customizer.php:70
+#: inc/customizer.php:80 inc/customizer.php:94
+msgid "Small label"
+msgstr ""
+
+#: inc/blocks.php:24 inc/customizer.php:33 inc/customizer.php:43
+#: inc/customizer.php:53 inc/customizer.php:61 inc/customizer.php:71
+#: inc/customizer.php:81 inc/customizer.php:95
+msgid "Title"
+msgstr ""
+
+#: inc/blocks.php:25 inc/customizer.php:34 inc/customizer.php:62
+#: inc/customizer.php:82
+msgid "Text"
+msgstr ""
+
+#: inc/blocks.php:26
+msgid "Number of items"
+msgstr ""
+
+#: inc/blocks.php:30
+msgid "Hero & search"
+msgstr ""
+
+#: inc/blocks.php:31
+msgid "Full-width image with title and the property search."
+msgstr ""
+
+#: inc/blocks.php:35 inc/customizer.php:31
+msgid "Background image"
+msgstr ""
+
+#: inc/blocks.php:39
+msgid "Show property search"
+msgstr ""
+
+#: inc/blocks.php:40
+msgid "Search opens on"
+msgstr ""
+
+#: inc/blocks.php:40 template-parts/home/hero.php:50
+msgid "Buy"
+msgstr ""
+
+#: inc/blocks.php:40 inc/blocks.php:55 template-parts/home/hero.php:51
+#: template-parts/property/filters.php:30
+msgid "Rent"
+msgstr ""
+
+#: inc/blocks.php:40 template-parts/home/hero.php:52
+msgid "New projects"
+msgstr ""
+
+#: inc/blocks.php:41 inc/customizer.php:35
+msgid "Popular searches"
+msgstr ""
+
+#: inc/blocks.php:41
+msgid "One per line: Label | URL. Leave empty to show your top cities."
+msgstr ""
+
+#: inc/blocks.php:45
+msgid "Properties grid"
+msgstr ""
+
+#: inc/blocks.php:46
+msgid "Latest or featured properties, filterable by purpose and type."
+msgstr ""
+
+#: inc/blocks.php:54 inc/customizer.php:45
+msgid "Only properties marked \"Featured\""
+msgstr ""
+
+#: inc/blocks.php:55 template-parts/property/filters.php:26
+msgid "Purpose"
+msgstr ""
+
+#: inc/blocks.php:55 inc/blocks.php:295 template-parts/home/featured.php:39
+#: template-parts/home/hero.php:70 template-parts/property/filters.php:28
+msgid "All"
+msgstr ""
+
+#: inc/blocks.php:55 template-parts/property/filters.php:29
+msgid "Sale"
+msgstr ""
+
+#: inc/blocks.php:56 page-templates/list-property.php:42
+#: template-parts/home/hero.php:68 template-parts/property/filters.php:51
+msgid "Property type"
+msgstr ""
+
+#: inc/blocks.php:57
+msgid "Show type links"
+msgstr ""
+
+#: inc/blocks.php:58
+msgid "Show \"View all\" button"
+msgstr ""
+
+#: inc/blocks.php:63
+msgid "Tiles linking to each property type."
+msgstr ""
+
+#: inc/blocks.php:73 inc/template-tags.php:44
+msgid "Developer projects"
+msgstr ""
+
+#: inc/blocks.php:74
+msgid "Projects with completion progress on a dark band."
+msgstr ""
+
+#: inc/blocks.php:85 inc/blocks.php:94 inc/customizer.php:72
+msgid "Services"
+msgstr ""
+
+#: inc/blocks.php:86
+msgid "Service cards with icons."
+msgstr ""
+
+#: inc/blocks.php:96
+msgid "Icon"
+msgstr ""
+
+#: inc/blocks.php:99
+msgid "Link"
+msgstr ""
+
+#: inc/blocks.php:105
+msgid "Image & checklist"
+msgstr ""
+
+#: inc/blocks.php:106
+msgid "Image with a badge, text, checklist and button."
+msgstr ""
+
+#: inc/blocks.php:110 inc/customizer.php:79
+msgid "Image"
+msgstr ""
+
+#: inc/blocks.php:114
+msgid "Points (one per line)"
+msgstr ""
+
+#: inc/blocks.php:115 inc/customizer.php:84
+msgid "Badge title"
+msgstr ""
+
+#: inc/blocks.php:116 inc/customizer.php:85
+msgid "Badge text"
+msgstr ""
+
+#: inc/blocks.php:117 inc/blocks.php:152 inc/customizer.php:86
+#: inc/customizer.php:100
+msgid "Button text"
+msgstr ""
+
+#: inc/blocks.php:118 inc/blocks.php:153 inc/customizer.php:87
+#: inc/customizer.php:101
+msgid "Button link"
+msgstr ""
+
+#: inc/blocks.php:122 inc/menus.php:55
+msgid "Agents"
+msgstr ""
+
+#: inc/blocks.php:123
+msgid "Your agents with call and WhatsApp buttons."
+msgstr ""
+
+#: inc/blocks.php:133
+msgid "Latest posts"
+msgstr ""
+
+#: inc/blocks.php:134
+msgid "Latest blog posts as cards."
+msgstr ""
+
+#: inc/blocks.php:145
+msgid "Call to action"
+msgstr ""
+
+#: inc/blocks.php:146
+msgid "Colored band with buttons."
+msgstr ""
+
+#: inc/blocks.php:229 inc/blocks.php:391
+msgid "Dara real estate"
+msgstr ""
+
+#: inc/blocks.php:278
+#, php-format
+msgid "%s: nothing to show yet. Add content first."
+msgstr ""
+
+#: inc/blocks.php:347
+msgid "Settings"
+msgstr ""
+
+#: inc/blocks.php:348
+msgid "Empty fields use the values from Appearance > Customize > Dara theme."
+msgstr ""
+
+#: inc/blocks.php:349
+msgid "Choose image"
+msgstr ""
+
+#: inc/blocks.php:350
+msgid "Replace image"
+msgstr ""
+
+#: inc/blocks.php:351
+msgid "Remove"
+msgstr ""
+
+#: inc/blocks.php:352
+msgid "Add item"
+msgstr ""
+
+#: inc/blocks.php:353
+msgid "Item"
+msgstr ""
+
+#: inc/blocks.php:354
+msgid "Move up"
+msgstr ""
+
+#: inc/blocks.php:355
+msgid "Move down"
+msgstr ""
+
+#: inc/blocks.php:395
+msgid "Real estate home page"
+msgstr ""
+
+#: inc/blocks.php:396
+msgid ""
+"Hero with search, properties, types, projects, services, why us, posts and "
+"call to action."
+msgstr ""
+
+#: inc/blocks.php:404
+msgid "Listings landing page"
+msgstr ""
+
+#: inc/blocks.php:405
+msgid ""
+"Hero with search, properties for sale, properties for rent and a call to "
+"action."
+msgstr ""
+
+#: inc/blocks.php:407
+msgid "Properties for sale"
+msgstr ""
+
+#: inc/blocks.php:407
+msgid "Properties for rent"
+msgstr ""
+
 #: inc/compat.php:21
 msgid ""
 "The Dara theme needs the \"Dara Core\" plugin for properties, projects, "
@@ -238,31 +497,7 @@ msgid "Home: hero & search"
 msgstr ""
 
 #: inc/customizer.php:31
-msgid "Background image"
-msgstr ""
-
-#: inc/customizer.php:31
 msgid "Recommended 1920×1080, compressed (WebP/JPEG under 250 KB)."
-msgstr ""
-
-#: inc/customizer.php:32 inc/customizer.php:42 inc/customizer.php:52
-#: inc/customizer.php:60 inc/customizer.php:70 inc/customizer.php:80
-#: inc/customizer.php:94
-msgid "Small label"
-msgstr ""
-
-#: inc/customizer.php:33 inc/customizer.php:43 inc/customizer.php:53
-#: inc/customizer.php:61 inc/customizer.php:71 inc/customizer.php:81
-#: inc/customizer.php:95
-msgid "Title"
-msgstr ""
-
-#: inc/customizer.php:34 inc/customizer.php:62 inc/customizer.php:82
-msgid "Text"
-msgstr ""
-
-#: inc/customizer.php:35
-msgid "Popular searches"
 msgstr ""
 
 #: inc/customizer.php:35
@@ -277,10 +512,6 @@ msgstr ""
 
 #: inc/customizer.php:44
 msgid "Number of properties"
-msgstr ""
-
-#: inc/customizer.php:45
-msgid "Only properties marked \"Featured\""
 msgstr ""
 
 #: inc/customizer.php:49
@@ -300,10 +531,6 @@ msgid "Home: services"
 msgstr ""
 
 #: inc/customizer.php:72
-msgid "Services"
-msgstr ""
-
-#: inc/customizer.php:72
 msgid ""
 "One per line: icon | title | text | link. Icons: megaphone, key, chart, "
 "clipboard, home, building, shield, calendar, user."
@@ -313,28 +540,8 @@ msgstr ""
 msgid "Home: why us"
 msgstr ""
 
-#: inc/customizer.php:79
-msgid "Image"
-msgstr ""
-
 #: inc/customizer.php:83
 msgid "Points"
-msgstr ""
-
-#: inc/customizer.php:84
-msgid "Badge title"
-msgstr ""
-
-#: inc/customizer.php:85
-msgid "Badge text"
-msgstr ""
-
-#: inc/customizer.php:86 inc/customizer.php:100
-msgid "Button text"
-msgstr ""
-
-#: inc/customizer.php:87 inc/customizer.php:101
-msgid "Button link"
 msgstr ""
 
 #: inc/customizer.php:91
@@ -453,7 +660,7 @@ msgstr ""
 msgid "Show sub menu of %s"
 msgstr ""
 
-#: inc/menus.php:50 inc/template-tags.php:336
+#: inc/menus.php:50 inc/template-tags.php:343
 msgid "Home"
 msgstr ""
 
@@ -521,10 +728,6 @@ msgstr ""
 
 #: inc/template-tags.php:41
 msgid "What are you looking for?"
-msgstr ""
-
-#: inc/template-tags.php:44
-msgid "Developer projects"
 msgstr ""
 
 #: inc/template-tags.php:45
@@ -624,7 +827,7 @@ msgstr ""
 msgid "Talk to an advisor"
 msgstr ""
 
-#: inc/template-tags.php:82 inc/template-tags.php:276
+#: inc/template-tags.php:82 inc/template-tags.php:283
 msgid "Blog"
 msgstr ""
 
@@ -656,29 +859,29 @@ msgstr ""
 msgid "© {year} {site}. All rights reserved."
 msgstr ""
 
-#: inc/template-tags.php:280
+#: inc/template-tags.php:287
 #, php-format
 msgid "Search: %s"
 msgstr ""
 
-#: inc/template-tags.php:283
+#: inc/template-tags.php:290
 msgid "Page not found"
 msgstr ""
 
-#: inc/template-tags.php:319
+#: inc/template-tags.php:326
 #, php-format
 msgid "in %s"
 msgstr ""
 
-#: inc/template-tags.php:329 inc/template-tags.php:359
+#: inc/template-tags.php:336 inc/template-tags.php:366
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/template-tags.php:373
+#: inc/template-tags.php:380
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:374
+#: inc/template-tags.php:381
 msgid "Next page"
 msgstr ""
 
@@ -729,11 +932,6 @@ msgstr ""
 
 #: page-templates/list-property.php:39 page-templates/list-property.php:39
 msgid "Management"
-msgstr ""
-
-#: page-templates/list-property.php:42 template-parts/home/hero.php:68
-#: template-parts/property/filters.php:51
-msgid "Property type"
 msgstr ""
 
 #: page-templates/list-property.php:49
@@ -1086,16 +1284,19 @@ msgstr ""
 msgid "Send request"
 msgstr ""
 
+#: template-parts/home/agents.php:29
+msgid "Our agents"
+msgstr ""
+
+#: template-parts/home/agents.php:30
+msgid "All agents"
+msgstr ""
+
 #: template-parts/home/blog.php:28
 msgid "All articles"
 msgstr ""
 
-#: template-parts/home/featured.php:32 template-parts/home/hero.php:70
-#: template-parts/property/filters.php:28
-msgid "All"
-msgstr ""
-
-#: template-parts/home/featured.php:49
+#: template-parts/home/featured.php:57
 msgid "View all properties"
 msgstr ""
 
@@ -1131,18 +1332,6 @@ msgstr ""
 msgid "Search type"
 msgstr ""
 
-#: template-parts/home/hero.php:50
-msgid "Buy"
-msgstr ""
-
-#: template-parts/home/hero.php:51 template-parts/property/filters.php:30
-msgid "Rent"
-msgstr ""
-
-#: template-parts/home/hero.php:52
-msgid "New projects"
-msgstr ""
-
 #: template-parts/home/hero.php:58
 msgid "City or district"
 msgstr ""
@@ -1174,14 +1363,6 @@ msgstr ""
 
 #: template-parts/property/filters.php:22
 msgid "Clear all"
-msgstr ""
-
-#: template-parts/property/filters.php:26
-msgid "Purpose"
-msgstr ""
-
-#: template-parts/property/filters.php:29
-msgid "Sale"
 msgstr ""
 
 #: template-parts/property/filters.php:59

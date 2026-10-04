@@ -105,6 +105,9 @@
 				});
 			});
 		});
+		var start = box.getAttribute("data-default");
+		var startTab = start ? $('[data-purpose="' + start + '"]', box) : null;
+		if (startTab) { startTab.click(); }
 		// Do not send empty fields: shorter, cache-friendlier URLs.
 		form.addEventListener("submit", function () {
 			$$("input, select", form).forEach(function (i) { if (!i.value) { i.disabled = true; } });

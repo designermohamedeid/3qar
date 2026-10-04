@@ -3,7 +3,7 @@
  * Plugin Name:       Dara Core
  * Plugin URI:        https://github.com/designermohamedeid/3qar
  * Description:       Real estate engine for the Dara theme: properties, developer projects, agents, advanced search, leads (viewing requests, project interest, contact, list-your-property) and structured data.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Mohamed Eid
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DARA_CORE_VERSION', '1.1.0' );
+define( 'DARA_CORE_VERSION', '1.1.1' );
 define( 'DARA_CORE_FILE', __FILE__ );
 define( 'DARA_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DARA_CORE_URL', plugin_dir_url( __FILE__ ) );
