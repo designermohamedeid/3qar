@@ -1,0 +1,21 @@
+/*
+Theme Name: Thara Real Estate
+Theme URI: https://github.com/designermohamedeid/3qar
+Author: Mohamed Eid
+Author URI: https://github.com/designermohamedeid
+Description: A bilingual (Arabic RTL / English LTR) real estate WordPress theme converted from the "Al-Thara Real Estate" HTML template. Includes Properties and Services post types, a fully customizable front page via the Customizer, translation-ready strings and self-hosted fonts.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: thara
+Tags: rtl-language-support, translation-ready, custom-logo, custom-menu, featured-images, theme-options, threaded-comments, one-column, two-columns, right-sidebar, business
+*/
+
+/*
+ * The theme styles live in assets/css/ and are enqueued from inc/enqueue.php:
+ *   - main.css   : the original template design (refactored to CSS variables).
+ *   - theme.css  : WordPress specific styles (inner pages, posts, widgets, comments...).
+ */
