@@ -97,7 +97,7 @@ zip -r dara-core.zip dara-core
 | jQuery / Bootstrap / مكتبة أيقونات | لا يوجد |
 | CSS | ملف أساسي ~5.5KB (gzip) + ملف صغير للقالب الحالي فقط (1–1.7KB) |
 | JavaScript | ملف واحد ~3.6KB (gzip)، يُحمّل بـ `defer` |
-| الخطوط | IBM Plex Sans Arabic مستضاف محلياً، 3 أوزان، `font-display: swap`، مع preload |
+| الخطوط | Alexandria مستضاف محلياً (خط متغير: ملف واحد لكل الأوزان، ~31KB)، `font-display: swap`، مع preload |
 | الخرائط | Leaflet يُحمّل فقط عند ظهور الخريطة على الشاشة |
 | الصور | مقاسات مخصصة + `srcset` + lazy loading، مع preload و`fetchpriority=high` لصورة LCP |
 | ووردبريس | تعطيل الإيموجي، وتحميل CSS المكوّنات المستخدمة فقط بدل المكتبة كاملة (~110KB) |

@@ -145,13 +145,11 @@ function dara_css_vars() {
  * Preload the fonts used above the fold and the hero image (LCP).
  */
 function dara_preload() {
-	$subset = is_rtl() ? 'arabic' : 'latin';
-	foreach ( array( 400, 700 ) as $weight ) {
-		printf(
-			'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
-			esc_url( DARA_URI . "/assets/fonts/plex-arabic-{$weight}-{$subset}.woff2" )
-		);
-	}
+	// One variable font file covers every weight.
+	printf(
+		'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
+		esc_url( DARA_URI . '/assets/fonts/alexandria-' . ( is_rtl() ? 'arabic' : 'latin' ) . '.woff2' )
+	);
 
 	$hero = 0;
 	if ( is_singular() && 'dara/hero' === dara_first_block( get_queried_object_id() ) ) {
