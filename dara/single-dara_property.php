@@ -64,6 +64,7 @@ while ( have_posts() ) :
 				<div class="sp-head__actions">
 					<button type="button" class="btn btn--outline btn--sm" data-share data-title="<?php echo esc_attr( get_the_title() ); ?>"><?php dara_the_icon( 'share', 18 ); ?><?php esc_html_e( 'Share', 'dara' ); ?></button>
 					<button type="button" class="btn btn--outline btn--sm fav-btn--inline" data-fav="<?php echo (int) $dara_id; ?>" aria-pressed="false"><?php dara_the_icon( 'heart', 18 ); ?><?php esc_html_e( 'Save', 'dara' ); ?></button>
+					<?php dara_compare_button( $dara_id, 'inline' ); ?>
 					<button type="button" class="btn btn--outline btn--sm" data-print><?php dara_the_icon( 'print', 18 ); ?><?php esc_html_e( 'Print', 'dara' ); ?></button>
 				</div>
 			</div>

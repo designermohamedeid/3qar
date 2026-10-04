@@ -20,7 +20,7 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: 404.php:20
+#: 404.php:20 page-templates/compare.php:47
 msgid "Browse properties"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgid "Grid"
 msgstr ""
 
 #: archive-dara_property.php:56 page-templates/contact.php:55
-#: single-dara_project.php:200 single-dara_property.php:177
+#: single-dara_project.php:200 single-dara_property.php:178
 msgid "Map"
 msgstr ""
 
@@ -133,9 +133,9 @@ msgstr ""
 msgid "Call us"
 msgstr ""
 
-#: footer.php:108 page-templates/contact.php:28 single-dara_agent.php:57
-#: single-dara_property.php:226 template-parts/cards/agent.php:44
-#: template-parts/home/cta.php:20
+#: footer.php:108 page-templates/compare.php:226 page-templates/contact.php:28
+#: single-dara_agent.php:57 single-dara_property.php:227
+#: template-parts/cards/agent.php:44 template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr ""
 
@@ -167,32 +167,64 @@ msgstr ""
 msgid "Mobile menu"
 msgstr ""
 
-#: inc/assets.php:37
+#: inc/assets.php:38
 msgid "Saved to favorites"
 msgstr ""
 
-#: inc/assets.php:38
+#: inc/assets.php:39
 msgid "Removed from favorites"
 msgstr ""
 
-#: inc/assets.php:39
+#: inc/assets.php:40
 msgid "Link copied"
 msgstr ""
 
-#: inc/assets.php:40
+#: inc/assets.php:41
 msgid "You have no saved properties yet."
 msgstr ""
 
-#: inc/assets.php:41
+#: inc/assets.php:42
 msgid "Close"
 msgstr ""
 
-#: inc/assets.php:42 single.php:45
+#: inc/assets.php:43 single.php:45
 msgid "Previous"
 msgstr ""
 
-#: inc/assets.php:43 single.php:46
+#: inc/assets.php:44 single.php:46
 msgid "Next"
+msgstr ""
+
+#: inc/assets.php:45
+msgid "Added to compare"
+msgstr ""
+
+#: inc/assets.php:46
+msgid "Removed from compare"
+msgstr ""
+
+#: inc/assets.php:47
+msgid "You can compare up to 4 properties"
+msgstr ""
+
+#: inc/assets.php:48
+msgid "Compare properties"
+msgstr ""
+
+#: inc/assets.php:49
+msgid "Compare now"
+msgstr ""
+
+#: inc/assets.php:50
+msgid "Clear"
+msgstr ""
+
+#: inc/assets.php:51
+msgid "Add one more property to compare"
+msgstr ""
+
+#: inc/assets.php:52 inc/blocks.php:362 page-templates/compare.php:137
+msgid "Remove"
 msgstr ""
 
 #: inc/blocks.php:23 inc/customizer.php:32 inc/customizer.php:42
@@ -269,7 +301,8 @@ msgstr ""
 msgid "Only properties marked \"Featured\""
 msgstr ""
 
-#: inc/blocks.php:55 template-parts/property/filters.php:26
+#: inc/blocks.php:55 page-templates/compare.php:158
+#: template-parts/property/filters.php:26
 msgid "Purpose"
 msgstr ""
 
@@ -419,10 +452,6 @@ msgstr ""
 
 #: inc/blocks.php:361
 msgid "Replace image"
-msgstr ""
-
-#: inc/blocks.php:362
-msgid "Remove"
 msgstr ""
 
 #: inc/blocks.php:363
@@ -950,6 +979,148 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
+#: inc/template-tags.php:607
+#, php-format
+msgid "Compare %s"
+msgstr ""
+
+#: inc/template-tags.php:616
+msgid "Compare"
+msgstr ""
+
+#: page-templates/compare.php:45
+msgid "No properties to compare yet"
+msgstr ""
+
+#: page-templates/compare.php:46
+msgid "Tap the compare button on up to 4 properties, then come back here."
+msgstr ""
+
+#: page-templates/compare.php:111
+msgid "Best"
+msgstr ""
+
+#: page-templates/compare.php:119
+msgid "Share comparison"
+msgstr ""
+
+#: page-templates/compare.php:120 single-dara_property.php:68
+msgid "Print"
+msgstr ""
+
+#: page-templates/compare.php:126
+msgid "Property comparison"
+msgstr ""
+
+#: page-templates/compare.php:143 page-templates/compare.php:145
+#: single-dara_project.php:148 template-parts/home/hero.php:79
+msgid "Price"
+msgstr ""
+
+#: page-templates/compare.php:152
+msgid "Price per m²"
+msgstr ""
+
+#: page-templates/compare.php:164 page-templates/list-property.php:54
+msgid "Details"
+msgstr ""
+
+#: page-templates/compare.php:167 single-dara_project.php:145
+msgid "Type"
+msgstr ""
+
+#: page-templates/compare.php:168 single-dara_project.php:97
+#: single-dara_project.php:199 template-parts/home/hero.php:57
+msgid "Location"
+msgstr ""
+
+#: page-templates/compare.php:169 single-dara_project.php:146
+#: template-parts/cards/property.php:26
+msgid "Area"
+msgstr ""
+
+#: page-templates/compare.php:170 single-dara_project.php:147
+#: template-parts/cards/property.php:24 template-parts/home/hero.php:95
+#: template-parts/property/filters.php:67
+msgid "Bedrooms"
+msgstr ""
+
+#: page-templates/compare.php:171 template-parts/cards/property.php:25
+msgid "Bathrooms"
+msgstr ""
+
+#: page-templates/compare.php:172
+msgid "Age"
+msgstr ""
+
+#: page-templates/compare.php:173
+msgid "Facing"
+msgstr ""
+
+#: page-templates/compare.php:174
+msgid "Condition"
+msgstr ""
+
+#: page-templates/compare.php:188 single-dara_project.php:157
+#: template-parts/cards/property.php:56
+msgid "m²"
+msgstr ""
+
+#: page-templates/compare.php:199 single-dara_property.php:119
+msgid "Features & amenities"
+msgstr ""
+
+#: page-templates/compare.php:205
+msgid "Yes"
+msgstr ""
+
+#: page-templates/compare.php:207
+msgid "No"
+msgstr ""
+
+#: page-templates/compare.php:214
+msgid "Contact"
+msgstr ""
+
+#: page-templates/compare.php:216
+msgid "Agent"
+msgstr ""
+
+#: page-templates/compare.php:223
+#, php-format
+msgid "Call %s"
+msgstr ""
+
+#: page-templates/compare.php:226 single-dara_property.php:30
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr ""
+
+#: page-templates/compare.php:228 template-parts/forms/viewing.php:11
+msgid "Request a viewing"
+msgstr ""
+
+#: page-templates/compare.php:239
+msgid ""
+"Not sure which one to choose? Send the comparison to our team and we will "
+"help you decide."
+msgstr ""
+
+#: page-templates/compare.php:240
+msgid "Hello, please help me choose between these properties:"
+msgstr ""
+
+#: page-templates/compare.php:240
+msgid "Ask an advisor on WhatsApp"
+msgstr ""
+
+#: page-templates/compare.php:117
+#, php-format
+msgid "Comparing %s property"
+msgid_plural "Comparing %s properties"
+msgstr[0] ""
+msgstr[1] ""
+
 #: page-templates/contact.php:34
 msgid "Office"
 msgstr ""
@@ -1012,10 +1183,6 @@ msgid "Expected price (optional)"
 msgstr ""
 
 #: page-templates/list-property.php:54
-msgid "Details"
-msgstr ""
-
-#: page-templates/list-property.php:54
 msgid "Area, rooms, age, special features…"
 msgstr ""
 
@@ -1039,7 +1206,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: single-dara_agent.php:48 single-dara_property.php:215
+#: single-dara_agent.php:48 single-dara_property.php:216
 #: template-parts/cards/agent.php:36
 #, php-format
 msgid "FAL %s"
@@ -1144,16 +1311,11 @@ msgstr ""
 msgid "Progress"
 msgstr ""
 
-#: single-dara_project.php:97 single-dara_project.php:199
-#: template-parts/home/hero.php:57
-msgid "Location"
-msgstr ""
-
 #: single-dara_project.php:102
 msgid "About the project"
 msgstr ""
 
-#: single-dara_project.php:115 single-dara_property.php:75
+#: single-dara_project.php:115 single-dara_property.php:76
 #, php-format
 msgid "Open photo %1$s of %2$s"
 msgstr ""
@@ -1166,29 +1328,8 @@ msgstr ""
 msgid "Model"
 msgstr ""
 
-#: single-dara_project.php:145
-msgid "Type"
-msgstr ""
-
-#: single-dara_project.php:146 template-parts/cards/property.php:26
-msgid "Area"
-msgstr ""
-
-#: single-dara_project.php:147 template-parts/cards/property.php:24
-#: template-parts/home/hero.php:95 template-parts/property/filters.php:67
-msgid "Bedrooms"
-msgstr ""
-
-#: single-dara_project.php:148 template-parts/home/hero.php:79
-msgid "Price"
-msgstr ""
-
 #: single-dara_project.php:149
 msgid "Status"
-msgstr ""
-
-#: single-dara_project.php:157 template-parts/cards/property.php:55
-msgid "m²"
 msgstr ""
 
 #: single-dara_project.php:182
@@ -1208,11 +1349,6 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: single-dara_property.php:30
-#, php-format
-msgid "Hello, I am interested in: %1$s %2$s"
-msgstr ""
-
 #: single-dara_property.php:51 template-parts/cards/property.php:37
 msgid "Featured"
 msgstr ""
@@ -1225,73 +1361,65 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: single-dara_property.php:67
-msgid "Print"
-msgstr ""
-
-#: single-dara_property.php:90
+#: single-dara_property.php:91
 #, php-format
 msgid "All photos (%s)"
 msgstr ""
 
-#: single-dara_property.php:111
+#: single-dara_property.php:112
 msgid "Description"
 msgstr ""
 
-#: single-dara_property.php:118
-msgid "Features & amenities"
-msgstr ""
-
-#: single-dara_property.php:129
+#: single-dara_property.php:130
 msgid "Floor plans"
 msgstr ""
 
-#: single-dara_property.php:134
+#: single-dara_property.php:135
 #, php-format
 msgid "Plan %s"
 msgstr ""
 
-#: single-dara_property.php:148
+#: single-dara_property.php:149
 msgid "Video tour"
 msgstr ""
 
-#: single-dara_property.php:155
+#: single-dara_property.php:156
 msgid "Play video"
 msgstr ""
 
-#: single-dara_property.php:161
+#: single-dara_property.php:162
 msgid "Watch the video"
 msgstr ""
 
-#: single-dara_property.php:175
+#: single-dara_property.php:176
 msgid "Location & nearby"
 msgstr ""
 
-#: single-dara_property.php:178
+#: single-dara_property.php:179
 msgid "Get directions"
 msgstr ""
 
-#: single-dara_property.php:223 template-parts/cards/agent.php:41
+#: single-dara_property.php:224 template-parts/cards/agent.php:41
 msgid "Call"
 msgstr ""
 
-#: single-dara_property.php:233
+#: single-dara_property.php:234
 msgid "License information"
 msgstr ""
 
-#: single-dara_property.php:235
+#: single-dara_property.php:236
 msgid "Ad license number"
 msgstr ""
 
-#: single-dara_property.php:238
+#: single-dara_property.php:239
 msgid "Office FAL license"
 msgstr ""
 
-#: single-dara_property.php:240
+#: single-dara_property.php:241
 msgid "Listed on"
 msgstr ""
 
-#: single-dara_property.php:259
+#: single-dara_property.php:260
 msgid "Similar properties"
 msgstr ""
 
@@ -1312,10 +1440,6 @@ msgid_plural "%s units"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/cards/property.php:25
-msgid "Bathrooms"
-msgstr ""
-
 #: template-parts/cards/property.php:40
 #, php-format
 msgid "Save %s to favorites"
@@ -1331,10 +1455,6 @@ msgstr ""
 
 #: template-parts/content-none.php:13
 msgid "There is nothing here yet."
-msgstr ""
-
-#: template-parts/forms/viewing.php:11
-msgid "Request a viewing"
 msgstr ""
 
 #: template-parts/forms/viewing.php:16

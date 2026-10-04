@@ -38,6 +38,7 @@ $dara_labels  = array(
 			<?php endif; ?>
 		</div>
 		<button type="button" class="fav-btn" data-fav="<?php echo (int) $dara_id; ?>" aria-pressed="false" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: property. */ __( 'Save %s to favorites', 'dara' ), get_the_title() ) ); ?>"><?php dara_the_icon( 'heart', 20 ); ?></button>
+		<?php dara_compare_button( $dara_id ); ?>
 		<?php if ( $dara_photos > 1 ) : ?>
 			<span class="card__count"><?php dara_the_icon( 'camera', 14 ); ?><?php echo esc_html( number_format_i18n( $dara_photos ) ); ?></span>
 		<?php endif; ?>

@@ -62,6 +62,7 @@ function dara_icon_paths() {
 		'youtube'   => '<rect x="3" y="6" width="18" height="12" rx="4"/><path d="m10 9.5 4.5 2.5-4.5 2.5z"/>',
 		'linkedin'  => '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>',
 		'facebook'  => '<path d="M14 21v-8h3l.5-3.5H14V8c0-1 .5-1.5 1.5-1.5H18V3.3C17.5 3.2 16.3 3 15 3c-2.8 0-4.5 1.7-4.5 4.6v1.9H7.5V13h3v8"/>',
+		'compare'   => '<path d="M7 4 3 8l4 4M3 8h13M17 12l4 4-4 4M21 16H8"/>',
 		'logo'      => '<path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5a3 3 0 0 1 6 0v5"/>',
 	);
 }

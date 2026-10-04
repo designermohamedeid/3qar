@@ -87,3 +87,18 @@ function dara_meta_description() {
 	}
 }
 add_action( 'wp_head', 'dara_meta_description', 2 );
+
+/**
+ * Keep comparison pages out of search results (they are per-visitor).
+ *
+ * @param array $robots Robots directives.
+ * @return array
+ */
+function dara_compare_noindex( $robots ) {
+	if ( is_page_template( 'page-templates/compare.php' ) ) {
+		$robots['noindex'] = true;
+		$robots['follow']  = true;
+	}
+	return $robots;
+}
+add_filter( 'wp_robots', 'dara_compare_noindex' );

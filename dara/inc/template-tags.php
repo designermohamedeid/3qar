@@ -581,3 +581,38 @@ function dara_mortgage_calc( $price, $down, $years, $rate, $method = 'amortized'
 		'total'   => $downv + $loan + max( 0, $profit ),
 	);
 }
+
+/**
+ * Compare page URL ('' when no page uses the Compare template).
+ *
+ * @return string
+ */
+function dara_compare_url() {
+	return dara_template_url( 'page-templates/compare.php' );
+}
+
+/**
+ * Add-to-compare button.
+ *
+ * @param int    $post_id Property ID.
+ * @param string $variant "card" (round icon) or "inline" (labelled button).
+ */
+function dara_compare_button( $post_id, $variant = 'card' ) {
+	if ( ! dara_compare_url() ) {
+		return;
+	}
+	$title = get_the_title( $post_id );
+	$img   = get_the_post_thumbnail_url( $post_id, 'thumbnail' );
+	/* translators: %s: property title. */
+	$label = sprintf( __( 'Compare %s', 'dara' ), $title );
+	printf(
+		'<button type="button" class="%1$s" data-compare="%2$d" data-title="%3$s" data-img="%4$s" aria-pressed="false" aria-label="%5$s">%6$s%7$s</button>',
+		'inline' === $variant ? 'btn btn--outline btn--sm cmp-btn--inline' : 'cmp-btn',
+		(int) $post_id,
+		esc_attr( $title ),
+		esc_url( $img ? $img : '' ),
+		esc_attr( $label ),
+		dara_icon( 'compare', 'inline' === $variant ? 18 : 20 ), // phpcs:ignore WordPress.Security.EscapeOutput
+		'inline' === $variant ? esc_html__( 'Compare', 'dara' ) : ''
+	);
+}

@@ -382,6 +382,101 @@
 		}
 	});
 
+	/* ---------- Compare (localStorage, max 4) ---------- */
+	var CMP_KEY = "dara_compare";
+	var CMP_MAX = 4;
+	function getCmp() {
+		try { return (JSON.parse(localStorage.getItem(CMP_KEY) || "[]") || []).filter(function (x) { return x && x.id; }); } catch (err) { return []; }
+	}
+	function setCmp(list) {
+		try { localStorage.setItem(CMP_KEY, JSON.stringify(list.slice(0, CMP_MAX))); } catch (err) { /* private mode */ }
+	}
+	function cmpUrl(list) {
+		if (!data.compareUrl) { return "#"; }
+		var u = new URL(data.compareUrl, location.href);
+		u.searchParams.delete("ids");
+		var q = u.search ? u.search + "&" : "?";
+		return u.origin + u.pathname + q + "ids=" + list.map(function (x) { return Number(x.id); }).join(",") + u.hash;
+	}
+	var cmpBar;
+	function paintCmp() {
+		var list = getCmp();
+		var ids = list.map(function (x) { return Number(x.id); });
+		$$("[data-compare]").forEach(function (b) {
+			b.setAttribute("aria-pressed", ids.indexOf(Number(b.getAttribute("data-compare"))) > -1 ? "true" : "false");
+		});
+		if (!data.compareUrl || $("[data-compare-page]")) { return; }
+		if (!cmpBar) {
+			cmpBar = doc.createElement("div");
+			cmpBar.className = "cmp-bar";
+			cmpBar.setAttribute("role", "region");
+			cmpBar.setAttribute("aria-label", i18n.cmpTitle || "Compare");
+			doc.body.appendChild(cmpBar);
+			cmpBar.addEventListener("click", function (e) {
+				var rm = e.target.closest("[data-cmp-remove]");
+				if (rm) {
+					setCmp(getCmp().filter(function (x) { return String(x.id) !== rm.getAttribute("data-cmp-remove"); }));
+					paintCmp();
+				}
+				if (e.target.closest("[data-cmp-clear]")) { setCmp([]); paintCmp(); }
+			});
+		}
+		doc.body.classList.toggle("has-cmp-bar", list.length > 0);
+		cmpBar.hidden = !list.length;
+		if (!list.length) { cmpBar.innerHTML = ""; return; }
+		var esc = function (s) { var d = doc.createElement("div"); d.textContent = s || ""; return d.innerHTML; };
+		var items = list.map(function (x) {
+			return '<li><span class="cmp-bar__thumb">' + (x.img ? '<img src="' + esc(x.img) + '" alt="" width="44" height="44">' : "") + "</span>" +
+				'<span class="cmp-bar__name">' + esc(x.title) + "</span>" +
+				'<button type="button" class="cmp-bar__x" data-cmp-remove="' + esc(String(x.id)) + '" aria-label="' + esc((i18n.remove || "Remove") + " " + x.title) + '">&times;</button></li>';
+		}).join("");
+		var ready = list.length > 1;
+		cmpBar.innerHTML =
+			'<div class="container cmp-bar__inner">' +
+			'<p class="cmp-bar__title"><strong>' + esc(i18n.cmpTitle) + "</strong> <span>" + list.length + " / " + CMP_MAX + "</span></p>" +
+			'<ul class="cmp-bar__list">' + items + "</ul>" +
+			'<div class="cmp-bar__actions">' +
+			(ready ? '<a class="btn btn--primary btn--sm" href="' + esc(cmpUrl(list)) + '">' + esc(i18n.cmpNow) + "</a>" : '<span class="cmp-bar__hint">' + esc(i18n.cmpMin) + "</span>") +
+			'<button type="button" class="btn btn--outline btn--sm" data-cmp-clear>' + esc(i18n.cmpClear) + "</button></div></div>";
+	}
+	doc.addEventListener("click", function (e) {
+		var b = e.target.closest("[data-compare]");
+		if (!b) { return; }
+		e.preventDefault();
+		var id = Number(b.getAttribute("data-compare"));
+		var list = getCmp();
+		var idx = list.map(function (x) { return Number(x.id); }).indexOf(id);
+		if (idx > -1) {
+			list.splice(idx, 1);
+			toast(i18n.cmpRemoved || "Removed");
+		} else if (list.length >= CMP_MAX) {
+			toast(i18n.cmpMax || "Max 4");
+			return;
+		} else {
+			list.push({ id: id, title: b.getAttribute("data-title") || "", img: b.getAttribute("data-img") || "" });
+			toast(i18n.cmpAdded || "Added");
+		}
+		setCmp(list);
+		paintCmp();
+	});
+	paintCmp();
+
+	// Compare page: open the saved list when the URL has no ids, keep the list in sync on remove.
+	var cmpPage = $("[data-compare-page]");
+	if (cmpPage) {
+		var params = new URLSearchParams(location.search);
+		var saved = getCmp();
+		if (!params.get("ids") && saved.length) {
+			location.replace(cmpUrl(saved));
+		}
+		cmpPage.addEventListener("click", function (e) {
+			var rm = e.target.closest("[data-remove]");
+			if (rm) {
+				setCmp(getCmp().filter(function (x) { return String(x.id) !== rm.getAttribute("data-remove"); }));
+			}
+		});
+	}
+
 	/* ---------- Favorites (localStorage) ---------- */
 	var FAV_KEY = "dara_favs";
 	function getFavs() {

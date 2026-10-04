@@ -33,7 +33,7 @@
 .dot--available{background:var(--primary)}
 .dot--reserved{background:#B45309}
 .dot--sold{background:#9AA6B5}
-.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-lg)}
+.table-wrap{position:relative;overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-lg)}
 .units{width:100%;min-width:700px;border-collapse:collapse;font-size:15px;text-align:start}
 .units th,.units td{padding:14px 18px;text-align:start;border-top:1px solid var(--line)}
 .units thead th{background:var(--surface);color:var(--ink);font-weight:600;border-top:0}

@@ -175,15 +175,15 @@ msgstr "تعيين الصفحة الرئيسية وصفحة المدونة ال�
 msgid "Create and assign menus"
 msgstr "إنشاء القوائم وتعيينها"
 
-#: includes/demo.php:62 includes/demo.php:539
+#: includes/demo.php:62 includes/demo.php:540
 msgid "Import demo content"
 msgstr "استيراد المحتوى التجريبي"
 
-#: includes/demo.php:163 includes/demo.php:458
+#: includes/demo.php:163 includes/demo.php:459
 msgid "Not allowed."
 msgstr "غير مسموح."
 
-#: includes/demo.php:537
+#: includes/demo.php:538
 msgid ""
 "Start faster: import the demo properties, projects and pages, then replace "
 "them with your own."

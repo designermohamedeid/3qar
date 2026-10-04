@@ -346,6 +346,7 @@ function dara_demo_import() {
 		'contact'  => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'تواصل معنا', 'Contact us' ), 'post_name' => 'contact', 'post_content' => $t( '<p>يسعدنا تواصلكم معنا، فريقنا متاح من الأحد إلى الخميس.</p>', '<p>We would love to hear from you. Our team is available Sunday to Thursday.</p>' ) ), array( '_wp_page_template' => 'page-templates/contact.php' ) ),
 		'list'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'أضف عقارك', 'List your property' ), 'post_name' => 'list-your-property', 'post_content' => $t( '<p>أرسل بيانات عقارك وسيتواصل معك مسوّق خلال يوم عمل.</p>', '<p>Send us your property details and an agent will contact you within one business day.</p>' ) ), array( '_wp_page_template' => 'page-templates/list-property.php' ) ),
 		'favorite' => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'المفضلة', 'Favorites' ), 'post_name' => 'favorites' ), array( '_wp_page_template' => 'page-templates/favorites.php' ) ),
+		'compare'  => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'مقارنة العقارات', 'Compare properties' ), 'post_name' => 'compare' ), array( '_wp_page_template' => 'page-templates/compare.php' ) ),
 	);
 	delete_transient( 'dara_template_pages' );
 

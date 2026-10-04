@@ -33,6 +33,7 @@ function dara_assets() {
 			'tiles'       => dara_mod( 'map_tiles' ),
 			'attribution' => wp_kses_post( dara_mod( 'map_attribution' ) ),
 			'restUrl'     => esc_url_raw( rest_url( 'wp/v2/' ) ),
+			'compareUrl'  => dara_compare_url(),
 			'i18n'        => array(
 				'saved'   => __( 'Saved to favorites', 'dara' ),
 				'removed' => __( 'Removed from favorites', 'dara' ),
@@ -41,6 +42,14 @@ function dara_assets() {
 				'close'   => __( 'Close', 'dara' ),
 				'prev'    => __( 'Previous', 'dara' ),
 				'next'    => __( 'Next', 'dara' ),
+				'cmpAdded'   => __( 'Added to compare', 'dara' ),
+				'cmpRemoved' => __( 'Removed from compare', 'dara' ),
+				'cmpMax'     => __( 'You can compare up to 4 properties', 'dara' ),
+				'cmpTitle'   => __( 'Compare properties', 'dara' ),
+				'cmpNow'     => __( 'Compare now', 'dara' ),
+				'cmpClear'   => __( 'Clear', 'dara' ),
+				'cmpMin'     => __( 'Add one more property to compare', 'dara' ),
+				'remove'     => __( 'Remove', 'dara' ),
 			),
 		)
 	);
