@@ -129,21 +129,26 @@ msgstr "بريدك الإلكتروني"
 msgid "Subscribe"
 msgstr "اشترك"
 
-#: footer.php:101
+#: footer.php:103
+#, php-format
+msgid "Design: %s"
+msgstr "تصميم: %s"
+
+#: footer.php:114
 #, php-format
 msgid "FAL license: %s"
 msgstr "رخصة فال: %s"
 
-#: footer.php:105
+#: footer.php:118
 #, php-format
 msgid "CR: %s"
 msgstr "السجل التجاري: %s"
 
-#: footer.php:118 page-templates/contact.php:25
+#: footer.php:131 page-templates/contact.php:25
 msgid "Call us"
 msgstr "اتصل بنا"
 
-#: footer.php:121 page-templates/compare.php:237 page-templates/contact.php:28
+#: footer.php:134 page-templates/compare.php:237 page-templates/contact.php:28
 #: single-dara_agent.php:63 single-dara_property.php:246
 #: template-parts/cards/agent.php:50 template-parts/home/cta.php:20
 msgid "WhatsApp"
@@ -236,14 +241,6 @@ msgstr "أضف عقاراً آخر للمقارنة"
 #: inc/assets.php:61 page-templates/compare.php:148
 msgid "Remove"
 msgstr "حذف"
-
-#: inc/compat.php:21
-msgid ""
-"The Dara theme needs the \"Dara Core\" plugin for properties, projects, "
-"search and lead forms. Please install and activate it."
-msgstr ""
-"يحتاج قالب دارة إلى إضافة \"Dara Core\" لتشغيل العقارات والمشاريع والبحث "
-"ونماذج الطلبات. يرجى تثبيتها وتفعيلها."
 
 #: inc/customizer.php:16
 msgid "Show this section"
@@ -464,19 +461,23 @@ msgstr "حقوق النشر"
 msgid "You can use {year} and {site}."
 msgstr "يمكنك استخدام {year} و {site}."
 
-#: inc/customizer.php:132 template-parts/property/mortgage.php:35
+#: inc/customizer.php:129
+msgid "Show designer credit"
+msgstr "إظهار حقوق المصمم"
+
+#: inc/customizer.php:133 template-parts/property/mortgage.php:35
 msgid "Mortgage calculator"
 msgstr "حاسبة التمويل العقاري"
 
-#: inc/customizer.php:134
+#: inc/customizer.php:135
 msgid "Show on properties for sale"
 msgstr "إظهارها في العقارات المعروضة للبيع"
 
-#: inc/customizer.php:137
+#: inc/customizer.php:138
 msgid "Calculation method"
 msgstr "طريقة الحساب"
 
-#: inc/customizer.php:138
+#: inc/customizer.php:139
 msgid ""
 "Declining balance is the standard mortgage formula. Flat rate (murabaha) "
 "applies the profit rate to the full amount for every year."
@@ -484,53 +485,53 @@ msgstr ""
 "الرصيد المتناقص هو معادلة التمويل العقاري المعتادة. النسبة الثابتة "
 "(المرابحة) تحسب نسبة الربح على كامل المبلغ لكل سنة."
 
-#: inc/customizer.php:140
+#: inc/customizer.php:141
 msgid "Declining balance"
 msgstr "الرصيد المتناقص"
 
-#: inc/customizer.php:141
+#: inc/customizer.php:142
 msgid "Flat rate (murabaha)"
 msgstr "نسبة ثابتة (مرابحة)"
 
-#: inc/customizer.php:144
+#: inc/customizer.php:145
 #, php-format
 msgid "Default annual profit rate (%)"
 msgstr "نسبة الربح السنوية الافتراضية (%)"
 
-#: inc/customizer.php:145
+#: inc/customizer.php:146
 #, php-format
 msgid "Default down payment (%)"
 msgstr "الدفعة الأولى الافتراضية (%)"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:147
 msgid "Default term (years)"
 msgstr "مدة التمويل الافتراضية (سنوات)"
 
-#: inc/customizer.php:147
+#: inc/customizer.php:148
 msgid "Maximum term (years)"
 msgstr "أقصى مدة تمويل (سنوات)"
 
-#: inc/customizer.php:148
+#: inc/customizer.php:149
 msgid "Disclaimer"
 msgstr "تنويه"
 
-#: inc/customizer.php:152
+#: inc/customizer.php:153
 msgid "Performance & maps"
 msgstr "الأداء والخرائط"
 
-#: inc/customizer.php:154
+#: inc/customizer.php:155
 msgid "Disable WordPress emoji script"
 msgstr "تعطيل سكربت الإيموجي في ووردبريس"
 
-#: inc/customizer.php:155
+#: inc/customizer.php:156
 msgid "Load block CSS only on pages that use blocks"
 msgstr "تحميل CSS المكوّنات فقط في الصفحات التي تستخدمها"
 
-#: inc/customizer.php:156
+#: inc/customizer.php:157
 msgid "Map tiles URL"
 msgstr "رابط بلاطات الخريطة"
 
-#: inc/customizer.php:156
+#: inc/customizer.php:157
 msgid ""
 "Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
 "Stadia...) with your key."
@@ -538,11 +539,11 @@ msgstr ""
 "الافتراضي: OpenStreetMap. للمواقع ذات الزيارات الكبيرة استخدم مزود خرائط "
 "(MapTiler أو Stadia...) بمفتاحك الخاص."
 
-#: inc/customizer.php:157
+#: inc/customizer.php:158
 msgid "Map attribution"
 msgstr "نص حقوق الخريطة"
 
-#: inc/customizer.php:190
+#: inc/customizer.php:191
 msgid "Dara theme"
 msgstr "قالب دارة"
 
@@ -551,7 +552,7 @@ msgstr "قالب دارة"
 msgid "Show sub menu of %s"
 msgstr "إظهار القائمة الفرعية لـ %s"
 
-#: inc/menus.php:50 inc/template-tags.php:359
+#: inc/menus.php:50 inc/template-tags.php:360
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -566,6 +567,42 @@ msgstr "المشاريع"
 #: inc/menus.php:55
 msgid "Agents"
 msgstr "المسوّقون"
+
+#: inc/plugin-installer.php:56
+msgid "Upload Dara Core"
+msgstr "رفع إضافة Dara Core"
+
+#: inc/plugin-installer.php:58
+msgid "Install and activate Dara Core"
+msgstr "تثبيت وتفعيل Dara Core"
+
+#: inc/plugin-installer.php:58
+msgid "Activate Dara Core"
+msgstr "تفعيل Dara Core"
+
+#: inc/plugin-installer.php:64
+msgid "Dara needs the Dara Core plugin."
+msgstr "قالب دارة يحتاج إضافة Dara Core."
+
+#: inc/plugin-installer.php:65
+msgid ""
+"It adds properties, projects, agents, search, lead forms, blocks and the "
+"demo importer."
+msgstr ""
+"تضيف العقارات والمشاريع والمسوّقين والبحث ونماذج الطلبات والبلوكات واستيراد "
+"المحتوى التجريبي."
+
+#: inc/plugin-installer.php:77
+msgid "Sorry, you are not allowed to install plugins."
+msgstr "عذرًا، ليس لديك صلاحية تثبيت الإضافات."
+
+#: inc/plugin-installer.php:99
+msgid ""
+"Dara Core could not be installed. Upload plugins/dara-core.zip from Plugins "
+"> Add New."
+msgstr ""
+"تعذّر تثبيت Dara Core. ارفع الملف plugins/dara-core.zip من الإضافات > أضف "
+"جديد."
 
 #: inc/setup.php:39
 msgid "Primary"
@@ -732,7 +769,7 @@ msgstr "رقم ترخيص على كل إعلان"
 msgid "Talk to an advisor"
 msgstr "تحدث مع مستشار"
 
-#: inc/template-tags.php:82 inc/template-tags.php:299
+#: inc/template-tags.php:82 inc/template-tags.php:300
 msgid "Blog"
 msgstr "المدونة"
 
@@ -767,45 +804,45 @@ msgstr "أحدث العقارات والمشاريع تصلك أولاً."
 msgid "© {year} {site}. All rights reserved."
 msgstr "© {year} {site}. جميع الحقوق محفوظة."
 
-#: inc/template-tags.php:119
+#: inc/template-tags.php:120
 msgid ""
 "Estimate only. The final installment depends on the bank, your salary and "
 "your obligations."
 msgstr ""
 "الأرقام تقديرية، والقسط النهائي يعتمد على جهة التمويل والراتب والالتزامات."
 
-#: inc/template-tags.php:303
+#: inc/template-tags.php:304
 #, php-format
 msgid "Search: %s"
 msgstr "نتائج البحث: %s"
 
-#: inc/template-tags.php:306
+#: inc/template-tags.php:307
 msgid "Page not found"
 msgstr "الصفحة غير موجودة"
 
-#: inc/template-tags.php:342
+#: inc/template-tags.php:343
 #, php-format
 msgid "in %s"
 msgstr "في %s"
 
-#: inc/template-tags.php:352 inc/template-tags.php:382
+#: inc/template-tags.php:353 inc/template-tags.php:383
 msgid "Breadcrumbs"
 msgstr "مسار التنقل"
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:397
 msgid "Previous page"
 msgstr "الصفحة السابقة"
 
-#: inc/template-tags.php:397
+#: inc/template-tags.php:398
 msgid "Next page"
 msgstr "الصفحة التالية"
 
-#: inc/template-tags.php:615
+#: inc/template-tags.php:616
 #, php-format
 msgid "Compare %s"
 msgstr "مقارنة %s"
 
-#: inc/template-tags.php:624
+#: inc/template-tags.php:625
 msgid "Compare"
 msgstr "قارن"
 

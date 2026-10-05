@@ -93,7 +93,20 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 
 		<div class="site-footer__bottom">
-			<span><?php echo esc_html( dara_copyright() ); ?></span>
+			<span>
+				<?php echo esc_html( dara_copyright() ); ?>
+				<?php if ( dara_mod( 'designer_credit' ) ) : ?>
+					<span class="site-footer__credit">
+						<?php
+						printf(
+							/* translators: %s: designer company link. */
+							esc_html__( 'Design: %s', 'dara' ),
+							'<a href="https://mansourahost.com" rel="noopener">Mansoura Host</a>'
+						);
+						?>
+					</span>
+				<?php endif; ?>
+			</span>
 			<?php
 			$dara_licenses = array();
 			if ( dara_has_core() && dara_setting( 'office_fal' ) ) {

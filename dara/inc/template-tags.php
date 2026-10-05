@@ -109,6 +109,7 @@ function dara_defaults() {
 		'newsletter_text'    => __( 'Get the newest properties and projects first.', 'dara' ),
 		/* translators: Keep {year} and {site}. */
 		'copyright'          => __( '© {year} {site}. All rights reserved.', 'dara' ),
+		'designer_credit'    => true,
 		// Mortgage calculator.
 		'mortgage_show'      => true,
 		'mortgage_method'    => 'amortized',

@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name:       Dara Core
- * Plugin URI:        https://github.com/designermohamedeid/3qar
+ * Plugin URI:        https://mansourahost.com
  * Description:       Real estate engine for the Dara theme: properties, developer projects, agents, advanced search, leads (viewing requests, project interest, contact, list-your-property) and structured data.
  * Version:           1.2.0
  * Requires at least: 6.3
  * Requires PHP:      7.4
- * Author:            Mohamed Eid
+ * Author:            Mansoura Host
+ * Author URI:        https://mansourahost.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       dara-core

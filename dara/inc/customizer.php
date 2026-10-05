@@ -126,6 +126,7 @@ function dara_customizer_map() {
 				'newsletter_show' => array( 'checkbox', __( 'Show newsletter', 'dara' ) ),
 				'newsletter_text' => array( 'text', __( 'Newsletter text', 'dara' ) ),
 				'copyright'       => array( 'text', __( 'Copyright', 'dara' ), __( 'You can use {year} and {site}.', 'dara' ) ),
+				'designer_credit' => array( 'checkbox', __( 'Show designer credit', 'dara' ) ),
 			),
 		),
 		'dara_mortgage' => array(

@@ -8,7 +8,8 @@ Fast bilingual real estate theme. Requires the Dara Core plugin.
 
 == Copyright ==
 
-Dara WordPress Theme, (C) 2026 Mohamed Eid.
+Dara WordPress Theme, (C) 2026 Mansoura Host (https://mansourahost.com).
+Support: info@mansourahost.com
 Dara is distributed under the terms of the GNU GPL v2 or later.
 
 This program is free software: you can redistribute it and/or modify

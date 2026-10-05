@@ -1,5 +1,6 @@
 Dara - Real Estate WordPress Theme
-Copyright (C) 2026 Mohamed Eid
+Copyright (C) 2026 Mansoura Host - https://mansourahost.com
+Contact: info@mansourahost.com
 
 LICENSE
 -------
