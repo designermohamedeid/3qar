@@ -1,0 +1,20 @@
+Dara - Real Estate WordPress Theme
+Copyright (C) 2026 Mansoura Host - https://mansourahost.com
+Contact: info@mansourahost.com
+
+LICENSE
+-------
+The PHP code, integrated HTML, CSS and JavaScript of the Dara theme, the
+Dara Child theme and the Dara Core plugin are licensed under the GNU General
+Public License, version 2 or later: https://www.gnu.org/licenses/gpl-2.0.html
+
+All other resources (images, documentation, design files) are licensed
+under the marketplace license you purchased.
+
+THIRD-PARTY RESOURCES
+---------------------
+Alexandria font        SIL Open Font License 1.1   https://fonts.google.com/specimen/Alexandria
+Leaflet 1.9.4          BSD 2-Clause License        https://leafletjs.com
+Map tiles / data       (c) OpenStreetMap contributors, ODbL   https://www.openstreetmap.org/copyright
+Icons                  Original SVG icons made for Dara, GPL v2 or later
+Demo images            Original illustrations made for Dara, for preview use

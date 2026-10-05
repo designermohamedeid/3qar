@@ -1,0 +1,12 @@
+{
+  "name": "dara-theme",
+  "private": true,
+  "description": "Build step for the Dara theme: minifies CSS and JS.",
+  "scripts": {
+    "build": "sh build.sh"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.36.0"
+  }
+}

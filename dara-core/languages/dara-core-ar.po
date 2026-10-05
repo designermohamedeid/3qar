@@ -1,0 +1,893 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Dara Core 1.2.0\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: dara-core\n"
+
+#: includes/admin.php:27
+msgid "Select images"
+msgstr "اختر الصور"
+
+#: includes/admin.php:28
+msgid "Use these images"
+msgstr "استخدم هذه الصور"
+
+#: includes/admin.php:29 includes/blocks.php:406 includes/fields.php:281
+msgid "Remove"
+msgstr "حذف"
+
+#: includes/admin.php:45 includes/blocks.php:127
+msgid "Image"
+msgstr "الصورة"
+
+#: includes/admin.php:49 includes/fields.php:36
+msgid "Price"
+msgstr "السعر"
+
+#: includes/admin.php:50 includes/blocks.php:66 includes/fields.php:30
+#: includes/leads.php:114
+msgid "Purpose"
+msgstr "الغرض"
+
+#: includes/admin.php:71
+msgid "Featured"
+msgstr "مميز"
+
+#: includes/admin.php:90 includes/post-types.php:96
+msgid "Lead"
+msgstr "الطلب"
+
+#: includes/admin.php:91 includes/admin.php:135 includes/helpers.php:158
+msgid "Type"
+msgstr "النوع"
+
+#: includes/admin.php:92 includes/admin.php:137 includes/fields.php:142
+msgid "Phone"
+msgstr "الهاتف"
+
+#: includes/admin.php:93
+msgid "About"
+msgstr "بخصوص"
+
+#: includes/admin.php:132
+msgid "Lead details"
+msgstr "تفاصيل الطلب"
+
+#: includes/admin.php:136
+msgid "Name"
+msgstr "الاسم"
+
+#: includes/admin.php:138 includes/fields.php:144
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: includes/admin.php:139
+msgid "Preferred date"
+msgstr "الموعد المفضل"
+
+#: includes/admin.php:140
+msgid "Details"
+msgstr "التفاصيل"
+
+#: includes/admin.php:141
+msgid "Message"
+msgstr "الرسالة"
+
+#: includes/admin.php:142
+msgid "Page"
+msgstr "الصفحة"
+
+#: includes/admin.php:167 includes/admin.php:211
+msgid "Dara settings"
+msgstr "إعدادات دارة"
+
+#: includes/admin.php:168 includes/blocks.php:402
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: includes/admin.php:203
+msgid "Currency label"
+msgstr "رمز العملة"
+
+#: includes/admin.php:203
+msgid "Shown after prices, e.g. SAR, EGP, AED."
+msgstr "يظهر بعد الأسعار، مثل: ر.س، ج.م، د.إ."
+
+#: includes/admin.php:204
+msgid "Leads email"
+msgstr "بريد استقبال الطلبات"
+
+#: includes/admin.php:204
+msgid "Viewing requests and forms are sent here (and to the property agent)."
+msgstr "تُرسل طلبات المعاينة والنماذج إلى هذا البريد (وإلى مسوّق العقار)."
+
+#: includes/admin.php:205
+msgid "Office FAL license"
+msgstr "رخصة فال للمنشأة"
+
+#: includes/admin.php:206
+msgid "Commercial registration"
+msgstr "السجل التجاري"
+
+#: includes/admin.php:207
+msgid "Default contact name"
+msgstr "اسم جهة التواصل الافتراضية"
+
+#: includes/admin.php:207
+msgid "Used when a property has no agent."
+msgstr "يُستخدم عندما لا يكون للعقار مسوّق."
+
+#: includes/admin.php:208
+msgid "Default contact phone"
+msgstr "هاتف التواصل الافتراضي"
+
+#: includes/admin.php:209
+msgid "Default WhatsApp number"
+msgstr "رقم واتساب الافتراضي"
+
+#: includes/admin.php:209
+msgid "International format without +"
+msgstr "بالصيغة الدولية بدون +"
+
+#: includes/blocks.php:24
+msgid "Small label"
+msgstr "العنوان الصغير"
+
+#: includes/blocks.php:25
+msgid "Title"
+msgstr "العنوان"
+
+#: includes/blocks.php:26
+msgid "Text"
+msgstr "النص"
+
+#: includes/blocks.php:27
+msgid "Number of items"
+msgstr "عدد العناصر"
+
+#: includes/blocks.php:31
+msgid "Hero & search"
+msgstr "الواجهة والبحث"
+
+#: includes/blocks.php:32
+msgid "Full-width image with title and the property search."
+msgstr "صورة بعرض الصفحة مع عنوان وبحث العقارات."
+
+#: includes/blocks.php:36
+msgid "Background image"
+msgstr "صورة الخلفية"
+
+#: includes/blocks.php:40
+msgid "Show property search"
+msgstr "إظهار بحث العقارات"
+
+#: includes/blocks.php:43
+msgid "Search opens on"
+msgstr "البحث يفتح على"
+
+#: includes/blocks.php:45
+msgid "Buy"
+msgstr "شراء"
+
+#: includes/blocks.php:46 includes/blocks.php:70
+msgid "Rent"
+msgstr "إيجار"
+
+#: includes/blocks.php:47
+msgid "New projects"
+msgstr "مشاريع جديدة"
+
+#: includes/blocks.php:50
+msgid "Popular searches"
+msgstr "عمليات البحث الشائعة"
+
+#: includes/blocks.php:50
+msgid "One per line: Label | URL. Leave empty to show your top cities."
+msgstr "سطر لكل عنصر: الاسم | الرابط. اتركه فارغاً لعرض أكثر المدن."
+
+#: includes/blocks.php:54
+msgid "Properties grid"
+msgstr "شبكة العقارات"
+
+#: includes/blocks.php:55
+msgid "Latest or featured properties, filterable by purpose and type."
+msgstr "أحدث العقارات أو المميزة منها، مع تصفية حسب الغرض والنوع."
+
+#: includes/blocks.php:63
+msgid "Only properties marked \"Featured\""
+msgstr "العقارات المميزة فقط"
+
+#: includes/blocks.php:68 includes/blocks.php:335
+msgid "All"
+msgstr "الكل"
+
+#: includes/blocks.php:69
+msgid "Sale"
+msgstr "بيع"
+
+#: includes/blocks.php:73 includes/leads.php:113
+msgid "Property type"
+msgstr "نوع العقار"
+
+#: includes/blocks.php:74
+msgid "Show type links"
+msgstr "إظهار روابط الأنواع"
+
+#: includes/blocks.php:75
+msgid "Show \"View all\" button"
+msgstr "إظهار زر \"عرض الكل\""
+
+#: includes/blocks.php:79
+msgid "Property types"
+msgstr "أنواع العقارات"
+
+#: includes/blocks.php:80
+msgid "Tiles linking to each property type."
+msgstr "مربعات تربط بكل نوع عقار."
+
+#: includes/blocks.php:90
+msgid "Developer projects"
+msgstr "مشاريع المطوّرين"
+
+#: includes/blocks.php:91
+msgid "Projects with completion progress on a dark band."
+msgstr "المشاريع مع نسبة الإنجاز على خلفية داكنة."
+
+#: includes/blocks.php:102 includes/blocks.php:111
+msgid "Services"
+msgstr "الخدمات"
+
+#: includes/blocks.php:103
+msgid "Service cards with icons."
+msgstr "بطاقات خدمات بأيقونات."
+
+#: includes/blocks.php:113 includes/fields.php:364 includes/fields.php:379
+msgid "Icon"
+msgstr "الأيقونة"
+
+#: includes/blocks.php:116
+msgid "Link"
+msgstr "الرابط"
+
+#: includes/blocks.php:122
+msgid "Image & checklist"
+msgstr "صورة وقائمة مميزات"
+
+#: includes/blocks.php:123
+msgid "Image with a badge, text, checklist and button."
+msgstr "صورة مع شارة ونص وقائمة مميزات وزر."
+
+#: includes/blocks.php:131
+msgid "Points (one per line)"
+msgstr "النقاط (سطر لكل نقطة)"
+
+#: includes/blocks.php:132
+msgid "Badge title"
+msgstr "عنوان الشارة"
+
+#: includes/blocks.php:133
+msgid "Badge text"
+msgstr "نص الشارة"
+
+#: includes/blocks.php:134 includes/blocks.php:179
+msgid "Button text"
+msgstr "نص الزر"
+
+#: includes/blocks.php:135 includes/blocks.php:180
+msgid "Button link"
+msgstr "رابط الزر"
+
+#: includes/blocks.php:139 includes/post-types.php:80
+msgid "Agents"
+msgstr "المسوّقون"
+
+#: includes/blocks.php:140
+msgid "Your agents with call and WhatsApp buttons."
+msgstr "مسوّقوك مع أزرار الاتصال وواتساب."
+
+#: includes/blocks.php:150
+msgid "Latest posts"
+msgstr "أحدث المقالات"
+
+#: includes/blocks.php:151
+msgid "Latest blog posts as cards."
+msgstr "أحدث مقالات المدونة كبطاقات."
+
+#: includes/blocks.php:162
+msgid "Mortgage calculator"
+msgstr "حاسبة التمويل العقاري"
+
+#: includes/blocks.php:163
+msgid ""
+"Estimate the monthly installment from price, down payment, term and profit "
+"rate."
+msgstr "احسب القسط الشهري من السعر والدفعة الأولى والمدة ونسبة الربح."
+
+#: includes/blocks.php:168
+msgid "Default property price"
+msgstr "سعر العقار الافتراضي"
+
+#: includes/blocks.php:172
+msgid "Call to action"
+msgstr "دعوة لإجراء"
+
+#: includes/blocks.php:173
+msgid "Colored band with buttons."
+msgstr "شريط ملوّن مع أزرار."
+
+#: includes/blocks.php:266 includes/blocks.php:444
+msgid "Dara real estate"
+msgstr "دارة العقارية"
+
+#: includes/blocks.php:315
+#, php-format
+msgid "%s: nothing to show yet. Add content first."
+msgstr "%s: لا يوجد محتوى لعرضه بعد. أضف المحتوى أولاً."
+
+#: includes/blocks.php:403
+msgid "Empty fields use the values from Appearance > Customize > Dara theme."
+msgstr "الحقول الفارغة تستخدم القيم من المظهر ← تخصيص ← قالب دارة."
+
+#: includes/blocks.php:404
+msgid "Choose image"
+msgstr "اختر صورة"
+
+#: includes/blocks.php:405
+msgid "Replace image"
+msgstr "استبدال الصورة"
+
+#: includes/blocks.php:407
+msgid "Add item"
+msgstr "إضافة عنصر"
+
+#: includes/blocks.php:408
+msgid "Item"
+msgstr "عنصر"
+
+#: includes/blocks.php:409
+msgid "Move up"
+msgstr "تحريك لأعلى"
+
+#: includes/blocks.php:410
+msgid "Move down"
+msgstr "تحريك لأسفل"
+
+#: includes/blocks.php:448
+msgid "Real estate home page"
+msgstr "صفحة رئيسية عقارية"
+
+#: includes/blocks.php:449
+msgid ""
+"Hero with search, properties, types, projects, services, why us, posts and "
+"call to action."
+msgstr ""
+"واجهة مع بحث، عقارات، أنواع، مشاريع، خدمات، لماذا نحن، مقالات ودعوة لإجراء."
+
+#: includes/blocks.php:457
+msgid "Listings landing page"
+msgstr "صفحة هبوط للعقارات"
+
+#: includes/blocks.php:458
+msgid ""
+"Hero with search, properties for sale, properties for rent and a call to "
+"action."
+msgstr "واجهة مع بحث، عقارات للبيع، عقارات للإيجار ودعوة لإجراء."
+
+#: includes/blocks.php:460
+msgid "Properties for sale"
+msgstr "عقارات للبيع"
+
+#: includes/blocks.php:460
+msgid "Properties for rent"
+msgstr "عقارات للإيجار"
+
+#: includes/demo.php:19 includes/demo.php:20 includes/demo.php:35
+msgid "Demo content"
+msgstr "المحتوى التجريبي"
+
+#: includes/demo.php:38
+msgid "Demo content imported. Visit your site to see it."
+msgstr "تم استيراد المحتوى التجريبي. زُر موقعك لمشاهدته."
+
+#: includes/demo.php:38
+msgid "View site"
+msgstr "عرض الموقع"
+
+#: includes/demo.php:40
+msgid "Demo content removed."
+msgstr "تم حذف المحتوى التجريبي."
+
+#: includes/demo.php:43
+msgid ""
+"Fill your site with sample properties, projects, agents, blog posts, pages, "
+"menus and home page settings so it looks like the theme demo. You can remove"
+" all of it later with one click; your own content is never touched."
+msgstr ""
+"املأ موقعك بعقارات ومشاريع ومسوّقين ومقالات وصفحات وقوائم وإعدادات رئيسية "
+"تجريبية ليبدو مثل ديمو القالب. يمكنك حذف كل ذلك لاحقاً بضغطة واحدة دون "
+"المساس بمحتواك."
+
+#: includes/demo.php:49
+msgid "Remove demo content"
+msgstr "حذف المحتوى التجريبي"
+
+#: includes/demo.php:55
+msgid "Content language"
+msgstr "لغة المحتوى"
+
+#: includes/demo.php:60
+msgid "Set the demo home page and blog page in Settings > Reading"
+msgstr "تعيين الصفحة الرئيسية وصفحة المدونة التجريبية في الإعدادات ← القراءة"
+
+#: includes/demo.php:61
+msgid "Create and assign menus"
+msgstr "إنشاء القوائم وتعيينها"
+
+#: includes/demo.php:62 includes/demo.php:611
+msgid "Import demo content"
+msgstr "استيراد المحتوى التجريبي"
+
+#: includes/demo.php:164 includes/demo.php:530
+msgid "Not allowed."
+msgstr "غير مسموح."
+
+#: includes/demo.php:609
+msgid ""
+"Start faster: import the demo properties, projects and pages, then replace "
+"them with your own."
+msgstr ""
+"ابدأ أسرع: استورد العقارات والمشاريع والصفحات التجريبية ثم استبدلها بمحتواك."
+
+#: includes/fields.php:26
+msgid "Property details"
+msgstr "تفاصيل العقار"
+
+#: includes/fields.php:32 includes/helpers.php:48
+msgid "For sale"
+msgstr "للبيع"
+
+#: includes/fields.php:33 includes/helpers.php:48
+msgid "For rent"
+msgstr "للإيجار"
+
+#: includes/fields.php:36
+msgid "Numbers only. Leave empty to show \"Price on request\"."
+msgstr "أرقام فقط. اتركه فارغاً لعرض \"السعر عند الطلب\"."
+
+#: includes/fields.php:39
+msgid "Rent period"
+msgstr "مدة الإيجار"
+
+#: includes/fields.php:42
+msgid "Yearly"
+msgstr "سنوي"
+
+#: includes/fields.php:43
+msgid "Monthly"
+msgstr "شهري"
+
+#: includes/fields.php:44
+msgid "Daily"
+msgstr "يومي"
+
+#: includes/fields.php:47
+msgid "Area (m²)"
+msgstr "المساحة (م²)"
+
+#: includes/fields.php:48 includes/helpers.php:162
+msgid "Bedrooms"
+msgstr "غرف النوم"
+
+#: includes/fields.php:49 includes/helpers.php:163
+msgid "Bathrooms"
+msgstr "دورات المياه"
+
+#: includes/fields.php:50
+msgid "Property age"
+msgstr "عمر العقار"
+
+#: includes/fields.php:50
+msgid "e.g. New, 5 years"
+msgstr "مثال: جديد، 5 سنوات"
+
+#: includes/fields.php:53 includes/helpers.php:173
+msgid "Facing"
+msgstr "الواجهة"
+
+#: includes/fields.php:56
+msgid "North"
+msgstr "شمالية"
+
+#: includes/fields.php:57
+msgid "South"
+msgstr "جنوبية"
+
+#: includes/fields.php:58
+msgid "East"
+msgstr "شرقية"
+
+#: includes/fields.php:59
+msgid "West"
+msgstr "غربية"
+
+#: includes/fields.php:60
+msgid "Corner"
+msgstr "زاوية"
+
+#: includes/fields.php:65 includes/helpers.php:174
+msgid "Condition"
+msgstr "الحالة"
+
+#: includes/fields.php:68
+msgid "Ready to move"
+msgstr "جاهز للسكن"
+
+#: includes/fields.php:69 includes/fields.php:111
+msgid "Under construction"
+msgstr "قيد الإنشاء"
+
+#: includes/fields.php:70
+msgid "Off-plan"
+msgstr "على الخارطة"
+
+#: includes/fields.php:73
+msgid "Featured property"
+msgstr "عقار مميز"
+
+#: includes/fields.php:74 includes/post-types.php:80
+msgid "Agent"
+msgstr "المسوّق"
+
+#: includes/fields.php:78
+msgid "Gallery, floor plans & video"
+msgstr "معرض الصور والمخططات والفيديو"
+
+#: includes/fields.php:80 includes/fields.php:134
+msgid "Photo gallery"
+msgstr "معرض الصور"
+
+#: includes/fields.php:81
+msgid "Floor plans"
+msgstr "المخططات"
+
+#: includes/fields.php:81
+msgid "Use each image caption as the floor name (e.g. Ground floor)."
+msgstr "استخدم وصف كل صورة كاسم للدور (مثل: الدور الأرضي)."
+
+#: includes/fields.php:82
+msgid "Video URL (YouTube / Vimeo)"
+msgstr "رابط الفيديو (يوتيوب / فيميو)"
+
+#: includes/fields.php:86
+msgid "Location"
+msgstr "الموقع"
+
+#: includes/fields.php:88 includes/fields.php:122
+msgid "Address"
+msgstr "العنوان"
+
+#: includes/fields.php:89 includes/fields.php:123
+msgid "Latitude"
+msgstr "خط العرض"
+
+#: includes/fields.php:89
+msgid "Right-click the location in Google Maps to copy the coordinates."
+msgstr "اضغط بالزر الأيمن على الموقع في خرائط جوجل لنسخ الإحداثيات."
+
+#: includes/fields.php:90 includes/fields.php:124
+msgid "Longitude"
+msgstr "خط الطول"
+
+#: includes/fields.php:91
+msgid "Nearby places"
+msgstr "أماكن قريبة"
+
+#: includes/fields.php:91
+msgid "One per line: Place | Distance"
+msgstr "سطر لكل عنصر: المكان | المسافة"
+
+#: includes/fields.php:95
+msgid "Advertising license"
+msgstr "ترخيص الإعلان"
+
+#: includes/fields.php:97
+msgid "Ad license number"
+msgstr "رقم ترخيص الإعلان"
+
+#: includes/fields.php:103
+msgid "Project details"
+msgstr "تفاصيل المشروع"
+
+#: includes/fields.php:105
+msgid "Developer"
+msgstr "المطوّر"
+
+#: includes/fields.php:108
+msgid "Status"
+msgstr "الحالة"
+
+#: includes/fields.php:110
+msgid "Off-plan sales"
+msgstr "البيع على الخارطة"
+
+#: includes/fields.php:112
+msgid "Ready"
+msgstr "جاهز"
+
+#: includes/fields.php:115
+#, php-format
+msgid "Completion (%)"
+msgstr "نسبة الإنجاز (%)"
+
+#: includes/fields.php:116
+msgid "Prices from"
+msgstr "تبدأ الأسعار من"
+
+#: includes/fields.php:117
+msgid "Number of units"
+msgstr "عدد الوحدات"
+
+#: includes/fields.php:118
+msgid "Unit types"
+msgstr "أنواع الوحدات"
+
+#: includes/fields.php:118
+msgid "e.g. Apartments 2–4 bedrooms"
+msgstr "مثال: شقق 2–4 غرف"
+
+#: includes/fields.php:119
+msgid "Delivery date"
+msgstr "موعد التسليم"
+
+#: includes/fields.php:120
+msgid "Licensed off-plan sales (Wafi)"
+msgstr "بيع على الخارطة مرخّص (وافي)"
+
+#: includes/fields.php:121
+msgid "Brochure URL (PDF)"
+msgstr "رابط البروشور (PDF)"
+
+#: includes/fields.php:128
+msgid "Units, payment plan & phases"
+msgstr "الوحدات وخطة الدفع ومراحل التنفيذ"
+
+#: includes/fields.php:130
+msgid "Amenities"
+msgstr "المرافق"
+
+#: includes/fields.php:130
+msgid "One per line."
+msgstr "عنصر في كل سطر."
+
+#: includes/fields.php:131
+msgid "Units table"
+msgstr "جدول الوحدات"
+
+#: includes/fields.php:131
+msgid ""
+"One per line: Model | Type | Area | Bedrooms | Price | "
+"available/reserved/sold"
+msgstr ""
+"سطر لكل وحدة: النموذج | النوع | المساحة | الغرف | السعر | "
+"available/reserved/sold"
+
+#: includes/fields.php:132
+msgid "Payment plan"
+msgstr "خطة الدفع"
+
+#: includes/fields.php:132
+msgid "One per line: Percent | Title | Note"
+msgstr "سطر لكل دفعة: النسبة | العنوان | ملاحظة"
+
+#: includes/fields.php:133
+msgid "Construction phases"
+msgstr "مراحل التنفيذ"
+
+#: includes/fields.php:133
+msgid "One per line: Date | Title | done/current/upcoming"
+msgstr "سطر لكل مرحلة: التاريخ | العنوان | done/current/upcoming"
+
+#: includes/fields.php:140
+msgid "Contact details"
+msgstr "بيانات التواصل"
+
+#: includes/fields.php:143
+msgid "WhatsApp number"
+msgstr "رقم واتساب"
+
+#: includes/fields.php:143
+msgid "International format without + (e.g. 9665XXXXXXXX)"
+msgstr "بالصيغة الدولية بدون + (مثال: 9665XXXXXXXX)"
+
+#: includes/fields.php:145
+msgid "FAL license number"
+msgstr "رقم رخصة فال"
+
+#: includes/fields.php:285
+msgid "Add images"
+msgstr "إضافة صور"
+
+#: includes/fields.php:298
+msgid "— Default contact —"
+msgstr "— جهة التواصل الافتراضية —"
+
+#: includes/fields.php:351
+msgid "Villa"
+msgstr "فيلا"
+
+#: includes/fields.php:352
+msgid "Apartment"
+msgstr "شقة"
+
+#: includes/fields.php:353
+msgid "Land"
+msgstr "أرض"
+
+#: includes/fields.php:354
+msgid "Office / commercial"
+msgstr "مكتب / تجاري"
+
+#: includes/fields.php:355
+msgid "Building"
+msgstr "عمارة"
+
+#: includes/fields.php:356
+msgid "Rest house"
+msgstr "استراحة"
+
+#: includes/helpers.php:18
+msgid "SAR"
+msgstr "ر.س"
+
+#: includes/helpers.php:62
+msgid "Price on request"
+msgstr "السعر عند الطلب"
+
+#: includes/helpers.php:70
+msgid "yearly"
+msgstr "سنوياً"
+
+#: includes/helpers.php:71
+msgid "monthly"
+msgstr "شهرياً"
+
+#: includes/helpers.php:72
+msgid "daily"
+msgstr "يومياً"
+
+#: includes/helpers.php:161
+msgid "Area"
+msgstr "المساحة"
+
+#: includes/helpers.php:161
+msgid "m²"
+msgstr "م²"
+
+#: includes/helpers.php:164
+msgid "Age"
+msgstr "عمر العقار"
+
+#: includes/helpers.php:222
+msgid "Sales team"
+msgstr "فريق المبيعات"
+
+#: includes/helpers.php:257
+msgid "Viewing request"
+msgstr "طلب معاينة"
+
+#: includes/helpers.php:258
+msgid "Project interest"
+msgstr "اهتمام بمشروع"
+
+#: includes/helpers.php:259
+msgid "List a property"
+msgstr "عرض عقار"
+
+#: includes/helpers.php:260
+msgid "Contact"
+msgstr "تواصل"
+
+#: includes/helpers.php:261
+msgid "Newsletter"
+msgstr "النشرة البريدية"
+
+#: includes/leads.php:46
+msgid "Thank you! We received your request and will contact you shortly."
+msgstr "شكراً لك! استلمنا طلبك وسنتواصل معك قريباً."
+
+#: includes/leads.php:47
+msgid "Please enter your name and a valid phone number or email."
+msgstr "يرجى إدخال اسمك ورقم جوال أو بريد إلكتروني صحيح."
+
+#: includes/leads.php:48
+msgid "Please wait a moment before sending again."
+msgstr "يرجى الانتظار قليلاً قبل الإرسال مرة أخرى."
+
+#: includes/leads.php:112
+msgid "City"
+msgstr "المدينة"
+
+#: includes/leads.php:115
+msgid "Unit type"
+msgstr "نوع الوحدة"
+
+#: includes/leads.php:116
+msgid "Expected price"
+msgstr "السعر المتوقع"
+
+#: includes/post-types.php:26
+#, php-format
+msgid "Add %s"
+msgstr "إضافة %s"
+
+#: includes/post-types.php:28
+#, php-format
+msgid "Edit %s"
+msgstr "تعديل %s"
+
+#: includes/post-types.php:30
+#, php-format
+msgid "View %s"
+msgstr "عرض %s"
+
+#: includes/post-types.php:32
+#, php-format
+msgid "Search %s"
+msgstr "بحث في %s"
+
+#: includes/post-types.php:33
+msgid "Nothing found."
+msgstr "لا توجد نتائج."
+
+#: includes/post-types.php:46
+msgid "Properties"
+msgstr "العقارات"
+
+#: includes/post-types.php:46
+msgid "Property"
+msgstr "عقار"
+
+#: includes/post-types.php:63
+msgid "Projects"
+msgstr "المشاريع"
+
+#: includes/post-types.php:63
+msgid "Project"
+msgstr "مشروع"
+
+#: includes/post-types.php:80
+msgid "Photo"
+msgstr "الصورة الشخصية"
+
+#: includes/post-types.php:96
+msgid "Leads"
+msgstr "الطلبات"
+
+#: includes/post-types.php:119
+msgid "Property Types"
+msgstr "أنواع العقارات"
+
+#: includes/post-types.php:119
+msgid "Property Type"
+msgstr "نوع العقار"
+
+#: includes/post-types.php:131
+msgid "Cities & Districts"
+msgstr "المدن والأحياء"
+
+#: includes/post-types.php:131
+msgid "City / District"
+msgstr "المدينة / الحي"
+
+#: includes/post-types.php:146
+msgid "Features"
+msgstr "المميزات"
+
+#: includes/post-types.php:146
+msgid "Feature"
+msgstr "ميزة"
