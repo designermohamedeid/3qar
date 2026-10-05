@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
  * @return array
  */
 function dara_customizer_map() {
-	$show = __( 'Show this section', 'dara' );
+	$show       = __( 'Show this section', 'dara' );
 	$lines_help = __( 'One item per line.', 'dara' );
 	return array(
 		'dara_brand'    => array(
@@ -132,7 +132,15 @@ function dara_customizer_map() {
 			__( 'Mortgage calculator', 'dara' ),
 			array(
 				'mortgage_show'      => array( 'checkbox', __( 'Show on properties for sale', 'dara' ) ),
-				'mortgage_method'    => array( 'select', __( 'Calculation method', 'dara' ), __( 'Declining balance is the standard mortgage formula. Flat rate (murabaha) applies the profit rate to the full amount for every year.', 'dara' ), array( 'amortized' => __( 'Declining balance', 'dara' ), 'flat' => __( 'Flat rate (murabaha)', 'dara' ) ) ),
+				'mortgage_method'    => array(
+					'select',
+					__( 'Calculation method', 'dara' ),
+					__( 'Declining balance is the standard mortgage formula. Flat rate (murabaha) applies the profit rate to the full amount for every year.', 'dara' ),
+					array(
+						'amortized' => __( 'Declining balance', 'dara' ),
+						'flat'      => __( 'Flat rate (murabaha)', 'dara' ),
+					),
+				),
 				'mortgage_rate'      => array( 'float', __( 'Default annual profit rate (%)', 'dara' ) ),
 				'mortgage_down'      => array( 'number', __( 'Default down payment (%)', 'dara' ) ),
 				'mortgage_years'     => array( 'number', __( 'Default term (years)', 'dara' ) ),
@@ -176,10 +184,22 @@ function dara_customize_register( $wpc ) {
 		'select'   => 'sanitize_key',
 	);
 
-	$wpc->add_panel( 'dara', array( 'title' => __( 'Dara theme', 'dara' ), 'priority' => 25 ) );
+	$wpc->add_panel(
+		'dara',
+		array(
+			'title'    => __( 'Dara theme', 'dara' ),
+			'priority' => 25,
+		)
+	);
 
 	foreach ( dara_customizer_map() as $section => $def ) {
-		$wpc->add_section( $section, array( 'title' => $def[0], 'panel' => 'dara' ) );
+		$wpc->add_section(
+			$section,
+			array(
+				'title' => $def[0],
+				'panel' => 'dara',
+			)
+		);
 		foreach ( $def[1] as $key => $field ) {
 			$wpc->add_setting(
 				$key,
@@ -202,7 +222,11 @@ function dara_customize_register( $wpc ) {
 				$wpc->add_control( $key, $args );
 			} elseif ( 'float' === $field[0] ) {
 				$args['type']        = 'number';
-				$args['input_attrs'] = array( 'min' => 0, 'max' => 100, 'step' => 0.01 );
+				$args['input_attrs'] = array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 0.01,
+				);
 				$wpc->add_control( $key, $args );
 			} elseif ( 'color' === $field[0] ) {
 				$wpc->add_control( new WP_Customize_Color_Control( $wpc, $key, $args ) );

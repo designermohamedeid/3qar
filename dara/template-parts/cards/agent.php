@@ -17,7 +17,13 @@ $dara_count = dara_agent_listing_count( $dara_id );
 		<span class="avatar avatar--lg">
 			<?php
 			if ( has_post_thumbnail() ) {
-				the_post_thumbnail( 'thumbnail', array( 'alt' => '', 'loading' => 'lazy' ) );
+				the_post_thumbnail(
+					'thumbnail',
+					array(
+						'alt'     => '',
+						'loading' => 'lazy',
+					)
+				);
 			} else {
 				echo esc_html( dara_initials( get_the_title() ) );
 			}

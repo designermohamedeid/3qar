@@ -23,8 +23,8 @@ function dara_setting( $key ) {
 		'agent_phone' => '',
 		'agent_wa'    => '',
 	);
-	$options = (array) get_option( 'dara_core_settings', array() );
-	$value   = isset( $options[ $key ] ) && '' !== $options[ $key ] ? $options[ $key ] : ( isset( $defaults[ $key ] ) ? $defaults[ $key ] : '' );
+	$options  = (array) get_option( 'dara_core_settings', array() );
+	$value    = isset( $options[ $key ] ) && '' !== $options[ $key ] ? $options[ $key ] : ( isset( $defaults[ $key ] ) ? $defaults[ $key ] : '' );
 	return apply_filters( 'dara_setting', $value, $key );
 }
 
@@ -51,7 +51,7 @@ function dara_purpose_label( $purpose ) {
 /**
  * Price split in amount + unit, for display.
  *
- * @param int $post_id Property or project ID.
+ * @param int    $post_id Property or project ID.
  * @param string $key  Meta key.
  * @return array{amount:string,unit:string,raw:float}
  */
@@ -254,10 +254,10 @@ function dara_whatsapp_url( $number, $message = '' ) {
  */
 function dara_lead_types() {
 	return array(
-		'viewing' => __( 'Viewing request', 'dara-core' ),
-		'project' => __( 'Project interest', 'dara-core' ),
-		'listing' => __( 'List a property', 'dara-core' ),
-		'contact' => __( 'Contact', 'dara-core' ),
+		'viewing'    => __( 'Viewing request', 'dara-core' ),
+		'project'    => __( 'Project interest', 'dara-core' ),
+		'listing'    => __( 'List a property', 'dara-core' ),
+		'contact'    => __( 'Contact', 'dara-core' ),
 		'newsletter' => __( 'Newsletter', 'dara-core' ),
 	);
 }

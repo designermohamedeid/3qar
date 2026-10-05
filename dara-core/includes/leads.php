@@ -107,7 +107,7 @@ function dara_core_handle_lead() {
 	}
 
 	// Extra structured fields (list-your-property / project unit type...).
-	$extra = array();
+	$extra        = array();
 	$extra_fields = array(
 		'lead_city'    => __( 'City', 'dara-core' ),
 		'lead_ptype'   => __( 'Property type', 'dara-core' ),
@@ -162,7 +162,7 @@ function dara_core_handle_lead() {
 		if ( $related ) {
 			$body .= get_permalink( $related ) . "\n";
 		}
-		$body .= "\n" . admin_url( 'post.php?post=' . $lead_id . '&action=edit' );
+		$body   .= "\n" . admin_url( 'post.php?post=' . $lead_id . '&action=edit' );
 		$headers = is_email( $email ) ? array( 'Reply-To: ' . $name . ' <' . $email . '>' ) : array();
 		wp_mail( array_unique( array_filter( $to ) ), '[' . get_bloginfo( 'name' ) . '] ' . $title, $body, $headers );
 

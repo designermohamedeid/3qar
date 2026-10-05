@@ -26,17 +26,6 @@ function dara_disable_emojis() {
 add_action( 'init', 'dara_disable_emojis' );
 
 /**
- * Head cleanup.
- */
-function dara_head_cleanup() {
-	remove_action( 'wp_head', 'wp_generator' );
-	remove_action( 'wp_head', 'rsd_link' );
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-}
-add_action( 'after_setup_theme', 'dara_head_cleanup' );
-
-/**
  * Only load block-library CSS where blocks are actually used.
  */
 function dara_trim_block_css() {

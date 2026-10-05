@@ -1,6 +1,6 @@
 <?php
 /**
- * Dara Real Estate theme.
+ * Dara theme.
  *
  * @package Dara
  */
@@ -18,5 +18,4 @@ require DARA_DIR . '/inc/customizer.php';
 require DARA_DIR . '/inc/assets.php';
 require DARA_DIR . '/inc/performance.php';
 require DARA_DIR . '/inc/menus.php';
-require DARA_DIR . '/inc/compat.php';
-require DARA_DIR . '/inc/blocks.php';
+require DARA_DIR . '/inc/plugin-installer.php';

@@ -238,6 +238,7 @@ a.page-numbers:hover{border-color:var(--primary);color:var(--primary)}
 .form-notice--error{background:#FEF3F2;color:var(--danger)}
 .search-form{display:flex;gap:8px}
 .search-form .btn{min-width:52px;padding:0 14px}
+.sticky .card__title::before{content:"\2605\00a0";color:var(--primary)}
 .site-footer{background:var(--ink);color:#C9D2DD;padding-top:clamp(48px,7vw,72px)}
 .site-footer a{color:#C9D2DD}
 .site-footer a:hover{color:#fff}

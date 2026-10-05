@@ -178,11 +178,23 @@ function dara_core_filter_query( $query ) {
 		case 'price_asc':
 		case 'price_desc':
 			$query->set( 'meta_key', '_dara_price' );
-			$query->set( 'orderby', array( 'meta_value_num' => 'price_asc' === $f['sort'] ? 'ASC' : 'DESC', 'date' => 'DESC' ) );
+			$query->set(
+				'orderby',
+				array(
+					'meta_value_num' => 'price_asc' === $f['sort'] ? 'ASC' : 'DESC',
+					'date'           => 'DESC',
+				)
+			);
 			break;
 		case 'area_desc':
 			$query->set( 'meta_key', '_dara_area' );
-			$query->set( 'orderby', array( 'meta_value_num' => 'DESC', 'date' => 'DESC' ) );
+			$query->set(
+				'orderby',
+				array(
+					'meta_value_num' => 'DESC',
+					'date'           => 'DESC',
+				)
+			);
 			break;
 	}
 }

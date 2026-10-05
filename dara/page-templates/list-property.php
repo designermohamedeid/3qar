@@ -11,7 +11,12 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 get_template_part( 'template-parts/page-title' );
-$dara_types = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) ) : array();
+$dara_types = dara_has_core() ? get_terms(
+	array(
+		'taxonomy'   => 'property_type',
+		'hide_empty' => false,
+	)
+) : array();
 ?>
 <div class="container container--mid section section--top-0">
 	<?php

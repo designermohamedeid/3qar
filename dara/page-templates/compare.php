@@ -14,7 +14,7 @@ get_header();
 get_template_part( 'template-parts/page-title' );
 
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view.
-$dara_ids = isset( $_GET['ids'] ) ? array_slice( array_unique( array_filter( array_map( 'absint', explode( ',', sanitize_text_field( wp_unslash( $_GET['ids'] ) ) ) ) ) ), 0, 4 ) : array();
+$dara_ids   = isset( $_GET['ids'] ) ? array_slice( array_unique( array_filter( array_map( 'absint', explode( ',', sanitize_text_field( wp_unslash( $_GET['ids'] ) ) ) ) ) ), 0, 4 ) : array();
 $dara_props = array();
 if ( $dara_ids && dara_has_core() ) {
 	$dara_props = get_posts(
@@ -49,19 +49,19 @@ if ( $dara_ids && dara_has_core() ) {
 		<?php
 	else :
 		// Collect values.
-		$dara_rows = array();
-		$dara_data = array();
+		$dara_rows         = array();
+		$dara_data         = array();
 		$dara_all_features = array();
 		foreach ( $dara_props as $dara_p ) {
-			$dara_id    = $dara_p->ID;
-			$dara_price = (float) get_post_meta( $dara_id, '_dara_price', true );
-			$dara_area  = (float) get_post_meta( $dara_id, '_dara_area', true );
-			$dara_types = get_the_terms( $dara_id, 'property_type' );
-			$dara_city  = get_the_terms( $dara_id, 'property_city' );
-			$dara_feats = get_the_terms( $dara_id, 'property_feature' );
-			$dara_feats = $dara_feats && ! is_wp_error( $dara_feats ) ? wp_list_pluck( $dara_feats, 'name', 'term_id' ) : array();
-			$dara_all_features += $dara_feats;
-			$dara_agent = dara_get_agent( $dara_id );
+			$dara_id               = $dara_p->ID;
+			$dara_price            = (float) get_post_meta( $dara_id, '_dara_price', true );
+			$dara_area             = (float) get_post_meta( $dara_id, '_dara_area', true );
+			$dara_types            = get_the_terms( $dara_id, 'property_type' );
+			$dara_city             = get_the_terms( $dara_id, 'property_city' );
+			$dara_feats            = get_the_terms( $dara_id, 'property_feature' );
+			$dara_feats            = $dara_feats && ! is_wp_error( $dara_feats ) ? wp_list_pluck( $dara_feats, 'name', 'term_id' ) : array();
+			$dara_all_features    += $dara_feats;
+			$dara_agent            = dara_get_agent( $dara_id );
 			$dara_data[ $dara_id ] = array(
 				'price'     => $dara_price,
 				'purpose'   => get_post_meta( $dara_id, '_dara_purpose', true ),
@@ -81,7 +81,7 @@ if ( $dara_ids && dara_has_core() ) {
 		asort( $dara_all_features );
 
 		// Best value per numeric row (only among comparable, non-empty values).
-		$dara_best = function ( $key, $mode ) use ( $dara_data ) {
+		$dara_best         = function ( $key, $mode ) use ( $dara_data ) {
 			$vals = array_filter(
 				wp_list_pluck( $dara_data, $key ),
 				function ( $v ) {
@@ -101,8 +101,8 @@ if ( $dara_ids && dara_has_core() ) {
 			'beds'  => $dara_best( 'beds', 'max' ),
 			'baths' => $dara_best( 'baths', 'max' ),
 		);
-		$dara_cur  = dara_setting( 'currency' );
-		$dara_cell = function ( $id, $key, $text ) use ( $dara_data, $dara_best_vals ) {
+		$dara_cur          = dara_setting( 'currency' );
+		$dara_cell         = function ( $id, $key, $text ) use ( $dara_data, $dara_best_vals ) {
 			$best = isset( $dara_best_vals[ $key ] ) && null !== $dara_best_vals[ $key ] && (float) $dara_data[ $id ][ $key ] === (float) $dara_best_vals[ $key ];
 			printf(
 				'<td class="%1$s">%2$s%3$s</td>',
@@ -111,7 +111,7 @@ if ( $dara_ids && dara_has_core() ) {
 				$best ? ' <span class="compare__best">' . esc_html__( 'Best', 'dara' ) . '</span>' : ''
 			);
 		};
-		$dara_wa_lines = array();
+		$dara_wa_lines     = array();
 		?>
 		<div class="compare__bar">
 			<p><?php echo esc_html( sprintf( /* translators: %s: number of properties. */ _n( 'Comparing %s property', 'Comparing %s properties', count( $dara_props ), 'dara' ), number_format_i18n( count( $dara_props ) ) ) ); ?></p>
@@ -130,7 +130,18 @@ if ( $dara_ids && dara_has_core() ) {
 						<?php foreach ( $dara_props as $dara_p ) : ?>
 							<?php $dara_wa_lines[] = '• ' . get_the_title( $dara_p ) . ' — ' . get_permalink( $dara_p ); ?>
 							<th scope="col" class="compare__prop">
-								<a class="compare__img" href="<?php echo esc_url( get_permalink( $dara_p ) ); ?>" tabindex="-1" aria-hidden="true"><?php echo dara_img( get_post_thumbnail_id( $dara_p ), 'dara-card', array( 'alt' => '', 'sizes' => '260px' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
+								<a class="compare__img" href="<?php echo esc_url( get_permalink( $dara_p ) ); ?>" tabindex="-1" aria-hidden="true">
+								<?php
+								echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+									get_post_thumbnail_id( $dara_p ),
+									'dara-card',
+									array(
+										'alt'   => '',
+										'sizes' => '260px',
+									)
+								); // phpcs:ignore WordPress.Security.EscapeOutput 
+								?>
+																</a>
 								<a class="compare__name" href="<?php echo esc_url( get_permalink( $dara_p ) ); ?>"><?php echo esc_html( get_the_title( $dara_p ) ); ?></a>
 								<?php $dara_pp = dara_price_parts( $dara_p->ID ); ?>
 								<span class="compare__price"><?php echo esc_html( $dara_pp['amount'] ); ?> <small><?php echo esc_html( $dara_pp['unit'] ); ?></small></span>

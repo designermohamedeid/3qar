@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dara Documentation</title>
+<style>
+:root{--primary:#0B6E5F;--primary-50:#E6F2EF;--ink:#0E1A22;--muted:#5B6B73;--line:#E3E8EA;--bg:#fff;--code:#F4F7F8}
+@media (prefers-color-scheme:dark){:root{--primary:#3FB9A3;--primary-50:#123B35;--ink:#E8EEF0;--muted:#9AABB2;--line:#26343B;--bg:#0F181D;--code:#17232A}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--primary)}
+.layout{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav{position:sticky;top:0;height:100vh;overflow:auto;padding:28px 22px;border-right:1px solid var(--line);background:var(--bg)}
+nav .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;margin-bottom:6px}
+nav .brand span{width:36px;height:36px;border-radius:10px;background:var(--primary);display:grid;place-items:center}
+nav .ver{color:var(--muted);font-size:13px;margin:0 0 20px}
+nav ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav li a{display:block;padding:5px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:15px}
+nav li a:hover{background:var(--primary-50);color:var(--primary)}
+main{padding:40px 56px 80px;max-width:940px;min-width:0}
+h1{font-size:34px;line-height:1.25;margin:0 0 8px}
+h2{font-size:26px;margin:56px 0 12px;padding-top:12px;border-top:1px solid var(--line)}
+h3{font-size:19px;margin:28px 0 8px}
+.lead{font-size:18px;color:var(--muted)}
+code,kbd{font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:2px 6px;border-radius:5px}
+pre{background:var(--code);padding:16px;border-radius:10px;overflow:auto}
+pre code{padding:0;background:none}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--code)}
+.table-wrap{overflow-x:auto}
+.note{padding:12px 16px;border-radius:10px;background:var(--primary-50);border-left:4px solid var(--primary);margin:16px 0}
+img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+.shots{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start}
+.menu-toggle{display:none}
+@media (max-width:900px){
+ .layout{grid-template-columns:1fr}
+ nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+ main{padding:24px 16px 60px}
+ .shots{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav aria-label="Contents">
+	<div class="brand"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span>Dara</div>
+	<p class="ver">Theme 1.5.0 · Dara Core 1.2.0</p>
+	<ol>
+		<li><a href="#intro">Introduction</a></li>
+		<li><a href="#requirements">Requirements</a></li>
+		<li><a href="#package">Package contents</a></li>
+		<li><a href="#install">Installation</a></li>
+		<li><a href="#demo">Demo content</a></li>
+		<li><a href="#home">Building the home page</a></li>
+		<li><a href="#blocks">Dara blocks</a></li>
+		<li><a href="#properties">Properties</a></li>
+		<li><a href="#projects">Developer projects</a></li>
+		<li><a href="#agents">Agents</a></li>
+		<li><a href="#leads">Leads &amp; forms</a></li>
+		<li><a href="#pages">Page templates</a></li>
+		<li><a href="#mortgage">Mortgage calculator</a></li>
+		<li><a href="#compare">Compare &amp; favorites</a></li>
+		<li><a href="#customizer">Customizer options</a></li>
+		<li><a href="#settings">Plugin settings</a></li>
+		<li><a href="#menus">Menus &amp; logo</a></li>
+		<li><a href="#languages">Languages &amp; RTL</a></li>
+		<li><a href="#performance">Performance</a></li>
+		<li><a href="#child">Child theme &amp; customization</a></li>
+		<li><a href="#hooks">Hooks for developers</a></li>
+		<li><a href="#faq">FAQ &amp; troubleshooting</a></li>
+		<li><a href="#changelog">Changelog</a></li>
+		<li><a href="#credits">Credits &amp; license</a></li>
+	</ol>
+</nav>
+<main>
+
+<h1 id="intro">Dara: Real Estate WordPress Theme</h1>
+<p class="lead">Thank you for choosing Dara. This guide explains how to install the theme, import the demo, and manage properties, projects, agents and leads.</p>
+<p>Dara is a fast, bilingual (Arabic RTL / English LTR) real estate theme for brokers, agencies and developers. Its features:</p>
+<ul>
+	<li>Property listings with advanced search, filters and a map view.</li>
+	<li>Developer project pages with units, payment plans and construction progress.</li>
+	<li>Agent profiles.</li>
+	<li>Cache-friendly lead forms.</li>
+	<li>Ten Gutenberg section blocks.</li>
+	<li>A mortgage calculator.</li>
+	<li>Property comparison and favorites.</li>
+	<li>Schema.org structured data.</li>
+</ul>
+<p>It ships no jQuery and no CSS framework. Each page loads only the CSS it needs.</p>
+<div class="shots">
+	<img src="images/en-desktop-home.jpg" alt="Dara home page on desktop" loading="lazy">
+	<img src="images/en-mobile-home.jpg" alt="Dara home page on mobile" loading="lazy">
+</div>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+	<li>WordPress 6.3 or newer (tested up to 6.8)</li>
+	<li>PHP 7.4 or newer (PHP 8.1+ recommended)</li>
+	<li>The bundled <strong>Dara Core</strong> plugin (required for properties, projects, agents, search, leads and blocks)</li>
+	<li>Recommended: a caching plugin and image compression (WebP)</li>
+</ul>
+
+<h2 id="package">Package contents</h2>
+<div class="table-wrap"><table>
+	<tr><th>File</th><th>What it is</th></tr>
+	<tr><td><code>Theme/dara.zip</code></td><td>The theme. Upload this in <em>Appearance → Themes → Add New → Upload</em>. Dara Core is bundled inside it.</td></tr>
+	<tr><td><code>Theme/dara-child.zip</code></td><td>Child theme, for your own CSS and template changes (optional).</td></tr>
+	<tr><td><code>Plugin/dara-core.zip</code></td><td>The Dara Core plugin, in case you prefer to install it manually.</td></tr>
+	<tr><td><code>Documentation/</code></td><td>This guide.</td></tr>
+	<tr><td><code>Licensing.txt</code></td><td>License information.</td></tr>
+</table></div>
+<div class="note">Upload <code>dara.zip</code>, not the whole package. Uploading the main download gives the error "The package could not be installed. The theme is missing the style.css stylesheet."</div>
+
+<h2 id="install">Installation</h2>
+<h3>1. Install the theme</h3>
+<ol>
+	<li>Go to <em>Appearance → Themes → Add New → Upload Theme</em>.</li>
+	<li>Choose <code>dara.zip</code>, click <em>Install Now</em>, then <em>Activate</em>.</li>
+</ol>
+<h3>2. Install Dara Core</h3>
+<p>After activation, a notice says <em>"Dara needs the Dara Core plugin."</em></p>
+<ol>
+	<li>Click <strong>Install and activate Dara Core</strong>. The theme installs the bundled plugin and takes you to the demo importer.</li>
+	<li>If your host does not allow direct file writes, upload <code>Plugin/dara-core.zip</code> in <em>Plugins → Add New → Upload Plugin</em> instead.</li>
+</ol>
+<h3>3. Permalinks</h3>
+<p>Go to <em>Settings → Permalinks</em> and choose <em>Post name</em>. Property links then look like <code>/properties/modern-villa/</code>.</p>
+<h3>4. Child theme (optional)</h3>
+<p>If you plan to edit CSS or templates:</p>
+<ol>
+	<li>Install <code>dara-child.zip</code> and activate it. Dara (the parent) must stay installed.</li>
+	<li>Your Customizer settings are stored per theme. Set them up after activating the child theme, or export and import them with a Customizer export plugin.</li>
+</ol>
+
+<h2 id="demo">Demo content</h2>
+<p>Go to <em>Properties → Demo content</em>. Choose:</p>
+<ul>
+	<li>Arabic or English demo content.</li>
+	<li>Whether to set the home page and blog page.</li>
+	<li>Whether to create the menus.</li>
+</ul>
+<p>Then click <strong>Import</strong>. In a few seconds it adds the following:</p>
+<ul>
+	<li>8 properties.</li>
+	<li>2 projects.</li>
+	<li>2 agents.</li>
+	<li>Property types, cities and districts.</li>
+	<li>Blog posts.</li>
+	<li>Images.</li>
+	<li>The pages Home, Blog, Contact, List your property, Favorites and Compare.</li>
+</ul>
+<p><strong>Remove demo content</strong> deletes everything the importer created. It also restores your previous home page, menus and settings. Content you created yourself is never touched.</p>
+<div class="note">Demo images are simple illustrations so the package stays small. Replace them with your real photos.</div>
+
+<h2 id="home">Building the home page</h2>
+<p>There are two ways to build the home page. Use whichever you prefer.</p>
+<ol>
+	<li><strong>Blocks (recommended).</strong>
+		<ul>
+			<li>Edit the Home page in the block editor and add or rearrange the <em>Dara</em> blocks.</li>
+			<li>The pattern <em>Real estate home page</em> inserts the full layout in one click.</li>
+			<li>The pattern <em>Listings landing page</em> is a ready landing page.</li>
+		</ul>
+	</li>
+	<li><strong>Customizer.</strong>
+		<ul>
+			<li>If the static front page has no Dara blocks, or you show latest posts, the home sections come from <em>Appearance → Customize → Dara theme → Home: …</em>.</li>
+			<li>Each section can be shown or hidden.</li>
+		</ul>
+	</li>
+</ol>
+<p>Empty block fields fall back to the Customizer values, so the two methods share defaults.</p>
+
+<h2 id="blocks">Dara blocks</h2>
+<p>All blocks are in the <em>Dara real estate</em> category of the inserter. They render on the server and add no JavaScript to the front end.</p>
+<div class="table-wrap"><table>
+	<tr><th>Block</th><th>Options</th></tr>
+	<tr><td>Hero &amp; search</td><td>Background image, label, title, text, show search, default search tab (buy / rent / projects)</td></tr>
+	<tr><td>Properties grid</td><td>Title, number of items, purpose (sale / rent), property type, featured only, type chips, "view all" button</td></tr>
+	<tr><td>Property types</td><td>Title and label. Shows your property types with icons and counts.</td></tr>
+	<tr><td>Developer projects</td><td>Title, text, number of projects</td></tr>
+	<tr><td>Services</td><td>Repeater: icon, title, text, link</td></tr>
+	<tr><td>Image &amp; checklist</td><td>Image, title, text, points, badge, button</td></tr>
+	<tr><td>Agents</td><td>Title, number of agents</td></tr>
+	<tr><td>Latest posts</td><td>Title, number of posts</td></tr>
+	<tr><td>Mortgage calculator</td><td>Title, text, default price</td></tr>
+	<tr><td>Call to action</td><td>Title, text, button text and link</td></tr>
+</table></div>
+<p>Blocks are provided by Dara Core and appear when a Dara theme (or child theme) is active.</p>
+
+<h2 id="properties">Properties</h2>
+<p>Go to <em>Properties → Add New</em>.</p>
+<h3>Title, content and featured image</h3>
+<ul>
+	<li>The <strong>title</strong> is the property name.</li>
+	<li>The <strong>content</strong> is the description.</li>
+	<li>The <strong>excerpt</strong> is the short line shown on cards.</li>
+	<li>The <strong>featured image</strong> is the card and gallery cover. Use 1200×800 or larger.</li>
+</ul>
+<h3>Property details</h3>
+<div class="table-wrap"><table>
+	<tr><th>Field</th><th>Notes</th></tr>
+	<tr><td>Purpose</td><td>For sale / For rent. Rentals also take a rent period (yearly, monthly, daily).</td></tr>
+	<tr><td>Price</td><td>Numbers only. Leave it empty to show "Price on request".</td></tr>
+	<tr><td>Area, bedrooms, bathrooms</td><td>Shown on cards and used by the filters</td></tr>
+	<tr><td>Property age, facing, condition</td><td>Shown in the facts table</td></tr>
+	<tr><td>Featured property</td><td>Featured properties get a badge and can be shown on the home page</td></tr>
+	<tr><td>Agent</td><td>Leads go to this agent. When left empty, the default contact from the plugin settings is used.</td></tr>
+</table></div>
+<h3>Gallery, floor plans and video</h3>
+<ul>
+	<li>Add photos with <em>Add images</em> and drag to reorder them.</li>
+	<li>For floor plans, the image caption becomes the floor name (for example "Ground floor").</li>
+	<li>The video field accepts a YouTube or Vimeo URL. The player loads only when it is clicked.</li>
+</ul>
+<h3>Location</h3>
+<ul>
+	<li>Enter the address, latitude and longitude. To get the coordinates, right-click the location in Google Maps and click them to copy.</li>
+	<li>Nearby places are entered one per line.</li>
+	<li>The map uses Leaflet and OpenStreetMap, and loads only when it scrolls into view.</li>
+</ul>
+<h3>Taxonomies</h3>
+<ul>
+	<li><strong>Types</strong>: villa, apartment… Each type has an icon option.</li>
+	<li><strong>Cities</strong>: hierarchical, city → district.</li>
+	<li><strong>Features</strong>: pool, elevator…</li>
+</ul>
+<p>Archive and filter URLs: <code>/properties/</code>, <code>/property-type/villas/</code>, <code>/property-city/riyadh/</code>.</p>
+<img src="images/en-desktop-property.jpg" alt="Single property page" loading="lazy">
+<h3>Search &amp; filters</h3>
+<p>The properties page filters by the following, and every filter combination has its own URL that can be shared:</p>
+<ul>
+	<li>Purpose, type and city.</li>
+	<li>Price range, bedrooms and area.</li>
+	<li>Features and keyword.</li>
+</ul>
+<p>Results can be sorted by newest, price or area, and shown as a grid or on a map.</p>
+<img src="images/en-desktop-listing.jpg" alt="Property search results" loading="lazy">
+
+<h2 id="projects">Developer projects</h2>
+<p><em>Projects → Add New</em> covers the following fields:</p>
+<ul>
+	<li>Developer.</li>
+	<li>Status (off-plan / under construction / ready).</li>
+	<li>Completion % (shown as a progress bar).</li>
+	<li>Starting price, number of units, unit types and delivery date.</li>
+	<li>Off-plan license.</li>
+	<li>Brochure PDF and location.</li>
+	<li>Amenities.</li>
+	<li>Units table, payment plan and construction phases.</li>
+	<li>Gallery.</li>
+</ul>
+<p>Rows such as the units table use one line per row, with cells separated by <code>|</code>. For example:</p>
+<pre><code>2 bedrooms | 120 m² | from 650,000
+3 bedrooms | 165 m² | from 890,000</code></pre>
+
+<h2 id="agents">Agents</h2>
+<p><em>Properties → Agents → Add New</em> takes the following:</p>
+<ul>
+	<li>Name (the title).</li>
+	<li>Photo (the featured image).</li>
+	<li>Bio (the content).</li>
+	<li>Position (the excerpt).</li>
+	<li>Phone, WhatsApp, email and license number.</li>
+</ul>
+<p>Every agent gets a profile page with their listings. All agents are listed at <code>/agents/</code>.</p>
+
+<h2 id="leads">Leads &amp; forms</h2>
+<p>Viewing requests, project interest, contact and "list your property" forms are saved in the <em>Leads</em> admin menu and emailed to:</p>
+<ul>
+	<li>The leads email from the plugin settings.</li>
+	<li>The property's agent.</li>
+</ul>
+<p>The forms work with full-page caching, so they have no per-user nonce. Spam is blocked by these methods:</p>
+<ul>
+	<li>A hidden honeypot field.</li>
+	<li>A signed timestamp that rejects bots submitting in under 3 seconds.</li>
+	<li>A per-IP rate limit.</li>
+</ul>
+<div class="note">To make sure email is delivered, use an SMTP plugin (for example WP Mail SMTP).</div>
+
+<h2 id="pages">Page templates</h2>
+<p>Choose a template in the page editor under <em>Page → Template</em>.</p>
+<div class="table-wrap"><table>
+	<tr><th>Template</th><th>Use</th></tr>
+	<tr><td>Contact</td><td>Contact details, office map and contact form</td></tr>
+	<tr><td>List your property</td><td>Form for owners who want to sell or rent</td></tr>
+	<tr><td>Favorites</td><td>Properties the visitor saved with the heart button (stored in the browser)</td></tr>
+	<tr><td>Compare properties</td><td>Side-by-side comparison of up to 4 properties</td></tr>
+	<tr><td>Full width (no title)</td><td>For landing pages built with blocks</td></tr>
+</table></div>
+
+<h2 id="mortgage">Mortgage calculator</h2>
+<p>The calculator appears on every property for sale. It can also be added anywhere with the <em>Mortgage calculator</em> block. Settings live in <em>Customize → Dara theme → Mortgage calculator</em>:</p>
+<ul>
+	<li>Calculation method:
+		<ul>
+			<li><strong>Declining balance</strong>: the standard amortized mortgage.</li>
+			<li><strong>Flat rate (murabaha)</strong>: the profit rate applies to the full amount each year.</li>
+		</ul>
+	</li>
+	<li>Default rate, down payment and term.</li>
+	<li>Maximum term.</li>
+	<li>Disclaimer.</li>
+</ul>
+
+<h2 id="compare">Compare &amp; favorites</h2>
+<ul>
+	<li>Every property card has a <strong>compare</strong> button. A bar at the bottom of the screen collects up to 4 properties and links to the Compare page.</li>
+	<li>The comparison link can be shared: <code>/compare/?ids=12,15,18</code>.</li>
+	<li>The compare page is set to <em>noindex</em>.</li>
+	<li>The <strong>heart</strong> button saves a property to the visitor's favorites. No account is needed.</li>
+</ul>
+
+<h2 id="customizer">Customizer options</h2>
+<p>All options are in <em>Appearance → Customize → Dara theme</em>.</p>
+<div class="table-wrap"><table>
+	<tr><th>Section</th><th>Options</th></tr>
+	<tr><td>Brand &amp; header</td><td>Primary color, heading color, header button text and link</td></tr>
+	<tr><td>Home: hero &amp; search</td><td>Background image, label, title, text, popular searches</td></tr>
+	<tr><td>Home: featured properties</td><td>Title, count, featured only</td></tr>
+	<tr><td>Home: property types / projects / services / why us</td><td>Titles, texts, items, images</td></tr>
+	<tr><td>Home: blog &amp; call to action</td><td>Show or hide, titles, button</td></tr>
+	<tr><td>Contact &amp; social</td><td>Phone, WhatsApp, email, address, office coordinates, social links</td></tr>
+	<tr><td>Footer</td><td>About text, newsletter, copyright (<code>{year}</code> and <code>{site}</code> placeholders)</td></tr>
+	<tr><td>Mortgage calculator</td><td>See <a href="#mortgage">above</a></td></tr>
+	<tr><td>Performance &amp; maps</td><td>Emoji script, block CSS loading, map tiles URL and attribution</td></tr>
+</table></div>
+<p>The logo and site icon are set in <em>Customize → Site Identity</em>.</p>
+
+<h2 id="settings">Plugin settings</h2>
+<p><em>Properties → Settings</em> contains the following:</p>
+<ul>
+	<li><strong>Currency label</strong> shown after prices (for example SAR, EGP, AED).</li>
+	<li><strong>Leads email</strong>.</li>
+	<li>Office license and commercial registration numbers, shown in the footer.</li>
+	<li><strong>Default contact</strong> (name, phone and WhatsApp), used for properties without an agent.</li>
+</ul>
+
+<h2 id="menus">Menus &amp; logo</h2>
+<p><em>Appearance → Menus</em> has two locations:</p>
+<ul>
+	<li><strong>Main menu</strong>. Dropdowns are supported.</li>
+	<li><strong>Footer: quick links</strong>.</li>
+</ul>
+<p>If no menu is assigned, the theme shows a sensible default menu. The home hero uses a transparent header over the image. All other pages use a white header.</p>
+
+<h2 id="languages">Languages &amp; RTL</h2>
+<p>The text direction and layout follow your site language automatically. Dara is written in English and ships with a complete Arabic translation for both the theme and the plugin:</p>
+<ul>
+	<li>Theme: <code>dara/languages/ar.mo</code>.</li>
+	<li>Plugin: <code>dara-core/languages/dara-core-ar.mo</code>.</li>
+</ul>
+<p>To translate to another language, follow these steps:</p>
+<ol>
+	<li>Open <code>dara/languages/dara.pot</code> and <code>dara-core/languages/dara-core.pot</code> in Poedit or Loco Translate.</li>
+	<li>Save <code>{locale}.po/.mo</code> for the theme and <code>dara-core-{locale}.po/.mo</code> for the plugin.</li>
+	<li>Put the files in <code>wp-content/languages/themes/</code> and <code>wp-content/languages/plugins/</code> so updates don't overwrite them. For the theme, name them <code>dara-{locale}.mo</code>.</li>
+</ol>
+<p>Multilingual sites work with WPML and Polylang. The header language switcher appears automatically when one of them is active.</p>
+
+<h2 id="performance">Performance</h2>
+<p>On mobile, Dara scores 94–100 in Google PageSpeed (Lighthouse) with the demo content. The theme does the following:</p>
+<ul>
+	<li>Splits CSS by template: about 26 KB core plus a small page bundle, minified.</li>
+	<li>Uses one deferred vanilla JavaScript file.</li>
+	<li>Self-hosts a variable font with a single preload.</li>
+	<li>Preloads the largest image on each page.</li>
+	<li>Loads the map library and video player on demand.</li>
+	<li>Loads block CSS only where blocks are used.</li>
+</ul>
+<p>For best results:</p>
+<ul>
+	<li>Use a page cache (or server cache).</li>
+	<li>Serve images as WebP.</li>
+	<li>Keep the hero image under 250 KB.</li>
+</ul>
+<p>Avoid "combine JS/CSS" options in optimization plugins. The theme already loads per-page bundles.</p>
+
+<h2 id="child">Child theme &amp; customization</h2>
+<ul>
+	<li><strong>CSS:</strong> add your rules to <code>dara-child/style.css</code>. It loads after the theme styles.</li>
+	<li><strong>Templates:</strong> copy any file from <code>dara/</code> to the same path in <code>dara-child/</code> and edit it there. For example, copy <code>template-parts/cards/property.php</code> to change the property card. Updates won't overwrite your copy.</li>
+	<li><strong>Colors:</strong> prefer the Customizer. The theme uses CSS variables (<code>--primary</code>, <code>--ink</code>…) that you can also override in CSS.</li>
+	<li><strong>Development:</strong> the full source (unminified CSS and JS) is included. Define <code>SCRIPT_DEBUG</code> as <code>true</code> in <code>wp-config.php</code> to load the unminified files.</li>
+</ul>
+
+<h2 id="hooks">Hooks for developers</h2>
+<div class="table-wrap"><table>
+	<tr><th>Hook</th><th>Type</th><th>Description</th></tr>
+	<tr><td><code>dara_lead_created</code></td><td>action</td><td><code>( $lead_id, $data )</code>. Runs after a lead is saved, for example to send it to a CRM.</td></tr>
+	<tr><td><code>dara_setting</code></td><td>filter</td><td><code>( $value, $key )</code>. Filters a plugin setting.</td></tr>
+	<tr><td><code>dara_agent</code></td><td>filter</td><td><code>( $agent, $post_id )</code>. Filters the contact shown for a property.</td></tr>
+	<tr><td><code>dara_schema</code></td><td>filter</td><td><code>( $data, $post_id )</code>. Filters the JSON-LD data for properties and projects.</td></tr>
+	<tr><td><code>dara_output_schema</code></td><td>filter</td><td>Return <code>false</code> to disable the JSON-LD output (for example when an SEO plugin handles it).</td></tr>
+	<tr><td><code>dara_currency_code</code></td><td>filter</td><td>ISO currency code used in structured data. Default: <code>SAR</code>.</td></tr>
+	<tr><td><code>dara_css_bundles</code></td><td>filter</td><td>The CSS bundles loaded on the current page.</td></tr>
+</table></div>
+<p>The following example sends every lead to a webhook:</p>
+<pre><code>add_action( 'dara_lead_created', function ( $lead_id, $data ) {
+	wp_remote_post( 'https://example.com/webhook', array( 'body' =&gt; $data ) );
+}, 10, 2 );</code></pre>
+
+<h2 id="faq">FAQ &amp; troubleshooting</h2>
+<h3>Property pages show "Page not found"</h3>
+<p>Go to <em>Settings → Permalinks</em> and click <em>Save</em> to refresh the rewrite rules.</p>
+<h3>Forms send but no email arrives</h3>
+<p>Many hosts block PHP mail. Install an SMTP plugin. Leads are always saved in the <em>Leads</em> menu, even when email fails.</p>
+<h3>The map is empty</h3>
+<p>Check that the property has a latitude and longitude. For high traffic, set a commercial tile provider URL in <em>Customize → Performance &amp; maps</em>.</p>
+<h3>The home page shows my latest posts</h3>
+<p>Go to <em>Settings → Reading</em>, choose <em>A static page</em> and select <em>Home</em>. The demo importer can also do this for you.</p>
+<h3>Prices show the wrong currency</h3>
+<p>Set the currency label in <em>Properties → Settings</em>.</p>
+<h3>Will updating the theme remove my changes?</h3>
+<p>Theme updates replace the theme files, so any edits made inside <code>dara/</code> are lost. Your content and Customizer settings are kept. Put code changes in the child theme.</p>
+
+<h2 id="changelog">Changelog</h2>
+<h3>1.5.0 (theme) / 1.2.0 (Dara Core)</h3>
+<ul>
+	<li>Gutenberg blocks and block patterns moved into Dara Core.</li>
+	<li>One-click install of the bundled Dara Core plugin.</li>
+	<li>Child theme.</li>
+	<li>WordPress Coding Standards and Theme Check pass.</li>
+	<li>English documentation.</li>
+</ul>
+<h3>1.4.x</h3>
+<ul>
+	<li>Property comparison.</li>
+	<li>Alexandria variable font.</li>
+	<li>Mortgage calculator (declining balance and murabaha).</li>
+</ul>
+<h3>1.3.x</h3>
+<ul>
+	<li>Ten Gutenberg section blocks and patterns.</li>
+	<li>Agents archive and profiles.</li>
+	<li>One-click demo import and removal.</li>
+</ul>
+<h3>1.0.0</h3>
+<ul>
+	<li>Initial release.</li>
+</ul>
+
+<h2 id="credits">Credits &amp; license</h2>
+<ul>
+	<li>Theme and plugin code: GNU GPL v2 or later.</li>
+	<li>Alexandria font: SIL Open Font License 1.1.</li>
+	<li>Leaflet 1.9.4: BSD 2-Clause.</li>
+	<li>Map data © OpenStreetMap contributors (ODbL).</li>
+	<li>Icons: original inline SVGs (GPL).</li>
+	<li>Demo images: original illustrations made for Dara (GPL). They are for preview only.</li>
+</ul>
+<p>Need help? Contact support through the marketplace item page. Please include your WordPress version, your PHP version and a link to the page with the problem.</p>
+</main>
+</div>
+</body>
+</html>

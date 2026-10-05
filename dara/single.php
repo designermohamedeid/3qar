@@ -26,13 +26,29 @@ while ( have_posts() ) :
 			<h1 class="article__title"><?php the_title(); ?></h1>
 		</div>
 		<?php if ( has_post_thumbnail() ) : ?>
-			<figure class="container article__thumb"><?php the_post_thumbnail( 'dara-wide', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 1240px) 100vw, 1192px' ) ); ?></figure>
+			<figure class="container article__thumb">
+			<?php
+			the_post_thumbnail(
+				'dara-wide',
+				array(
+					'loading'       => 'eager',
+					'fetchpriority' => 'high',
+					'sizes'         => '(max-width: 1240px) 100vw, 1192px',
+				)
+			);
+			?>
+														</figure>
 		<?php endif; ?>
 		<div class="container container--narrow">
 			<div class="entry-content">
 				<?php
 				the_content();
-				wp_link_pages( array( 'before' => '<nav class="page-links">', 'after' => '</nav>' ) );
+				wp_link_pages(
+					array(
+						'before' => '<nav class="page-links">',
+						'after'  => '</nav>',
+					)
+				);
 				?>
 			</div>
 			<footer class="article__foot">

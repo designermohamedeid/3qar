@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$dara_args = array(
+$dara_args    = array(
 	'post_type'           => 'dara_property',
 	'posts_per_page'      => max( 1, (int) dara_part_opt( $args, 'featured_count' ) ),
 	'no_found_rows'       => true,
@@ -15,10 +15,21 @@ $dara_args = array(
 );
 $dara_purpose = isset( $args['purpose'] ) ? sanitize_key( $args['purpose'] ) : '';
 if ( in_array( $dara_purpose, array( 'sale', 'rent' ), true ) ) {
-	$dara_args['meta_query'] = array( array( 'key' => '_dara_purpose', 'value' => $dara_purpose ) ); // phpcs:ignore WordPress.DB.SlowDBQuery
+	$dara_args['meta_query'] = array(
+		array(
+			'key'   => '_dara_purpose',
+			'value' => $dara_purpose,
+		),
+	); // phpcs:ignore WordPress.DB.SlowDBQuery
 }
 if ( ! empty( $args['type'] ) ) {
-	$dara_args['tax_query'] = array( array( 'taxonomy' => 'property_type', 'field' => 'slug', 'terms' => sanitize_title( $args['type'] ) ) ); // phpcs:ignore WordPress.DB.SlowDBQuery
+	$dara_args['tax_query'] = array(
+		array(
+			'taxonomy' => 'property_type',
+			'field'    => 'slug',
+			'terms'    => sanitize_title( $args['type'] ),
+		),
+	); // phpcs:ignore WordPress.DB.SlowDBQuery
 }
 if ( dara_part_opt( $args, 'featured_only' ) ) {
 	$dara_args['meta_key']   = '_dara_featured'; // phpcs:ignore WordPress.DB.SlowDBQuery
@@ -28,7 +39,14 @@ $dara_q = new WP_Query( $dara_args );
 if ( ! $dara_q->have_posts() ) {
 	return;
 }
-$dara_types = get_terms( array( 'taxonomy' => 'property_type', 'number' => 4, 'orderby' => 'count', 'order' => 'DESC' ) );
+$dara_types = get_terms(
+	array(
+		'taxonomy' => 'property_type',
+		'number'   => 4,
+		'orderby'  => 'count',
+		'order'    => 'DESC',
+	)
+);
 ?>
 <section class="section">
 	<div class="container">
@@ -54,7 +72,20 @@ $dara_types = get_terms( array( 'taxonomy' => 'property_type', 'number' => 4, 'o
 		</div>
 		<?php if ( ! isset( $args['show_button'] ) || $args['show_button'] ) : ?>
 		<div class="section-foot">
-			<a class="btn btn--outline" href="<?php echo esc_url( dara_listings_url( array_filter( array( 'purpose' => $dara_purpose, 'type' => isset( $args['type'] ) ? $args['type'] : '' ) ) ) ); ?>"><?php esc_html_e( 'View all properties', 'dara' ); ?><?php dara_the_icon( 'arrow', 18, 'flip-rtl' ); ?></a>
+			<a class="btn btn--outline" href="
+			<?php
+			echo esc_url(
+				dara_listings_url(
+					array_filter(
+						array(
+							'purpose' => $dara_purpose,
+							'type'    => isset( $args['type'] ) ? $args['type'] : '',
+						)
+					)
+				)
+			);
+			?>
+												"><?php esc_html_e( 'View all properties', 'dara' ); ?><?php dara_the_icon( 'arrow', 18, 'flip-rtl' ); ?></a>
 		</div>
 		<?php endif; ?>
 	</div>

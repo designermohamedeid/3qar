@@ -24,13 +24,13 @@ function dara_core_schema() {
 	}
 
 	$data = array(
-		'@context'      => 'https://schema.org',
-		'@type'         => 'RealEstateListing',
-		'name'          => get_the_title( $id ),
-		'url'           => get_permalink( $id ),
-		'description'   => wp_strip_all_tags( get_the_excerpt( $id ) ),
-		'datePosted'    => get_the_date( 'c', $id ),
-		'image'         => $images,
+		'@context'    => 'https://schema.org',
+		'@type'       => 'RealEstateListing',
+		'name'        => get_the_title( $id ),
+		'url'         => get_permalink( $id ),
+		'description' => wp_strip_all_tags( get_the_excerpt( $id ) ),
+		'datePosted'  => get_the_date( 'c', $id ),
+		'image'       => $images,
 	);
 
 	$key   = 'dara_project' === get_post_type( $id ) ? '_dara_price_from' : '_dara_price';
@@ -44,8 +44,8 @@ function dara_core_schema() {
 		);
 	}
 
-	$lat = get_post_meta( $id, '_dara_lat', true );
-	$lng = get_post_meta( $id, '_dara_lng', true );
+	$lat     = get_post_meta( $id, '_dara_lat', true );
+	$lng     = get_post_meta( $id, '_dara_lng', true );
 	$address = get_post_meta( $id, '_dara_address', true );
 	if ( $address || ( $lat && $lng ) ) {
 		$place = array( '@type' => 'Place' );

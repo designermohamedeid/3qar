@@ -7,10 +7,23 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$dara_hero  = (int) dara_part_opt( $args, 'hero_image' );
-$dara_types = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) ) : array();
-$dara_city_terms = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_city', 'hide_empty' => true, 'orderby' => 'count', 'order' => 'DESC', 'number' => 40 ) ) : array();
-$dara_popular = dara_part_lines( $args, 'hero_popular', 2 );
+$dara_hero       = (int) dara_part_opt( $args, 'hero_image' );
+$dara_types      = dara_has_core() ? get_terms(
+	array(
+		'taxonomy'   => 'property_type',
+		'hide_empty' => false,
+	)
+) : array();
+$dara_city_terms = dara_has_core() ? get_terms(
+	array(
+		'taxonomy'   => 'property_city',
+		'hide_empty' => true,
+		'orderby'    => 'count',
+		'order'      => 'DESC',
+		'number'     => 40,
+	)
+) : array();
+$dara_popular    = dara_part_lines( $args, 'hero_popular', 2 );
 if ( ! $dara_popular && $dara_city_terms && ! is_wp_error( $dara_city_terms ) ) {
 	foreach ( array_slice( $dara_city_terms, 0, 5 ) as $dara_term ) {
 		$dara_popular[] = array( $dara_term->name, get_term_link( $dara_term ) );
@@ -32,7 +45,19 @@ $dara_rent_ranges = array(
 <section class="hero">
 	<?php
 	if ( $dara_hero ) {
-		echo wp_get_attachment_image( $dara_hero, 'dara-hero', false, array( 'class' => 'hero__bg', 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async', 'sizes' => '100vw' ) );
+		echo wp_get_attachment_image(
+			$dara_hero,
+			'dara-hero',
+			false,
+			array(
+				'class'         => 'hero__bg',
+				'alt'           => '',
+				'loading'       => 'eager',
+				'fetchpriority' => 'high',
+				'decoding'      => 'async',
+				'sizes'         => '100vw',
+			)
+		);
 	}
 	?>
 	<div class="container hero__inner">

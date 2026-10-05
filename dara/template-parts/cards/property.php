@@ -29,7 +29,17 @@ $dara_labels  = array(
 <article class="card card--property" data-id="<?php echo (int) $dara_id; ?>">
 	<div class="card__media">
 		<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-			<?php echo dara_img( get_post_thumbnail_id(), 'dara-card', array( 'loading' => $dara_lazy ? 'lazy' : 'eager', 'sizes' => '(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 400px', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+			<?php
+			echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+				get_post_thumbnail_id(),
+				'dara-card',
+				array(
+					'loading' => $dara_lazy ? 'lazy' : 'eager',
+					'sizes'   => '(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 400px',
+					'alt'     => '',
+				)
+			); // phpcs:ignore WordPress.Security.EscapeOutput 
+			?>
 		</a>
 		<div class="card__badges">
 			<span class="badge badge--<?php echo 'rent' === $dara_purpose ? 'dark' : 'primary'; ?>"><?php echo esc_html( dara_purpose_label( $dara_purpose ) ); ?></span>

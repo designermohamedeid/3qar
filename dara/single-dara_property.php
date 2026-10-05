@@ -137,7 +137,18 @@ while ( have_posts() ) :
 							</div>
 							<?php foreach ( $dara_plans as $dara_n => $dara_plan ) : ?>
 								<div class="tabs__panel" role="tabpanel" id="plan-<?php echo (int) $dara_n; ?>" aria-labelledby="plan-tab-<?php echo (int) $dara_n; ?>" <?php echo 0 === $dara_n ? '' : 'hidden'; ?>>
-									<a href="<?php echo esc_url( wp_get_attachment_url( $dara_plan ) ); ?>" target="_blank" rel="noopener"><?php echo dara_img( $dara_plan, 'large', array( 'class' => 'plan-img', 'alt' => wp_get_attachment_caption( $dara_plan ) ? wp_get_attachment_caption( $dara_plan ) : get_the_title() ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
+									<a href="<?php echo esc_url( wp_get_attachment_url( $dara_plan ) ); ?>" target="_blank" rel="noopener">
+									<?php
+									echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+										$dara_plan,
+										'large',
+										array(
+											'class' => 'plan-img',
+											'alt'   => wp_get_attachment_caption( $dara_plan ) ? wp_get_attachment_caption( $dara_plan ) : get_the_title(),
+										)
+									); // phpcs:ignore WordPress.Security.EscapeOutput 
+									?>
+												</a>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -195,7 +206,15 @@ while ( have_posts() ) :
 						<span class="agent__avatar">
 							<?php
 							if ( $dara_agent['photo'] ) {
-								echo wp_get_attachment_image( $dara_agent['photo'], 'thumbnail', false, array( 'alt' => '', 'loading' => 'lazy' ) );
+								echo wp_get_attachment_image(
+									$dara_agent['photo'],
+									'thumbnail',
+									false,
+									array(
+										'alt'     => '',
+										'loading' => 'lazy',
+									)
+								);
 							} else {
 								echo esc_html( dara_initials( $dara_agent['name'] ) );
 							}
@@ -251,7 +270,12 @@ while ( have_posts() ) :
 				'posts_per_page' => 3,
 				'post__not_in'   => array( $dara_id ),
 				'no_found_rows'  => true,
-				'tax_query'      => $dara_type_ids ? array( array( 'taxonomy' => 'property_type', 'terms' => $dara_type_ids ) ) : array(), // phpcs:ignore WordPress.DB.SlowDBQuery
+				'tax_query'      => $dara_type_ids ? array(
+					array(
+						'taxonomy' => 'property_type',
+						'terms'    => $dara_type_ids,
+					),
+				) : array(), // phpcs:ignore WordPress.DB.SlowDBQuery
 			)
 		);
 		if ( $dara_similar->have_posts() ) :

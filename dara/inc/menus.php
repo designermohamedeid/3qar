@@ -55,6 +55,12 @@ function dara_primary_menu( $id = 'primary-menu' ) {
 			echo '<li><a href="' . esc_url( get_post_type_archive_link( 'dara_agent' ) ) . '">' . esc_html__( 'Agents', 'dara' ) . '</a></li>';
 		}
 	}
-	wp_list_pages( array( 'title_li' => '', 'depth' => 1, 'number' => 4 ) );
+	wp_list_pages(
+		array(
+			'title_li' => '',
+			'depth'    => 1,
+			'number'   => 4,
+		)
+	);
 	echo '</ul>';
 }

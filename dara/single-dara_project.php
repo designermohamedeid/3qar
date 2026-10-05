@@ -11,24 +11,24 @@ get_header();
 
 while ( have_posts() ) :
 	the_post();
-	$dara_id       = get_the_ID();
-	$dara_status   = dara_option_label( 'dara_project', '_dara_status', get_post_meta( $dara_id, '_dara_status', true ) );
-	$dara_progress = min( 100, (int) get_post_meta( $dara_id, '_dara_progress', true ) );
-	$dara_from     = get_post_meta( $dara_id, '_dara_price_from', true );
-	$dara_units_n  = get_post_meta( $dara_id, '_dara_units_count', true );
-	$dara_delivery = get_post_meta( $dara_id, '_dara_delivery', true );
-	$dara_dev      = get_post_meta( $dara_id, '_dara_developer', true );
-	$dara_brochure = get_post_meta( $dara_id, '_dara_brochure', true );
-	$dara_amen     = dara_lines( $dara_id, '_dara_amenities', 1 );
-	$dara_units    = dara_lines( $dara_id, '_dara_units', 6 );
-	$dara_payment  = dara_lines( $dara_id, '_dara_payment', 3 );
-	$dara_phases   = dara_lines( $dara_id, '_dara_phases', 3 );
-	$dara_gallery  = dara_gallery_ids( $dara_id );
-	$dara_lat      = get_post_meta( $dara_id, '_dara_lat', true );
-	$dara_lng      = get_post_meta( $dara_id, '_dara_lng', true );
-	$dara_cities   = get_the_terms( $dara_id, 'property_city' );
-	$dara_loc      = $dara_cities && ! is_wp_error( $dara_cities ) ? implode( '، ', wp_list_pluck( array_reverse( $dara_cities ), 'name' ) ) : get_post_meta( $dara_id, '_dara_address', true );
-	$dara_states   = array(
+	$dara_id           = get_the_ID();
+	$dara_status       = dara_option_label( 'dara_project', '_dara_status', get_post_meta( $dara_id, '_dara_status', true ) );
+	$dara_progress     = min( 100, (int) get_post_meta( $dara_id, '_dara_progress', true ) );
+	$dara_from         = get_post_meta( $dara_id, '_dara_price_from', true );
+	$dara_units_n      = get_post_meta( $dara_id, '_dara_units_count', true );
+	$dara_delivery     = get_post_meta( $dara_id, '_dara_delivery', true );
+	$dara_dev          = get_post_meta( $dara_id, '_dara_developer', true );
+	$dara_brochure     = get_post_meta( $dara_id, '_dara_brochure', true );
+	$dara_amen         = dara_lines( $dara_id, '_dara_amenities', 1 );
+	$dara_units        = dara_lines( $dara_id, '_dara_units', 6 );
+	$dara_payment      = dara_lines( $dara_id, '_dara_payment', 3 );
+	$dara_phases       = dara_lines( $dara_id, '_dara_phases', 3 );
+	$dara_gallery      = dara_gallery_ids( $dara_id );
+	$dara_lat          = get_post_meta( $dara_id, '_dara_lat', true );
+	$dara_lng          = get_post_meta( $dara_id, '_dara_lng', true );
+	$dara_cities       = get_the_terms( $dara_id, 'property_city' );
+	$dara_loc          = $dara_cities && ! is_wp_error( $dara_cities ) ? implode( '، ', wp_list_pluck( array_reverse( $dara_cities ), 'name' ) ) : get_post_meta( $dara_id, '_dara_address', true );
+	$dara_states       = array(
 		'available' => array( __( 'Available', 'dara' ), 'available' ),
 		'reserved'  => array( __( 'Reserved', 'dara' ), 'reserved' ),
 		'sold'      => array( __( 'Sold', 'dara' ), 'sold' ),
@@ -42,7 +42,16 @@ while ( have_posts() ) :
 	<section class="project-hero">
 		<?php
 		if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'dara-hero', array( 'class' => 'hero__bg', 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '100vw' ) );
+			the_post_thumbnail(
+				'dara-hero',
+				array(
+					'class'         => 'hero__bg',
+					'alt'           => '',
+					'loading'       => 'eager',
+					'fetchpriority' => 'high',
+					'sizes'         => '100vw',
+				)
+			);
 		}
 		?>
 		<div class="container project-hero__inner">
@@ -91,10 +100,22 @@ while ( have_posts() ) :
 
 		<nav class="in-page-nav" aria-label="<?php esc_attr_e( 'Project sections', 'dara' ); ?>">
 			<a href="#overview"><?php esc_html_e( 'Overview', 'dara' ); ?></a>
-			<?php if ( $dara_units ) : ?><a href="#units"><?php esc_html_e( 'Units', 'dara' ); ?></a><?php endif; ?>
-			<?php if ( $dara_payment ) : ?><a href="#payment"><?php esc_html_e( 'Payment plan', 'dara' ); ?></a><?php endif; ?>
-			<?php if ( $dara_phases ) : ?><a href="#phases"><?php esc_html_e( 'Progress', 'dara' ); ?></a><?php endif; ?>
-			<?php if ( is_numeric( $dara_lat ) ) : ?><a href="#location"><?php esc_html_e( 'Location', 'dara' ); ?></a><?php endif; ?>
+			<?php
+			if ( $dara_units ) :
+				?>
+				<a href="#units"><?php esc_html_e( 'Units', 'dara' ); ?></a><?php endif; ?>
+			<?php
+			if ( $dara_payment ) :
+				?>
+				<a href="#payment"><?php esc_html_e( 'Payment plan', 'dara' ); ?></a><?php endif; ?>
+			<?php
+			if ( $dara_phases ) :
+				?>
+				<a href="#phases"><?php esc_html_e( 'Progress', 'dara' ); ?></a><?php endif; ?>
+			<?php
+			if ( is_numeric( $dara_lat ) ) :
+				?>
+				<a href="#location"><?php esc_html_e( 'Location', 'dara' ); ?></a><?php endif; ?>
 		</nav>
 
 		<section class="pj-section pj-overview" id="overview">
@@ -120,7 +141,10 @@ while ( have_posts() ) :
 				foreach ( $dara_gallery as $dara_att ) {
 					$dara_src = wp_get_attachment_image_src( $dara_att, 'large' );
 					if ( $dara_src ) {
-						$dara_lightbox[] = array( 'src' => $dara_src[0], 'alt' => '' );
+						$dara_lightbox[] = array(
+							'src' => $dara_src[0],
+							'alt' => '',
+						);
 					}
 				}
 				?>

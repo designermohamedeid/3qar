@@ -32,7 +32,13 @@ while ( have_posts() ) :
 			<span class="avatar avatar--xl">
 				<?php
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'medium', array( 'alt' => '', 'loading' => 'eager' ) );
+					the_post_thumbnail(
+						'medium',
+						array(
+							'alt'     => '',
+							'loading' => 'eager',
+						)
+					);
 				} else {
 					echo esc_html( dara_initials( get_the_title() ) );
 				}

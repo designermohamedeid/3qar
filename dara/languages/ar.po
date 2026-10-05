@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara Real Estate 1.0.0\n"
+"Project-Id-Version: Dara 1.5.0\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,19 +67,19 @@ msgid "Grid"
 msgstr "شبكة"
 
 #: archive-dara_property.php:56 page-templates/contact.php:55
-#: single-dara_project.php:200 single-dara_property.php:178
+#: single-dara_project.php:224 single-dara_property.php:189
 msgid "Map"
 msgstr "خريطة"
 
-#: archive-dara_property.php:89
+#: archive-dara_property.php:96
 msgid "No properties match your search"
 msgstr "لا توجد عقارات مطابقة لبحثك"
 
-#: archive-dara_property.php:90
+#: archive-dara_property.php:97
 msgid "Try removing some filters or searching another area."
 msgstr "جرّب إزالة بعض الفلاتر أو البحث في منطقة أخرى."
 
-#: archive-dara_property.php:91
+#: archive-dara_property.php:98
 msgid "See all properties"
 msgstr "عرض كل العقارات"
 
@@ -109,43 +109,43 @@ msgstr[5] "%s تعليق"
 msgid "Quick links"
 msgstr "روابط سريعة"
 
-#: footer.php:48 inc/blocks.php:62 template-parts/home/featured.php:38
+#: footer.php:61 template-parts/home/featured.php:56
 msgid "Property types"
 msgstr "أنواع العقارات"
 
-#: footer.php:59
+#: footer.php:72
 msgid "Newsletter"
 msgstr "النشرة البريدية"
 
-#: footer.php:63
+#: footer.php:76
 msgid "Email address"
 msgstr "البريد الإلكتروني"
 
-#: footer.php:64
+#: footer.php:77
 msgid "Your email"
 msgstr "بريدك الإلكتروني"
 
-#: footer.php:65
+#: footer.php:78
 msgid "Subscribe"
 msgstr "اشترك"
 
-#: footer.php:88
+#: footer.php:101
 #, php-format
 msgid "FAL license: %s"
 msgstr "رخصة فال: %s"
 
-#: footer.php:92
+#: footer.php:105
 #, php-format
 msgid "CR: %s"
 msgstr "السجل التجاري: %s"
 
-#: footer.php:105 page-templates/contact.php:25
+#: footer.php:118 page-templates/contact.php:25
 msgid "Call us"
 msgstr "اتصل بنا"
 
-#: footer.php:108 page-templates/compare.php:226 page-templates/contact.php:28
-#: single-dara_agent.php:57 single-dara_property.php:227
-#: template-parts/cards/agent.php:44 template-parts/home/cta.php:20
+#: footer.php:121 page-templates/compare.php:237 page-templates/contact.php:28
+#: single-dara_agent.php:63 single-dara_property.php:246
+#: template-parts/cards/agent.php:50 template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr "واتساب"
 
@@ -153,7 +153,7 @@ msgstr "واتساب"
 msgid "Skip to content"
 msgstr "انتقل إلى المحتوى"
 
-#: header.php:27 inc/setup.php:46
+#: header.php:27 inc/setup.php:64
 msgid "Main menu"
 msgstr "القائمة الرئيسية"
 
@@ -177,337 +177,65 @@ msgstr "إغلاق القائمة"
 msgid "Mobile menu"
 msgstr "قائمة الجوال"
 
-#: inc/assets.php:38
+#: inc/assets.php:47
 msgid "Saved to favorites"
 msgstr "تمت الإضافة إلى المفضلة"
 
-#: inc/assets.php:39
+#: inc/assets.php:48
 msgid "Removed from favorites"
 msgstr "تمت الإزالة من المفضلة"
 
-#: inc/assets.php:40
+#: inc/assets.php:49
 msgid "Link copied"
 msgstr "تم نسخ الرابط"
 
-#: inc/assets.php:41
+#: inc/assets.php:50
 msgid "You have no saved properties yet."
 msgstr "لا توجد عقارات محفوظة بعد."
 
-#: inc/assets.php:42
+#: inc/assets.php:51
 msgid "Close"
 msgstr "إغلاق"
 
-#: inc/assets.php:43 single.php:45
+#: inc/assets.php:52 single.php:61
 msgid "Previous"
 msgstr "السابق"
 
-#: inc/assets.php:44 single.php:46
+#: inc/assets.php:53 single.php:62
 msgid "Next"
 msgstr "التالي"
 
-#: inc/assets.php:45
+#: inc/assets.php:54
 msgid "Added to compare"
 msgstr "تمت الإضافة للمقارنة"
 
-#: inc/assets.php:46
+#: inc/assets.php:55
 msgid "Removed from compare"
 msgstr "تمت الإزالة من المقارنة"
 
-#: inc/assets.php:47
+#: inc/assets.php:56
 msgid "You can compare up to 4 properties"
 msgstr "يمكنك مقارنة 4 عقارات كحد أقصى"
 
-#: inc/assets.php:48
+#: inc/assets.php:57
 msgid "Compare properties"
 msgstr "مقارنة العقارات"
 
-#: inc/assets.php:49
+#: inc/assets.php:58
 msgid "Compare now"
 msgstr "قارن الآن"
 
-#: inc/assets.php:50
+#: inc/assets.php:59
 msgid "Clear"
 msgstr "مسح"
 
-#: inc/assets.php:51
+#: inc/assets.php:60
 msgid "Add one more property to compare"
 msgstr "أضف عقاراً آخر للمقارنة"
 
-#: inc/assets.php:52 inc/blocks.php:362 page-templates/compare.php:137
+#: inc/assets.php:61 page-templates/compare.php:148
 msgid "Remove"
 msgstr "حذف"
-
-#: inc/blocks.php:23 inc/customizer.php:32 inc/customizer.php:42
-#: inc/customizer.php:52 inc/customizer.php:60 inc/customizer.php:70
-#: inc/customizer.php:80 inc/customizer.php:94
-msgid "Small label"
-msgstr "العنوان الصغير"
-
-#: inc/blocks.php:24 inc/customizer.php:33 inc/customizer.php:43
-#: inc/customizer.php:53 inc/customizer.php:61 inc/customizer.php:71
-#: inc/customizer.php:81 inc/customizer.php:95
-msgid "Title"
-msgstr "العنوان"
-
-#: inc/blocks.php:25 inc/customizer.php:34 inc/customizer.php:62
-#: inc/customizer.php:82
-msgid "Text"
-msgstr "النص"
-
-#: inc/blocks.php:26
-msgid "Number of items"
-msgstr "عدد العناصر"
-
-#: inc/blocks.php:30
-msgid "Hero & search"
-msgstr "الواجهة والبحث"
-
-#: inc/blocks.php:31
-msgid "Full-width image with title and the property search."
-msgstr "صورة بعرض الصفحة مع عنوان وبحث العقارات."
-
-#: inc/blocks.php:35 inc/customizer.php:31
-msgid "Background image"
-msgstr "صورة الخلفية"
-
-#: inc/blocks.php:39
-msgid "Show property search"
-msgstr "إظهار بحث العقارات"
-
-#: inc/blocks.php:40
-msgid "Search opens on"
-msgstr "البحث يفتح على"
-
-#: inc/blocks.php:40 template-parts/home/hero.php:50
-msgid "Buy"
-msgstr "شراء"
-
-#: inc/blocks.php:40 inc/blocks.php:55 template-parts/home/hero.php:51
-#: template-parts/property/filters.php:30
-msgid "Rent"
-msgstr "إيجار"
-
-#: inc/blocks.php:40 template-parts/home/hero.php:52
-msgid "New projects"
-msgstr "مشاريع جديدة"
-
-#: inc/blocks.php:41 inc/customizer.php:35
-msgid "Popular searches"
-msgstr "عمليات البحث الشائعة"
-
-#: inc/blocks.php:41
-msgid "One per line: Label | URL. Leave empty to show your top cities."
-msgstr "سطر لكل عنصر: الاسم | الرابط. اتركه فارغاً لعرض أكثر المدن."
-
-#: inc/blocks.php:45
-msgid "Properties grid"
-msgstr "شبكة العقارات"
-
-#: inc/blocks.php:46
-msgid "Latest or featured properties, filterable by purpose and type."
-msgstr "أحدث العقارات أو المميزة منها، مع تصفية حسب الغرض والنوع."
-
-#: inc/blocks.php:54 inc/customizer.php:45
-msgid "Only properties marked \"Featured\""
-msgstr "العقارات المميزة فقط"
-
-#: inc/blocks.php:55 page-templates/compare.php:158
-#: template-parts/property/filters.php:26
-msgid "Purpose"
-msgstr "الغرض"
-
-#: inc/blocks.php:55 inc/blocks.php:306 template-parts/home/featured.php:39
-#: template-parts/home/hero.php:70 template-parts/property/filters.php:28
-msgid "All"
-msgstr "الكل"
-
-#: inc/blocks.php:55 template-parts/property/filters.php:29
-msgid "Sale"
-msgstr "بيع"
-
-#: inc/blocks.php:56 page-templates/list-property.php:42
-#: template-parts/home/hero.php:68 template-parts/property/filters.php:51
-msgid "Property type"
-msgstr "نوع العقار"
-
-#: inc/blocks.php:57
-msgid "Show type links"
-msgstr "إظهار روابط الأنواع"
-
-#: inc/blocks.php:58
-msgid "Show \"View all\" button"
-msgstr "إظهار زر \"عرض الكل\""
-
-#: inc/blocks.php:63
-msgid "Tiles linking to each property type."
-msgstr "مربعات تربط بكل نوع عقار."
-
-#: inc/blocks.php:73 inc/template-tags.php:44
-msgid "Developer projects"
-msgstr "مشاريع المطوّرين"
-
-#: inc/blocks.php:74
-msgid "Projects with completion progress on a dark band."
-msgstr "المشاريع مع نسبة الإنجاز على خلفية داكنة."
-
-#: inc/blocks.php:85 inc/blocks.php:94 inc/customizer.php:72
-msgid "Services"
-msgstr "الخدمات"
-
-#: inc/blocks.php:86
-msgid "Service cards with icons."
-msgstr "بطاقات خدمات بأيقونات."
-
-#: inc/blocks.php:96
-msgid "Icon"
-msgstr "الأيقونة"
-
-#: inc/blocks.php:99
-msgid "Link"
-msgstr "الرابط"
-
-#: inc/blocks.php:105
-msgid "Image & checklist"
-msgstr "صورة وقائمة مميزات"
-
-#: inc/blocks.php:106
-msgid "Image with a badge, text, checklist and button."
-msgstr "صورة مع شارة ونص وقائمة مميزات وزر."
-
-#: inc/blocks.php:110 inc/customizer.php:79
-msgid "Image"
-msgstr "الصورة"
-
-#: inc/blocks.php:114
-msgid "Points (one per line)"
-msgstr "النقاط (سطر لكل نقطة)"
-
-#: inc/blocks.php:115 inc/customizer.php:84
-msgid "Badge title"
-msgstr "عنوان الشارة"
-
-#: inc/blocks.php:116 inc/customizer.php:85
-msgid "Badge text"
-msgstr "نص الشارة"
-
-#: inc/blocks.php:117 inc/blocks.php:162 inc/customizer.php:86
-#: inc/customizer.php:100
-msgid "Button text"
-msgstr "نص الزر"
-
-#: inc/blocks.php:118 inc/blocks.php:163 inc/customizer.php:87
-#: inc/customizer.php:101
-msgid "Button link"
-msgstr "رابط الزر"
-
-#: inc/blocks.php:122 inc/menus.php:55
-msgid "Agents"
-msgstr "المسوّقون"
-
-#: inc/blocks.php:123
-msgid "Your agents with call and WhatsApp buttons."
-msgstr "مسوّقوك مع أزرار الاتصال وواتساب."
-
-#: inc/blocks.php:133
-msgid "Latest posts"
-msgstr "أحدث المقالات"
-
-#: inc/blocks.php:134
-msgid "Latest blog posts as cards."
-msgstr "أحدث مقالات المدونة كبطاقات."
-
-#: inc/blocks.php:145 inc/customizer.php:132
-#: template-parts/property/mortgage.php:35
-msgid "Mortgage calculator"
-msgstr "حاسبة التمويل العقاري"
-
-#: inc/blocks.php:146
-msgid ""
-"Estimate the monthly installment from price, down payment, term and profit "
-"rate."
-msgstr "احسب القسط الشهري من السعر والدفعة الأولى والمدة ونسبة الربح."
-
-#: inc/blocks.php:151
-msgid "Default property price"
-msgstr "سعر العقار الافتراضي"
-
-#: inc/blocks.php:155
-msgid "Call to action"
-msgstr "دعوة لإجراء"
-
-#: inc/blocks.php:156
-msgid "Colored band with buttons."
-msgstr "شريط ملوّن مع أزرار."
-
-#: inc/blocks.php:240 inc/blocks.php:402
-msgid "Dara real estate"
-msgstr "دارة العقارية"
-
-#: inc/blocks.php:289
-#, php-format
-msgid "%s: nothing to show yet. Add content first."
-msgstr "%s: لا يوجد محتوى لعرضه بعد. أضف المحتوى أولاً."
-
-#: inc/blocks.php:358
-msgid "Settings"
-msgstr "الإعدادات"
-
-#: inc/blocks.php:359
-msgid "Empty fields use the values from Appearance > Customize > Dara theme."
-msgstr "الحقول الفارغة تستخدم القيم من المظهر ← تخصيص ← قالب دارة."
-
-#: inc/blocks.php:360
-msgid "Choose image"
-msgstr "اختر صورة"
-
-#: inc/blocks.php:361
-msgid "Replace image"
-msgstr "استبدال الصورة"
-
-#: inc/blocks.php:363
-msgid "Add item"
-msgstr "إضافة عنصر"
-
-#: inc/blocks.php:364
-msgid "Item"
-msgstr "عنصر"
-
-#: inc/blocks.php:365
-msgid "Move up"
-msgstr "تحريك لأعلى"
-
-#: inc/blocks.php:366
-msgid "Move down"
-msgstr "تحريك لأسفل"
-
-#: inc/blocks.php:406
-msgid "Real estate home page"
-msgstr "صفحة رئيسية عقارية"
-
-#: inc/blocks.php:407
-msgid ""
-"Hero with search, properties, types, projects, services, why us, posts and "
-"call to action."
-msgstr ""
-"واجهة مع بحث، عقارات، أنواع، مشاريع، خدمات، لماذا نحن، مقالات ودعوة لإجراء."
-
-#: inc/blocks.php:415
-msgid "Listings landing page"
-msgstr "صفحة هبوط للعقارات"
-
-#: inc/blocks.php:416
-msgid ""
-"Hero with search, properties for sale, properties for rent and a call to "
-"action."
-msgstr "واجهة مع بحث، عقارات للبيع، عقارات للإيجار ودعوة لإجراء."
-
-#: inc/blocks.php:418
-msgid "Properties for sale"
-msgstr "عقارات للبيع"
-
-#: inc/blocks.php:418
-msgid "Properties for rent"
-msgstr "عقارات للإيجار"
 
 #: inc/compat.php:21
 msgid ""
@@ -554,8 +282,32 @@ msgid "Home: hero & search"
 msgstr "الرئيسية: الواجهة والبحث"
 
 #: inc/customizer.php:31
+msgid "Background image"
+msgstr "صورة الخلفية"
+
+#: inc/customizer.php:31
 msgid "Recommended 1920×1080, compressed (WebP/JPEG under 250 KB)."
 msgstr "المقاس المقترح 1920×1080 مضغوطة (WebP/JPEG أقل من 250 كيلوبايت)."
+
+#: inc/customizer.php:32 inc/customizer.php:42 inc/customizer.php:52
+#: inc/customizer.php:60 inc/customizer.php:70 inc/customizer.php:80
+#: inc/customizer.php:94
+msgid "Small label"
+msgstr "العنوان الصغير"
+
+#: inc/customizer.php:33 inc/customizer.php:43 inc/customizer.php:53
+#: inc/customizer.php:61 inc/customizer.php:71 inc/customizer.php:81
+#: inc/customizer.php:95
+msgid "Title"
+msgstr "العنوان"
+
+#: inc/customizer.php:34 inc/customizer.php:62 inc/customizer.php:82
+msgid "Text"
+msgstr "النص"
+
+#: inc/customizer.php:35
+msgid "Popular searches"
+msgstr "عمليات البحث الشائعة"
 
 #: inc/customizer.php:35
 msgid ""
@@ -570,6 +322,10 @@ msgstr "الرئيسية: العقارات المميزة"
 #: inc/customizer.php:44
 msgid "Number of properties"
 msgstr "عدد العقارات"
+
+#: inc/customizer.php:45
+msgid "Only properties marked \"Featured\""
+msgstr "العقارات المميزة فقط"
 
 #: inc/customizer.php:49
 msgid "Home: property types"
@@ -588,6 +344,10 @@ msgid "Home: services"
 msgstr "الرئيسية: الخدمات"
 
 #: inc/customizer.php:72
+msgid "Services"
+msgstr "الخدمات"
+
+#: inc/customizer.php:72
 msgid ""
 "One per line: icon | title | text | link. Icons: megaphone, key, chart, "
 "clipboard, home, building, shield, calendar, user."
@@ -599,9 +359,29 @@ msgstr ""
 msgid "Home: why us"
 msgstr "الرئيسية: لماذا نحن"
 
+#: inc/customizer.php:79
+msgid "Image"
+msgstr "الصورة"
+
 #: inc/customizer.php:83
 msgid "Points"
 msgstr "النقاط"
+
+#: inc/customizer.php:84
+msgid "Badge title"
+msgstr "عنوان الشارة"
+
+#: inc/customizer.php:85
+msgid "Badge text"
+msgstr "نص الشارة"
+
+#: inc/customizer.php:86 inc/customizer.php:100
+msgid "Button text"
+msgstr "نص الزر"
+
+#: inc/customizer.php:87 inc/customizer.php:101
+msgid "Button link"
+msgstr "رابط الزر"
 
 #: inc/customizer.php:91
 msgid "Home: blog & call to action"
@@ -644,7 +424,7 @@ msgid "International format without +, e.g. 9665XXXXXXXX"
 msgstr "بالصيغة الدولية بدون +، مثال: 9665XXXXXXXX"
 
 #: inc/customizer.php:109 page-templates/contact.php:31
-#: page-templates/contact.php:47 single-dara_agent.php:60
+#: page-templates/contact.php:47 single-dara_agent.php:66
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -684,15 +464,19 @@ msgstr "حقوق النشر"
 msgid "You can use {year} and {site}."
 msgstr "يمكنك استخدام {year} و {site}."
 
+#: inc/customizer.php:132 template-parts/property/mortgage.php:35
+msgid "Mortgage calculator"
+msgstr "حاسبة التمويل العقاري"
+
 #: inc/customizer.php:134
 msgid "Show on properties for sale"
 msgstr "إظهارها في العقارات المعروضة للبيع"
 
-#: inc/customizer.php:135
+#: inc/customizer.php:137
 msgid "Calculation method"
 msgstr "طريقة الحساب"
 
-#: inc/customizer.php:135
+#: inc/customizer.php:138
 msgid ""
 "Declining balance is the standard mortgage formula. Flat rate (murabaha) "
 "applies the profit rate to the full amount for every year."
@@ -700,53 +484,53 @@ msgstr ""
 "الرصيد المتناقص هو معادلة التمويل العقاري المعتادة. النسبة الثابتة "
 "(المرابحة) تحسب نسبة الربح على كامل المبلغ لكل سنة."
 
-#: inc/customizer.php:135
+#: inc/customizer.php:140
 msgid "Declining balance"
 msgstr "الرصيد المتناقص"
 
-#: inc/customizer.php:135
+#: inc/customizer.php:141
 msgid "Flat rate (murabaha)"
 msgstr "نسبة ثابتة (مرابحة)"
 
-#: inc/customizer.php:136
+#: inc/customizer.php:144
 #, php-format
 msgid "Default annual profit rate (%)"
 msgstr "نسبة الربح السنوية الافتراضية (%)"
 
-#: inc/customizer.php:137
+#: inc/customizer.php:145
 #, php-format
 msgid "Default down payment (%)"
 msgstr "الدفعة الأولى الافتراضية (%)"
 
-#: inc/customizer.php:138
+#: inc/customizer.php:146
 msgid "Default term (years)"
 msgstr "مدة التمويل الافتراضية (سنوات)"
 
-#: inc/customizer.php:139
+#: inc/customizer.php:147
 msgid "Maximum term (years)"
 msgstr "أقصى مدة تمويل (سنوات)"
 
-#: inc/customizer.php:140
+#: inc/customizer.php:148
 msgid "Disclaimer"
 msgstr "تنويه"
 
-#: inc/customizer.php:144
+#: inc/customizer.php:152
 msgid "Performance & maps"
 msgstr "الأداء والخرائط"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:154
 msgid "Disable WordPress emoji script"
 msgstr "تعطيل سكربت الإيموجي في ووردبريس"
 
-#: inc/customizer.php:147
+#: inc/customizer.php:155
 msgid "Load block CSS only on pages that use blocks"
 msgstr "تحميل CSS المكوّنات فقط في الصفحات التي تستخدمها"
 
-#: inc/customizer.php:148
+#: inc/customizer.php:156
 msgid "Map tiles URL"
 msgstr "رابط بلاطات الخريطة"
 
-#: inc/customizer.php:148
+#: inc/customizer.php:156
 msgid ""
 "Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
 "Stadia...) with your key."
@@ -754,11 +538,11 @@ msgstr ""
 "الافتراضي: OpenStreetMap. للمواقع ذات الزيارات الكبيرة استخدم مزود خرائط "
 "(MapTiler أو Stadia...) بمفتاحك الخاص."
 
-#: inc/customizer.php:149
+#: inc/customizer.php:157
 msgid "Map attribution"
 msgstr "نص حقوق الخريطة"
 
-#: inc/customizer.php:179
+#: inc/customizer.php:190
 msgid "Dara theme"
 msgstr "قالب دارة"
 
@@ -767,7 +551,7 @@ msgstr "قالب دارة"
 msgid "Show sub menu of %s"
 msgstr "إظهار القائمة الفرعية لـ %s"
 
-#: inc/menus.php:50 inc/template-tags.php:351
+#: inc/menus.php:50 inc/template-tags.php:359
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -779,27 +563,31 @@ msgstr "العقارات"
 msgid "Projects"
 msgstr "المشاريع"
 
-#: inc/setup.php:36
+#: inc/menus.php:55
+msgid "Agents"
+msgstr "المسوّقون"
+
+#: inc/setup.php:39
 msgid "Primary"
 msgstr "الأساسي"
 
-#: inc/setup.php:37
+#: inc/setup.php:44
 msgid "Ink"
 msgstr "الداكن"
 
-#: inc/setup.php:38
+#: inc/setup.php:49
 msgid "Surface"
 msgstr "خلفية فاتحة"
 
-#: inc/setup.php:39
+#: inc/setup.php:54
 msgid "White"
 msgstr "أبيض"
 
-#: inc/setup.php:47
+#: inc/setup.php:65
 msgid "Footer: quick links"
 msgstr "الفوتر: روابط سريعة"
 
-#: inc/setup.php:72
+#: inc/setup.php:90
 msgid "Blog sidebar"
 msgstr "الشريط الجانبي للمدونة"
 
@@ -838,6 +626,10 @@ msgstr "تصفّح حسب النوع"
 #: inc/template-tags.php:41
 msgid "What are you looking for?"
 msgstr "ما الذي تبحث عنه؟"
+
+#: inc/template-tags.php:44
+msgid "Developer projects"
+msgstr "مشاريع المطوّرين"
 
 #: inc/template-tags.php:45
 msgid "New off-plan and under-construction projects"
@@ -940,7 +732,7 @@ msgstr "رقم ترخيص على كل إعلان"
 msgid "Talk to an advisor"
 msgstr "تحدث مع مستشار"
 
-#: inc/template-tags.php:82 inc/template-tags.php:291
+#: inc/template-tags.php:82 inc/template-tags.php:299
 msgid "Blog"
 msgstr "المدونة"
 
@@ -982,38 +774,38 @@ msgid ""
 msgstr ""
 "الأرقام تقديرية، والقسط النهائي يعتمد على جهة التمويل والراتب والالتزامات."
 
-#: inc/template-tags.php:295
+#: inc/template-tags.php:303
 #, php-format
 msgid "Search: %s"
 msgstr "نتائج البحث: %s"
 
-#: inc/template-tags.php:298
+#: inc/template-tags.php:306
 msgid "Page not found"
 msgstr "الصفحة غير موجودة"
 
-#: inc/template-tags.php:334
+#: inc/template-tags.php:342
 #, php-format
 msgid "in %s"
 msgstr "في %s"
 
-#: inc/template-tags.php:344 inc/template-tags.php:374
+#: inc/template-tags.php:352 inc/template-tags.php:382
 msgid "Breadcrumbs"
 msgstr "مسار التنقل"
 
-#: inc/template-tags.php:388
+#: inc/template-tags.php:396
 msgid "Previous page"
 msgstr "الصفحة السابقة"
 
-#: inc/template-tags.php:389
+#: inc/template-tags.php:397
 msgid "Next page"
 msgstr "الصفحة التالية"
 
-#: inc/template-tags.php:607
+#: inc/template-tags.php:615
 #, php-format
 msgid "Compare %s"
 msgstr "مقارنة %s"
 
-#: inc/template-tags.php:616
+#: inc/template-tags.php:624
 msgid "Compare"
 msgstr "قارن"
 
@@ -1041,105 +833,109 @@ msgstr "طباعة"
 msgid "Property comparison"
 msgstr "مقارنة العقارات"
 
-#: page-templates/compare.php:143 page-templates/compare.php:145
-#: single-dara_project.php:148 template-parts/home/hero.php:79
+#: page-templates/compare.php:154 page-templates/compare.php:156
+#: single-dara_project.php:172 template-parts/home/hero.php:104
 msgid "Price"
 msgstr "السعر"
 
-#: page-templates/compare.php:152
+#: page-templates/compare.php:163
 msgid "Price per m²"
 msgstr "سعر المتر"
 
-#: page-templates/compare.php:164 page-templates/list-property.php:54
+#: page-templates/compare.php:169 template-parts/property/filters.php:37
+msgid "Purpose"
+msgstr "الغرض"
+
+#: page-templates/compare.php:175 page-templates/list-property.php:59
 msgid "Details"
 msgstr "التفاصيل"
 
-#: page-templates/compare.php:167 single-dara_project.php:145
+#: page-templates/compare.php:178 single-dara_project.php:169
 msgid "Type"
 msgstr "النوع"
 
-#: page-templates/compare.php:168 single-dara_project.php:97
-#: single-dara_project.php:199 template-parts/home/hero.php:57
+#: page-templates/compare.php:179 single-dara_project.php:118
+#: single-dara_project.php:223 template-parts/home/hero.php:82
 msgid "Location"
 msgstr "الموقع"
 
-#: page-templates/compare.php:169 single-dara_project.php:146
+#: page-templates/compare.php:180 single-dara_project.php:170
 #: template-parts/cards/property.php:26
 msgid "Area"
 msgstr "المساحة"
 
-#: page-templates/compare.php:170 single-dara_project.php:147
-#: template-parts/cards/property.php:24 template-parts/home/hero.php:95
-#: template-parts/property/filters.php:67
+#: page-templates/compare.php:181 single-dara_project.php:171
+#: template-parts/cards/property.php:24 template-parts/home/hero.php:120
+#: template-parts/property/filters.php:84
 msgid "Bedrooms"
 msgstr "غرف النوم"
 
-#: page-templates/compare.php:171 template-parts/cards/property.php:25
+#: page-templates/compare.php:182 template-parts/cards/property.php:25
 msgid "Bathrooms"
 msgstr "دورات المياه"
 
-#: page-templates/compare.php:172
+#: page-templates/compare.php:183
 msgid "Age"
 msgstr "عمر العقار"
 
-#: page-templates/compare.php:173
+#: page-templates/compare.php:184
 msgid "Facing"
 msgstr "الواجهة"
 
-#: page-templates/compare.php:174
+#: page-templates/compare.php:185
 msgid "Condition"
 msgstr "الحالة"
 
-#: page-templates/compare.php:188 single-dara_project.php:157
-#: template-parts/cards/property.php:56
+#: page-templates/compare.php:199 single-dara_project.php:181
+#: template-parts/cards/property.php:66
 msgid "m²"
 msgstr "م²"
 
-#: page-templates/compare.php:199 single-dara_property.php:119
+#: page-templates/compare.php:210 single-dara_property.php:119
 msgid "Features & amenities"
 msgstr "المميزات والمرافق"
 
-#: page-templates/compare.php:205
+#: page-templates/compare.php:216
 msgid "Yes"
 msgstr "نعم"
 
-#: page-templates/compare.php:207
+#: page-templates/compare.php:218
 msgid "No"
 msgstr "لا"
 
-#: page-templates/compare.php:214
+#: page-templates/compare.php:225
 msgid "Contact"
 msgstr "تواصل"
 
-#: page-templates/compare.php:216
+#: page-templates/compare.php:227
 msgid "Agent"
 msgstr "المسوّق"
 
-#: page-templates/compare.php:223
+#: page-templates/compare.php:234
 #, php-format
 msgid "Call %s"
 msgstr "اتصل بـ %s"
 
-#: page-templates/compare.php:226 single-dara_property.php:30
+#: page-templates/compare.php:237 single-dara_property.php:30
 #, php-format
 msgid "Hello, I am interested in: %1$s %2$s"
 msgstr "مرحباً، أرغب في الاستفسار عن: %1$s %2$s"
 
-#: page-templates/compare.php:228 template-parts/forms/viewing.php:11
+#: page-templates/compare.php:239 template-parts/forms/viewing.php:11
 msgid "Request a viewing"
 msgstr "اطلب معاينة"
 
-#: page-templates/compare.php:239
+#: page-templates/compare.php:250
 msgid ""
 "Not sure which one to choose? Send the comparison to our team and we will "
 "help you decide."
 msgstr "محتار بينهم؟ أرسل المقارنة لفريقنا وسنساعدك في الاختيار."
 
-#: page-templates/compare.php:240
+#: page-templates/compare.php:251
 msgid "Hello, please help me choose between these properties:"
 msgstr "مرحباً، أرجو مساعدتي في الاختيار بين هذه العقارات:"
 
-#: page-templates/compare.php:240
+#: page-templates/compare.php:251
 msgid "Ask an advisor on WhatsApp"
 msgstr "اسأل مستشاراً عبر واتساب"
 
@@ -1162,24 +958,24 @@ msgstr "المكتب"
 msgid "Send us a message"
 msgstr "أرسل لنا رسالة"
 
-#: page-templates/contact.php:45 page-templates/list-property.php:32
-#: single-dara_agent.php:113 single-dara_project.php:212
+#: page-templates/contact.php:45 page-templates/list-property.php:37
+#: single-dara_agent.php:119 single-dara_project.php:236
 #: template-parts/forms/viewing.php:14
 msgid "Name"
 msgstr "الاسم"
 
-#: page-templates/contact.php:46 page-templates/list-property.php:33
-#: single-dara_agent.php:114 single-dara_project.php:213
+#: page-templates/contact.php:46 page-templates/list-property.php:38
+#: single-dara_agent.php:120 single-dara_project.php:237
 #: template-parts/forms/viewing.php:15
 msgid "Mobile number"
 msgstr "رقم الجوال"
 
-#: page-templates/contact.php:48 single-dara_agent.php:115
+#: page-templates/contact.php:48 single-dara_agent.php:121
 #: template-parts/forms/viewing.php:17
 msgid "Message"
 msgstr "الرسالة"
 
-#: page-templates/contact.php:50 single-dara_agent.php:116
+#: page-templates/contact.php:50 single-dara_agent.php:122
 msgid "Send message"
 msgstr "إرسال الرسالة"
 
@@ -1187,39 +983,44 @@ msgstr "إرسال الرسالة"
 msgid "Please enable JavaScript to see your saved properties."
 msgstr "يرجى تفعيل JavaScript لعرض العقارات المحفوظة."
 
-#: page-templates/list-property.php:35
+#: page-templates/list-property.php:40
 msgid "I want to"
 msgstr "أرغب في"
 
-#: page-templates/list-property.php:37 page-templates/list-property.php:37
+#: page-templates/list-property.php:42 page-templates/list-property.php:42
 msgid "Sell"
 msgstr "البيع"
 
-#: page-templates/list-property.php:38 page-templates/list-property.php:38
+#: page-templates/list-property.php:43 page-templates/list-property.php:43
 msgid "Rent out"
 msgstr "التأجير"
 
-#: page-templates/list-property.php:39 page-templates/list-property.php:39
+#: page-templates/list-property.php:44 page-templates/list-property.php:44
 msgid "Management"
 msgstr "إدارة الأملاك"
 
-#: page-templates/list-property.php:49
+#: page-templates/list-property.php:47 template-parts/home/hero.php:93
+#: template-parts/property/filters.php:68
+msgid "Property type"
+msgstr "نوع العقار"
+
+#: page-templates/list-property.php:54
 msgid "Other"
 msgstr "أخرى"
 
-#: page-templates/list-property.php:52 template-parts/property/filters.php:35
+#: page-templates/list-property.php:57 template-parts/property/filters.php:46
 msgid "City / district"
 msgstr "المدينة / الحي"
 
-#: page-templates/list-property.php:53
+#: page-templates/list-property.php:58
 msgid "Expected price (optional)"
 msgstr "السعر المتوقع (اختياري)"
 
-#: page-templates/list-property.php:54
+#: page-templates/list-property.php:59
 msgid "Area, rooms, age, special features…"
 msgstr "المساحة، عدد الغرف، عمر العقار، المميزات…"
 
-#: page-templates/list-property.php:56
+#: page-templates/list-property.php:61
 msgid "Send property details"
 msgstr "إرسال بيانات العقار"
 
@@ -1231,7 +1032,7 @@ msgstr "البحث عن:"
 msgid "Search…"
 msgstr "ابحث…"
 
-#: searchform.php:14 template-parts/home/hero.php:103
+#: searchform.php:14 template-parts/home/hero.php:128
 msgid "Search"
 msgstr "ابحث"
 
@@ -1239,31 +1040,31 @@ msgstr "ابحث"
 msgid "Sidebar"
 msgstr "الشريط الجانبي"
 
-#: single-dara_agent.php:48 single-dara_property.php:216
-#: template-parts/cards/agent.php:36
+#: single-dara_agent.php:54 single-dara_property.php:235
+#: template-parts/cards/agent.php:42
 #, php-format
 msgid "FAL %s"
 msgstr "فال %s"
 
-#: single-dara_agent.php:71
+#: single-dara_agent.php:77
 msgid "About the agent"
 msgstr "نبذة عن المسوّق"
 
-#: single-dara_agent.php:99
+#: single-dara_agent.php:105
 msgid "Pages"
 msgstr "الصفحات"
 
-#: single-dara_agent.php:103
+#: single-dara_agent.php:109
 msgid "No properties listed yet."
 msgstr "لا توجد عقارات معروضة بعد."
 
-#: single-dara_agent.php:110
+#: single-dara_agent.php:116
 #, php-format
 msgid "Message %s"
 msgstr "راسل %s"
 
-#: single-dara_agent.php:78 template-parts/cards/agent.php:34
-#: template-parts/home/types.php:25
+#: single-dara_agent.php:84 template-parts/cards/agent.php:40
+#: template-parts/home/types.php:32
 #, php-format
 msgid "%s property"
 msgid_plural "%s properties"
@@ -1298,99 +1099,99 @@ msgstr "جارٍ العمل"
 msgid "Upcoming"
 msgstr "قادم"
 
-#: single-dara_project.php:55
+#: single-dara_project.php:64
 msgid "Licensed off-plan sales"
 msgstr "بيع على الخارطة مرخّص"
 
-#: single-dara_project.php:63
+#: single-dara_project.php:72
 #, php-format
 msgid "Developed by %s"
 msgstr "تطوير %s"
 
-#: single-dara_project.php:68 single-dara_project.php:206
+#: single-dara_project.php:77 single-dara_project.php:230
 msgid "Register your interest"
 msgstr "سجّل اهتمامك"
 
-#: single-dara_project.php:70
+#: single-dara_project.php:79
 msgid "Download brochure"
 msgstr "تحميل البروشور"
 
-#: single-dara_project.php:79 template-parts/cards/project.php:41
+#: single-dara_project.php:88 template-parts/cards/project.php:51
 msgid "Prices from"
 msgstr "تبدأ الأسعار من"
 
-#: single-dara_project.php:82 single-dara_project.php:94
+#: single-dara_project.php:91 single-dara_project.php:106
 msgid "Units"
 msgstr "الوحدات"
 
-#: single-dara_project.php:85
+#: single-dara_project.php:94
 msgid "Delivery"
 msgstr "التسليم"
 
-#: single-dara_project.php:88 single-dara_project.php:88
-#: template-parts/cards/project.php:46 template-parts/cards/project.php:47
+#: single-dara_project.php:97 single-dara_project.php:97
+#: template-parts/cards/project.php:56 template-parts/cards/project.php:57
 msgid "Completion"
 msgstr "نسبة الإنجاز"
 
-#: single-dara_project.php:92
+#: single-dara_project.php:101
 msgid "Project sections"
 msgstr "أقسام المشروع"
 
-#: single-dara_project.php:93
+#: single-dara_project.php:102
 msgid "Overview"
 msgstr "نظرة عامة"
 
-#: single-dara_project.php:95 single-dara_project.php:171
+#: single-dara_project.php:110 single-dara_project.php:195
 msgid "Payment plan"
 msgstr "خطة الدفع"
 
-#: single-dara_project.php:96
+#: single-dara_project.php:114
 msgid "Progress"
 msgstr "مراحل التنفيذ"
 
-#: single-dara_project.php:102
+#: single-dara_project.php:123
 msgid "About the project"
 msgstr "عن المشروع"
 
-#: single-dara_project.php:115 single-dara_property.php:76
+#: single-dara_project.php:136 single-dara_property.php:76
 #, php-format
 msgid "Open photo %1$s of %2$s"
 msgstr "فتح الصورة %1$s من %2$s"
 
-#: single-dara_project.php:134
+#: single-dara_project.php:158
 msgid "Available units"
 msgstr "الوحدات المتاحة"
 
-#: single-dara_project.php:144
+#: single-dara_project.php:168
 msgid "Model"
 msgstr "النموذج"
 
-#: single-dara_project.php:149
+#: single-dara_project.php:173
 msgid "Status"
 msgstr "الحالة"
 
-#: single-dara_project.php:182
+#: single-dara_project.php:206
 msgid "Construction progress"
 msgstr "مراحل التنفيذ"
 
-#: single-dara_project.php:207
+#: single-dara_project.php:231
 msgid ""
 "Get updated prices, available units and booking priority before launch."
 msgstr "احصل على الأسعار المحدّثة والوحدات المتاحة وأولوية الحجز قبل الإطلاق."
 
-#: single-dara_project.php:218
+#: single-dara_project.php:242
 msgid "Unit type"
 msgstr "نوع الوحدة"
 
-#: single-dara_project.php:226
+#: single-dara_project.php:250
 msgid "Send"
 msgstr "إرسال"
 
-#: single-dara_property.php:51 template-parts/cards/property.php:37
+#: single-dara_property.php:51 template-parts/cards/property.php:47
 msgid "Featured"
 msgstr "مميز"
 
-#: single-dara_property.php:65 single.php:40
+#: single-dara_property.php:65 single.php:56
 msgid "Share"
 msgstr "مشاركة"
 
@@ -1416,47 +1217,47 @@ msgstr "المخططات"
 msgid "Plan %s"
 msgstr "مخطط %s"
 
-#: single-dara_property.php:149
+#: single-dara_property.php:160
 msgid "Video tour"
 msgstr "جولة بالفيديو"
 
-#: single-dara_property.php:156
+#: single-dara_property.php:167
 msgid "Play video"
 msgstr "تشغيل الفيديو"
 
-#: single-dara_property.php:162
+#: single-dara_property.php:173
 msgid "Watch the video"
 msgstr "شاهد الفيديو"
 
-#: single-dara_property.php:176
+#: single-dara_property.php:187
 msgid "Location & nearby"
 msgstr "الموقع وما حوله"
 
-#: single-dara_property.php:179
+#: single-dara_property.php:190
 msgid "Get directions"
 msgstr "الاتجاهات"
 
-#: single-dara_property.php:224 template-parts/cards/agent.php:41
+#: single-dara_property.php:243 template-parts/cards/agent.php:47
 msgid "Call"
 msgstr "اتصال"
 
-#: single-dara_property.php:234
+#: single-dara_property.php:253
 msgid "License information"
 msgstr "بيانات الترخيص"
 
-#: single-dara_property.php:236
+#: single-dara_property.php:255
 msgid "Ad license number"
 msgstr "رقم ترخيص الإعلان"
 
-#: single-dara_property.php:239
+#: single-dara_property.php:258
 msgid "Office FAL license"
 msgstr "رخصة فال للمنشأة"
 
-#: single-dara_property.php:241
+#: single-dara_property.php:260
 msgid "Listed on"
 msgstr "تاريخ الإضافة"
 
-#: single-dara_property.php:260
+#: single-dara_property.php:284
 msgid "Similar properties"
 msgstr "عقارات مشابهة"
 
@@ -1465,12 +1266,12 @@ msgstr "عقارات مشابهة"
 msgid "%s min read"
 msgstr "قراءة %s دقائق"
 
-#: template-parts/cards/project.php:20
+#: template-parts/cards/project.php:21
 #, php-format
 msgid "Delivery: %s"
 msgstr "التسليم: %s"
 
-#: template-parts/cards/project.php:18
+#: template-parts/cards/project.php:19
 #, php-format
 msgid "%s unit"
 msgid_plural "%s units"
@@ -1481,7 +1282,7 @@ msgstr[3] "%s وحدات"
 msgstr[4] "%s وحدة"
 msgstr[5] "%s وحدة"
 
-#: template-parts/cards/property.php:40
+#: template-parts/cards/property.php:50
 #, php-format
 msgid "Save %s to favorites"
 msgstr "حفظ %s في المفضلة"
@@ -1522,55 +1323,72 @@ msgstr "كل المسوّقين"
 msgid "All articles"
 msgstr "كل المقالات"
 
-#: template-parts/home/featured.php:57
+#: template-parts/home/featured.php:57 template-parts/home/hero.php:95
+#: template-parts/property/filters.php:39
+msgid "All"
+msgstr "الكل"
+
+#: template-parts/home/featured.php:88
 msgid "View all properties"
 msgstr "عرض كل العقارات"
 
-#: template-parts/home/hero.php:20 template-parts/home/hero.php:26
+#: template-parts/home/hero.php:33 template-parts/home/hero.php:39
 msgid "Any price"
 msgstr "أي سعر"
 
-#: template-parts/home/hero.php:21
+#: template-parts/home/hero.php:34
 msgid "Up to 1 million"
 msgstr "حتى مليون"
 
-#: template-parts/home/hero.php:22
+#: template-parts/home/hero.php:35
 msgid "1 – 3 million"
 msgstr "1 – 3 مليون"
 
-#: template-parts/home/hero.php:23
+#: template-parts/home/hero.php:36
 msgid "Over 3 million"
 msgstr "أكثر من 3 مليون"
 
-#: template-parts/home/hero.php:27
+#: template-parts/home/hero.php:40
 msgid "Up to 50,000"
 msgstr "حتى 50,000"
 
-#: template-parts/home/hero.php:28
+#: template-parts/home/hero.php:41
 msgid "50,000 – 100,000"
 msgstr "50,000 – 100,000"
 
-#: template-parts/home/hero.php:29
+#: template-parts/home/hero.php:42
 msgid "Over 100,000"
 msgstr "أكثر من 100,000"
 
-#: template-parts/home/hero.php:49
+#: template-parts/home/hero.php:74
 msgid "Search type"
 msgstr "نوع البحث"
 
-#: template-parts/home/hero.php:58
+#: template-parts/home/hero.php:75
+msgid "Buy"
+msgstr "شراء"
+
+#: template-parts/home/hero.php:76 template-parts/property/filters.php:41
+msgid "Rent"
+msgstr "إيجار"
+
+#: template-parts/home/hero.php:77
+msgid "New projects"
+msgstr "مشاريع جديدة"
+
+#: template-parts/home/hero.php:83
 msgid "City or district"
 msgstr "المدينة أو الحي"
 
-#: template-parts/home/hero.php:87
+#: template-parts/home/hero.php:112
 msgid "Yearly rent"
 msgstr "الإيجار السنوي"
 
-#: template-parts/home/hero.php:97 template-parts/property/filters.php:69
+#: template-parts/home/hero.php:122 template-parts/property/filters.php:88
 msgid "Any"
 msgstr "الكل"
 
-#: template-parts/home/hero.php:108
+#: template-parts/home/hero.php:133
 msgid "Popular:"
 msgstr "الأكثر بحثاً:"
 
@@ -1582,43 +1400,47 @@ msgstr "كل المشاريع"
 msgid "Learn more"
 msgstr "اعرف المزيد"
 
-#: template-parts/property/filters.php:18
-#: template-parts/property/filters.php:21
+#: template-parts/property/filters.php:29
+#: template-parts/property/filters.php:32
 msgid "Filter results"
 msgstr "فلترة النتائج"
 
-#: template-parts/property/filters.php:22
+#: template-parts/property/filters.php:33
 msgid "Clear all"
 msgstr "مسح الكل"
 
-#: template-parts/property/filters.php:59
+#: template-parts/property/filters.php:40
+msgid "Sale"
+msgstr "بيع"
+
+#: template-parts/property/filters.php:76
 #, php-format
 msgid "Price (%s)"
 msgstr "السعر (%s)"
 
-#: template-parts/property/filters.php:61
 #: template-parts/property/filters.php:78
+#: template-parts/property/filters.php:104
 msgid "From"
 msgstr "من"
 
-#: template-parts/property/filters.php:62
 #: template-parts/property/filters.php:79
+#: template-parts/property/filters.php:105
 msgid "To"
 msgstr "إلى"
 
-#: template-parts/property/filters.php:62
+#: template-parts/property/filters.php:79
 msgid "No limit"
 msgstr "بلا حد"
 
-#: template-parts/property/filters.php:76
+#: template-parts/property/filters.php:102
 msgid "Area (m²)"
 msgstr "المساحة (م²)"
 
-#: template-parts/property/filters.php:85
+#: template-parts/property/filters.php:111
 msgid "Features"
 msgstr "المميزات"
 
-#: template-parts/property/filters.php:95
+#: template-parts/property/filters.php:121
 msgid "Show results"
 msgstr "عرض النتائج"
 

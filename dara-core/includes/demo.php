@@ -108,7 +108,8 @@ function dara_demo_image( $name ) {
 		return 0;
 	}
 	update_post_meta( $id, '_dara_demo', 1 );
-	return $cache[ $name ] = (int) $id;
+	$cache[ $name ] = (int) $id;
+	return $cache[ $name ];
 }
 
 /**
@@ -170,7 +171,7 @@ function dara_demo_import() {
 		set_time_limit( 300 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions
 	}
 	$GLOBALS['dara_demo_lang'] = isset( $_POST['lang'] ) && 'en' === $_POST['lang'] ? 'en' : 'ar';
-	$t = 'dara_demo_t';
+	$t                         = 'dara_demo_t';
 
 	// Taxonomies.
 	$types = array();
@@ -193,7 +194,14 @@ function dara_demo_import() {
 	) as $city ) {
 		$city_id = dara_demo_term( $t( $city[0][0], $city[0][1] ), 'property_city' );
 		foreach ( $city[1] as $d ) {
-			$districts[ $d[1] ] = dara_demo_term( $t( $d[0], $d[1] ), 'property_city', array( 'parent' => $city_id, 'slug' => sanitize_title( $city[0][1] . '-' . $d[1] ) ) );
+			$districts[ $d[1] ] = dara_demo_term(
+				$t( $d[0], $d[1] ),
+				'property_city',
+				array(
+					'parent' => $city_id,
+					'slug'   => sanitize_title( $city[0][1] . '-' . $d[1] ),
+				)
+			);
 		}
 	}
 
@@ -211,7 +219,11 @@ function dara_demo_import() {
 				'post_excerpt' => $t( 'مستشارة عقارية — فلل شمال الرياض', 'Property advisor — North Riyadh villas' ),
 				'post_content' => $t( '<p>أكثر من 8 سنوات في تسويق الفلل والدوبلكسات شمال الرياض. ترافق عملاءها من أول معاينة حتى نقل الملكية.</p>', '<p>8+ years marketing villas and duplexes in North Riyadh, guiding clients from the first viewing to the transfer of ownership.</p>' ),
 			),
-			array( '_dara_phone' => '+966 50 000 0001', '_dara_whatsapp' => '966500000001', '_dara_fal' => '1100000001' )
+			array(
+				'_dara_phone'    => '+966 50 000 0001',
+				'_dara_whatsapp' => '966500000001',
+				'_dara_fal'      => '1100000001',
+			)
 		),
 		dara_demo_post(
 			array(
@@ -220,17 +232,21 @@ function dara_demo_import() {
 				'post_excerpt' => $t( 'مسوّق عقاري — الشقق والتجاري', 'Agent — apartments & commercial' ),
 				'post_content' => $t( '<p>متخصص في الشقق السكنية والمكاتب التجارية للبيع والإيجار في الرياض وجدة.</p>', '<p>Specialised in apartments and offices for sale and rent in Riyadh and Jeddah.</p>' ),
 			),
-			array( '_dara_phone' => '+966 50 000 0002', '_dara_whatsapp' => '966500000002', '_dara_fal' => '1100000002' )
+			array(
+				'_dara_phone'    => '+966 50 000 0002',
+				'_dara_whatsapp' => '966500000002',
+				'_dara_fal'      => '1100000002',
+			)
 		),
 	);
 
 	// Properties.
-	$nearby = $t( "مدرسة عالمية | 5 دقائق\nطريق الملك سلمان | 3 دقائق\nمركز تسوق | 8 دقائق\nمستشفى | 12 دقيقة", "International school | 5 min\nKing Salman Road | 3 min\nShopping mall | 8 min\nHospital | 12 min" );
-	$desc   = $t(
+	$nearby       = $t( "مدرسة عالمية | 5 دقائق\nطريق الملك سلمان | 3 دقائق\nمركز تسوق | 8 دقائق\nمستشفى | 12 دقيقة", "International school | 5 min\nKing Salman Road | 3 min\nShopping mall | 8 min\nHospital | 12 min" );
+	$desc         = $t(
 		"<!-- wp:paragraph -->\n<p>عقار مميز بتصميم معاصر وتشطيبات حديثة، بمساحات واسعة ومطبخ مفتوح مجهز بالكامل، وجناح رئيسي بغرفة ملابس. قريب من المدارس والطرق الرئيسية والمراكز التجارية.</p>\n<!-- /wp:paragraph -->",
 		"<!-- wp:paragraph -->\n<p>A contemporary property with modern finishes, generous spaces, a fully fitted open kitchen and a master suite with walk-in closet. Close to schools, main roads and shopping.</p>\n<!-- /wp:paragraph -->"
 	);
-	$props = array(
+	$props        = array(
 		// title ar, title en, type, district, purpose, price, area, beds, baths, image, lat, lng, featured, agent.
 		array( 'فيلا مودرن بحديقة ومسبح خاص', 'Modern villa with garden and private pool', 'villa', 'Al Malqa', 'sale', 3450000, 520, 5, 6, 'villa-2', 24.812, 46.612, 1, 0 ),
 		array( 'شقة فاخرة بإطلالة مفتوحة', 'Luxury apartment with open views', 'apartment', 'Al Yasmin', 'sale', 1280000, 185, 3, 3, 'tower-1', 24.826, 46.648, 0, 1 ),
@@ -282,14 +298,14 @@ function dara_demo_import() {
 	}
 
 	// Projects.
-	$units = $t(
+	$units    = $t(
 		"A1 | شقة | 110 | 2 | 850000 | available\nA2 | شقة | 145 | 3 | 1120000 | available\nB1 | شقة | 165 | 3 | 1290000 | reserved\nC1 | شقة | 210 | 4 | 1640000 | available\nPH | بنتهاوس | 320 | 4 | 2900000 | sold",
 		"A1 | Apartment | 110 | 2 | 850000 | available\nA2 | Apartment | 145 | 3 | 1120000 | available\nB1 | Apartment | 165 | 3 | 1290000 | reserved\nC1 | Apartment | 210 | 4 | 1640000 | available\nPH | Penthouse | 320 | 4 | 2900000 | sold"
 	);
-	$payment = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
+	$payment  = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
 	$projects = array(
-		array( 'أبراج الواحة', 'Al Waha Towers', 'tower-3', 'construction', 65, 850000, $t( 'الربع الرابع 2027', 'Q4 2027' ), 'Al Yasmin', 24.83, 46.64, $t( 'يناير 2025', 'Jan 2025' ) . " | " . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'يونيو 2025', 'Jun 2025' ) . " | " . $t( 'الحفر والأساسات', 'Foundations' ) . " | done\n" . $t( 'مارس 2026', 'Mar 2026' ) . " | " . $t( 'الهيكل الإنشائي', 'Structure' ) . " | current\n" . $t( 'مارس 2027', 'Mar 2027' ) . " | " . $t( 'التشطيبات والواجهات', 'Finishing & facades' ) . " | upcoming\n" . $t( 'ديسمبر 2027', 'Dec 2027' ) . " | " . $t( 'التسليم', 'Handover' ) . " | upcoming" ),
-		array( 'مجمع رُبى السكني', 'Ruba Residences', 'tower-1', 'offplan', 20, 1450000, $t( 'الربع الثاني 2028', 'Q2 2028' ), 'North Obhur', 21.75, 39.12, $t( 'مارس 2026', 'Mar 2026' ) . " | " . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'سبتمبر 2026', 'Sep 2026' ) . " | " . $t( 'الأساسات', 'Foundations' ) . " | current\n" . $t( 'يونيو 2027', 'Jun 2027' ) . " | " . $t( 'الهيكل الإنشائي', 'Structure' ) . " | upcoming\n" . $t( 'يونيو 2028', 'Jun 2028' ) . " | " . $t( 'التسليم', 'Handover' ) . " | upcoming" ),
+		array( 'أبراج الواحة', 'Al Waha Towers', 'tower-3', 'construction', 65, 850000, $t( 'الربع الرابع 2027', 'Q4 2027' ), 'Al Yasmin', 24.83, 46.64, $t( 'يناير 2025', 'Jan 2025' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'يونيو 2025', 'Jun 2025' ) . ' | ' . $t( 'الحفر والأساسات', 'Foundations' ) . " | done\n" . $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | current\n" . $t( 'مارس 2027', 'Mar 2027' ) . ' | ' . $t( 'التشطيبات والواجهات', 'Finishing & facades' ) . " | upcoming\n" . $t( 'ديسمبر 2027', 'Dec 2027' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
+		array( 'مجمع رُبى السكني', 'Ruba Residences', 'tower-1', 'offplan', 20, 1450000, $t( 'الربع الثاني 2028', 'Q2 2028' ), 'North Obhur', 21.75, 39.12, $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'سبتمبر 2026', 'Sep 2026' ) . ' | ' . $t( 'الأساسات', 'Foundations' ) . " | current\n" . $t( 'يونيو 2027', 'Jun 2027' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | upcoming\n" . $t( 'يونيو 2028', 'Jun 2028' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
 	);
 	foreach ( $projects as $p ) {
 		$id = dara_demo_post(
@@ -341,18 +357,64 @@ function dara_demo_import() {
 
 	// Pages.
 	$pages = array(
-		'home'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'الرئيسية', 'Home' ), 'post_name' => 'home', 'post_content' => function_exists( 'dara_home_pattern_content' ) ? dara_home_pattern_content() : '' ) ),
-		'blog'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'المدونة', 'Blog' ), 'post_name' => 'blog' ) ),
-		'contact'  => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'تواصل معنا', 'Contact us' ), 'post_name' => 'contact', 'post_content' => $t( '<p>يسعدنا تواصلكم معنا، فريقنا متاح من الأحد إلى الخميس.</p>', '<p>We would love to hear from you. Our team is available Sunday to Thursday.</p>' ) ), array( '_wp_page_template' => 'page-templates/contact.php' ) ),
-		'list'     => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'أضف عقارك', 'List your property' ), 'post_name' => 'list-your-property', 'post_content' => $t( '<p>أرسل بيانات عقارك وسيتواصل معك مسوّق خلال يوم عمل.</p>', '<p>Send us your property details and an agent will contact you within one business day.</p>' ) ), array( '_wp_page_template' => 'page-templates/list-property.php' ) ),
-		'favorite' => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'المفضلة', 'Favorites' ), 'post_name' => 'favorites' ), array( '_wp_page_template' => 'page-templates/favorites.php' ) ),
-		'compare'  => dara_demo_post( array( 'post_type' => 'page', 'post_title' => $t( 'مقارنة العقارات', 'Compare properties' ), 'post_name' => 'compare' ), array( '_wp_page_template' => 'page-templates/compare.php' ) ),
+		'home'     => dara_demo_post(
+			array(
+				'post_type'    => 'page',
+				'post_title'   => $t( 'الرئيسية', 'Home' ),
+				'post_name'    => 'home',
+				'post_content' => dara_core_home_pattern_content(),
+			)
+		),
+		'blog'     => dara_demo_post(
+			array(
+				'post_type'  => 'page',
+				'post_title' => $t( 'المدونة', 'Blog' ),
+				'post_name'  => 'blog',
+			)
+		),
+		'contact'  => dara_demo_post(
+			array(
+				'post_type'    => 'page',
+				'post_title'   => $t( 'تواصل معنا', 'Contact us' ),
+				'post_name'    => 'contact',
+				'post_content' => $t( '<p>يسعدنا تواصلكم معنا، فريقنا متاح من الأحد إلى الخميس.</p>', '<p>We would love to hear from you. Our team is available Sunday to Thursday.</p>' ),
+			),
+			array( '_wp_page_template' => 'page-templates/contact.php' )
+		),
+		'list'     => dara_demo_post(
+			array(
+				'post_type'    => 'page',
+				'post_title'   => $t( 'أضف عقارك', 'List your property' ),
+				'post_name'    => 'list-your-property',
+				'post_content' => $t( '<p>أرسل بيانات عقارك وسيتواصل معك مسوّق خلال يوم عمل.</p>', '<p>Send us your property details and an agent will contact you within one business day.</p>' ),
+			),
+			array( '_wp_page_template' => 'page-templates/list-property.php' )
+		),
+		'favorite' => dara_demo_post(
+			array(
+				'post_type'  => 'page',
+				'post_title' => $t( 'المفضلة', 'Favorites' ),
+				'post_name'  => 'favorites',
+			),
+			array( '_wp_page_template' => 'page-templates/favorites.php' )
+		),
+		'compare'  => dara_demo_post(
+			array(
+				'post_type'  => 'page',
+				'post_title' => $t( 'مقارنة العقارات', 'Compare properties' ),
+				'post_name'  => 'compare',
+			),
+			array( '_wp_page_template' => 'page-templates/compare.php' )
+		),
 	);
 	delete_transient( 'dara_template_pages' );
 
 	// Move the untouched WordPress sample post/page to the trash (restored on removal).
 	$trashed = array();
-	foreach ( array( 'hello-world' => 'post', 'sample-page' => 'page' ) as $slug => $type ) {
+	foreach ( array(
+		'hello-world' => 'post',
+		'sample-page' => 'page',
+	) as $slug => $type ) {
 		$sample = get_page_by_path( $slug, OBJECT, $type );
 		if ( $sample && $sample->post_date === $sample->post_modified && wp_trash_post( $sample->ID ) ) {
 			$trashed[] = $sample->ID;
@@ -380,7 +442,16 @@ function dara_demo_import() {
 		if ( ! is_wp_error( $main ) ) {
 			$menus[] = $main;
 			$add     = function ( $menu, $title, $url, $parent = 0 ) {
-				return wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => $title, 'menu-item-url' => $url, 'menu-item-parent-id' => $parent, 'menu-item-status' => 'publish' ) );
+				return wp_update_nav_menu_item(
+					$menu,
+					0,
+					array(
+						'menu-item-title'     => $title,
+						'menu-item-url'       => $url,
+						'menu-item-parent-id' => $parent,
+						'menu-item-status'    => 'publish',
+					)
+				);
 			};
 			$archive = get_post_type_archive_link( 'dara_property' );
 			$add( $main, $t( 'الرئيسية', 'Home' ), home_url( '/' ) );
@@ -411,7 +482,7 @@ function dara_demo_import() {
 	}
 
 	// Theme options (only when they are still empty, so nothing of the user's is overwritten).
-	$mods = array(
+	$mods     = array(
 		'hero_image' => dara_demo_image( 'hero' ),
 		'why_image'  => dara_demo_image( 'interior-1' ),
 		'phone'      => '+966 11 000 0000',
@@ -437,7 +508,7 @@ function dara_demo_import() {
 	update_option(
 		'dara_demo_imported',
 		array(
-			'time'   => time(),
+			'time'     => time(),
 			'menus'    => $menus,
 			'backup'   => $backup,
 			'set_mods' => $set_mods,

@@ -65,7 +65,14 @@ $dara_points = array();
 				$dara_i = 0;
 				while ( have_posts() ) :
 					the_post();
-					get_template_part( 'template-parts/cards/property', null, array( 'heading' => 'h2', 'lazy' => $dara_i > 2 ) );
+					get_template_part(
+						'template-parts/cards/property',
+						null,
+						array(
+							'heading' => 'h2',
+							'lazy'    => $dara_i > 2,
+						)
+					);
 					$dara_lat = get_post_meta( get_the_ID(), '_dara_lat', true );
 					$dara_lng = get_post_meta( get_the_ID(), '_dara_lng', true );
 					if ( is_numeric( $dara_lat ) && is_numeric( $dara_lng ) ) {

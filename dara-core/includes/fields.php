@@ -25,15 +25,51 @@ function dara_core_fields() {
 			'dara-property-main'     => array(
 				'title'  => __( 'Property details', 'dara-core' ),
 				'fields' => array(
-					'_dara_purpose'      => array( 'select', __( 'Purpose', 'dara-core' ), array( 'sale' => __( 'For sale', 'dara-core' ), 'rent' => __( 'For rent', 'dara-core' ) ) ),
+					'_dara_purpose'      => array(
+						'select',
+						__( 'Purpose', 'dara-core' ),
+						array(
+							'sale' => __( 'For sale', 'dara-core' ),
+							'rent' => __( 'For rent', 'dara-core' ),
+						),
+					),
 					'_dara_price'        => array( 'number', __( 'Price', 'dara-core' ), null, __( 'Numbers only. Leave empty to show "Price on request".', 'dara-core' ) ),
-					'_dara_price_period' => array( 'select', __( 'Rent period', 'dara-core' ), array( '' => '—', 'year' => __( 'Yearly', 'dara-core' ), 'month' => __( 'Monthly', 'dara-core' ), 'day' => __( 'Daily', 'dara-core' ) ) ),
+					'_dara_price_period' => array(
+						'select',
+						__( 'Rent period', 'dara-core' ),
+						array(
+							''      => '—',
+							'year'  => __( 'Yearly', 'dara-core' ),
+							'month' => __( 'Monthly', 'dara-core' ),
+							'day'   => __( 'Daily', 'dara-core' ),
+						),
+					),
 					'_dara_area'         => array( 'number', __( 'Area (m²)', 'dara-core' ) ),
 					'_dara_beds'         => array( 'number', __( 'Bedrooms', 'dara-core' ) ),
 					'_dara_baths'        => array( 'number', __( 'Bathrooms', 'dara-core' ) ),
 					'_dara_age'          => array( 'text', __( 'Property age', 'dara-core' ), null, __( 'e.g. New, 5 years', 'dara-core' ) ),
-					'_dara_facing'       => array( 'select', __( 'Facing', 'dara-core' ), array( '' => '—', 'north' => __( 'North', 'dara-core' ), 'south' => __( 'South', 'dara-core' ), 'east' => __( 'East', 'dara-core' ), 'west' => __( 'West', 'dara-core' ), 'corner' => __( 'Corner', 'dara-core' ) ) ),
-					'_dara_condition'    => array( 'select', __( 'Condition', 'dara-core' ), array( '' => '—', 'ready' => __( 'Ready to move', 'dara-core' ), 'construction' => __( 'Under construction', 'dara-core' ), 'offplan' => __( 'Off-plan', 'dara-core' ) ) ),
+					'_dara_facing'       => array(
+						'select',
+						__( 'Facing', 'dara-core' ),
+						array(
+							''       => '—',
+							'north'  => __( 'North', 'dara-core' ),
+							'south'  => __( 'South', 'dara-core' ),
+							'east'   => __( 'East', 'dara-core' ),
+							'west'   => __( 'West', 'dara-core' ),
+							'corner' => __( 'Corner', 'dara-core' ),
+						),
+					),
+					'_dara_condition'    => array(
+						'select',
+						__( 'Condition', 'dara-core' ),
+						array(
+							''             => '—',
+							'ready'        => __( 'Ready to move', 'dara-core' ),
+							'construction' => __( 'Under construction', 'dara-core' ),
+							'offplan'      => __( 'Off-plan', 'dara-core' ),
+						),
+					),
 					'_dara_featured'     => array( 'checkbox', __( 'Featured property', 'dara-core' ) ),
 					'_dara_agent'        => array( 'agent', __( 'Agent', 'dara-core' ) ),
 				),
@@ -67,7 +103,15 @@ function dara_core_fields() {
 				'title'  => __( 'Project details', 'dara-core' ),
 				'fields' => array(
 					'_dara_developer'   => array( 'text', __( 'Developer', 'dara-core' ) ),
-					'_dara_status'      => array( 'select', __( 'Status', 'dara-core' ), array( 'offplan' => __( 'Off-plan sales', 'dara-core' ), 'construction' => __( 'Under construction', 'dara-core' ), 'ready' => __( 'Ready', 'dara-core' ) ) ),
+					'_dara_status'      => array(
+						'select',
+						__( 'Status', 'dara-core' ),
+						array(
+							'offplan'      => __( 'Off-plan sales', 'dara-core' ),
+							'construction' => __( 'Under construction', 'dara-core' ),
+							'ready'        => __( 'Ready', 'dara-core' ),
+						),
+					),
 					'_dara_progress'    => array( 'number', __( 'Completion (%)', 'dara-core' ) ),
 					'_dara_price_from'  => array( 'number', __( 'Prices from', 'dara-core' ) ),
 					'_dara_units_count' => array( 'number', __( 'Number of units', 'dara-core' ) ),
@@ -207,17 +251,17 @@ function dara_core_render_box( $post, $box ) {
 	foreach ( $box['args']['fields'] as $key => $field ) {
 		$value = get_post_meta( $post->ID, $key, true );
 		$type  = $field[0];
-		$id    = esc_attr( $key );
+		$id    = $key;
 		$wide  = in_array( $type, array( 'lines', 'textarea', 'gallery' ), true ) ? ' dara-field--wide' : '';
 
 		echo '<div class="dara-field' . esc_attr( $wide ) . '">';
 		if ( 'checkbox' === $type ) {
-			printf( '<label><input type="checkbox" name="%1$s" value="1"%2$s> %3$s</label>', $id, checked( $value, '1', false ), esc_html( $field[1] ) );
+			printf( '<label><input type="checkbox" name="%1$s" value="1"%2$s> %3$s</label>', esc_attr( $id ), checked( $value, '1', false ), esc_html( $field[1] ) );
 		} else {
-			printf( '<label for="%1$s">%2$s</label>', $id, esc_html( $field[1] ) );
+			printf( '<label for="%1$s">%2$s</label>', esc_attr( $id ), esc_html( $field[1] ) );
 			switch ( $type ) {
 				case 'select':
-					echo '<select id="' . $id . '" name="' . $id . '">';
+					echo '<select id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '">';
 					foreach ( $field[2] as $opt => $label ) {
 						printf( '<option value="%1$s"%2$s>%3$s</option>', esc_attr( $opt ), selected( $value, $opt, false ), esc_html( $label ) );
 					}
@@ -225,11 +269,11 @@ function dara_core_render_box( $post, $box ) {
 					break;
 				case 'lines':
 				case 'textarea':
-					printf( '<textarea id="%1$s" name="%1$s" rows="5">%2$s</textarea>', $id, esc_textarea( $value ) );
+					printf( '<textarea id="%1$s" name="%1$s" rows="5">%2$s</textarea>', esc_attr( $id ), esc_textarea( $value ) );
 					break;
 				case 'gallery':
 					echo '<div class="dara-gallery" data-multiple="1">';
-					echo '<input type="hidden" id="' . $id . '" name="' . $id . '" value="' . esc_attr( $value ) . '">';
+					echo '<input type="hidden" id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '" value="' . esc_attr( $value ) . '">';
 					echo '<ul class="dara-gallery__list">';
 					foreach ( array_filter( explode( ',', (string) $value ) ) as $att_id ) {
 						$thumb = wp_get_attachment_image_url( (int) $att_id, 'thumbnail' );
@@ -251,7 +295,7 @@ function dara_core_render_box( $post, $box ) {
 							'fields'         => 'ids',
 						)
 					);
-					echo '<select id="' . $id . '" name="' . $id . '"><option value="">' . esc_html__( '— Default contact —', 'dara-core' ) . '</option>';
+					echo '<select id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '"><option value="">' . esc_html__( '— Default contact —', 'dara-core' ) . '</option>';
 					foreach ( $agents as $agent_id ) {
 						printf( '<option value="%1$d"%2$s>%3$s</option>', (int) $agent_id, selected( (int) $value, (int) $agent_id, false ), esc_html( get_the_title( $agent_id ) ) );
 					}
@@ -259,7 +303,7 @@ function dara_core_render_box( $post, $box ) {
 					break;
 				default:
 					$input_type = in_array( $type, array( 'number', 'url', 'email' ), true ) ? $type : 'text';
-					printf( '<input type="%1$s" id="%2$s" name="%2$s" value="%3$s"%4$s>', esc_attr( $input_type ), $id, esc_attr( $value ), 'number' === $type ? ' step="any" min="0"' : '' );
+					printf( '<input type="%1$s" id="%2$s" name="%2$s" value="%3$s"%4$s>', esc_attr( $input_type ), esc_attr( $id ), esc_attr( $value ), 'number' === $type ? ' step="any" min="0"' : '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static attribute string.
 			}
 		}
 		if ( ! empty( $field[3] ) ) {

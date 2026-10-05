@@ -8,8 +8,19 @@
 defined( 'ABSPATH' ) || exit;
 
 $dara_f        = dara_get_filters();
-$dara_types    = get_terms( array( 'taxonomy' => 'property_type', 'hide_empty' => false ) );
-$dara_features = get_terms( array( 'taxonomy' => 'property_feature', 'hide_empty' => false, 'number' => 12 ) );
+$dara_types    = get_terms(
+	array(
+		'taxonomy'   => 'property_type',
+		'hide_empty' => false,
+	)
+);
+$dara_features = get_terms(
+	array(
+		'taxonomy'   => 'property_feature',
+		'hide_empty' => false,
+		'number'     => 12,
+	)
+);
 $dara_action   = get_post_type_archive_link( 'dara_property' );
 if ( is_tax( 'property_type' ) ) {
 	$dara_f['type'] = array( get_queried_object()->slug );
@@ -35,7 +46,13 @@ if ( is_tax( 'property_type' ) ) {
 			<span class="filters__label"><?php esc_html_e( 'City / district', 'dara' ); ?></span>
 			<input type="text" name="location" value="<?php echo esc_attr( $dara_f['location'] ); ?>" list="dara-cities-f" autocomplete="off">
 			<?php
-			$dara_cities = get_terms( array( 'taxonomy' => 'property_city', 'hide_empty' => true, 'number' => 60 ) );
+			$dara_cities = get_terms(
+				array(
+					'taxonomy'   => 'property_city',
+					'hide_empty' => true,
+					'number'     => 60,
+				)
+			);
 			if ( $dara_cities && ! is_wp_error( $dara_cities ) ) {
 				echo '<datalist id="dara-cities-f">';
 				foreach ( $dara_cities as $dara_c ) {
@@ -66,7 +83,16 @@ if ( is_tax( 'property_type' ) ) {
 		<fieldset class="filters__group">
 			<legend><?php esc_html_e( 'Bedrooms', 'dara' ); ?></legend>
 			<div class="pills">
-				<?php foreach ( array( '' => __( 'Any', 'dara' ), 1 => '1+', 2 => '2+', 3 => '3+', 4 => '4+', 5 => '5+' ) as $dara_v => $dara_l ) : ?>
+				<?php
+				foreach ( array(
+					'' => __( 'Any', 'dara' ),
+					1  => '1+',
+					2  => '2+',
+					3  => '3+',
+					4  => '4+',
+					5  => '5+',
+				) as $dara_v => $dara_l ) :
+					?>
 					<label><input type="radio" name="beds" value="<?php echo esc_attr( $dara_v ); ?>" <?php checked( (string) $dara_f['beds'], (string) $dara_v ); ?>><span><?php echo esc_html( $dara_l ); ?></span></label>
 				<?php endforeach; ?>
 			</div>

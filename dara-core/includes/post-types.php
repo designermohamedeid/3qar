@@ -49,7 +49,10 @@ function dara_core_register_post_types() {
 			'show_in_rest'  => true,
 			'menu_icon'     => 'dashicons-admin-home',
 			'menu_position' => 5,
-			'rewrite'       => array( 'slug' => 'properties', 'with_front' => false ),
+			'rewrite'       => array(
+				'slug'       => 'properties',
+				'with_front' => false,
+			),
 			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 		)
 	);
@@ -63,7 +66,10 @@ function dara_core_register_post_types() {
 			'show_in_rest'  => true,
 			'menu_icon'     => 'dashicons-building',
 			'menu_position' => 6,
-			'rewrite'       => array( 'slug' => 'projects', 'with_front' => false ),
+			'rewrite'       => array(
+				'slug'       => 'projects',
+				'with_front' => false,
+			),
 			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 		)
 	);
@@ -71,27 +77,30 @@ function dara_core_register_post_types() {
 	register_post_type(
 		'dara_agent',
 		array(
-			'labels'        => dara_core_labels( __( 'Agents', 'dara-core' ), __( 'Agent', 'dara-core' ), array( 'featured_image' => __( 'Photo', 'dara-core' ) ) ),
-			'public'        => true,
-			'has_archive'   => true,
-			'show_in_menu'  => 'edit.php?post_type=dara_property',
-			'show_in_rest'  => true,
-			'rewrite'       => array( 'slug' => 'agents', 'with_front' => false ),
-			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+			'labels'       => dara_core_labels( __( 'Agents', 'dara-core' ), __( 'Agent', 'dara-core' ), array( 'featured_image' => __( 'Photo', 'dara-core' ) ) ),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_menu' => 'edit.php?post_type=dara_property',
+			'show_in_rest' => true,
+			'rewrite'      => array(
+				'slug'       => 'agents',
+				'with_front' => false,
+			),
+			'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 		)
 	);
 
 	register_post_type(
 		'dara_lead',
 		array(
-			'labels'       => dara_core_labels( __( 'Leads', 'dara-core' ), __( 'Lead', 'dara-core' ) ),
-			'public'       => false,
-			'show_ui'      => true,
-			'menu_icon'    => 'dashicons-email-alt',
+			'labels'        => dara_core_labels( __( 'Leads', 'dara-core' ), __( 'Lead', 'dara-core' ) ),
+			'public'        => false,
+			'show_ui'       => true,
+			'menu_icon'     => 'dashicons-email-alt',
 			'menu_position' => 7,
-			'supports'     => array( 'title' ),
-			'capabilities' => array( 'create_posts' => 'do_not_allow' ),
-			'map_meta_cap' => true,
+			'supports'      => array( 'title' ),
+			'capabilities'  => array( 'create_posts' => 'do_not_allow' ),
+			'map_meta_cap'  => true,
 		)
 	);
 
@@ -120,7 +129,10 @@ function dara_core_register_post_types() {
 			$tax_defaults,
 			array(
 				'labels'  => dara_core_labels( __( 'Cities & Districts', 'dara-core' ), __( 'City / District', 'dara-core' ) ),
-				'rewrite' => array( 'slug' => 'location', 'hierarchical' => true ),
+				'rewrite' => array(
+					'slug'         => 'location',
+					'hierarchical' => true,
+				),
 			)
 		)
 	);

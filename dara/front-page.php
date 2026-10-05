@@ -26,7 +26,7 @@ get_template_part( 'template-parts/home/hero' );
 /**
  * Filter the home sections (slug => Customizer toggle). Reorder or add your own.
  */
-$dara_sections = apply_filters(
+$dara_sections   = apply_filters(
 	'dara_home_sections',
 	array(
 		'featured' => 'show_featured',

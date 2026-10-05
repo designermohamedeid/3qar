@@ -29,7 +29,12 @@ while ( have_posts() ) :
 	<div class="container container--narrow section section--top-0">
 		<div class="entry-content"><?php the_content(); ?></div>
 		<?php
-		wp_link_pages( array( 'before' => '<nav class="page-links">', 'after' => '</nav>' ) );
+		wp_link_pages(
+			array(
+				'before' => '<nav class="page-links">',
+				'after'  => '</nav>',
+			)
+		);
 		if ( comments_open() || get_comments_number() ) {
 			comments_template();
 		}

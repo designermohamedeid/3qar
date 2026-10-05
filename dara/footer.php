@@ -34,14 +34,27 @@ defined( 'ABSPATH' ) || exit;
 					);
 				} else {
 					echo '<ul class="footer-links">';
-					wp_list_pages( array( 'title_li' => '', 'depth' => 1, 'number' => 6 ) );
+					wp_list_pages(
+						array(
+							'title_li' => '',
+							'depth'    => 1,
+							'number'   => 6,
+						)
+					);
 					echo '</ul>';
 				}
 				?>
 			</div>
 
 			<?php
-			$dara_types = dara_has_core() ? get_terms( array( 'taxonomy' => 'property_type', 'number' => 6, 'orderby' => 'count', 'order' => 'DESC' ) ) : array();
+			$dara_types = dara_has_core() ? get_terms(
+				array(
+					'taxonomy' => 'property_type',
+					'number'   => 6,
+					'orderby'  => 'count',
+					'order'    => 'DESC',
+				)
+			) : array();
 			if ( $dara_types && ! is_wp_error( $dara_types ) ) :
 				?>
 				<div class="site-footer__col">

@@ -13,9 +13,10 @@ $dara_status   = dara_option_label( 'dara_project', '_dara_status', get_post_met
 $dara_from     = get_post_meta( $dara_id, '_dara_price_from', true );
 $dara_cities   = get_the_terms( $dara_id, 'property_city' );
 $dara_loc      = $dara_cities && ! is_wp_error( $dara_cities ) ? implode( '، ', wp_list_pluck( array_reverse( $dara_cities ), 'name' ) ) : get_post_meta( $dara_id, '_dara_address', true );
+$dara_units    = (int) get_post_meta( $dara_id, '_dara_units_count', true );
 $dara_facts    = array_filter(
 	array(
-		get_post_meta( $dara_id, '_dara_units_count', true ) ? sprintf( /* translators: %s: number of units. */ _n( '%s unit', '%s units', (int) get_post_meta( $dara_id, '_dara_units_count', true ), 'dara' ), number_format_i18n( (int) get_post_meta( $dara_id, '_dara_units_count', true ) ) ) : '',
+		$dara_units ? sprintf( /* translators: %s: number of units. */ _n( '%s unit', '%s units', $dara_units, 'dara' ), number_format_i18n( $dara_units ) ) : '',
 		get_post_meta( $dara_id, '_dara_unit_types', true ),
 		get_post_meta( $dara_id, '_dara_delivery', true ) ? sprintf( /* translators: %s: date. */ __( 'Delivery: %s', 'dara' ), get_post_meta( $dara_id, '_dara_delivery', true ) ) : '',
 	)
@@ -24,7 +25,16 @@ $dara_facts    = array_filter(
 <article class="card card--project">
 	<a class="card--project__link" href="<?php the_permalink(); ?>">
 		<div class="card__media card__media--wide">
-			<?php echo dara_img( get_post_thumbnail_id(), 'dara-wide', array( 'sizes' => '(max-width: 900px) 100vw, 600px', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+			<?php
+			echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+				get_post_thumbnail_id(),
+				'dara-wide',
+				array(
+					'sizes' => '(max-width: 900px) 100vw, 600px',
+					'alt'   => '',
+				)
+			); // phpcs:ignore WordPress.Security.EscapeOutput 
+			?>
 			<?php if ( $dara_status ) : ?>
 				<span class="badge badge--light card__status"><?php echo esc_html( $dara_status ); ?></span>
 			<?php endif; ?>

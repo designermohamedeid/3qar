@@ -19,6 +19,8 @@ function dara_setup() {
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'editor-styles' );
+	add_theme_support( 'dara-blocks' ); // Section blocks from the Dara Core plugin.
+	add_editor_style( array( 'assets/css/core.css', 'assets/css/home.css', 'assets/css/agents.css', 'assets/css/editor.css' ) );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
 	add_theme_support(
@@ -33,10 +35,26 @@ function dara_setup() {
 	add_theme_support(
 		'editor-color-palette',
 		array(
-			array( 'name' => __( 'Primary', 'dara' ), 'slug' => 'primary', 'color' => '#0B6E5F' ),
-			array( 'name' => __( 'Ink', 'dara' ), 'slug' => 'ink', 'color' => '#0E1A2B' ),
-			array( 'name' => __( 'Surface', 'dara' ), 'slug' => 'surface', 'color' => '#F5F7FA' ),
-			array( 'name' => __( 'White', 'dara' ), 'slug' => 'white', 'color' => '#FFFFFF' ),
+			array(
+				'name'  => __( 'Primary', 'dara' ),
+				'slug'  => 'primary',
+				'color' => '#0B6E5F',
+			),
+			array(
+				'name'  => __( 'Ink', 'dara' ),
+				'slug'  => 'ink',
+				'color' => '#0E1A2B',
+			),
+			array(
+				'name'  => __( 'Surface', 'dara' ),
+				'slug'  => 'surface',
+				'color' => '#F5F7FA',
+			),
+			array(
+				'name'  => __( 'White', 'dara' ),
+				'slug'  => 'white',
+				'color' => '#FFFFFF',
+			),
 		)
 	);
 	add_editor_style( 'assets/css/editor.css' );

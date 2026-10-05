@@ -7,7 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$dara_types = get_terms( array( 'taxonomy' => 'property_type', 'parent' => 0, 'number' => 6, 'hide_empty' => false ) );
+$dara_types = get_terms(
+	array(
+		'taxonomy'   => 'property_type',
+		'parent'     => 0,
+		'number'     => 6,
+		'hide_empty' => false,
+	)
+);
 if ( ! $dara_types || is_wp_error( $dara_types ) ) {
 	return;
 }

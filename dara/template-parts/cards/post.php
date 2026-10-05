@@ -10,7 +10,16 @@ $dara_cats = get_the_category();
 ?>
 <article <?php post_class( 'card card--post' ); ?>>
 	<a class="card__media card__media--wide" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-		<?php echo dara_img( get_post_thumbnail_id(), 'dara-card', array( 'sizes' => '(max-width: 640px) 100vw, 400px', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+		<?php
+		echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+			get_post_thumbnail_id(),
+			'dara-card',
+			array(
+				'sizes' => '(max-width: 640px) 100vw, 400px',
+				'alt'   => '',
+			)
+		); // phpcs:ignore WordPress.Security.EscapeOutput 
+		?>
 	</a>
 	<div class="card__body">
 		<p class="card__kicker">

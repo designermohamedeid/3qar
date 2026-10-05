@@ -19,37 +19,37 @@ function dara_defaults() {
 	}
 	$d = array(
 		// Brand.
-		'primary_color'       => '#0B6E5F',
-		'ink_color'           => '#0E1A2B',
-		'header_cta_text'     => __( 'List your property', 'dara' ),
-		'header_cta_url'      => '',
+		'primary_color'      => '#0B6E5F',
+		'ink_color'          => '#0E1A2B',
+		'header_cta_text'    => __( 'List your property', 'dara' ),
+		'header_cta_url'     => '',
 		// Hero.
-		'hero_image'          => 0,
-		'hero_eyebrow'        => __( 'Properties for sale, rent and new developments', 'dara' ),
-		'hero_title'          => __( 'Find your next property with confidence', 'dara' ),
-		'hero_text'           => __( 'Verified listings with full details, clear prices and licensed agents who stay with you until the contract is signed.', 'dara' ),
-		'hero_popular'        => '',
+		'hero_image'         => 0,
+		'hero_eyebrow'       => __( 'Properties for sale, rent and new developments', 'dara' ),
+		'hero_title'         => __( 'Find your next property with confidence', 'dara' ),
+		'hero_text'          => __( 'Verified listings with full details, clear prices and licensed agents who stay with you until the contract is signed.', 'dara' ),
+		'hero_popular'       => '',
 		// Featured.
-		'show_featured'       => true,
-		'featured_eyebrow'    => __( 'Hand-picked', 'dara' ),
-		'featured_title'      => __( 'Latest featured properties', 'dara' ),
-		'featured_count'      => 6,
-		'featured_only'       => false,
+		'show_featured'      => true,
+		'featured_eyebrow'   => __( 'Hand-picked', 'dara' ),
+		'featured_title'     => __( 'Latest featured properties', 'dara' ),
+		'featured_count'     => 6,
+		'featured_only'      => false,
 		// Types.
-		'show_types'          => true,
-		'types_eyebrow'       => __( 'Browse by type', 'dara' ),
-		'types_title'         => __( 'What are you looking for?', 'dara' ),
+		'show_types'         => true,
+		'types_eyebrow'      => __( 'Browse by type', 'dara' ),
+		'types_title'        => __( 'What are you looking for?', 'dara' ),
 		// Projects.
-		'show_projects'       => true,
-		'projects_eyebrow'    => __( 'Developer projects', 'dara' ),
-		'projects_title'      => __( 'New off-plan and under-construction projects', 'dara' ),
-		'projects_text'       => __( 'Follow construction progress, see available units and payment plans, and register your interest directly.', 'dara' ),
-		'projects_count'      => 2,
+		'show_projects'      => true,
+		'projects_eyebrow'   => __( 'Developer projects', 'dara' ),
+		'projects_title'     => __( 'New off-plan and under-construction projects', 'dara' ),
+		'projects_text'      => __( 'Follow construction progress, see available units and payment plans, and register your interest directly.', 'dara' ),
+		'projects_count'     => 2,
 		// Services.
-		'show_services'       => true,
-		'services_eyebrow'    => __( 'Our services', 'dara' ),
-		'services_title'      => __( 'Everything your property needs, in one place', 'dara' ),
-		'services_items'      => implode(
+		'show_services'      => true,
+		'services_eyebrow'   => __( 'Our services', 'dara' ),
+		'services_title'     => __( 'Everything your property needs, in one place', 'dara' ),
+		'services_items'     => implode(
 			"\n",
 			array(
 				'megaphone | ' . __( 'Real estate marketing', 'dara' ) . ' | ' . __( 'Professional photography and digital campaigns that reach the right buyer fast.', 'dara' ) . ' | ',
@@ -59,12 +59,12 @@ function dara_defaults() {
 			)
 		),
 		// Why us.
-		'show_why'            => true,
-		'why_image'           => 0,
-		'why_eyebrow'         => __( 'Why us?', 'dara' ),
-		'why_title'           => __( 'A clear real estate experience from search to handover', 'dara' ),
-		'why_text'            => __( 'We show every detail you need to decide with confidence, and arrange the viewing, negotiation and paperwork for you.', 'dara' ),
-		'why_points'          => implode(
+		'show_why'           => true,
+		'why_image'          => 0,
+		'why_eyebrow'        => __( 'Why us?', 'dara' ),
+		'why_title'          => __( 'A clear real estate experience from search to handover', 'dara' ),
+		'why_text'           => __( 'We show every detail you need to decide with confidence, and arrange the viewing, negotiation and paperwork for you.', 'dara' ),
+		'why_points'         => implode(
 			"\n",
 			array(
 				__( 'Listings inspected and verified', 'dara' ),
@@ -73,55 +73,55 @@ function dara_defaults() {
 				__( 'Help with financing, documentation and transfer', 'dara' ),
 			)
 		),
-		'why_badge_title'     => __( 'Licensed listings', 'dara' ),
-		'why_badge_text'      => __( 'A license number on every ad', 'dara' ),
-		'why_btn_text'        => __( 'Talk to an advisor', 'dara' ),
-		'why_btn_url'         => '',
+		'why_badge_title'    => __( 'Licensed listings', 'dara' ),
+		'why_badge_text'     => __( 'A license number on every ad', 'dara' ),
+		'why_btn_text'       => __( 'Talk to an advisor', 'dara' ),
+		'why_btn_url'        => '',
 		// Blog.
-		'show_blog'           => true,
-		'blog_eyebrow'        => __( 'Blog', 'dara' ),
-		'blog_title'          => __( 'Your guide to the property market', 'dara' ),
-		'blog_count'          => 3,
+		'show_blog'          => true,
+		'blog_eyebrow'       => __( 'Blog', 'dara' ),
+		'blog_title'         => __( 'Your guide to the property market', 'dara' ),
+		'blog_count'         => 3,
 		// CTA.
-		'show_cta'            => true,
-		'cta_title'           => __( 'Own a property you want to sell or rent?', 'dara' ),
-		'cta_text'            => __( 'Send us the details and an agent will contact you within one business day to arrange photos and pricing.', 'dara' ),
-		'cta_btn_text'        => __( 'List your property', 'dara' ),
-		'cta_btn_url'         => '',
+		'show_cta'           => true,
+		'cta_title'          => __( 'Own a property you want to sell or rent?', 'dara' ),
+		'cta_text'           => __( 'Send us the details and an agent will contact you within one business day to arrange photos and pricing.', 'dara' ),
+		'cta_btn_text'       => __( 'List your property', 'dara' ),
+		'cta_btn_url'        => '',
 		// Contact.
-		'phone'               => '',
-		'whatsapp'            => '',
-		'email'               => '',
-		'address'             => '',
-		'map_lat'             => '',
-		'map_lng'             => '',
+		'phone'              => '',
+		'whatsapp'           => '',
+		'email'              => '',
+		'address'            => '',
+		'map_lat'            => '',
+		'map_lng'            => '',
 		// Social.
-		'social_x'            => '',
-		'social_instagram'    => '',
-		'social_snapchat'     => '',
-		'social_tiktok'       => '',
-		'social_youtube'      => '',
-		'social_linkedin'     => '',
-		'social_facebook'     => '',
+		'social_x'           => '',
+		'social_instagram'   => '',
+		'social_snapchat'    => '',
+		'social_tiktok'      => '',
+		'social_youtube'     => '',
+		'social_linkedin'    => '',
+		'social_facebook'    => '',
 		// Footer.
-		'footer_about'        => __( 'We help you buy, sell, rent and manage property, and present developer projects transparently from the first visit to the signed contract.', 'dara' ),
-		'newsletter_show'     => true,
-		'newsletter_text'     => __( 'Get the newest properties and projects first.', 'dara' ),
+		'footer_about'       => __( 'We help you buy, sell, rent and manage property, and present developer projects transparently from the first visit to the signed contract.', 'dara' ),
+		'newsletter_show'    => true,
+		'newsletter_text'    => __( 'Get the newest properties and projects first.', 'dara' ),
 		/* translators: Keep {year} and {site}. */
-		'copyright'           => __( '© {year} {site}. All rights reserved.', 'dara' ),
+		'copyright'          => __( '© {year} {site}. All rights reserved.', 'dara' ),
 		// Mortgage calculator.
-		'mortgage_show'       => true,
-		'mortgage_method'     => 'amortized',
-		'mortgage_rate'       => '5.5',
-		'mortgage_down'       => 10,
-		'mortgage_years'      => 25,
-		'mortgage_max_years'  => 30,
-		'mortgage_note'       => __( 'Estimate only. The final installment depends on the bank, your salary and your obligations.', 'dara' ),
+		'mortgage_show'      => true,
+		'mortgage_method'    => 'amortized',
+		'mortgage_rate'      => '5.5',
+		'mortgage_down'      => 10,
+		'mortgage_years'     => 25,
+		'mortgage_max_years' => 30,
+		'mortgage_note'      => __( 'Estimate only. The final installment depends on the bank, your salary and your obligations.', 'dara' ),
 		// Performance.
-		'perf_emoji'          => true,
-		'perf_block_css'      => true,
-		'map_tiles'           => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-		'map_attribution'     => '&copy; OpenStreetMap',
+		'perf_emoji'         => true,
+		'perf_block_css'     => true,
+		'map_tiles'          => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+		'map_attribution'    => '&copy; OpenStreetMap',
 	);
 	return $d;
 }
@@ -267,13 +267,21 @@ function dara_languages() {
 	if ( function_exists( 'pll_the_languages' ) ) {
 		foreach ( (array) pll_the_languages( array( 'raw' => 1 ) ) as $l ) {
 			if ( empty( $l['current_lang'] ) ) {
-				$langs[] = array( 'url' => $l['url'], 'label' => strtoupper( $l['slug'] ), 'name' => $l['name'] );
+				$langs[] = array(
+					'url'   => $l['url'],
+					'label' => strtoupper( $l['slug'] ),
+					'name'  => $l['name'],
+				);
 			}
 		}
 	} elseif ( has_filter( 'wpml_active_languages' ) ) {
 		foreach ( (array) apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) ) as $l ) {
 			if ( empty( $l['active'] ) ) {
-				$langs[] = array( 'url' => $l['url'], 'label' => strtoupper( $l['code'] ), 'name' => $l['native_name'] );
+				$langs[] = array(
+					'url'   => $l['url'],
+					'label' => strtoupper( $l['code'] ),
+					'name'  => $l['native_name'],
+				);
 			}
 		}
 	}
@@ -560,11 +568,11 @@ function dara_first_block( $post = null ) {
  * @return array monthly, loan, down, profit, total
  */
 function dara_mortgage_calc( $price, $down, $years, $rate, $method = 'amortized' ) {
-	$price  = max( 0, (float) $price );
-	$downv  = $price * min( 100, max( 0, (float) $down ) ) / 100;
-	$loan   = $price - $downv;
-	$n      = max( 1, (int) $years ) * 12;
-	$r      = max( 0, (float) $rate ) / 100;
+	$price = max( 0, (float) $price );
+	$downv = $price * min( 100, max( 0, (float) $down ) ) / 100;
+	$loan  = $price - $downv;
+	$n     = max( 1, (int) $years ) * 12;
+	$r     = max( 0, (float) $rate ) / 100;
 	if ( 'flat' === $method ) {
 		$profit  = $loan * $r * ( $n / 12 );
 		$monthly = ( $loan + $profit ) / $n;

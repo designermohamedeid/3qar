@@ -13,7 +13,16 @@ $dara_points = dara_part_lines( $args, 'why_points' );
 <section class="section section--tight">
 	<div class="container why">
 		<div class="why__media">
-			<?php echo dara_img( $dara_img, 'dara-wide', array( 'sizes' => '(max-width: 900px) 100vw, 600px', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+			<?php
+			echo dara_img( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_get_attachment_image() markup.
+				$dara_img,
+				'dara-wide',
+				array(
+					'sizes' => '(max-width: 900px) 100vw, 600px',
+					'alt'   => '',
+				)
+			); // phpcs:ignore WordPress.Security.EscapeOutput 
+			?>
 			<?php if ( dara_part_opt( $args, 'why_badge_title' ) ) : ?>
 				<div class="why__badge">
 					<span class="why__badge-icon"><?php dara_the_icon( 'shield', 22 ); ?></span>

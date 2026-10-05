@@ -38,6 +38,7 @@
 .alignright{float:right;margin-inline-start:1.5em}
 .aligncenter{margin-inline:auto}
 .wp-caption-text,figcaption{font-size:14px;color:var(--muted);text-align:center;margin-top:8px}
+.bypostauthor>.comment-body .comment-author .fn::after{content:"\00a0\2713";color:var(--primary)}
 .comments{margin-top:56px}
 .comment-list{list-style:none;margin:0;padding:0}
 .comment-list .children{list-style:none;padding-inline-start:32px}

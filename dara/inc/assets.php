@@ -23,7 +23,16 @@ function dara_assets() {
 	}
 	wp_add_inline_style( 'dara', dara_css_vars() );
 
-	wp_enqueue_script( 'dara', dara_asset_url( "assets/js/main{$min}.js" ), array(), dara_asset_ver( "assets/js/main{$min}.js" ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script(
+		'dara',
+		dara_asset_url( "assets/js/main{$min}.js" ),
+		array(),
+		dara_asset_ver( "assets/js/main{$min}.js" ),
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
 	wp_localize_script(
 		'dara',
 		'daraData',
@@ -35,13 +44,13 @@ function dara_assets() {
 			'restUrl'     => esc_url_raw( rest_url( 'wp/v2/' ) ),
 			'compareUrl'  => dara_compare_url(),
 			'i18n'        => array(
-				'saved'   => __( 'Saved to favorites', 'dara' ),
-				'removed' => __( 'Removed from favorites', 'dara' ),
-				'copied'  => __( 'Link copied', 'dara' ),
-				'empty'   => __( 'You have no saved properties yet.', 'dara' ),
-				'close'   => __( 'Close', 'dara' ),
-				'prev'    => __( 'Previous', 'dara' ),
-				'next'    => __( 'Next', 'dara' ),
+				'saved'      => __( 'Saved to favorites', 'dara' ),
+				'removed'    => __( 'Removed from favorites', 'dara' ),
+				'copied'     => __( 'Link copied', 'dara' ),
+				'empty'      => __( 'You have no saved properties yet.', 'dara' ),
+				'close'      => __( 'Close', 'dara' ),
+				'prev'       => __( 'Previous', 'dara' ),
+				'next'       => __( 'Next', 'dara' ),
 				'cmpAdded'   => __( 'Added to compare', 'dara' ),
 				'cmpRemoved' => __( 'Removed from compare', 'dara' ),
 				'cmpMax'     => __( 'You can compare up to 4 properties', 'dara' ),
