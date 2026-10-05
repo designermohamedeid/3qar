@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara 1.5.0\n"
+"Project-Id-Version: Dara 1.6.0\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,7 +67,7 @@ msgid "Grid"
 msgstr "شبكة"
 
 #: archive-dara_property.php:56 page-templates/contact.php:55
-#: single-dara_project.php:224 single-dara_property.php:189
+#: single-dara_project.php:226 single-dara_property.php:189
 msgid "Map"
 msgstr "خريطة"
 
@@ -422,6 +422,7 @@ msgstr "بالصيغة الدولية بدون +، مثال: 9665XXXXXXXX"
 
 #: inc/customizer.php:109 page-templates/contact.php:31
 #: page-templates/contact.php:47 single-dara_agent.php:66
+#: taxonomy-project_developer.php:57
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -552,7 +553,7 @@ msgstr "قالب دارة"
 msgid "Show sub menu of %s"
 msgstr "إظهار القائمة الفرعية لـ %s"
 
-#: inc/menus.php:50 inc/template-tags.php:360
+#: inc/menus.php:50 inc/template-tags.php:363
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -560,7 +561,7 @@ msgstr "الرئيسية"
 msgid "Properties"
 msgstr "العقارات"
 
-#: inc/menus.php:53
+#: inc/menus.php:53 taxonomy-project_developer.php:73
 msgid "Projects"
 msgstr "المشاريع"
 
@@ -820,29 +821,29 @@ msgstr "نتائج البحث: %s"
 msgid "Page not found"
 msgstr "الصفحة غير موجودة"
 
-#: inc/template-tags.php:343
+#: inc/template-tags.php:346
 #, php-format
 msgid "in %s"
 msgstr "في %s"
 
-#: inc/template-tags.php:353 inc/template-tags.php:383
+#: inc/template-tags.php:356 inc/template-tags.php:389
 msgid "Breadcrumbs"
 msgstr "مسار التنقل"
 
-#: inc/template-tags.php:397
+#: inc/template-tags.php:403
 msgid "Previous page"
 msgstr "الصفحة السابقة"
 
-#: inc/template-tags.php:398
+#: inc/template-tags.php:404
 msgid "Next page"
 msgstr "الصفحة التالية"
 
-#: inc/template-tags.php:616
+#: inc/template-tags.php:622
 #, php-format
 msgid "Compare %s"
 msgstr "مقارنة %s"
 
-#: inc/template-tags.php:625
+#: inc/template-tags.php:631
 msgid "Compare"
 msgstr "قارن"
 
@@ -871,7 +872,7 @@ msgid "Property comparison"
 msgstr "مقارنة العقارات"
 
 #: page-templates/compare.php:154 page-templates/compare.php:156
-#: single-dara_project.php:172 template-parts/home/hero.php:104
+#: single-dara_project.php:174 template-parts/home/hero.php:104
 msgid "Price"
 msgstr "السعر"
 
@@ -887,21 +888,21 @@ msgstr "الغرض"
 msgid "Details"
 msgstr "التفاصيل"
 
-#: page-templates/compare.php:178 single-dara_project.php:169
+#: page-templates/compare.php:178 single-dara_project.php:171
 msgid "Type"
 msgstr "النوع"
 
-#: page-templates/compare.php:179 single-dara_project.php:118
-#: single-dara_project.php:223 template-parts/home/hero.php:82
+#: page-templates/compare.php:179 single-dara_project.php:120
+#: single-dara_project.php:225 template-parts/home/hero.php:82
 msgid "Location"
 msgstr "الموقع"
 
-#: page-templates/compare.php:180 single-dara_project.php:170
+#: page-templates/compare.php:180 single-dara_project.php:172
 #: template-parts/cards/property.php:26
 msgid "Area"
 msgstr "المساحة"
 
-#: page-templates/compare.php:181 single-dara_project.php:171
+#: page-templates/compare.php:181 single-dara_project.php:173
 #: template-parts/cards/property.php:24 template-parts/home/hero.php:120
 #: template-parts/property/filters.php:84
 msgid "Bedrooms"
@@ -923,7 +924,7 @@ msgstr "الواجهة"
 msgid "Condition"
 msgstr "الحالة"
 
-#: page-templates/compare.php:199 single-dara_project.php:181
+#: page-templates/compare.php:199 single-dara_project.php:183
 #: template-parts/cards/property.php:66
 msgid "m²"
 msgstr "م²"
@@ -996,13 +997,13 @@ msgid "Send us a message"
 msgstr "أرسل لنا رسالة"
 
 #: page-templates/contact.php:45 page-templates/list-property.php:37
-#: single-dara_agent.php:119 single-dara_project.php:236
+#: single-dara_agent.php:119 single-dara_project.php:238
 #: template-parts/forms/viewing.php:14
 msgid "Name"
 msgstr "الاسم"
 
 #: page-templates/contact.php:46 page-templates/list-property.php:38
-#: single-dara_agent.php:120 single-dara_project.php:237
+#: single-dara_agent.php:120 single-dara_project.php:239
 #: template-parts/forms/viewing.php:15
 msgid "Mobile number"
 msgstr "رقم الجوال"
@@ -1015,6 +1016,14 @@ msgstr "الرسالة"
 #: page-templates/contact.php:50 single-dara_agent.php:122
 msgid "Send message"
 msgstr "إرسال الرسالة"
+
+#: page-templates/developers.php:16
+msgid "The developers behind our projects, with their full portfolios."
+msgstr "المطوّرون العقاريون خلف مشاريعنا، مع جميع مشاريعهم."
+
+#: page-templates/developers.php:39
+msgid "No developers added yet."
+msgstr "لم تتم إضافة مطوّرين بعد."
 
 #: page-templates/favorites.php:18
 msgid "Please enable JavaScript to see your saved properties."
@@ -1140,87 +1149,87 @@ msgstr "قادم"
 msgid "Licensed off-plan sales"
 msgstr "بيع على الخارطة مرخّص"
 
-#: single-dara_project.php:72
+#: single-dara_project.php:74
 #, php-format
 msgid "Developed by %s"
 msgstr "تطوير %s"
 
-#: single-dara_project.php:77 single-dara_project.php:230
+#: single-dara_project.php:79 single-dara_project.php:232
 msgid "Register your interest"
 msgstr "سجّل اهتمامك"
 
-#: single-dara_project.php:79
+#: single-dara_project.php:81
 msgid "Download brochure"
 msgstr "تحميل البروشور"
 
-#: single-dara_project.php:88 template-parts/cards/project.php:51
+#: single-dara_project.php:90 template-parts/cards/project.php:51
 msgid "Prices from"
 msgstr "تبدأ الأسعار من"
 
-#: single-dara_project.php:91 single-dara_project.php:106
+#: single-dara_project.php:93 single-dara_project.php:108
 msgid "Units"
 msgstr "الوحدات"
 
-#: single-dara_project.php:94
+#: single-dara_project.php:96
 msgid "Delivery"
 msgstr "التسليم"
 
-#: single-dara_project.php:97 single-dara_project.php:97
+#: single-dara_project.php:99 single-dara_project.php:99
 #: template-parts/cards/project.php:56 template-parts/cards/project.php:57
 msgid "Completion"
 msgstr "نسبة الإنجاز"
 
-#: single-dara_project.php:101
+#: single-dara_project.php:103
 msgid "Project sections"
 msgstr "أقسام المشروع"
 
-#: single-dara_project.php:102
+#: single-dara_project.php:104
 msgid "Overview"
 msgstr "نظرة عامة"
 
-#: single-dara_project.php:110 single-dara_project.php:195
+#: single-dara_project.php:112 single-dara_project.php:197
 msgid "Payment plan"
 msgstr "خطة الدفع"
 
-#: single-dara_project.php:114
+#: single-dara_project.php:116
 msgid "Progress"
 msgstr "مراحل التنفيذ"
 
-#: single-dara_project.php:123
+#: single-dara_project.php:125
 msgid "About the project"
 msgstr "عن المشروع"
 
-#: single-dara_project.php:136 single-dara_property.php:76
+#: single-dara_project.php:138 single-dara_property.php:76
 #, php-format
 msgid "Open photo %1$s of %2$s"
 msgstr "فتح الصورة %1$s من %2$s"
 
-#: single-dara_project.php:158
+#: single-dara_project.php:160
 msgid "Available units"
 msgstr "الوحدات المتاحة"
 
-#: single-dara_project.php:168
+#: single-dara_project.php:170
 msgid "Model"
 msgstr "النموذج"
 
-#: single-dara_project.php:173
+#: single-dara_project.php:175
 msgid "Status"
 msgstr "الحالة"
 
-#: single-dara_project.php:206
+#: single-dara_project.php:208
 msgid "Construction progress"
 msgstr "مراحل التنفيذ"
 
-#: single-dara_project.php:231
+#: single-dara_project.php:233
 msgid ""
 "Get updated prices, available units and booking priority before launch."
 msgstr "احصل على الأسعار المحدّثة والوحدات المتاحة وأولوية الحجز قبل الإطلاق."
 
-#: single-dara_project.php:242
+#: single-dara_project.php:244
 msgid "Unit type"
 msgstr "نوع الوحدة"
 
-#: single-dara_project.php:250
+#: single-dara_project.php:252
 msgid "Send"
 msgstr "إرسال"
 
@@ -1302,6 +1311,34 @@ msgstr "عقارات مشابهة"
 #, php-format
 msgid "%s min read"
 msgstr "قراءة %s دقائق"
+
+#: taxonomy-project_developer.php:44 template-parts/cards/developer.php:31
+#, php-format
+msgid "Since %s"
+msgstr "منذ %s"
+
+#: taxonomy-project_developer.php:54
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#: taxonomy-project_developer.php:67
+msgid "About the developer"
+msgstr "عن المطوّر"
+
+#: taxonomy-project_developer.php:85
+msgid "No projects listed yet."
+msgstr "لا توجد مشاريع بعد."
+
+#: taxonomy-project_developer.php:41 template-parts/cards/developer.php:29
+#, php-format
+msgid "%s project"
+msgid_plural "%s projects"
+msgstr[0] "لا مشاريع"
+msgstr[1] "مشروع واحد"
+msgstr[2] "مشروعان"
+msgstr[3] "%s مشاريع"
+msgstr[4] "%s مشروعًا"
+msgstr[5] "%s مشروع"
 
 #: template-parts/cards/project.php:21
 #, php-format

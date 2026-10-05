@@ -102,7 +102,6 @@ function dara_core_fields() {
 			'dara-project-main'   => array(
 				'title'  => __( 'Project details', 'dara-core' ),
 				'fields' => array(
-					'_dara_developer'   => array( 'text', __( 'Developer', 'dara-core' ) ),
 					'_dara_status'      => array(
 						'select',
 						__( 'Status', 'dara-core' ),

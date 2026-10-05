@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara 1.5.0\n"
+"Project-Id-Version: Dara 1.6.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +65,7 @@ msgid "Grid"
 msgstr ""
 
 #: archive-dara_property.php:56 page-templates/contact.php:55
-#: single-dara_project.php:224 single-dara_property.php:189
+#: single-dara_project.php:226 single-dara_property.php:189
 msgid "Map"
 msgstr ""
 
@@ -410,6 +410,7 @@ msgstr ""
 
 #: inc/customizer.php:109 page-templates/contact.php:31
 #: page-templates/contact.php:47 single-dara_agent.php:66
+#: taxonomy-project_developer.php:57
 msgid "Email"
 msgstr ""
 
@@ -536,7 +537,7 @@ msgstr ""
 msgid "Show sub menu of %s"
 msgstr ""
 
-#: inc/menus.php:50 inc/template-tags.php:360
+#: inc/menus.php:50 inc/template-tags.php:363
 msgid "Home"
 msgstr ""
 
@@ -544,7 +545,7 @@ msgstr ""
 msgid "Properties"
 msgstr ""
 
-#: inc/menus.php:53
+#: inc/menus.php:53 taxonomy-project_developer.php:73
 msgid "Projects"
 msgstr ""
 
@@ -790,29 +791,29 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: inc/template-tags.php:343
+#: inc/template-tags.php:346
 #, php-format
 msgid "in %s"
 msgstr ""
 
-#: inc/template-tags.php:353 inc/template-tags.php:383
+#: inc/template-tags.php:356 inc/template-tags.php:389
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/template-tags.php:397
+#: inc/template-tags.php:403
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:398
+#: inc/template-tags.php:404
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:616
+#: inc/template-tags.php:622
 #, php-format
 msgid "Compare %s"
 msgstr ""
 
-#: inc/template-tags.php:625
+#: inc/template-tags.php:631
 msgid "Compare"
 msgstr ""
 
@@ -841,7 +842,7 @@ msgid "Property comparison"
 msgstr ""
 
 #: page-templates/compare.php:154 page-templates/compare.php:156
-#: single-dara_project.php:172 template-parts/home/hero.php:104
+#: single-dara_project.php:174 template-parts/home/hero.php:104
 msgid "Price"
 msgstr ""
 
@@ -857,21 +858,21 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: page-templates/compare.php:178 single-dara_project.php:169
+#: page-templates/compare.php:178 single-dara_project.php:171
 msgid "Type"
 msgstr ""
 
-#: page-templates/compare.php:179 single-dara_project.php:118
-#: single-dara_project.php:223 template-parts/home/hero.php:82
+#: page-templates/compare.php:179 single-dara_project.php:120
+#: single-dara_project.php:225 template-parts/home/hero.php:82
 msgid "Location"
 msgstr ""
 
-#: page-templates/compare.php:180 single-dara_project.php:170
+#: page-templates/compare.php:180 single-dara_project.php:172
 #: template-parts/cards/property.php:26
 msgid "Area"
 msgstr ""
 
-#: page-templates/compare.php:181 single-dara_project.php:171
+#: page-templates/compare.php:181 single-dara_project.php:173
 #: template-parts/cards/property.php:24 template-parts/home/hero.php:120
 #: template-parts/property/filters.php:84
 msgid "Bedrooms"
@@ -893,7 +894,7 @@ msgstr ""
 msgid "Condition"
 msgstr ""
 
-#: page-templates/compare.php:199 single-dara_project.php:181
+#: page-templates/compare.php:199 single-dara_project.php:183
 #: template-parts/cards/property.php:66
 msgid "m²"
 msgstr ""
@@ -962,13 +963,13 @@ msgid "Send us a message"
 msgstr ""
 
 #: page-templates/contact.php:45 page-templates/list-property.php:37
-#: single-dara_agent.php:119 single-dara_project.php:236
+#: single-dara_agent.php:119 single-dara_project.php:238
 #: template-parts/forms/viewing.php:14
 msgid "Name"
 msgstr ""
 
 #: page-templates/contact.php:46 page-templates/list-property.php:38
-#: single-dara_agent.php:120 single-dara_project.php:237
+#: single-dara_agent.php:120 single-dara_project.php:239
 #: template-parts/forms/viewing.php:15
 msgid "Mobile number"
 msgstr ""
@@ -980,6 +981,14 @@ msgstr ""
 
 #: page-templates/contact.php:50 single-dara_agent.php:122
 msgid "Send message"
+msgstr ""
+
+#: page-templates/developers.php:16
+msgid "The developers behind our projects, with their full portfolios."
+msgstr ""
+
+#: page-templates/developers.php:39
+msgid "No developers added yet."
 msgstr ""
 
 #: page-templates/favorites.php:18
@@ -1102,87 +1111,87 @@ msgstr ""
 msgid "Licensed off-plan sales"
 msgstr ""
 
-#: single-dara_project.php:72
+#: single-dara_project.php:74
 #, php-format
 msgid "Developed by %s"
 msgstr ""
 
-#: single-dara_project.php:77 single-dara_project.php:230
+#: single-dara_project.php:79 single-dara_project.php:232
 msgid "Register your interest"
 msgstr ""
 
-#: single-dara_project.php:79
+#: single-dara_project.php:81
 msgid "Download brochure"
 msgstr ""
 
-#: single-dara_project.php:88 template-parts/cards/project.php:51
+#: single-dara_project.php:90 template-parts/cards/project.php:51
 msgid "Prices from"
 msgstr ""
 
-#: single-dara_project.php:91 single-dara_project.php:106
+#: single-dara_project.php:93 single-dara_project.php:108
 msgid "Units"
 msgstr ""
 
-#: single-dara_project.php:94
+#: single-dara_project.php:96
 msgid "Delivery"
 msgstr ""
 
-#: single-dara_project.php:97 single-dara_project.php:97
+#: single-dara_project.php:99 single-dara_project.php:99
 #: template-parts/cards/project.php:56 template-parts/cards/project.php:57
 msgid "Completion"
 msgstr ""
 
-#: single-dara_project.php:101
+#: single-dara_project.php:103
 msgid "Project sections"
 msgstr ""
 
-#: single-dara_project.php:102
+#: single-dara_project.php:104
 msgid "Overview"
 msgstr ""
 
-#: single-dara_project.php:110 single-dara_project.php:195
+#: single-dara_project.php:112 single-dara_project.php:197
 msgid "Payment plan"
 msgstr ""
 
-#: single-dara_project.php:114
+#: single-dara_project.php:116
 msgid "Progress"
 msgstr ""
 
-#: single-dara_project.php:123
+#: single-dara_project.php:125
 msgid "About the project"
 msgstr ""
 
-#: single-dara_project.php:136 single-dara_property.php:76
+#: single-dara_project.php:138 single-dara_property.php:76
 #, php-format
 msgid "Open photo %1$s of %2$s"
 msgstr ""
 
-#: single-dara_project.php:158
+#: single-dara_project.php:160
 msgid "Available units"
 msgstr ""
 
-#: single-dara_project.php:168
+#: single-dara_project.php:170
 msgid "Model"
 msgstr ""
 
-#: single-dara_project.php:173
+#: single-dara_project.php:175
 msgid "Status"
 msgstr ""
 
-#: single-dara_project.php:206
+#: single-dara_project.php:208
 msgid "Construction progress"
 msgstr ""
 
-#: single-dara_project.php:231
+#: single-dara_project.php:233
 msgid ""
 "Get updated prices, available units and booking priority before launch."
 msgstr ""
 
-#: single-dara_project.php:242
+#: single-dara_project.php:244
 msgid "Unit type"
 msgstr ""
 
-#: single-dara_project.php:250
+#: single-dara_project.php:252
 msgid "Send"
 msgstr ""
 
@@ -1264,6 +1273,30 @@ msgstr ""
 #, php-format
 msgid "%s min read"
 msgstr ""
+
+#: taxonomy-project_developer.php:44 template-parts/cards/developer.php:31
+#, php-format
+msgid "Since %s"
+msgstr ""
+
+#: taxonomy-project_developer.php:54
+msgid "Website"
+msgstr ""
+
+#: taxonomy-project_developer.php:67
+msgid "About the developer"
+msgstr ""
+
+#: taxonomy-project_developer.php:85
+msgid "No projects listed yet."
+msgstr ""
+
+#: taxonomy-project_developer.php:41 template-parts/cards/developer.php:29
+#, php-format
+msgid "%s project"
+msgid_plural "%s projects"
+msgstr[0] ""
+msgstr[1] ""
 
 #: template-parts/cards/project.php:21
 #, php-format

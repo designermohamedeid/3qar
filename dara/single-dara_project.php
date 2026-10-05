@@ -17,7 +17,7 @@ while ( have_posts() ) :
 	$dara_from         = get_post_meta( $dara_id, '_dara_price_from', true );
 	$dara_units_n      = get_post_meta( $dara_id, '_dara_units_count', true );
 	$dara_delivery     = get_post_meta( $dara_id, '_dara_delivery', true );
-	$dara_dev          = get_post_meta( $dara_id, '_dara_developer', true );
+	$dara_dev          = function_exists( 'dara_project_developer' ) ? dara_project_developer( $dara_id ) : null;
 	$dara_brochure     = get_post_meta( $dara_id, '_dara_brochure', true );
 	$dara_amen         = dara_lines( $dara_id, '_dara_amenities', 1 );
 	$dara_units        = dara_lines( $dara_id, '_dara_units', 6 );
@@ -69,7 +69,9 @@ while ( have_posts() ) :
 				<?php
 				echo esc_html( $dara_loc );
 				if ( $dara_dev ) {
-					echo ' · ' . esc_html( sprintf( /* translators: %s: developer. */ __( 'Developed by %s', 'dara' ), $dara_dev ) );
+					$dara_dev_name = $dara_dev['url'] ? '<a href="' . esc_url( $dara_dev['url'] ) . '">' . esc_html( $dara_dev['name'] ) . '</a>' : esc_html( $dara_dev['name'] );
+					/* translators: %s: developer name (linked). */
+					echo ' · ' . sprintf( esc_html__( 'Developed by %s', 'dara' ), $dara_dev_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above.
 				}
 				?>
 			</p>

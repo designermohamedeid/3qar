@@ -13,8 +13,10 @@ defined( 'ABSPATH' ) || exit;
  * @param string $hook Hook suffix.
  */
 function dara_core_admin_assets( $hook ) {
-	$screen = get_current_screen();
-	if ( ! $screen || ! in_array( $screen->post_type, array( 'dara_property', 'dara_project', 'dara_agent' ), true ) || ! in_array( $hook, array( 'post.php', 'post-new.php' ), true ) ) {
+	$screen  = get_current_screen();
+	$is_edit = $screen && in_array( $screen->post_type, array( 'dara_property', 'dara_project', 'dara_agent' ), true ) && in_array( $hook, array( 'post.php', 'post-new.php' ), true );
+	$is_term = $screen && 'project_developer' === $screen->taxonomy && in_array( $hook, array( 'edit-tags.php', 'term.php' ), true );
+	if ( ! $is_edit && ! $is_term ) {
 		return;
 	}
 	wp_enqueue_media();

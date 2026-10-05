@@ -63,3 +63,4 @@
 .register h2{color:#fff}
 .register__text{flex:1 1 320px}
 .register__form{flex:1 1 420px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.project-hero__sub a{color:#fff;text-decoration:underline;text-underline-offset:3px}

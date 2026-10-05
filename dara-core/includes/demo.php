@@ -298,16 +298,30 @@ function dara_demo_import() {
 	}
 
 	// Projects.
-	$units    = $t(
+	$units      = $t(
 		"A1 | شقة | 110 | 2 | 850000 | available\nA2 | شقة | 145 | 3 | 1120000 | available\nB1 | شقة | 165 | 3 | 1290000 | reserved\nC1 | شقة | 210 | 4 | 1640000 | available\nPH | بنتهاوس | 320 | 4 | 2900000 | sold",
 		"A1 | Apartment | 110 | 2 | 850000 | available\nA2 | Apartment | 145 | 3 | 1120000 | available\nB1 | Apartment | 165 | 3 | 1290000 | reserved\nC1 | Apartment | 210 | 4 | 1640000 | available\nPH | Penthouse | 320 | 4 | 2900000 | sold"
 	);
-	$payment  = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
-	$projects = array(
+	$payment    = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
+	$projects   = array(
 		array( 'أبراج الواحة', 'Al Waha Towers', 'tower-3', 'construction', 65, 850000, $t( 'الربع الرابع 2027', 'Q4 2027' ), 'Al Yasmin', 24.83, 46.64, $t( 'يناير 2025', 'Jan 2025' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'يونيو 2025', 'Jun 2025' ) . ' | ' . $t( 'الحفر والأساسات', 'Foundations' ) . " | done\n" . $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | current\n" . $t( 'مارس 2027', 'Mar 2027' ) . ' | ' . $t( 'التشطيبات والواجهات', 'Finishing & facades' ) . " | upcoming\n" . $t( 'ديسمبر 2027', 'Dec 2027' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
 		array( 'مجمع رُبى السكني', 'Ruba Residences', 'tower-1', 'offplan', 20, 1450000, $t( 'الربع الثاني 2028', 'Q2 2028' ), 'North Obhur', 21.75, 39.12, $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'سبتمبر 2026', 'Sep 2026' ) . ' | ' . $t( 'الأساسات', 'Foundations' ) . " | current\n" . $t( 'يونيو 2027', 'Jun 2027' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | upcoming\n" . $t( 'يونيو 2028', 'Jun 2028' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
 	);
-	foreach ( $projects as $p ) {
+	$developers = array();
+	foreach ( array(
+		array( 'الواحة للتطوير العقاري', 'Al Waha Development', 'developer-1', '2009', 'شركة تطوير سعودية متخصصة في المجمعات السكنية المتكاملة، سلّمت أكثر من 3,000 وحدة في الرياض والمنطقة الشرقية.', 'A Saudi developer of integrated residential communities that has delivered more than 3,000 homes in Riyadh and the Eastern Province.' ),
+		array( 'رُبى العقارية', 'Ruba Real Estate', 'developer-2', '2014', 'مطوّر عقاري يركّز على المشاريع السكنية الساحلية في جدة، بتصاميم عصرية ومساحات خضراء واسعة.', 'A developer focused on coastal residential projects in Jeddah, with modern design and generous green spaces.' ),
+	) as $i => $d ) {
+		$term_id = dara_demo_term( $t( $d[0], $d[1] ), 'project_developer', array( 'description' => $t( $d[4], $d[5] ) ) );
+		update_term_meta( $term_id, 'dara_logo', dara_demo_image( $d[2] ) );
+		update_term_meta( $term_id, 'dara_founded', $d[3] );
+		update_term_meta( $term_id, 'dara_website', 'https://example.com' );
+		update_term_meta( $term_id, 'dara_phone', '+966 11 000 000' . ( $i + 1 ) );
+		update_term_meta( $term_id, 'dara_email', 'sales' . ( $i + 1 ) . '@example.com' );
+		$developers[] = $term_id;
+	}
+
+	foreach ( $projects as $pi => $p ) {
 		$id = dara_demo_post(
 			array(
 				'post_type'    => 'dara_project',
@@ -315,7 +329,6 @@ function dara_demo_import() {
 				'post_content' => $t( '<p>أبراج سكنية حول ساحة مركزية خضراء، بوحدات من غرفتين إلى أربع غرف، ومرافق مشتركة تشمل نادياً رياضياً ومسبحاً ومنطقة ألعاب للأطفال، مع حراسة على مدار الساعة ومواقف سفلية.</p>', '<p>Residential towers around a central green plaza with 2–4 bedroom units and shared amenities: gym, pool, kids play area, 24/7 security and underground parking.</p>' ),
 			),
 			array(
-				'_dara_developer'   => $t( 'شركة التطوير العقاري', 'Real Estate Development Co.' ),
 				'_dara_status'      => $p[3],
 				'_dara_progress'    => $p[4],
 				'_dara_price_from'  => $p[5],
@@ -334,6 +347,7 @@ function dara_demo_import() {
 		);
 		set_post_thumbnail( $id, dara_demo_image( $p[2] ) );
 		wp_set_object_terms( $id, $districts[ $p[7] ], 'property_city' );
+		wp_set_object_terms( $id, $developers[ $pi ], 'project_developer' );
 	}
 
 	// Blog posts.
@@ -406,6 +420,14 @@ function dara_demo_import() {
 			),
 			array( '_wp_page_template' => 'page-templates/compare.php' )
 		),
+		'devs'     => dara_demo_post(
+			array(
+				'post_type'  => 'page',
+				'post_title' => $t( 'المطوّرون العقاريون', 'Developers' ),
+				'post_name'  => 'developers',
+			),
+			array( '_wp_page_template' => 'page-templates/developers.php' )
+		),
 	);
 	delete_transient( 'dara_template_pages' );
 
@@ -458,7 +480,9 @@ function dara_demo_import() {
 			$props_item = $add( $main, $t( 'العقارات', 'Properties' ), $archive );
 			$add( $main, $t( 'للبيع', 'For sale' ), add_query_arg( 'purpose', 'sale', $archive ), $props_item );
 			$add( $main, $t( 'للإيجار', 'For rent' ), add_query_arg( 'purpose', 'rent', $archive ), $props_item );
-			$add( $main, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+			$projects_item = $add( $main, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+			$add( $main, $t( 'كل المشاريع', 'All projects' ), get_post_type_archive_link( 'dara_project' ), $projects_item );
+			$add( $main, $t( 'المطوّرون', 'Developers' ), get_permalink( $pages['devs'] ), $projects_item );
 			$add( $main, $t( 'المسوّقون', 'Agents' ), get_post_type_archive_link( 'dara_agent' ) );
 			$add( $main, $t( 'المدونة', 'Blog' ), get_permalink( $pages['blog'] ) );
 			$add( $main, $t( 'تواصل معنا', 'Contact' ), get_permalink( $pages['contact'] ) );
@@ -468,6 +492,7 @@ function dara_demo_import() {
 				$menus[] = $foot;
 				$add( $foot, $t( 'العقارات', 'Properties' ), $archive );
 				$add( $foot, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+				$add( $foot, $t( 'المطوّرون', 'Developers' ), get_permalink( $pages['devs'] ) );
 				$add( $foot, $t( 'المسوّقون', 'Agents' ), get_post_type_archive_link( 'dara_agent' ) );
 				$add( $foot, $t( 'أضف عقارك', 'List your property' ), get_permalink( $pages['list'] ) );
 				$add( $foot, $t( 'تواصل معنا', 'Contact' ), get_permalink( $pages['contact'] ) );
@@ -548,7 +573,7 @@ function dara_demo_remove() {
 		}
 	}
 
-	foreach ( array( 'property_type', 'property_city', 'property_feature', 'category' ) as $tax ) {
+	foreach ( array( 'property_type', 'property_city', 'property_feature', 'project_developer', 'category' ) as $tax ) {
 		$terms = get_terms(
 			array(
 				'taxonomy'   => $tax,

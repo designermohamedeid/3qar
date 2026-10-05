@@ -41,8 +41,12 @@
 			return;
 		}
 		var box = add.closest(".dara-gallery");
-		var frame = wp.media({ title: l10n.title, button: { text: l10n.button }, library: { type: "image" }, multiple: "add" });
+		var single = box.hasAttribute("data-single");
+		var frame = wp.media({ title: l10n.title, button: { text: l10n.button }, library: { type: "image" }, multiple: single ? false : "add" });
 		frame.on("select", function () {
+			if (single) {
+				box.querySelector(".dara-gallery__list").innerHTML = "";
+			}
 			frame.state().get("selection").each(function (m) {
 				var att = m.toJSON();
 				if (!box.querySelector('li[data-id="' + att.id + '"]')) {

@@ -94,7 +94,7 @@ function dara_page_bundles() {
 	if ( is_singular( 'dara_project' ) ) {
 		$bundles[] = 'project';
 	}
-	if ( is_post_type_archive( 'dara_agent' ) || is_singular( 'dara_agent' ) ) {
+	if ( is_post_type_archive( 'dara_agent' ) || is_singular( 'dara_agent' ) || is_tax( 'project_developer' ) || is_page_template( 'page-templates/developers.php' ) ) {
 		$bundles[] = 'agents';
 	}
 	if ( ! is_front_page() && ( is_singular() || is_home() || is_archive() || is_search() || is_404() ) && ! is_post_type_archive( array( 'dara_property', 'dara_project', 'dara_agent' ) ) && ! is_tax( array( 'property_type', 'property_city' ) ) ) {
