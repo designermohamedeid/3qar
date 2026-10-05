@@ -172,63 +172,63 @@ msgstr ""
 msgid "Mobile menu"
 msgstr ""
 
-#: inc/assets.php:47
+#: inc/assets.php:56
 msgid "Saved to favorites"
 msgstr ""
 
-#: inc/assets.php:48
+#: inc/assets.php:57
 msgid "Removed from favorites"
 msgstr ""
 
-#: inc/assets.php:49
+#: inc/assets.php:58
 msgid "Link copied"
 msgstr ""
 
-#: inc/assets.php:50
+#: inc/assets.php:59
 msgid "You have no saved properties yet."
 msgstr ""
 
-#: inc/assets.php:51
+#: inc/assets.php:60
 msgid "Close"
 msgstr ""
 
-#: inc/assets.php:52 single.php:61
+#: inc/assets.php:61 single.php:61
 msgid "Previous"
 msgstr ""
 
-#: inc/assets.php:53 single.php:62
+#: inc/assets.php:62 single.php:62
 msgid "Next"
 msgstr ""
 
-#: inc/assets.php:54
+#: inc/assets.php:63
 msgid "Added to compare"
 msgstr ""
 
-#: inc/assets.php:55
+#: inc/assets.php:64
 msgid "Removed from compare"
 msgstr ""
 
-#: inc/assets.php:56
+#: inc/assets.php:65
 msgid "You can compare up to 4 properties"
 msgstr ""
 
-#: inc/assets.php:57
+#: inc/assets.php:66
 msgid "Compare properties"
 msgstr ""
 
-#: inc/assets.php:58
+#: inc/assets.php:67
 msgid "Compare now"
 msgstr ""
 
-#: inc/assets.php:59
+#: inc/assets.php:68
 msgid "Clear"
 msgstr ""
 
-#: inc/assets.php:60
+#: inc/assets.php:69
 msgid "Add one more property to compare"
 msgstr ""
 
-#: inc/assets.php:61 page-templates/compare.php:148
+#: inc/assets.php:70 page-templates/compare.php:148
 msgid "Remove"
 msgstr ""
 
@@ -514,21 +514,45 @@ msgstr ""
 msgid "Load block CSS only on pages that use blocks"
 msgstr ""
 
-#: inc/customizer.php:157
-msgid "Map tiles URL"
+#: inc/customizer.php:159
+msgid "Map provider"
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:160
+msgid "Google Maps needs an API key with the \"Maps JavaScript API\" enabled."
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "OpenStreetMap (free)"
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "Google Maps"
+msgstr ""
+
+#: inc/customizer.php:166
+msgid "Google Maps API key"
+msgstr ""
+
+#: inc/customizer.php:166
+msgid "Restrict the key to your domain in Google Cloud Console."
+msgstr ""
+
+#: inc/customizer.php:167
+msgid "Map tiles URL (OpenStreetMap)"
+msgstr ""
+
+#: inc/customizer.php:167
 msgid ""
 "Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, "
 "Stadia...) with your key."
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:168
 msgid "Map attribution"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:201
 msgid "Dara theme"
 msgstr ""
 
@@ -537,7 +561,7 @@ msgstr ""
 msgid "Show sub menu of %s"
 msgstr ""
 
-#: inc/menus.php:50 inc/template-tags.php:363
+#: inc/menus.php:50 inc/template-tags.php:365
 msgid "Home"
 msgstr ""
 
@@ -744,7 +768,7 @@ msgstr ""
 msgid "Talk to an advisor"
 msgstr ""
 
-#: inc/template-tags.php:82 inc/template-tags.php:300
+#: inc/template-tags.php:82 inc/template-tags.php:302
 msgid "Blog"
 msgstr ""
 
@@ -782,38 +806,38 @@ msgid ""
 "your obligations."
 msgstr ""
 
-#: inc/template-tags.php:304
+#: inc/template-tags.php:306
 #, php-format
 msgid "Search: %s"
 msgstr ""
 
-#: inc/template-tags.php:307
+#: inc/template-tags.php:309
 msgid "Page not found"
 msgstr ""
 
-#: inc/template-tags.php:346
+#: inc/template-tags.php:348
 #, php-format
 msgid "in %s"
 msgstr ""
 
-#: inc/template-tags.php:356 inc/template-tags.php:389
+#: inc/template-tags.php:358 inc/template-tags.php:391
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/template-tags.php:403
+#: inc/template-tags.php:405
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:406
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:622
+#: inc/template-tags.php:624
 #, php-format
 msgid "Compare %s"
 msgstr ""
 
-#: inc/template-tags.php:631
+#: inc/template-tags.php:633
 msgid "Compare"
 msgstr ""
 

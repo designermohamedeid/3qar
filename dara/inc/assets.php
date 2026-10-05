@@ -39,6 +39,15 @@ function dara_assets() {
 		array(
 			'leafletJs'   => DARA_URI . '/assets/vendor/leaflet/leaflet.js',
 			'leafletCss'  => DARA_URI . '/assets/vendor/leaflet/leaflet.css',
+			'mapProvider' => 'google' === dara_mod( 'map_provider' ) && dara_mod( 'map_google_key' ) ? 'google' : 'osm',
+			'googleJs'    => 'google' !== dara_mod( 'map_provider' ) ? '' : 'https://maps.googleapis.com/maps/api/js?' . http_build_query(
+				array(
+					'key'      => dara_mod( 'map_google_key' ),
+					'language' => substr( get_locale(), 0, 2 ),
+					'loading'  => 'async',
+					'callback' => 'daraGoogleReady',
+				)
+			),
 			'tiles'       => dara_mod( 'map_tiles' ),
 			'attribution' => wp_kses_post( dara_mod( 'map_attribution' ) ),
 			'restUrl'     => esc_url_raw( rest_url( 'wp/v2/' ) ),

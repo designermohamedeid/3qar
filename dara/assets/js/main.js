@@ -139,52 +139,104 @@
 		});
 	});
 
-	/* ---------- Leaflet on demand ---------- */
-	var leafletPromise;
-	function loadLeaflet() {
-		if (window.L) { return Promise.resolve(window.L); }
-		if (leafletPromise) { return leafletPromise; }
-		leafletPromise = new Promise(function (resolve, reject) {
-			var css = doc.createElement("link");
-			css.rel = "stylesheet";
-			css.href = data.leafletCss;
-			doc.head.appendChild(css);
+	/* ---------- Maps on demand (Leaflet / OpenStreetMap or Google Maps) ---------- */
+	var mapPromise;
+	function loadScript(src, css) {
+		return new Promise(function (resolve, reject) {
+			if (css) {
+				var l = doc.createElement("link");
+				l.rel = "stylesheet";
+				l.href = css;
+				doc.head.appendChild(l);
+			}
 			var s = doc.createElement("script");
-			s.src = data.leafletJs;
+			s.src = src;
 			s.async = true;
-			s.onload = function () { resolve(window.L); };
 			s.onerror = reject;
+			if (data.mapProvider !== "google") { s.onload = resolve; }
 			doc.head.appendChild(s);
 		});
-		return leafletPromise;
 	}
-	function baseMap(el, opts) {
+	function loadMaps() {
+		if (mapPromise) { return mapPromise; }
+		if (data.mapProvider === "google") {
+			mapPromise = new Promise(function (resolve, reject) {
+				window.daraGoogleReady = resolve;
+				loadScript(data.googleJs).catch(reject);
+			});
+		} else {
+			mapPromise = window.L ? Promise.resolve() : loadScript(data.leafletJs, data.leafletCss);
+		}
+		return mapPromise;
+	}
+	function pinHtml(label) {
+		return "<span>" + String(label).replace(/[<>&"]/g, "") + "</span>";
+	}
+	var homeHtml = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/></svg>';
+
+	// Same small API for both providers: addHome(lat, lng), addPin(lat, lng, label, title, link), fit(points).
+	function leafletMap(el, lat, lng, zoom) {
 		var L = window.L;
-		var map = L.map(el, Object.assign({ scrollWheelZoom: false }, opts || {}));
+		var map = L.map(el, { scrollWheelZoom: false, center: [lat, lng], zoom: zoom });
 		L.tileLayer(data.tiles, { maxZoom: 19, attribution: data.attribution }).addTo(map);
-		return map;
+		return {
+			addHome: function (la, ln) {
+				L.marker([la, ln], { keyboard: false, icon: L.divIcon({ className: "map-home", html: homeHtml, iconSize: [48, 48], iconAnchor: [24, 24] }) }).addTo(map);
+			},
+			addPin: function (la, ln, label, title, link) {
+				L.marker([la, ln], { title: title, riseOnHover: true, icon: L.divIcon({ className: "map-pin", html: pinHtml(label), iconSize: null }) }).addTo(map).bindPopup(link);
+			},
+			fit: function (points) { map.fitBounds(points, { padding: [40, 40] }); }
+		};
 	}
-	function pinIcon(label, active) {
-		return window.L.divIcon({
-			className: "map-pin" + (active ? " map-pin--active" : ""),
-			html: "<span>" + String(label).replace(/[<>&"]/g, "") + "</span>",
-			iconSize: null
-		});
+	function googleMap(el, lat, lng, zoom) {
+		var g = window.google.maps;
+		var map = new g.Map(el, { center: { lat: lat, lng: lng }, zoom: zoom, gestureHandling: "cooperative", mapTypeControl: false, streetViewControl: false });
+		var info = new g.InfoWindow();
+		// HTML markers via OverlayView, so the pins look the same as with Leaflet.
+		function HtmlMarker(la, ln, cls, html, title, link) {
+			this.pos = new g.LatLng(la, ln);
+			this.div = doc.createElement("div");
+			this.div.className = cls;
+			this.div.innerHTML = html;
+			this.div.style.position = "absolute";
+			if (title) { this.div.title = title; }
+			if (link) {
+				var self = this;
+				this.div.style.cursor = "pointer";
+				this.div.addEventListener("click", function () { info.setContent(link); info.setPosition(self.pos); info.open({ map: map }); });
+			}
+			this.setMap(map);
+		}
+		HtmlMarker.prototype = new g.OverlayView();
+		HtmlMarker.prototype.onAdd = function () { this.getPanes().overlayMouseTarget.appendChild(this.div); };
+		HtmlMarker.prototype.draw = function () {
+			var p = this.getProjection().fromLatLngToDivPixel(this.pos);
+			this.div.style.left = p.x + "px";
+			this.div.style.top = p.y + "px";
+		};
+		HtmlMarker.prototype.onRemove = function () { this.div.remove(); };
+		return {
+			addHome: function (la, ln) {
+				var m = new HtmlMarker(la, ln, "map-home map-home--g", homeHtml);
+				return m;
+			},
+			addPin: function (la, ln, label, title, link) { return new HtmlMarker(la, ln, "map-pin", pinHtml(label), title, link); },
+			fit: function (points) {
+				var b = new g.LatLngBounds();
+				points.forEach(function (p) { b.extend({ lat: p[0], lng: p[1] }); });
+				map.fitBounds(b, 40);
+			}
+		};
 	}
-	function homeIcon() {
-		return window.L.divIcon({
-			className: "map-home",
-			html: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/></svg>',
-			iconSize: [48, 48],
-			iconAnchor: [24, 24]
-		});
+	function createMap(el, lat, lng, zoom) {
+		return data.mapProvider === "google" ? googleMap(el, lat, lng, zoom) : leafletMap(el, lat, lng, zoom);
 	}
 	function initSingleMap(el) {
-		loadLeaflet().then(function () {
-			var ll = [parseFloat(el.getAttribute("data-lat")), parseFloat(el.getAttribute("data-lng"))];
-			var map = baseMap(el, { center: ll, zoom: 15 });
-			window.L.marker(ll, { icon: homeIcon(), keyboard: false }).addTo(map);
-		});
+		loadMaps().then(function () {
+			var lat = parseFloat(el.getAttribute("data-lat")), lng = parseFloat(el.getAttribute("data-lng"));
+			createMap(el, lat, lng, 15).addHome(lat, lng);
+		}).catch(function () { el.hidden = true; });
 	}
 	var mapObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
 		entries.forEach(function (en) {
@@ -209,19 +261,18 @@
 				listingReady = true;
 				var points = [];
 				try { points = JSON.parse(($("#listing-points") || {}).textContent || "[]"); } catch (err) { points = []; }
-				loadLeaflet().then(function (L) {
-					var map = baseMap(listingMap, { center: points.length ? [points[0].lat, points[0].lng] : [24.7136, 46.6753], zoom: 11 });
+				loadMaps().then(function () {
+					var map = createMap(listingMap, points.length ? points[0].lat : 24.7136, points.length ? points[0].lng : 46.6753, 11);
 					var group = [];
 					points.forEach(function (p) {
-						var m = L.marker([p.lat, p.lng], { icon: pinIcon(p.label), title: p.title, riseOnHover: true }).addTo(map);
 						var a = doc.createElement("a");
 						a.href = p.url;
 						a.textContent = p.title;
-						m.bindPopup(a);
+						map.addPin(p.lat, p.lng, p.label, p.title, a);
 						group.push([p.lat, p.lng]);
 					});
-					if (group.length > 1) { map.fitBounds(group, { padding: [40, 40] }); }
-				});
+					if (group.length > 1) { map.fit(group); }
+				}).catch(function () { listingReady = false; });
 			}
 		});
 	});

@@ -121,6 +121,8 @@ function dara_defaults() {
 		// Performance.
 		'perf_emoji'         => true,
 		'perf_block_css'     => true,
+		'map_provider'       => 'osm',
+		'map_google_key'     => '',
 		'map_tiles'          => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 		'map_attribution'    => '&copy; OpenStreetMap',
 	);
