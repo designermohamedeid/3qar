@@ -47,7 +47,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <div class="layout">
 <nav aria-label="Contents">
 	<div class="brand"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span>Dara</div>
-	<p class="ver">Theme 1.5.0 · Dara Core 1.2.0<br>by <a href="https://mansourahost.com">Mansoura Host</a></p>
+	<p class="ver">Theme 1.6.0 · Dara Core 1.3.0<br>by <a href="https://mansourahost.com">Mansoura Host</a></p>
 	<ol>
 		<li><a href="#intro">Introduction</a></li>
 		<li><a href="#requirements">Requirements</a></li>
@@ -58,6 +58,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 		<li><a href="#blocks">Dara blocks</a></li>
 		<li><a href="#properties">Properties</a></li>
 		<li><a href="#projects">Developer projects</a></li>
+		<li><a href="#developers">Developers</a></li>
 		<li><a href="#agents">Agents</a></li>
 		<li><a href="#leads">Leads &amp; forms</a></li>
 		<li><a href="#pages">Page templates</a></li>
@@ -148,12 +149,16 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 	<li>8 properties.</li>
 	<li>2 projects.</li>
 	<li>2 agents.</li>
+	<li>2 developers with logos.</li>
 	<li>Property types, cities and districts.</li>
 	<li>Blog posts.</li>
 	<li>Images.</li>
-	<li>The pages Home, Blog, Contact, List your property, Favorites and Compare.</li>
+	<li>The pages Home, Blog, Contact, List your property, Favorites, Compare and Developers.</li>
 </ul>
 <p><strong>Remove demo content</strong> deletes everything the importer created. It also restores your previous home page, menus and settings. Content you created yourself is never touched.</p>
+<p>With WP-CLI you can import or remove the demo from the command line:</p>
+<pre><code>wp dara demo import --lang=en
+wp dara demo remove</code></pre>
 <div class="note">Demo images are simple illustrations so the package stays small. Replace them with your real photos.</div>
 
 <h2 id="home">Building the home page</h2>
@@ -221,7 +226,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <ul>
 	<li>Enter the address, latitude and longitude. To get the coordinates, right-click the location in Google Maps and click them to copy.</li>
 	<li>Nearby places are entered one per line.</li>
-	<li>The map uses Leaflet and OpenStreetMap, and loads only when it scrolls into view.</li>
+	<li>The map uses OpenStreetMap by default, or Google Maps if you choose it (see <a href="#customizer">Customizer options</a>). Either way it loads only when it scrolls into view.</li>
 </ul>
 <h3>Taxonomies</h3>
 <ul>
@@ -257,6 +262,21 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <p>Rows such as the units table use one line per row, with cells separated by <code>|</code>. For example:</p>
 <pre><code>2 bedrooms | 120 m² | from 650,000
 3 bedrooms | 165 m² | from 890,000</code></pre>
+
+<h2 id="developers">Developers</h2>
+<p>Developers group your projects by the company that builds them. Go to <em>Projects → Developers</em> and add one with the following:</p>
+<ul>
+	<li>Name and description (the "About the developer" text).</li>
+	<li>Logo.</li>
+	<li>Year founded.</li>
+	<li>Website, phone and email.</li>
+</ul>
+<p>Then tick the developer in the <em>Developers</em> box when you edit a project. Each developer gets the following:</p>
+<ul>
+	<li>A profile page at <code>/developer/developer-name/</code>, with the logo, contact buttons, description and all of their projects.</li>
+	<li>A link from every project page ("Developed by …").</li>
+</ul>
+<p>To list all developers, create a page with the <em>Developers</em> template.</p>
 
 <h2 id="agents">Agents</h2>
 <p><em>Properties → Agents → Add New</em> takes the following:</p>
@@ -328,7 +348,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 	<tr><td>Contact &amp; social</td><td>Phone, WhatsApp, email, address, office coordinates, social links</td></tr>
 	<tr><td>Footer</td><td>About text, newsletter, copyright (<code>{year}</code> and <code>{site}</code> placeholders), designer credit</td></tr>
 	<tr><td>Mortgage calculator</td><td>See <a href="#mortgage">above</a></td></tr>
-	<tr><td>Performance &amp; maps</td><td>Emoji script, block CSS loading, map tiles URL and attribution</td></tr>
+	<tr><td>Performance &amp; maps</td><td>Emoji script, block CSS loading, map provider (OpenStreetMap or Google Maps), Google Maps API key, map tiles URL and attribution</td></tr>
 </table></div>
 <p>The logo and site icon are set in <em>Customize → Site Identity</em>.</p>
 
@@ -411,7 +431,13 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <h3>Forms send but no email arrives</h3>
 <p>Many hosts block PHP mail. Install an SMTP plugin. Leads are always saved in the <em>Leads</em> menu, even when email fails.</p>
 <h3>The map is empty</h3>
-<p>Check that the property has a latitude and longitude. For high traffic, set a commercial tile provider URL in <em>Customize → Performance &amp; maps</em>.</p>
+<p>Check that the property has a latitude and longitude. If you use Google Maps, check the following:</p>
+<ul>
+	<li>The API key has the <em>Maps JavaScript API</em> enabled.</li>
+	<li>Billing is active on the Google Cloud project.</li>
+	<li>Your domain is allowed in the key's restrictions.</li>
+</ul>
+<p>If you use OpenStreetMap and get high traffic, set a commercial tile provider URL in <em>Customize → Performance &amp; maps</em>.</p>
 <h3>The home page shows my latest posts</h3>
 <p>Go to <em>Settings → Reading</em>, choose <em>A static page</em> and select <em>Home</em>. The demo importer can also do this for you.</p>
 <h3>Prices show the wrong currency</h3>
@@ -420,6 +446,12 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <p>Theme updates replace the theme files, so any edits made inside <code>dara/</code> are lost. Your content and Customizer settings are kept. Put code changes in the child theme.</p>
 
 <h2 id="changelog">Changelog</h2>
+<h3>1.6.0 (theme) / 1.3.0 (Dara Core)</h3>
+<ul>
+	<li>Developers: logo, contact details, profile pages and a directory page template.</li>
+	<li>Google Maps as an alternative map provider.</li>
+	<li>WP-CLI commands to import and remove the demo.</li>
+</ul>
 <h3>1.5.0 (theme) / 1.2.0 (Dara Core)</h3>
 <ul>
 	<li>Gutenberg blocks and block patterns moved into Dara Core.</li>

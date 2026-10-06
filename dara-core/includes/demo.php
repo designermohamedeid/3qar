@@ -157,20 +157,42 @@ function dara_demo_term( $name, $taxonomy, $args = array() ) {
 }
 
 /**
- * Run the import.
+ * Import form handler.
  */
 function dara_demo_import() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
 		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
 	}
-	if ( get_option( 'dara_demo_imported' ) ) {
-		wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo' ) );
+	if ( ! get_option( 'dara_demo_imported' ) ) {
+		dara_demo_run_import(
+			isset( $_POST['lang'] ) && 'en' === $_POST['lang'] ? 'en' : 'ar',
+			! empty( $_POST['set_front'] ),
+			! empty( $_POST['set_menus'] )
+		);
+		wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=imported' ) );
 		exit;
+	}
+	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo' ) );
+	exit;
+}
+add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
+
+/**
+ * Import the demo content.
+ *
+ * @param string $lang      ar or en.
+ * @param bool   $set_front Use the demo home and blog pages.
+ * @param bool   $set_menus Create and assign the demo menus.
+ * @return bool False when demo content is already installed.
+ */
+function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = true ) {
+	if ( get_option( 'dara_demo_imported' ) ) {
+		return false;
 	}
 	if ( function_exists( 'set_time_limit' ) ) {
 		set_time_limit( 300 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions
 	}
-	$GLOBALS['dara_demo_lang'] = isset( $_POST['lang'] ) && 'en' === $_POST['lang'] ? 'en' : 'ar';
+	$GLOBALS['dara_demo_lang'] = 'en' === $lang ? 'en' : 'ar';
 	$t                         = 'dara_demo_t';
 
 	// Taxonomies.
@@ -298,16 +320,30 @@ function dara_demo_import() {
 	}
 
 	// Projects.
-	$units    = $t(
+	$units      = $t(
 		"A1 | شقة | 110 | 2 | 850000 | available\nA2 | شقة | 145 | 3 | 1120000 | available\nB1 | شقة | 165 | 3 | 1290000 | reserved\nC1 | شقة | 210 | 4 | 1640000 | available\nPH | بنتهاوس | 320 | 4 | 2900000 | sold",
 		"A1 | Apartment | 110 | 2 | 850000 | available\nA2 | Apartment | 145 | 3 | 1120000 | available\nB1 | Apartment | 165 | 3 | 1290000 | reserved\nC1 | Apartment | 210 | 4 | 1640000 | available\nPH | Penthouse | 320 | 4 | 2900000 | sold"
 	);
-	$payment  = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
-	$projects = array(
+	$payment    = $t( "10% | عند الحجز | دفعة أولى لتثبيت الوحدة\n40% | أثناء الإنشاء | على دفعات حسب مراحل الإنجاز\n50% | عند الاستلام | نقداً أو عبر التمويل العقاري", "10% | On booking | Down payment to reserve the unit\n40% | During construction | Instalments by milestone\n50% | On handover | Cash or mortgage" );
+	$projects   = array(
 		array( 'أبراج الواحة', 'Al Waha Towers', 'tower-3', 'construction', 65, 850000, $t( 'الربع الرابع 2027', 'Q4 2027' ), 'Al Yasmin', 24.83, 46.64, $t( 'يناير 2025', 'Jan 2025' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'يونيو 2025', 'Jun 2025' ) . ' | ' . $t( 'الحفر والأساسات', 'Foundations' ) . " | done\n" . $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | current\n" . $t( 'مارس 2027', 'Mar 2027' ) . ' | ' . $t( 'التشطيبات والواجهات', 'Finishing & facades' ) . " | upcoming\n" . $t( 'ديسمبر 2027', 'Dec 2027' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
 		array( 'مجمع رُبى السكني', 'Ruba Residences', 'tower-1', 'offplan', 20, 1450000, $t( 'الربع الثاني 2028', 'Q2 2028' ), 'North Obhur', 21.75, 39.12, $t( 'مارس 2026', 'Mar 2026' ) . ' | ' . $t( 'إطلاق المشروع', 'Launch' ) . " | done\n" . $t( 'سبتمبر 2026', 'Sep 2026' ) . ' | ' . $t( 'الأساسات', 'Foundations' ) . " | current\n" . $t( 'يونيو 2027', 'Jun 2027' ) . ' | ' . $t( 'الهيكل الإنشائي', 'Structure' ) . " | upcoming\n" . $t( 'يونيو 2028', 'Jun 2028' ) . ' | ' . $t( 'التسليم', 'Handover' ) . ' | upcoming' ),
 	);
-	foreach ( $projects as $p ) {
+	$developers = array();
+	foreach ( array(
+		array( 'الواحة للتطوير العقاري', 'Al Waha Development', 'developer-1', '2009', 'شركة تطوير سعودية متخصصة في المجمعات السكنية المتكاملة، سلّمت أكثر من 3,000 وحدة في الرياض والمنطقة الشرقية.', 'A Saudi developer of integrated residential communities that has delivered more than 3,000 homes in Riyadh and the Eastern Province.' ),
+		array( 'رُبى العقارية', 'Ruba Real Estate', 'developer-2', '2014', 'مطوّر عقاري يركّز على المشاريع السكنية الساحلية في جدة، بتصاميم عصرية ومساحات خضراء واسعة.', 'A developer focused on coastal residential projects in Jeddah, with modern design and generous green spaces.' ),
+	) as $i => $d ) {
+		$term_id = dara_demo_term( $t( $d[0], $d[1] ), 'project_developer', array( 'description' => $t( $d[4], $d[5] ) ) );
+		update_term_meta( $term_id, 'dara_logo', dara_demo_image( $d[2] ) );
+		update_term_meta( $term_id, 'dara_founded', $d[3] );
+		update_term_meta( $term_id, 'dara_website', 'https://example.com' );
+		update_term_meta( $term_id, 'dara_phone', '+966 11 000 000' . ( $i + 1 ) );
+		update_term_meta( $term_id, 'dara_email', 'sales' . ( $i + 1 ) . '@example.com' );
+		$developers[] = $term_id;
+	}
+
+	foreach ( $projects as $pi => $p ) {
 		$id = dara_demo_post(
 			array(
 				'post_type'    => 'dara_project',
@@ -315,7 +351,6 @@ function dara_demo_import() {
 				'post_content' => $t( '<p>أبراج سكنية حول ساحة مركزية خضراء، بوحدات من غرفتين إلى أربع غرف، ومرافق مشتركة تشمل نادياً رياضياً ومسبحاً ومنطقة ألعاب للأطفال، مع حراسة على مدار الساعة ومواقف سفلية.</p>', '<p>Residential towers around a central green plaza with 2–4 bedroom units and shared amenities: gym, pool, kids play area, 24/7 security and underground parking.</p>' ),
 			),
 			array(
-				'_dara_developer'   => $t( 'شركة التطوير العقاري', 'Real Estate Development Co.' ),
 				'_dara_status'      => $p[3],
 				'_dara_progress'    => $p[4],
 				'_dara_price_from'  => $p[5],
@@ -334,6 +369,7 @@ function dara_demo_import() {
 		);
 		set_post_thumbnail( $id, dara_demo_image( $p[2] ) );
 		wp_set_object_terms( $id, $districts[ $p[7] ], 'property_city' );
+		wp_set_object_terms( $id, $developers[ $pi ], 'project_developer' );
 	}
 
 	// Blog posts.
@@ -406,6 +442,14 @@ function dara_demo_import() {
 			),
 			array( '_wp_page_template' => 'page-templates/compare.php' )
 		),
+		'devs'     => dara_demo_post(
+			array(
+				'post_type'  => 'page',
+				'post_title' => $t( 'المطوّرون العقاريون', 'Developers' ),
+				'post_name'  => 'developers',
+			),
+			array( '_wp_page_template' => 'page-templates/developers.php' )
+		),
 	);
 	delete_transient( 'dara_template_pages' );
 
@@ -429,7 +473,7 @@ function dara_demo_import() {
 		'settings'       => get_option( 'dara_core_settings' ),
 	);
 
-	if ( ! empty( $_POST['set_front'] ) ) {
+	if ( $set_front ) {
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $pages['home'] );
 		update_option( 'page_for_posts', $pages['blog'] );
@@ -437,7 +481,7 @@ function dara_demo_import() {
 
 	// Menus.
 	$menus = array();
-	if ( ! empty( $_POST['set_menus'] ) ) {
+	if ( $set_menus ) {
 		$main = wp_create_nav_menu( $t( 'القائمة الرئيسية (ديمو)', 'Main menu (demo)' ) . ' ' . wp_rand( 100, 999 ) );
 		if ( ! is_wp_error( $main ) ) {
 			$menus[] = $main;
@@ -458,7 +502,9 @@ function dara_demo_import() {
 			$props_item = $add( $main, $t( 'العقارات', 'Properties' ), $archive );
 			$add( $main, $t( 'للبيع', 'For sale' ), add_query_arg( 'purpose', 'sale', $archive ), $props_item );
 			$add( $main, $t( 'للإيجار', 'For rent' ), add_query_arg( 'purpose', 'rent', $archive ), $props_item );
-			$add( $main, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+			$projects_item = $add( $main, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+			$add( $main, $t( 'كل المشاريع', 'All projects' ), get_post_type_archive_link( 'dara_project' ), $projects_item );
+			$add( $main, $t( 'المطوّرون', 'Developers' ), get_permalink( $pages['devs'] ), $projects_item );
 			$add( $main, $t( 'المسوّقون', 'Agents' ), get_post_type_archive_link( 'dara_agent' ) );
 			$add( $main, $t( 'المدونة', 'Blog' ), get_permalink( $pages['blog'] ) );
 			$add( $main, $t( 'تواصل معنا', 'Contact' ), get_permalink( $pages['contact'] ) );
@@ -468,6 +514,7 @@ function dara_demo_import() {
 				$menus[] = $foot;
 				$add( $foot, $t( 'العقارات', 'Properties' ), $archive );
 				$add( $foot, $t( 'المشاريع', 'Projects' ), get_post_type_archive_link( 'dara_project' ) );
+				$add( $foot, $t( 'المطوّرون', 'Developers' ), get_permalink( $pages['devs'] ) );
 				$add( $foot, $t( 'المسوّقون', 'Agents' ), get_post_type_archive_link( 'dara_agent' ) );
 				$add( $foot, $t( 'أضف عقارك', 'List your property' ), get_permalink( $pages['list'] ) );
 				$add( $foot, $t( 'تواصل معنا', 'Contact' ), get_permalink( $pages['contact'] ) );
@@ -517,18 +564,26 @@ function dara_demo_import() {
 		false
 	);
 
-	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=imported' ) );
-	exit;
+	return true;
 }
-add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
 
 /**
- * Remove everything tagged as demo and restore the reading settings.
+ * Remove form handler.
  */
 function dara_demo_remove() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
 		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
 	}
+	dara_demo_run_remove();
+	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=removed' ) );
+	exit;
+}
+add_action( 'admin_post_dara_demo_remove', 'dara_demo_remove' );
+
+/**
+ * Remove everything tagged as demo and restore the reading settings.
+ */
+function dara_demo_run_remove() {
 	$info = (array) get_option( 'dara_demo_imported', array() );
 
 	$ids = get_posts(
@@ -548,7 +603,7 @@ function dara_demo_remove() {
 		}
 	}
 
-	foreach ( array( 'property_type', 'property_city', 'property_feature', 'category' ) as $tax ) {
+	foreach ( array( 'property_type', 'property_city', 'property_feature', 'project_developer', 'category' ) as $tax ) {
 		$terms = get_terms(
 			array(
 				'taxonomy'   => $tax,
@@ -584,11 +639,12 @@ function dara_demo_remove() {
 
 	delete_option( 'dara_demo_imported' );
 	delete_transient( 'dara_template_pages' );
-
-	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=removed' ) );
-	exit;
 }
-add_action( 'admin_post_dara_demo_remove', 'dara_demo_remove' );
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require DARA_CORE_DIR . 'includes/class-dara-demo-cli.php';
+	WP_CLI::add_command( 'dara demo', 'Dara_Demo_CLI' );
+}
 
 /**
  * Point new users to the importer after activating the plugin.

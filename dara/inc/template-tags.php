@@ -121,6 +121,8 @@ function dara_defaults() {
 		// Performance.
 		'perf_emoji'         => true,
 		'perf_block_css'     => true,
+		'map_provider'       => 'osm',
+		'map_google_key'     => '',
 		'map_tiles'          => 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 		'map_attribution'    => '&copy; OpenStreetMap',
 	);
@@ -312,6 +314,9 @@ function dara_page_title() {
 	if ( is_post_type_archive() ) {
 		return post_type_archive_title( '', false );
 	}
+	if ( is_tax( 'project_developer' ) ) {
+		return single_term_title( '', false );
+	}
 	if ( is_archive() ) {
 		return wp_strip_all_tags( get_the_archive_title() );
 	}
@@ -377,6 +382,9 @@ function dara_breadcrumbs() {
 		}
 	} elseif ( is_tax( array( 'property_type', 'property_city' ) ) ) {
 		$items[] = array( get_post_type_archive_link( 'dara_property' ), get_post_type_object( 'dara_property' )->labels->name );
+	} elseif ( is_tax( 'project_developer' ) ) {
+		$devs    = dara_template_url( 'page-templates/developers.php' );
+		$items[] = $devs ? array( $devs, get_the_title( url_to_postid( $devs ) ) ) : array( get_post_type_archive_link( 'dara_project' ), get_post_type_object( 'dara_project' )->labels->name );
 	}
 	$items[] = array( '', is_singular() ? get_the_title() : dara_page_title() );
 

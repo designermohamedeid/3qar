@@ -154,7 +154,17 @@ function dara_customizer_map() {
 			array(
 				'perf_emoji'      => array( 'checkbox', __( 'Disable WordPress emoji script', 'dara' ) ),
 				'perf_block_css'  => array( 'checkbox', __( 'Load block CSS only on pages that use blocks', 'dara' ) ),
-				'map_tiles'       => array( 'url', __( 'Map tiles URL', 'dara' ), __( 'Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, Stadia...) with your key.', 'dara' ) ),
+				'map_provider'    => array(
+					'select',
+					__( 'Map provider', 'dara' ),
+					__( 'Google Maps needs an API key with the "Maps JavaScript API" enabled.', 'dara' ),
+					array(
+						'osm'    => __( 'OpenStreetMap (free)', 'dara' ),
+						'google' => __( 'Google Maps', 'dara' ),
+					),
+				),
+				'map_google_key'  => array( 'text', __( 'Google Maps API key', 'dara' ), __( 'Restrict the key to your domain in Google Cloud Console.', 'dara' ) ),
+				'map_tiles'       => array( 'url', __( 'Map tiles URL (OpenStreetMap)', 'dara' ), __( 'Default: OpenStreetMap. For heavy traffic use a tile provider (MapTiler, Stadia...) with your key.', 'dara' ) ),
 				'map_attribution' => array( 'text', __( 'Map attribution', 'dara' ) ),
 			),
 		),

@@ -1,134 +1,136 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara Core 1.2.0\n"
+"Project-Id-Version: Dara Core 1.3.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: dara-core\n"
 
-#: includes/admin.php:27
+#: includes/admin.php:29
 msgid "Select images"
 msgstr ""
 
-#: includes/admin.php:28
+#: includes/admin.php:30
 msgid "Use these images"
 msgstr ""
 
-#: includes/admin.php:29 includes/blocks.php:406 includes/fields.php:281
+#: includes/admin.php:31 includes/blocks.php:406 includes/developers.php:58
+#: includes/fields.php:280
 msgid "Remove"
 msgstr ""
 
-#: includes/admin.php:45 includes/blocks.php:127
+#: includes/admin.php:47 includes/blocks.php:127
 msgid "Image"
 msgstr ""
 
-#: includes/admin.php:49 includes/fields.php:36
+#: includes/admin.php:51 includes/fields.php:36
 msgid "Price"
 msgstr ""
 
-#: includes/admin.php:50 includes/blocks.php:66 includes/fields.php:30
+#: includes/admin.php:52 includes/blocks.php:66 includes/fields.php:30
 #: includes/leads.php:114
 msgid "Purpose"
 msgstr ""
 
-#: includes/admin.php:71
+#: includes/admin.php:73
 msgid "Featured"
 msgstr ""
 
-#: includes/admin.php:90 includes/post-types.php:96
+#: includes/admin.php:92 includes/post-types.php:96
 msgid "Lead"
 msgstr ""
 
-#: includes/admin.php:91 includes/admin.php:135 includes/helpers.php:158
+#: includes/admin.php:93 includes/admin.php:137 includes/helpers.php:158
 msgid "Type"
 msgstr ""
 
-#: includes/admin.php:92 includes/admin.php:137 includes/fields.php:142
+#: includes/admin.php:94 includes/admin.php:139 includes/developers.php:39
+#: includes/fields.php:141
 msgid "Phone"
 msgstr ""
 
-#: includes/admin.php:93
+#: includes/admin.php:95
 msgid "About"
 msgstr ""
 
-#: includes/admin.php:132
+#: includes/admin.php:134
 msgid "Lead details"
 msgstr ""
 
-#: includes/admin.php:136
+#: includes/admin.php:138
 msgid "Name"
 msgstr ""
 
-#: includes/admin.php:138 includes/fields.php:144
+#: includes/admin.php:140 includes/developers.php:40 includes/fields.php:143
 msgid "Email"
 msgstr ""
 
-#: includes/admin.php:139
+#: includes/admin.php:141
 msgid "Preferred date"
 msgstr ""
 
-#: includes/admin.php:140
+#: includes/admin.php:142
 msgid "Details"
 msgstr ""
 
-#: includes/admin.php:141
+#: includes/admin.php:143
 msgid "Message"
 msgstr ""
 
-#: includes/admin.php:142
+#: includes/admin.php:144
 msgid "Page"
 msgstr ""
 
-#: includes/admin.php:167 includes/admin.php:211
+#: includes/admin.php:169 includes/admin.php:213
 msgid "Dara settings"
 msgstr ""
 
-#: includes/admin.php:168 includes/blocks.php:402
+#: includes/admin.php:170 includes/blocks.php:402
 msgid "Settings"
 msgstr ""
 
-#: includes/admin.php:203
+#: includes/admin.php:205
 msgid "Currency label"
 msgstr ""
 
-#: includes/admin.php:203
+#: includes/admin.php:205
 msgid "Shown after prices, e.g. SAR, EGP, AED."
 msgstr ""
 
-#: includes/admin.php:204
+#: includes/admin.php:206
 msgid "Leads email"
 msgstr ""
 
-#: includes/admin.php:204
+#: includes/admin.php:206
 msgid "Viewing requests and forms are sent here (and to the property agent)."
 msgstr ""
 
-#: includes/admin.php:205
+#: includes/admin.php:207
 msgid "Office FAL license"
 msgstr ""
 
-#: includes/admin.php:206
+#: includes/admin.php:208
 msgid "Commercial registration"
 msgstr ""
 
-#: includes/admin.php:207
+#: includes/admin.php:209
 msgid "Default contact name"
 msgstr ""
 
-#: includes/admin.php:207
+#: includes/admin.php:209
 msgid "Used when a property has no agent."
 msgstr ""
 
-#: includes/admin.php:208
+#: includes/admin.php:210
 msgid "Default contact phone"
 msgstr ""
 
-#: includes/admin.php:209
+#: includes/admin.php:211
 msgid "Default WhatsApp number"
 msgstr ""
 
-#: includes/admin.php:209
+#: includes/admin.php:211
 msgid "International format without +"
 msgstr ""
 
@@ -244,7 +246,7 @@ msgstr ""
 msgid "Service cards with icons."
 msgstr ""
 
-#: includes/blocks.php:113 includes/fields.php:364 includes/fields.php:379
+#: includes/blocks.php:113 includes/fields.php:363 includes/fields.php:378
 msgid "Icon"
 msgstr ""
 
@@ -422,18 +424,42 @@ msgstr ""
 msgid "Create and assign menus"
 msgstr ""
 
-#: includes/demo.php:62 includes/demo.php:611
+#: includes/demo.php:62 includes/demo.php:636
 msgid "Import demo content"
 msgstr ""
 
-#: includes/demo.php:164 includes/demo.php:530
+#: includes/demo.php:164 includes/demo.php:555
 msgid "Not allowed."
 msgstr ""
 
-#: includes/demo.php:609
+#: includes/demo.php:634
 msgid ""
 "Start faster: import the demo properties, projects and pages, then replace "
 "them with your own."
+msgstr ""
+
+#: includes/developers.php:18
+msgid "Developers"
+msgstr ""
+
+#: includes/developers.php:18
+msgid "Developer"
+msgstr ""
+
+#: includes/developers.php:36 includes/developers.php:138
+msgid "Logo"
+msgstr ""
+
+#: includes/developers.php:37
+msgid "Founded"
+msgstr ""
+
+#: includes/developers.php:38
+msgid "Website"
+msgstr ""
+
+#: includes/developers.php:60
+msgid "Select logo"
 msgstr ""
 
 #: includes/fields.php:26
@@ -520,7 +546,7 @@ msgstr ""
 msgid "Ready to move"
 msgstr ""
 
-#: includes/fields.php:69 includes/fields.php:111
+#: includes/fields.php:69 includes/fields.php:110
 msgid "Under construction"
 msgstr ""
 
@@ -540,7 +566,7 @@ msgstr ""
 msgid "Gallery, floor plans & video"
 msgstr ""
 
-#: includes/fields.php:80 includes/fields.php:134
+#: includes/fields.php:80 includes/fields.php:133
 msgid "Photo gallery"
 msgstr ""
 
@@ -560,11 +586,11 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: includes/fields.php:88 includes/fields.php:122
+#: includes/fields.php:88 includes/fields.php:121
 msgid "Address"
 msgstr ""
 
-#: includes/fields.php:89 includes/fields.php:123
+#: includes/fields.php:89 includes/fields.php:122
 msgid "Latitude"
 msgstr ""
 
@@ -572,7 +598,7 @@ msgstr ""
 msgid "Right-click the location in Google Maps to copy the coordinates."
 msgstr ""
 
-#: includes/fields.php:90 includes/fields.php:124
+#: includes/fields.php:90 includes/fields.php:123
 msgid "Longitude"
 msgstr ""
 
@@ -596,138 +622,134 @@ msgstr ""
 msgid "Project details"
 msgstr ""
 
-#: includes/fields.php:105
-msgid "Developer"
-msgstr ""
-
-#: includes/fields.php:108
+#: includes/fields.php:107
 msgid "Status"
 msgstr ""
 
-#: includes/fields.php:110
+#: includes/fields.php:109
 msgid "Off-plan sales"
 msgstr ""
 
-#: includes/fields.php:112
+#: includes/fields.php:111
 msgid "Ready"
 msgstr ""
 
-#: includes/fields.php:115
+#: includes/fields.php:114
 #, php-format
 msgid "Completion (%)"
 msgstr ""
 
-#: includes/fields.php:116
+#: includes/fields.php:115
 msgid "Prices from"
 msgstr ""
 
-#: includes/fields.php:117
+#: includes/fields.php:116
 msgid "Number of units"
 msgstr ""
 
-#: includes/fields.php:118
+#: includes/fields.php:117
 msgid "Unit types"
 msgstr ""
 
-#: includes/fields.php:118
+#: includes/fields.php:117
 msgid "e.g. Apartments 2–4 bedrooms"
 msgstr ""
 
-#: includes/fields.php:119
+#: includes/fields.php:118
 msgid "Delivery date"
 msgstr ""
 
-#: includes/fields.php:120
+#: includes/fields.php:119
 msgid "Licensed off-plan sales (Wafi)"
 msgstr ""
 
-#: includes/fields.php:121
+#: includes/fields.php:120
 msgid "Brochure URL (PDF)"
 msgstr ""
 
-#: includes/fields.php:128
+#: includes/fields.php:127
 msgid "Units, payment plan & phases"
 msgstr ""
 
-#: includes/fields.php:130
+#: includes/fields.php:129
 msgid "Amenities"
 msgstr ""
 
-#: includes/fields.php:130
+#: includes/fields.php:129
 msgid "One per line."
 msgstr ""
 
-#: includes/fields.php:131
+#: includes/fields.php:130
 msgid "Units table"
 msgstr ""
 
-#: includes/fields.php:131
+#: includes/fields.php:130
 msgid ""
 "One per line: Model | Type | Area | Bedrooms | Price | "
 "available/reserved/sold"
 msgstr ""
 
-#: includes/fields.php:132
+#: includes/fields.php:131
 msgid "Payment plan"
 msgstr ""
 
-#: includes/fields.php:132
+#: includes/fields.php:131
 msgid "One per line: Percent | Title | Note"
 msgstr ""
 
-#: includes/fields.php:133
+#: includes/fields.php:132
 msgid "Construction phases"
 msgstr ""
 
-#: includes/fields.php:133
+#: includes/fields.php:132
 msgid "One per line: Date | Title | done/current/upcoming"
 msgstr ""
 
-#: includes/fields.php:140
+#: includes/fields.php:139
 msgid "Contact details"
 msgstr ""
 
-#: includes/fields.php:143
+#: includes/fields.php:142
 msgid "WhatsApp number"
 msgstr ""
 
-#: includes/fields.php:143
+#: includes/fields.php:142
 msgid "International format without + (e.g. 9665XXXXXXXX)"
 msgstr ""
 
-#: includes/fields.php:145
+#: includes/fields.php:144
 msgid "FAL license number"
 msgstr ""
 
-#: includes/fields.php:285
+#: includes/fields.php:284
 msgid "Add images"
 msgstr ""
 
-#: includes/fields.php:298
+#: includes/fields.php:297
 msgid "— Default contact —"
 msgstr ""
 
-#: includes/fields.php:351
+#: includes/fields.php:350
 msgid "Villa"
 msgstr ""
 
-#: includes/fields.php:352
+#: includes/fields.php:351
 msgid "Apartment"
 msgstr ""
 
-#: includes/fields.php:353
+#: includes/fields.php:352
 msgid "Land"
 msgstr ""
 
-#: includes/fields.php:354
+#: includes/fields.php:353
 msgid "Office / commercial"
 msgstr ""
 
-#: includes/fields.php:355
+#: includes/fields.php:354
 msgid "Building"
 msgstr ""
 
-#: includes/fields.php:356
+#: includes/fields.php:355
 msgid "Rest house"
 msgstr ""
 

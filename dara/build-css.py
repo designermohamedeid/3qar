@@ -10,7 +10,7 @@ BUCKETS = [
     ('listing', r'\.listing|\.filters|\.check\b|\.pills|\.results-bar|\.sort\b|\.view-toggle|\.grid--results'),
     ('project', r'\.project-hero|\.key-facts|\.in-page-nav|\.pj-|\.dots\b|\.legend|\.dot\b|\.dot--|\.table-wrap|\.units|\.status|\.plan(?![-\w])|\.timeline|\.register'),
     ('property', r'\.mortgage|\.single-property|\.sp-|\.gallery|\.facts|\.tabs__|\.plan-img|\.video|\.nearby|\.agent(?![-\w])|\.agent__|\.agent-box|\.license-box|\.related|\.lightbox'),
-    ('agents', r'\.grid--agents|\.card--agent|\.page-head--agent|\.agent-profile|\.agent-layout|\.agent-bio|\.avatar--xl'),
+    ('agents', r'\.dev-logo|\.card--developer|\.grid--developers|\.developer|\.page-head--developer|\.grid--agents|\.card--agent|\.page-head--agent|\.agent-profile|\.agent-layout|\.agent-bio|\.avatar--xl'),
     ('content', r'\.compare|\.with-sidebar|\.content-area|\.sidebar|\.widget|\.archive-desc|\.article|\.tags\b|\.post-navigation|\.entry-content|\.align|\.wp-caption|figcaption|\.comment|\.contact(?![-\w])|\.contact__|\.contact-cards|\.error-404'),
 ]
 
