@@ -157,20 +157,42 @@ function dara_demo_term( $name, $taxonomy, $args = array() ) {
 }
 
 /**
- * Run the import.
+ * Import form handler.
  */
 function dara_demo_import() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
 		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
 	}
-	if ( get_option( 'dara_demo_imported' ) ) {
-		wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo' ) );
+	if ( ! get_option( 'dara_demo_imported' ) ) {
+		dara_demo_run_import(
+			isset( $_POST['lang'] ) && 'en' === $_POST['lang'] ? 'en' : 'ar',
+			! empty( $_POST['set_front'] ),
+			! empty( $_POST['set_menus'] )
+		);
+		wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=imported' ) );
 		exit;
+	}
+	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo' ) );
+	exit;
+}
+add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
+
+/**
+ * Import the demo content.
+ *
+ * @param string $lang      ar or en.
+ * @param bool   $set_front Use the demo home and blog pages.
+ * @param bool   $set_menus Create and assign the demo menus.
+ * @return bool False when demo content is already installed.
+ */
+function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = true ) {
+	if ( get_option( 'dara_demo_imported' ) ) {
+		return false;
 	}
 	if ( function_exists( 'set_time_limit' ) ) {
 		set_time_limit( 300 ); // phpcs:ignore Squiz.PHP.DiscouragedFunctions
 	}
-	$GLOBALS['dara_demo_lang'] = isset( $_POST['lang'] ) && 'en' === $_POST['lang'] ? 'en' : 'ar';
+	$GLOBALS['dara_demo_lang'] = 'en' === $lang ? 'en' : 'ar';
 	$t                         = 'dara_demo_t';
 
 	// Taxonomies.
@@ -451,7 +473,7 @@ function dara_demo_import() {
 		'settings'       => get_option( 'dara_core_settings' ),
 	);
 
-	if ( ! empty( $_POST['set_front'] ) ) {
+	if ( $set_front ) {
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $pages['home'] );
 		update_option( 'page_for_posts', $pages['blog'] );
@@ -459,7 +481,7 @@ function dara_demo_import() {
 
 	// Menus.
 	$menus = array();
-	if ( ! empty( $_POST['set_menus'] ) ) {
+	if ( $set_menus ) {
 		$main = wp_create_nav_menu( $t( 'القائمة الرئيسية (ديمو)', 'Main menu (demo)' ) . ' ' . wp_rand( 100, 999 ) );
 		if ( ! is_wp_error( $main ) ) {
 			$menus[] = $main;
@@ -542,18 +564,26 @@ function dara_demo_import() {
 		false
 	);
 
-	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=imported' ) );
-	exit;
+	return true;
 }
-add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
 
 /**
- * Remove everything tagged as demo and restore the reading settings.
+ * Remove form handler.
  */
 function dara_demo_remove() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
 		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
 	}
+	dara_demo_run_remove();
+	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=removed' ) );
+	exit;
+}
+add_action( 'admin_post_dara_demo_remove', 'dara_demo_remove' );
+
+/**
+ * Remove everything tagged as demo and restore the reading settings.
+ */
+function dara_demo_run_remove() {
 	$info = (array) get_option( 'dara_demo_imported', array() );
 
 	$ids = get_posts(
@@ -609,11 +639,12 @@ function dara_demo_remove() {
 
 	delete_option( 'dara_demo_imported' );
 	delete_transient( 'dara_template_pages' );
-
-	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=removed' ) );
-	exit;
 }
-add_action( 'admin_post_dara_demo_remove', 'dara_demo_remove' );
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require DARA_CORE_DIR . 'includes/class-dara-demo-cli.php';
+	WP_CLI::add_command( 'dara demo', 'Dara_Demo_CLI' );
+}
 
 /**
  * Point new users to the importer after activating the plugin.
