@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara 1.7.0\n"
+"Project-Id-Version: Dara 1.8.0\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr "ربما تم نقلها أو حذفها. جرّب البحث أو تص�
 msgid "Back to home"
 msgstr "العودة للرئيسية"
 
-#: 404.php:20 page-templates/compare.php:47
+#: 404.php:20
 msgid "Browse properties"
 msgstr "تصفح العقارات"
 
@@ -148,9 +148,9 @@ msgstr "السجل التجاري: %s"
 msgid "Call us"
 msgstr "اتصل بنا"
 
-#: footer.php:134 page-templates/compare.php:237 page-templates/contact.php:28
-#: single-dara_agent.php:63 single-dara_property.php:246
-#: template-parts/cards/agent.php:50 template-parts/home/cta.php:20
+#: footer.php:134 page-templates/contact.php:28 single-dara_agent.php:63
+#: single-dara_property.php:246 template-parts/cards/agent.php:50
+#: template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr "واتساب"
 
@@ -238,7 +238,7 @@ msgstr "مسح"
 msgid "Add one more property to compare"
 msgstr "أضف عقاراً آخر للمقارنة"
 
-#: inc/assets.php:70 page-templates/compare.php:148
+#: inc/assets.php:70
 msgid "Remove"
 msgstr "حذف"
 
@@ -466,7 +466,7 @@ msgstr "يمكنك استخدام {year} و {site}."
 msgid "Show designer credit"
 msgstr "إظهار حقوق المصمم"
 
-#: inc/customizer.php:133 template-parts/property/mortgage.php:39
+#: inc/customizer.php:133
 msgid "Mortgage calculator"
 msgstr "حاسبة التمويل العقاري"
 
@@ -593,23 +593,43 @@ msgstr "المشاريع"
 msgid "Agents"
 msgstr "المسوّقون"
 
-#: inc/plugin-installer.php:56
+#: inc/plugin-installer.php:74
+msgid "Install and activate Dara Pro"
+msgstr "تثبيت وتفعيل Dara Pro"
+
+#: inc/plugin-installer.php:76
 msgid "Upload Dara Core"
 msgstr "رفع إضافة Dara Core"
 
-#: inc/plugin-installer.php:58
+#: inc/plugin-installer.php:78
 msgid "Install and activate Dara Core"
 msgstr "تثبيت وتفعيل Dara Core"
 
-#: inc/plugin-installer.php:58
+#: inc/plugin-installer.php:78
 msgid "Activate Dara Core"
 msgstr "تفعيل Dara Core"
 
-#: inc/plugin-installer.php:64
+#: inc/plugin-installer.php:80
+msgid "Install and activate Dara Core and Dara Pro"
+msgstr "تثبيت وتفعيل Dara Core و Dara Pro"
+
+#: inc/plugin-installer.php:87
+msgid "Finish setting up Dara."
+msgstr "أكمل إعداد دارة."
+
+#: inc/plugin-installer.php:87
 msgid "Dara needs the Dara Core plugin."
 msgstr "قالب دارة يحتاج إضافة Dara Core."
 
-#: inc/plugin-installer.php:65
+#: inc/plugin-installer.php:88
+msgid ""
+"Dara Pro adds the blocks, demo importer, mortgage calculator, comparison and"
+" Google Maps."
+msgstr ""
+"يضيف Dara Pro البلوكات واستيراد المحتوى التجريبي وحاسبة التمويل والمقارنة "
+"وخرائط جوجل."
+
+#: inc/plugin-installer.php:88
 msgid ""
 "It adds properties, projects, agents, search, lead forms, blocks and the "
 "demo importer."
@@ -617,11 +637,11 @@ msgstr ""
 "تضيف العقارات والمشاريع والمسوّقين والبحث ونماذج الطلبات والبلوكات واستيراد "
 "المحتوى التجريبي."
 
-#: inc/plugin-installer.php:77
+#: inc/plugin-installer.php:100
 msgid "Sorry, you are not allowed to install plugins."
 msgstr "عذرًا، ليس لديك صلاحية تثبيت الإضافات."
 
-#: inc/plugin-installer.php:99
+#: inc/plugin-installer.php:124
 msgid ""
 "Dara Core could not be installed. Upload plugins/dara-core.zip from Plugins "
 "> Add New."
@@ -862,155 +882,18 @@ msgstr "الصفحة السابقة"
 msgid "Next page"
 msgstr "الصفحة التالية"
 
-#: inc/template-tags.php:633
+#: inc/template-tags.php:611
 #, php-format
 msgid "Compare %s"
 msgstr "مقارنة %s"
 
-#: inc/template-tags.php:642
+#: inc/template-tags.php:620
 msgid "Compare"
 msgstr "قارن"
 
-#: page-templates/compare.php:45
-msgid "No properties to compare yet"
-msgstr "لا توجد عقارات للمقارنة بعد"
-
-#: page-templates/compare.php:46
-msgid "Tap the compare button on up to 4 properties, then come back here."
-msgstr "اضغط زر المقارنة على عقارين أو أكثر (حتى 4)، ثم ارجع لهذه الصفحة."
-
-#: page-templates/compare.php:111
-msgid "Best"
-msgstr "الأفضل"
-
-#: page-templates/compare.php:119
-msgid "Share comparison"
-msgstr "مشاركة المقارنة"
-
-#: page-templates/compare.php:120 single-dara_property.php:68
-msgid "Print"
-msgstr "طباعة"
-
-#: page-templates/compare.php:126
-msgid "Property comparison"
-msgstr "مقارنة العقارات"
-
-#: page-templates/compare.php:154 page-templates/compare.php:156
-#: single-dara_project.php:174 template-parts/home/hero.php:104
-msgid "Price"
-msgstr "السعر"
-
-#: page-templates/compare.php:163
-msgid "Price per m²"
-msgstr "سعر المتر"
-
-#: page-templates/compare.php:169 template-parts/property/filters.php:37
-msgid "Purpose"
-msgstr "الغرض"
-
-#: page-templates/compare.php:175 page-templates/list-property.php:59
-msgid "Details"
-msgstr "التفاصيل"
-
-#: page-templates/compare.php:178 single-dara_project.php:171
-msgid "Type"
-msgstr "النوع"
-
-#: page-templates/compare.php:179 single-dara_project.php:120
-#: single-dara_project.php:225 template-parts/home/hero.php:82
-msgid "Location"
-msgstr "الموقع"
-
-#: page-templates/compare.php:180 single-dara_project.php:172
-#: template-parts/cards/property.php:26
-msgid "Area"
-msgstr "المساحة"
-
-#: page-templates/compare.php:181 single-dara_project.php:173
-#: template-parts/cards/property.php:24 template-parts/home/hero.php:120
-#: template-parts/property/filters.php:84
-msgid "Bedrooms"
-msgstr "غرف النوم"
-
-#: page-templates/compare.php:182 template-parts/cards/property.php:25
-msgid "Bathrooms"
-msgstr "دورات المياه"
-
-#: page-templates/compare.php:183
-msgid "Age"
-msgstr "عمر العقار"
-
-#: page-templates/compare.php:184
-msgid "Facing"
-msgstr "الواجهة"
-
-#: page-templates/compare.php:185
-msgid "Condition"
-msgstr "الحالة"
-
-#: page-templates/compare.php:199 single-dara_project.php:183
-#: template-parts/cards/property.php:66
-msgid "m²"
-msgstr "م²"
-
-#: page-templates/compare.php:210 single-dara_property.php:119
-msgid "Features & amenities"
-msgstr "المميزات والمرافق"
-
-#: page-templates/compare.php:216
-msgid "Yes"
-msgstr "نعم"
-
-#: page-templates/compare.php:218
-msgid "No"
-msgstr "لا"
-
-#: page-templates/compare.php:225
-msgid "Contact"
-msgstr "تواصل"
-
-#: page-templates/compare.php:227
-msgid "Agent"
-msgstr "المسوّق"
-
-#: page-templates/compare.php:234
-#, php-format
-msgid "Call %s"
-msgstr "اتصل بـ %s"
-
-#: page-templates/compare.php:237 single-dara_property.php:30
-#, php-format
-msgid "Hello, I am interested in: %1$s %2$s"
-msgstr "مرحباً، أرغب في الاستفسار عن: %1$s %2$s"
-
-#: page-templates/compare.php:239 template-parts/forms/viewing.php:11
-msgid "Request a viewing"
-msgstr "اطلب معاينة"
-
-#: page-templates/compare.php:250
-msgid ""
-"Not sure which one to choose? Send the comparison to our team and we will "
-"help you decide."
-msgstr "محتار بينهم؟ أرسل المقارنة لفريقنا وسنساعدك في الاختيار."
-
-#: page-templates/compare.php:251
-msgid "Hello, please help me choose between these properties:"
-msgstr "مرحباً، أرجو مساعدتي في الاختيار بين هذه العقارات:"
-
-#: page-templates/compare.php:251
-msgid "Ask an advisor on WhatsApp"
-msgstr "اسأل مستشاراً عبر واتساب"
-
-#: page-templates/compare.php:117
-#, php-format
-msgid "Comparing %s property"
-msgid_plural "Comparing %s properties"
-msgstr[0] "مقارنة %s عقار"
-msgstr[1] "مقارنة عقار واحد"
-msgstr[2] "مقارنة عقارين"
-msgstr[3] "مقارنة %s عقارات"
-msgstr[4] "مقارنة %s عقاراً"
-msgstr[5] "مقارنة %s عقار"
+#: page-templates/compare.php:18
+msgid "Property comparison needs the Dara Pro plugin."
+msgstr "مقارنة العقارات تحتاج إضافة Dara Pro."
 
 #: page-templates/contact.php:34
 msgid "Office"
@@ -1085,6 +968,10 @@ msgstr "المدينة / الحي"
 #: page-templates/list-property.php:58
 msgid "Expected price (optional)"
 msgstr "السعر المتوقع (اختياري)"
+
+#: page-templates/list-property.php:59
+msgid "Details"
+msgstr "التفاصيل"
 
 #: page-templates/list-property.php:59
 msgid "Area, rooms, age, special features…"
@@ -1219,6 +1106,11 @@ msgstr "خطة الدفع"
 msgid "Progress"
 msgstr "مراحل التنفيذ"
 
+#: single-dara_project.php:120 single-dara_project.php:225
+#: template-parts/home/hero.php:82
+msgid "Location"
+msgstr "الموقع"
+
 #: single-dara_project.php:125
 msgid "About the project"
 msgstr "عن المشروع"
@@ -1236,9 +1128,30 @@ msgstr "الوحدات المتاحة"
 msgid "Model"
 msgstr "النموذج"
 
+#: single-dara_project.php:171
+msgid "Type"
+msgstr "النوع"
+
+#: single-dara_project.php:172 template-parts/cards/property.php:26
+msgid "Area"
+msgstr "المساحة"
+
+#: single-dara_project.php:173 template-parts/cards/property.php:24
+#: template-parts/home/hero.php:120 template-parts/property/filters.php:84
+msgid "Bedrooms"
+msgstr "غرف النوم"
+
+#: single-dara_project.php:174 template-parts/home/hero.php:104
+msgid "Price"
+msgstr "السعر"
+
 #: single-dara_project.php:175
 msgid "Status"
 msgstr "الحالة"
+
+#: single-dara_project.php:183 template-parts/cards/property.php:66
+msgid "m²"
+msgstr "م²"
 
 #: single-dara_project.php:208
 msgid "Construction progress"
@@ -1257,6 +1170,11 @@ msgstr "نوع الوحدة"
 msgid "Send"
 msgstr "إرسال"
 
+#: single-dara_property.php:30
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr "مرحباً، أرغب في الاستفسار عن: %1$s %2$s"
+
 #: single-dara_property.php:51 template-parts/cards/property.php:47
 msgid "Featured"
 msgstr "مميز"
@@ -1269,6 +1187,10 @@ msgstr "مشاركة"
 msgid "Save"
 msgstr "حفظ"
 
+#: single-dara_property.php:68
+msgid "Print"
+msgstr "طباعة"
+
 #: single-dara_property.php:91
 #, php-format
 msgid "All photos (%s)"
@@ -1277,6 +1199,10 @@ msgstr "كل الصور (%s)"
 #: single-dara_property.php:112
 msgid "Description"
 msgstr "الوصف"
+
+#: single-dara_property.php:119
+msgid "Features & amenities"
+msgstr "المميزات والمرافق"
 
 #: single-dara_property.php:130
 msgid "Floor plans"
@@ -1380,6 +1306,10 @@ msgstr[3] "%s وحدات"
 msgstr[4] "%s وحدة"
 msgstr[5] "%s وحدة"
 
+#: template-parts/cards/property.php:25
+msgid "Bathrooms"
+msgstr "دورات المياه"
+
 #: template-parts/cards/property.php:50
 #, php-format
 msgid "Save %s to favorites"
@@ -1396,6 +1326,10 @@ msgstr "لا توجد نتائج مطابقة. جرّب كلمات أخرى."
 #: template-parts/content-none.php:13
 msgid "There is nothing here yet."
 msgstr "لا يوجد محتوى هنا بعد."
+
+#: template-parts/forms/viewing.php:11
+msgid "Request a viewing"
+msgstr "اطلب معاينة"
 
 #: template-parts/forms/viewing.php:16
 msgid "Preferred date"
@@ -1507,6 +1441,10 @@ msgstr "فلترة النتائج"
 msgid "Clear all"
 msgstr "مسح الكل"
 
+#: template-parts/property/filters.php:37
+msgid "Purpose"
+msgstr "الغرض"
+
 #: template-parts/property/filters.php:40
 msgid "Sale"
 msgstr "بيع"
@@ -1541,73 +1479,3 @@ msgstr "المميزات"
 #: template-parts/property/filters.php:121
 msgid "Show results"
 msgstr "عرض النتائج"
-
-#: template-parts/property/mortgage.php:35
-msgid ""
-"I would like a financing consultation. Price: {price}, down payment: {down},"
-" term: {years} years, estimated monthly installment: {monthly}."
-msgstr ""
-"أرغب في استشارة تمويلية. السعر: {price}، الدفعة الأولى: {down}، المدة: "
-"{years} سنة، القسط الشهري التقديري: {monthly}."
-
-#: template-parts/property/mortgage.php:40
-msgid "Estimated monthly installment (flat rate)"
-msgstr "القسط الشهري التقديري (نسبة ثابتة)"
-
-#: template-parts/property/mortgage.php:40
-msgid "Estimated monthly installment (declining balance)"
-msgstr "القسط الشهري التقديري (رصيد متناقص)"
-
-#: template-parts/property/mortgage.php:47
-#, php-format
-msgid "Property price (%s)"
-msgstr "سعر العقار (%s)"
-
-#: template-parts/property/mortgage.php:52
-#: template-parts/property/mortgage.php:79
-msgid "Down payment"
-msgstr "الدفعة الأولى"
-
-#: template-parts/property/mortgage.php:58
-msgid "Term"
-msgstr "مدة التمويل"
-
-#: template-parts/property/mortgage.php:63
-#, php-format
-msgid "Annual profit rate (%)"
-msgstr "نسبة الربح السنوية (%)"
-
-#: template-parts/property/mortgage.php:69
-msgid "Monthly installment"
-msgstr "القسط الشهري"
-
-#: template-parts/property/mortgage.php:80
-msgid "Financing amount"
-msgstr "مبلغ التمويل"
-
-#: template-parts/property/mortgage.php:81
-msgid "Total profit"
-msgstr "إجمالي الأرباح"
-
-#: template-parts/property/mortgage.php:82
-msgid "Total cost"
-msgstr "التكلفة الإجمالية"
-
-#: template-parts/property/mortgage.php:85
-msgid "Request a financing consultation"
-msgstr "اطلب استشارة تمويلية"
-
-#: template-parts/property/mortgage.php:58
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#, php-format
-msgid "%s year"
-msgid_plural "%s years"
-msgstr[0] "%s سنة"
-msgstr[1] "سنة واحدة"
-msgstr[2] "سنتان"
-msgstr[3] "%s سنوات"
-msgstr[4] "%s سنة"
-msgstr[5] "%s سنة"

@@ -23,6 +23,7 @@ wp() { command wp --path="$WP_PATH" "$@"; }
 # Theme + bundled plugin.
 wp theme install "$ZIP" --activate --force
 wp plugin install "$WP_PATH/wp-content/themes/dara/plugins/dara-core.zip" --activate --force
+wp plugin install "$WP_PATH/wp-content/themes/dara/plugins/dara-pro.zip" --activate --force
 
 # Language and permalinks.
 if [ "$LANG_CODE" = "ar" ]; then

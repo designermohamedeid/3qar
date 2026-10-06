@@ -310,11 +310,22 @@ function dls_api_download( $req ) {
 	if ( ! $file || ! is_readable( $file ) ) {
 		return new WP_REST_Response( array( 'message' => 'File not found.' ), 404 );
 	}
+	$built = '';
+	if ( in_array( $package, dls_watermarked_packages(), true ) ) {
+		$built = dls_build_watermarked( $file, $package, $license, $domain, $releases[ $package ]['version'] );
+		if ( is_wp_error( $built ) ) {
+			return new WP_REST_Response( array( 'message' => $built->get_error_message() ), 500 );
+		}
+		$file = $built;
+	}
 	nocache_headers();
 	header( 'Content-Type: application/zip' );
 	header( 'Content-Disposition: attachment; filename="' . $package . '-' . $releases[ $package ]['version'] . '.zip"' );
 	header( 'Content-Length: ' . filesize( $file ) );
 	readfile( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_readfile
+	if ( $built ) {
+		wp_delete_file( $built );
+	}
 	exit;
 }
 

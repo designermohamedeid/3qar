@@ -5,13 +5,14 @@ A fast, bilingual (Arabic RTL / English LTR) real estate WordPress theme by [Man
 | Folder | Contents |
 | --- | --- |
 | `dara/` | The theme |
-| `dara-core/` | The required plugin: properties, projects, agents, search, leads, blocks and the demo importer |
+| `dara-core/` | The required plugin: properties, projects, agents, developers, search, leads, licensing |
+| `dara-pro/` | Premium plugin: blocks and patterns, demo importer, mortgage calculator, comparison, Google Maps |
 | `dara-child/` | Child theme |
 | `documentation/` | User guide (English) and licensing |
 | `store-assets/` | Marketplace images: thumbnail, preview and screenshots |
 | `license-server/` | License server plugin (muhamedeid.com) and WHMCS module. See its README. |
 | `demo-site/` | Live preview setup (script, demo helper plugin, guide) |
-| `bin/package.sh` | Builds `dist/direct` (licensed), `dist/market` (ThemeForest) and `dist/server` |
+| `bin/package.sh` | Builds `dist/direct` (licensed; Dara Pro is delivered per license by the server), `dist/market` (ThemeForest, everything bundled) and `dist/server` |
 
 Build the package:
 

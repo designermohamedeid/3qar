@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara Core 1.4.0\n"
+"Project-Id-Version: Dara Core 1.5.0\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,12 +17,11 @@ msgstr "اختر الصور"
 msgid "Use these images"
 msgstr "استخدم هذه الصور"
 
-#: includes/admin.php:31 includes/blocks.php:407 includes/developers.php:58
-#: includes/fields.php:280
+#: includes/admin.php:31 includes/developers.php:58 includes/fields.php:280
 msgid "Remove"
 msgstr "حذف"
 
-#: includes/admin.php:47 includes/blocks.php:127
+#: includes/admin.php:47
 msgid "Image"
 msgstr "الصورة"
 
@@ -30,8 +29,7 @@ msgstr "الصورة"
 msgid "Price"
 msgstr "السعر"
 
-#: includes/admin.php:52 includes/blocks.php:66 includes/fields.php:30
-#: includes/leads.php:114
+#: includes/admin.php:52 includes/fields.php:30 includes/leads.php:114
 msgid "Purpose"
 msgstr "الغرض"
 
@@ -88,7 +86,7 @@ msgstr "الصفحة"
 msgid "Dara settings"
 msgstr "إعدادات دارة"
 
-#: includes/admin.php:170 includes/blocks.php:403
+#: includes/admin.php:170
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -135,323 +133,6 @@ msgstr "رقم واتساب الافتراضي"
 #: includes/admin.php:211
 msgid "International format without +"
 msgstr "بالصيغة الدولية بدون +"
-
-#: includes/blocks.php:24
-msgid "Small label"
-msgstr "العنوان الصغير"
-
-#: includes/blocks.php:25
-msgid "Title"
-msgstr "العنوان"
-
-#: includes/blocks.php:26
-msgid "Text"
-msgstr "النص"
-
-#: includes/blocks.php:27
-msgid "Number of items"
-msgstr "عدد العناصر"
-
-#: includes/blocks.php:31
-msgid "Hero & search"
-msgstr "الواجهة والبحث"
-
-#: includes/blocks.php:32
-msgid "Full-width image with title and the property search."
-msgstr "صورة بعرض الصفحة مع عنوان وبحث العقارات."
-
-#: includes/blocks.php:36
-msgid "Background image"
-msgstr "صورة الخلفية"
-
-#: includes/blocks.php:40
-msgid "Show property search"
-msgstr "إظهار بحث العقارات"
-
-#: includes/blocks.php:43
-msgid "Search opens on"
-msgstr "البحث يفتح على"
-
-#: includes/blocks.php:45
-msgid "Buy"
-msgstr "شراء"
-
-#: includes/blocks.php:46 includes/blocks.php:70
-msgid "Rent"
-msgstr "إيجار"
-
-#: includes/blocks.php:47
-msgid "New projects"
-msgstr "مشاريع جديدة"
-
-#: includes/blocks.php:50
-msgid "Popular searches"
-msgstr "عمليات البحث الشائعة"
-
-#: includes/blocks.php:50
-msgid "One per line: Label | URL. Leave empty to show your top cities."
-msgstr "سطر لكل عنصر: الاسم | الرابط. اتركه فارغاً لعرض أكثر المدن."
-
-#: includes/blocks.php:54
-msgid "Properties grid"
-msgstr "شبكة العقارات"
-
-#: includes/blocks.php:55
-msgid "Latest or featured properties, filterable by purpose and type."
-msgstr "أحدث العقارات أو المميزة منها، مع تصفية حسب الغرض والنوع."
-
-#: includes/blocks.php:63
-msgid "Only properties marked \"Featured\""
-msgstr "العقارات المميزة فقط"
-
-#: includes/blocks.php:68 includes/blocks.php:336
-msgid "All"
-msgstr "الكل"
-
-#: includes/blocks.php:69
-msgid "Sale"
-msgstr "بيع"
-
-#: includes/blocks.php:73 includes/leads.php:113
-msgid "Property type"
-msgstr "نوع العقار"
-
-#: includes/blocks.php:74
-msgid "Show type links"
-msgstr "إظهار روابط الأنواع"
-
-#: includes/blocks.php:75
-msgid "Show \"View all\" button"
-msgstr "إظهار زر \"عرض الكل\""
-
-#: includes/blocks.php:79
-msgid "Property types"
-msgstr "أنواع العقارات"
-
-#: includes/blocks.php:80
-msgid "Tiles linking to each property type."
-msgstr "مربعات تربط بكل نوع عقار."
-
-#: includes/blocks.php:90
-msgid "Developer projects"
-msgstr "مشاريع المطوّرين"
-
-#: includes/blocks.php:91
-msgid "Projects with completion progress on a dark band."
-msgstr "المشاريع مع نسبة الإنجاز على خلفية داكنة."
-
-#: includes/blocks.php:102 includes/blocks.php:111
-msgid "Services"
-msgstr "الخدمات"
-
-#: includes/blocks.php:103
-msgid "Service cards with icons."
-msgstr "بطاقات خدمات بأيقونات."
-
-#: includes/blocks.php:113 includes/fields.php:363 includes/fields.php:378
-msgid "Icon"
-msgstr "الأيقونة"
-
-#: includes/blocks.php:116
-msgid "Link"
-msgstr "الرابط"
-
-#: includes/blocks.php:122
-msgid "Image & checklist"
-msgstr "صورة وقائمة مميزات"
-
-#: includes/blocks.php:123
-msgid "Image with a badge, text, checklist and button."
-msgstr "صورة مع شارة ونص وقائمة مميزات وزر."
-
-#: includes/blocks.php:131
-msgid "Points (one per line)"
-msgstr "النقاط (سطر لكل نقطة)"
-
-#: includes/blocks.php:132
-msgid "Badge title"
-msgstr "عنوان الشارة"
-
-#: includes/blocks.php:133
-msgid "Badge text"
-msgstr "نص الشارة"
-
-#: includes/blocks.php:134 includes/blocks.php:179
-msgid "Button text"
-msgstr "نص الزر"
-
-#: includes/blocks.php:135 includes/blocks.php:180
-msgid "Button link"
-msgstr "رابط الزر"
-
-#: includes/blocks.php:139 includes/post-types.php:80
-msgid "Agents"
-msgstr "المسوّقون"
-
-#: includes/blocks.php:140
-msgid "Your agents with call and WhatsApp buttons."
-msgstr "مسوّقوك مع أزرار الاتصال وواتساب."
-
-#: includes/blocks.php:150
-msgid "Latest posts"
-msgstr "أحدث المقالات"
-
-#: includes/blocks.php:151
-msgid "Latest blog posts as cards."
-msgstr "أحدث مقالات المدونة كبطاقات."
-
-#: includes/blocks.php:162
-msgid "Mortgage calculator"
-msgstr "حاسبة التمويل العقاري"
-
-#: includes/blocks.php:163
-msgid ""
-"Estimate the monthly installment from price, down payment, term and profit "
-"rate."
-msgstr "احسب القسط الشهري من السعر والدفعة الأولى والمدة ونسبة الربح."
-
-#: includes/blocks.php:168
-msgid "Default property price"
-msgstr "سعر العقار الافتراضي"
-
-#: includes/blocks.php:172
-msgid "Call to action"
-msgstr "دعوة لإجراء"
-
-#: includes/blocks.php:173
-msgid "Colored band with buttons."
-msgstr "شريط ملوّن مع أزرار."
-
-#: includes/blocks.php:267 includes/blocks.php:445
-msgid "Dara real estate"
-msgstr "دارة العقارية"
-
-#: includes/blocks.php:316
-#, php-format
-msgid "%s: nothing to show yet. Add content first."
-msgstr "%s: لا يوجد محتوى لعرضه بعد. أضف المحتوى أولاً."
-
-#: includes/blocks.php:404
-msgid "Empty fields use the values from Appearance > Customize > Dara theme."
-msgstr "الحقول الفارغة تستخدم القيم من المظهر ← تخصيص ← قالب دارة."
-
-#: includes/blocks.php:405
-msgid "Choose image"
-msgstr "اختر صورة"
-
-#: includes/blocks.php:406
-msgid "Replace image"
-msgstr "استبدال الصورة"
-
-#: includes/blocks.php:408
-msgid "Add item"
-msgstr "إضافة عنصر"
-
-#: includes/blocks.php:409
-msgid "Item"
-msgstr "عنصر"
-
-#: includes/blocks.php:410
-msgid "Move up"
-msgstr "تحريك لأعلى"
-
-#: includes/blocks.php:411
-msgid "Move down"
-msgstr "تحريك لأسفل"
-
-#: includes/blocks.php:449
-msgid "Real estate home page"
-msgstr "صفحة رئيسية عقارية"
-
-#: includes/blocks.php:450
-msgid ""
-"Hero with search, properties, types, projects, services, why us, posts and "
-"call to action."
-msgstr ""
-"واجهة مع بحث، عقارات، أنواع، مشاريع، خدمات، لماذا نحن، مقالات ودعوة لإجراء."
-
-#: includes/blocks.php:458
-msgid "Listings landing page"
-msgstr "صفحة هبوط للعقارات"
-
-#: includes/blocks.php:459
-msgid ""
-"Hero with search, properties for sale, properties for rent and a call to "
-"action."
-msgstr "واجهة مع بحث، عقارات للبيع، عقارات للإيجار ودعوة لإجراء."
-
-#: includes/blocks.php:461
-msgid "Properties for sale"
-msgstr "عقارات للبيع"
-
-#: includes/blocks.php:461
-msgid "Properties for rent"
-msgstr "عقارات للإيجار"
-
-#: includes/demo.php:19 includes/demo.php:20 includes/demo.php:35
-msgid "Demo content"
-msgstr "المحتوى التجريبي"
-
-#: includes/demo.php:38
-msgid "Demo content imported. Visit your site to see it."
-msgstr "تم استيراد المحتوى التجريبي. زُر موقعك لمشاهدته."
-
-#: includes/demo.php:38
-msgid "View site"
-msgstr "عرض الموقع"
-
-#: includes/demo.php:40
-msgid "Demo content removed."
-msgstr "تم حذف المحتوى التجريبي."
-
-#: includes/demo.php:44
-msgid "Demo import needs an active license."
-msgstr "استيراد المحتوى التجريبي يحتاج ترخيصًا مفعّلًا."
-
-#: includes/demo.php:44 includes/license.php:437
-msgid "Activate license"
-msgstr "تفعيل الترخيص"
-
-#: includes/demo.php:48
-msgid ""
-"Fill your site with sample properties, projects, agents, blog posts, pages, "
-"menus and home page settings so it looks like the theme demo. You can remove"
-" all of it later with one click; your own content is never touched."
-msgstr ""
-"املأ موقعك بعقارات ومشاريع ومسوّقين ومقالات وصفحات وقوائم وإعدادات رئيسية "
-"تجريبية ليبدو مثل ديمو القالب. يمكنك حذف كل ذلك لاحقاً بضغطة واحدة دون "
-"المساس بمحتواك."
-
-#: includes/demo.php:54
-msgid "Remove demo content"
-msgstr "حذف المحتوى التجريبي"
-
-#: includes/demo.php:60
-msgid "Content language"
-msgstr "لغة المحتوى"
-
-#: includes/demo.php:65
-msgid "Set the demo home page and blog page in Settings > Reading"
-msgstr "تعيين الصفحة الرئيسية وصفحة المدونة التجريبية في الإعدادات ← القراءة"
-
-#: includes/demo.php:66
-msgid "Create and assign menus"
-msgstr "إنشاء القوائم وتعيينها"
-
-#: includes/demo.php:67 includes/demo.php:672
-msgid "Import demo content"
-msgstr "استيراد المحتوى التجريبي"
-
-#: includes/demo.php:169 includes/demo.php:580 includes/license.php:387
-msgid "Not allowed."
-msgstr "غير مسموح."
-
-#: includes/demo.php:670
-msgid ""
-"Start faster: import the demo properties, projects and pages, then replace "
-"them with your own."
-msgstr ""
-"ابدأ أسرع: استورد العقارات والمشاريع والصفحات التجريبية ثم استبدلها بمحتواك."
 
 #: includes/developers.php:18
 msgid "Developers"
@@ -770,6 +451,10 @@ msgstr "عمارة"
 msgid "Rest house"
 msgstr "استراحة"
 
+#: includes/fields.php:363 includes/fields.php:378
+msgid "Icon"
+msgstr "الأيقونة"
+
 #: includes/helpers.php:18
 msgid "SAR"
 msgstr "ر.س"
@@ -841,6 +526,10 @@ msgstr "يرجى الانتظار قليلاً قبل الإرسال مرة أخ
 #: includes/leads.php:112
 msgid "City"
 msgstr "المدينة"
+
+#: includes/leads.php:113
+msgid "Property type"
+msgstr "نوع العقار"
 
 #: includes/leads.php:115
 msgid "Unit type"
@@ -960,39 +649,47 @@ msgstr "تحديثات ودعم مدى الحياة."
 
 #: includes/license.php:353
 msgid ""
-"Premium features (blocks, demo import, mortgage calculator, comparison, "
-"Google Maps) and updates are locked until you activate a license."
+"Dara Pro (blocks, demo import, mortgage calculator, comparison, Google Maps)"
+" and updates need an active license."
 msgstr ""
-"المزايا المميزة (البلوكات، استيراد المحتوى التجريبي، حاسبة التمويل، "
-"المقارنة، خرائط جوجل) والتحديثات مقفلة حتى تفعّل الترخيص."
+"Dara Pro (البلوكات، استيراد المحتوى التجريبي، حاسبة التمويل، المقارنة، خرائط"
+" جوجل) والتحديثات تحتاج ترخيصًا مفعّلًا."
 
 #: includes/license.php:365
 msgid "Check now"
 msgstr "تحقّق الآن"
 
 #: includes/license.php:366
+msgid "Reinstall Dara Pro"
+msgstr "إعادة تثبيت Dara Pro"
+
+#: includes/license.php:366
+msgid "Install Dara Pro"
+msgstr "تثبيت Dara Pro"
+
+#: includes/license.php:367
 msgid ""
 "Deactivate the license on this site? You can then use it on another domain."
 msgstr ""
 "إلغاء تفعيل الترخيص على هذا الموقع؟ يمكنك بعدها استخدامه على نطاق آخر."
 
-#: includes/license.php:366
+#: includes/license.php:367
 msgid "Deactivate on this site"
 msgstr "إلغاء التفعيل على هذا الموقع"
 
-#: includes/license.php:369
+#: includes/license.php:370
 msgid "License key"
 msgstr "مفتاح الترخيص"
 
-#: includes/license.php:371
+#: includes/license.php:372
 msgid "Activate"
 msgstr "تفعيل"
 
-#: includes/license.php:372
+#: includes/license.php:373
 msgid "Buy a license"
 msgstr "شراء ترخيص"
 
-#: includes/license.php:373
+#: includes/license.php:374
 msgid ""
 "Your key is in your purchase email. One key works on one live domain; local "
 "and staging sites are free."
@@ -1000,19 +697,27 @@ msgstr ""
 "تجد المفتاح في رسالة الشراء. المفتاح الواحد يعمل على نطاق فعلي واحد، "
 "والمواقع المحلية والتجريبية مجانية."
 
-#: includes/license.php:395
+#: includes/license.php:388
+msgid "Not allowed."
+msgstr "غير مسموح."
+
+#: includes/license.php:396
 msgid "License activated. Thank you!"
 msgstr "تم تفعيل الترخيص. شكرًا لك!"
 
-#: includes/license.php:398
+#: includes/license.php:399 includes/license.php:403
+msgid "Dara Pro is installed and active."
+msgstr "تم تثبيت Dara Pro وتفعيله."
+
+#: includes/license.php:406
 msgid "License is active."
 msgstr "الترخيص مفعّل."
 
-#: includes/license.php:409
+#: includes/license.php:417
 msgid "License deactivated on this site."
 msgstr "تم إلغاء تفعيل الترخيص على هذا الموقع."
 
-#: includes/license.php:431
+#: includes/license.php:439
 msgid ""
 "Dara is not activated on this domain: premium features and updates are "
 "locked, and visitors see an \"unlicensed copy\" notice."
@@ -1020,17 +725,35 @@ msgstr ""
 "دارة غير مفعّل على هذا النطاق: المزايا المميزة والتحديثات مقفلة، ويرى الزوار"
 " تنبيه \"نسخة غير مرخّصة\"."
 
-#: includes/license.php:452
+#: includes/license.php:445
+msgid "Activate license"
+msgstr "تفعيل الترخيص"
+
+#: includes/license.php:460
 msgid "This website uses an unlicensed copy of the Dara theme."
 msgstr "هذا الموقع يستخدم نسخة غير مرخّصة من قالب دارة."
 
-#: includes/license.php:454
+#: includes/license.php:462
 msgid "Get a license"
 msgstr "احصل على ترخيص"
 
-#: includes/license.php:590
+#: includes/license.php:605
 msgid "Activate a license with active updates to install this update."
 msgstr "فعّل ترخيصًا بتحديثات سارية لتثبيت هذا التحديث."
+
+#: includes/license.php:650
+msgid "Dara Pro is not available for this license yet. Contact support."
+msgstr "Dara Pro غير متاح لهذا الترخيص بعد. تواصل مع الدعم."
+
+#: includes/license.php:656
+msgid ""
+"WordPress cannot write files on this server. Check the file permissions."
+msgstr ""
+"ووردبريس لا يستطيع كتابة الملفات على هذا الخادم. تحقق من صلاحيات الملفات."
+
+#: includes/license.php:661
+msgid "Dara Pro could not be installed."
+msgstr "تعذّر تثبيت Dara Pro."
 
 #: includes/license.php:352
 #, php-format
@@ -1043,7 +766,7 @@ msgstr[3] "الفترة التجريبية: كل المزايا تعمل لـ %d
 msgstr[4] "الفترة التجريبية: كل المزايا تعمل لـ %d يومًا آخر."
 msgstr[5] "الفترة التجريبية: كل المزايا تعمل لـ %d يوم آخر."
 
-#: includes/license.php:430
+#: includes/license.php:438
 #, php-format
 msgid "Activate your Dara license. Premium features stop in %d day."
 msgid_plural "Activate your Dara license. Premium features stop in %d days."
@@ -1093,6 +816,10 @@ msgstr "المشاريع"
 #: includes/post-types.php:63
 msgid "Project"
 msgstr "مشروع"
+
+#: includes/post-types.php:80
+msgid "Agents"
+msgstr "المسوّقون"
 
 #: includes/post-types.php:80
 msgid "Photo"

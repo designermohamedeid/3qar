@@ -5,7 +5,7 @@
  * Everything created is tagged with the `_dara_demo` meta so it can be removed
  * with one click. Images are original illustrations bundled with the plugin.
  *
- * @package DaraCore
+ * @package DaraPro
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
 function dara_demo_menu() {
 	add_submenu_page(
 		'edit.php?post_type=dara_property',
-		__( 'Demo content', 'dara-core' ),
-		__( 'Demo content', 'dara-core' ),
+		__( 'Demo content', 'dara-pro' ),
+		__( 'Demo content', 'dara-pro' ),
 		'manage_options',
 		'dara-demo',
 		'dara_demo_page'
@@ -32,39 +32,39 @@ function dara_demo_page() {
 	$imported = get_option( 'dara_demo_imported' );
 	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- display only.
 	$done = isset( $_GET['done'] ) ? sanitize_key( $_GET['done'] ) : '';
-	echo '<div class="wrap"><h1>' . esc_html__( 'Demo content', 'dara-core' ) . '</h1>';
+	echo '<div class="wrap"><h1>' . esc_html__( 'Demo content', 'dara-pro' ) . '</h1>';
 
 	if ( 'imported' === $done ) {
-		echo '<div class="notice notice-success"><p>' . esc_html__( 'Demo content imported. Visit your site to see it.', 'dara-core' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'View site', 'dara-core' ) . '</a></p></div>';
+		echo '<div class="notice notice-success"><p>' . esc_html__( 'Demo content imported. Visit your site to see it.', 'dara-pro' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'View site', 'dara-pro' ) . '</a></p></div>';
 	} elseif ( 'removed' === $done ) {
-		echo '<div class="notice notice-success"><p>' . esc_html__( 'Demo content removed.', 'dara-core' ) . '</p></div>';
+		echo '<div class="notice notice-success"><p>' . esc_html__( 'Demo content removed.', 'dara-pro' ) . '</p></div>';
 	}
 
-	if ( ! dara_core_premium() ) {
-		echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'Demo import needs an active license.', 'dara-core' ) . ' <a class="button button-primary" href="' . esc_url( admin_url( 'edit.php?post_type=dara_property&page=dara-license' ) ) . '">' . esc_html__( 'Activate license', 'dara-core' ) . '</a></p></div></div>';
+	if ( ! dara_pro_active() ) {
+		echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'Demo import needs an active license.', 'dara-pro' ) . ' <a class="button button-primary" href="' . esc_url( admin_url( 'edit.php?post_type=dara_property&page=dara-license' ) ) . '">' . esc_html__( 'Activate license', 'dara-pro' ) . '</a></p></div></div>';
 		return;
 	}
 
-	echo '<p style="max-width:720px">' . esc_html__( 'Fill your site with sample properties, projects, agents, blog posts, pages, menus and home page settings so it looks like the theme demo. You can remove all of it later with one click; your own content is never touched.', 'dara-core' ) . '</p>';
+	echo '<p style="max-width:720px">' . esc_html__( 'Fill your site with sample properties, projects, agents, blog posts, pages, menus and home page settings so it looks like the theme demo. You can remove all of it later with one click; your own content is never touched.', 'dara-pro' ) . '</p>';
 
 	if ( $imported ) {
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
 		wp_nonce_field( 'dara_demo' );
 		echo '<input type="hidden" name="action" value="dara_demo_remove">';
-		submit_button( __( 'Remove demo content', 'dara-core' ), 'delete' );
+		submit_button( __( 'Remove demo content', 'dara-pro' ), 'delete' );
 		echo '</form>';
 	} else {
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '">';
 		wp_nonce_field( 'dara_demo' );
 		echo '<input type="hidden" name="action" value="dara_demo_import">';
-		echo '<p><label for="dara-demo-lang"><strong>' . esc_html__( 'Content language', 'dara-core' ) . '</strong></label><br><select id="dara-demo-lang" name="lang">';
+		echo '<p><label for="dara-demo-lang"><strong>' . esc_html__( 'Content language', 'dara-pro' ) . '</strong></label><br><select id="dara-demo-lang" name="lang">';
 		$is_ar = 0 === strpos( get_locale(), 'ar' );
 		echo '<option value="ar"' . selected( $is_ar, true, false ) . '>العربية</option>';
 		echo '<option value="en"' . selected( $is_ar, false, false ) . '>English</option>';
 		echo '</select></p>';
-		echo '<p><label><input type="checkbox" name="set_front" value="1" checked> ' . esc_html__( 'Set the demo home page and blog page in Settings > Reading', 'dara-core' ) . '</label></p>';
-		echo '<p><label><input type="checkbox" name="set_menus" value="1" checked> ' . esc_html__( 'Create and assign menus', 'dara-core' ) . '</label></p>';
-		submit_button( __( 'Import demo content', 'dara-core' ) );
+		echo '<p><label><input type="checkbox" name="set_front" value="1" checked> ' . esc_html__( 'Set the demo home page and blog page in Settings > Reading', 'dara-pro' ) . '</label></p>';
+		echo '<p><label><input type="checkbox" name="set_menus" value="1" checked> ' . esc_html__( 'Create and assign menus', 'dara-pro' ) . '</label></p>';
+		submit_button( __( 'Import demo content', 'dara-pro' ) );
 		echo '</form>';
 	}
 	echo '</div>';
@@ -92,7 +92,7 @@ function dara_demo_image( $name ) {
 	if ( isset( $cache[ $name ] ) ) {
 		return $cache[ $name ];
 	}
-	$src = DARA_CORE_DIR . 'demo/images/' . $name . '.jpg';
+	$src = DARA_PRO_DIR . 'demo/images/' . $name . '.jpg';
 	if ( ! file_exists( $src ) ) {
 		return 0;
 	}
@@ -166,7 +166,7 @@ function dara_demo_term( $name, $taxonomy, $args = array() ) {
  */
 function dara_demo_import() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
-		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
+		wp_die( esc_html__( 'Not allowed.', 'dara-pro' ) );
 	}
 	if ( ! get_option( 'dara_demo_imported' ) ) {
 		dara_demo_run_import(
@@ -191,7 +191,7 @@ add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
  * @return bool False when demo content is already installed.
  */
 function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = true ) {
-	if ( get_option( 'dara_demo_imported' ) || ! dara_core_premium() ) {
+	if ( get_option( 'dara_demo_imported' ) || ! dara_pro_active() || ! dara_pro_ok_b() || ! dara_pro_ok_f() ) {
 		return false;
 	}
 	if ( function_exists( 'set_time_limit' ) ) {
@@ -403,7 +403,7 @@ function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = tru
 				'post_type'    => 'page',
 				'post_title'   => $t( 'الرئيسية', 'Home' ),
 				'post_name'    => 'home',
-				'post_content' => dara_core_home_pattern_content(),
+				'post_content' => dara_pro_home_pattern_content(),
 			)
 		),
 		'blog'     => dara_demo_post(
@@ -577,7 +577,7 @@ function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = tru
  */
 function dara_demo_remove() {
 	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'dara_demo' ) ) {
-		wp_die( esc_html__( 'Not allowed.', 'dara-core' ) );
+		wp_die( esc_html__( 'Not allowed.', 'dara-pro' ) );
 	}
 	dara_demo_run_remove();
 	wp_safe_redirect( admin_url( 'edit.php?post_type=dara_property&page=dara-demo&done=removed' ) );
@@ -647,7 +647,7 @@ function dara_demo_run_remove() {
 }
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require DARA_CORE_DIR . 'includes/class-dara-demo-cli.php';
+	require DARA_PRO_DIR . 'includes/class-dara-demo-cli.php';
 	WP_CLI::add_command( 'dara demo', 'Dara_Demo_CLI' );
 }
 
@@ -667,9 +667,9 @@ function dara_demo_notice() {
 	}
 	printf(
 		'<div class="notice notice-info"><p>%1$s <a class="button button-primary" href="%2$s">%3$s</a></p></div>',
-		esc_html__( 'Start faster: import the demo properties, projects and pages, then replace them with your own.', 'dara-core' ),
+		esc_html__( 'Start faster: import the demo properties, projects and pages, then replace them with your own.', 'dara-pro' ),
 		esc_url( admin_url( 'edit.php?post_type=dara_property&page=dara-demo' ) ),
-		esc_html__( 'Import demo content', 'dara-core' )
+		esc_html__( 'Import demo content', 'dara-pro' )
 	);
 }
 add_action( 'admin_notices', 'dara_demo_notice' );

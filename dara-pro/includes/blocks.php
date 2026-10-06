@@ -7,10 +7,60 @@
  * theme declares support: add_theme_support( 'dara-blocks' ).
  * Empty block settings fall back to the Customizer values.
  *
- * @package DaraCore
+ * @package DaraPro
  */
 
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Third, independent check used by the blocks and patterns.
+ *
+ * @return bool
+ */
+function dara_pro_ok_b() {
+	static $r = null;
+	if ( null === $r ) {
+		$e = dara_pro_edition();
+		$r = 'direct' !== $e['edition'] || '' === $e['pubkey'] || dara_pro_ok_b_run( $e['pubkey'] );
+	}
+	return $r;
+}
+
+/**
+ * Run the third check.
+ *
+ * @param string $pubkey Base64 public key.
+ * @return bool
+ */
+function dara_pro_ok_b_run( $pubkey ) {
+	$dir  = DARA_PRO_DIR;
+	$list = @json_decode( (string) @file_get_contents( $dir . 'manifest.json' ), true ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged,WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	$sign = (string) @file_get_contents( $dir . 'manifest.sig' ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged,WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	if ( ! is_array( $list ) || empty( $list['files'] ) ) {
+		return false;
+	}
+	try {
+		$valid = sodium_crypto_sign_verify_detached( base64_decode( trim( $sign ) ), (string) file_get_contents( $dir . 'manifest.json' ), base64_decode( $pubkey ) ); // phpcs:ignore
+	} catch ( Exception $x ) {
+		$valid = false;
+	}
+	$build = include $dir . 'includes/build.php';
+	if ( ! $valid || ! is_array( $build ) || $build['b'] !== $list['b'] ) {
+		return false;
+	}
+	foreach ( array( 'dara-pro.php', 'includes/blocks.php', 'includes/guard.php', 'includes/demo.php' ) as $f ) {
+		if ( ! isset( $list['files'][ $f ] ) || ! hash_equals( $list['files'][ $f ], (string) hash_file( 'sha256', $dir . $f ) ) ) {
+			return false;
+		}
+	}
+	$opt  = (array) get_option( 'dara_license' );
+	$tok  = json_decode( (string) base64_decode( isset( $opt['payload'] ) ? $opt['payload'] : '' ), true ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
+	$site = strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
+	if ( 0 === strpos( $site, 'www.' ) ) {
+		$site = substr( $site, 4 );
+	}
+	return is_array( $tok ) && isset( $tok['k'], $tok['d'] ) && $tok['k'] === $list['k'] && $site === $tok['d'] && time() < (int) $tok['x'] + WEEK_IN_SECONDS;
+}
 
 /**
  * Block definitions.
@@ -20,39 +70,39 @@ defined( 'ABSPATH' ) || exit;
  *
  * @return array
  */
-function dara_core_blocks_config() {
-	$eyebrow = __( 'Small label', 'dara-core' );
-	$title   = __( 'Title', 'dara-core' );
-	$text    = __( 'Text', 'dara-core' );
-	$count   = __( 'Number of items', 'dara-core' );
+function dara_pro_blocks_config() {
+	$eyebrow = __( 'Small label', 'dara-pro' );
+	$title   = __( 'Title', 'dara-pro' );
+	$text    = __( 'Text', 'dara-pro' );
+	$count   = __( 'Number of items', 'dara-pro' );
 
 	return array(
 		'hero'           => array(
-			'title'       => __( 'Hero & search', 'dara-core' ),
-			'description' => __( 'Full-width image with title and the property search.', 'dara-core' ),
+			'title'       => __( 'Hero & search', 'dara-pro' ),
+			'description' => __( 'Full-width image with title and the property search.', 'dara-pro' ),
 			'icon'        => 'search',
 			'requires'    => '',
 			'controls'    => array(
-				'hero_image'   => array( 'image', __( 'Background image', 'dara-core' ) ),
+				'hero_image'   => array( 'image', __( 'Background image', 'dara-pro' ) ),
 				'hero_eyebrow' => array( 'text', $eyebrow ),
 				'hero_title'   => array( 'textarea', $title ),
 				'hero_text'    => array( 'textarea', $text ),
-				'show_search'  => array( 'toggle', __( 'Show property search', 'dara-core' ), true ),
+				'show_search'  => array( 'toggle', __( 'Show property search', 'dara-pro' ), true ),
 				'search_tab'   => array(
 					'select',
-					__( 'Search opens on', 'dara-core' ),
+					__( 'Search opens on', 'dara-pro' ),
 					array(
-						''         => __( 'Buy', 'dara-core' ),
-						'rent'     => __( 'Rent', 'dara-core' ),
-						'projects' => __( 'New projects', 'dara-core' ),
+						''         => __( 'Buy', 'dara-pro' ),
+						'rent'     => __( 'Rent', 'dara-pro' ),
+						'projects' => __( 'New projects', 'dara-pro' ),
 					),
 				),
-				'hero_popular' => array( 'textarea', __( 'Popular searches', 'dara-core' ), __( 'One per line: Label | URL. Leave empty to show your top cities.', 'dara-core' ) ),
+				'hero_popular' => array( 'textarea', __( 'Popular searches', 'dara-pro' ), __( 'One per line: Label | URL. Leave empty to show your top cities.', 'dara-pro' ) ),
 			),
 		),
 		'properties'     => array(
-			'title'       => __( 'Properties grid', 'dara-core' ),
-			'description' => __( 'Latest or featured properties, filterable by purpose and type.', 'dara-core' ),
+			'title'       => __( 'Properties grid', 'dara-pro' ),
+			'description' => __( 'Latest or featured properties, filterable by purpose and type.', 'dara-pro' ),
 			'icon'        => 'admin-home',
 			'requires'    => 'dara_property',
 			'template'    => 'featured',
@@ -60,24 +110,24 @@ function dara_core_blocks_config() {
 				'featured_eyebrow' => array( 'text', $eyebrow ),
 				'featured_title'   => array( 'text', $title ),
 				'featured_count'   => array( 'number', $count, array( 1, 24 ) ),
-				'featured_only'    => array( 'toggle', __( 'Only properties marked "Featured"', 'dara-core' ), false ),
+				'featured_only'    => array( 'toggle', __( 'Only properties marked "Featured"', 'dara-pro' ), false ),
 				'purpose'          => array(
 					'select',
-					__( 'Purpose', 'dara-core' ),
+					__( 'Purpose', 'dara-pro' ),
 					array(
-						''     => __( 'All', 'dara-core' ),
-						'sale' => __( 'Sale', 'dara-core' ),
-						'rent' => __( 'Rent', 'dara-core' ),
+						''     => __( 'All', 'dara-pro' ),
+						'sale' => __( 'Sale', 'dara-pro' ),
+						'rent' => __( 'Rent', 'dara-pro' ),
 					),
 				),
-				'type'             => array( 'select', __( 'Property type', 'dara-core' ), 'property_types' ),
-				'show_chips'       => array( 'toggle', __( 'Show type links', 'dara-core' ), true ),
-				'show_button'      => array( 'toggle', __( 'Show "View all" button', 'dara-core' ), true ),
+				'type'             => array( 'select', __( 'Property type', 'dara-pro' ), 'property_types' ),
+				'show_chips'       => array( 'toggle', __( 'Show type links', 'dara-pro' ), true ),
+				'show_button'      => array( 'toggle', __( 'Show "View all" button', 'dara-pro' ), true ),
 			),
 		),
 		'property-types' => array(
-			'title'       => __( 'Property types', 'dara-core' ),
-			'description' => __( 'Tiles linking to each property type.', 'dara-core' ),
+			'title'       => __( 'Property types', 'dara-pro' ),
+			'description' => __( 'Tiles linking to each property type.', 'dara-pro' ),
 			'icon'        => 'screenoptions',
 			'requires'    => 'dara_property',
 			'template'    => 'types',
@@ -87,8 +137,8 @@ function dara_core_blocks_config() {
 			),
 		),
 		'projects'       => array(
-			'title'       => __( 'Developer projects', 'dara-core' ),
-			'description' => __( 'Projects with completion progress on a dark band.', 'dara-core' ),
+			'title'       => __( 'Developer projects', 'dara-pro' ),
+			'description' => __( 'Projects with completion progress on a dark band.', 'dara-pro' ),
 			'icon'        => 'building',
 			'requires'    => 'dara_project',
 			'controls'    => array(
@@ -99,8 +149,8 @@ function dara_core_blocks_config() {
 			),
 		),
 		'services'       => array(
-			'title'       => __( 'Services', 'dara-core' ),
-			'description' => __( 'Service cards with icons.', 'dara-core' ),
+			'title'       => __( 'Services', 'dara-pro' ),
+			'description' => __( 'Service cards with icons.', 'dara-pro' ),
 			'icon'        => 'awards',
 			'requires'    => '',
 			'controls'    => array(
@@ -108,36 +158,36 @@ function dara_core_blocks_config() {
 				'services_title'   => array( 'text', $title ),
 				'services_items'   => array(
 					'repeater',
-					__( 'Services', 'dara-core' ),
+					__( 'Services', 'dara-pro' ),
 					array(
-						'icon'  => array( 'select', __( 'Icon', 'dara-core' ), dara_core_block_icon_options() ),
+						'icon'  => array( 'select', __( 'Icon', 'dara-pro' ), dara_pro_block_icon_options() ),
 						'title' => array( 'text', $title ),
 						'text'  => array( 'textarea', $text ),
-						'url'   => array( 'text', __( 'Link', 'dara-core' ) ),
+						'url'   => array( 'text', __( 'Link', 'dara-pro' ) ),
 					),
 				),
 			),
 		),
 		'why'            => array(
-			'title'       => __( 'Image & checklist', 'dara-core' ),
-			'description' => __( 'Image with a badge, text, checklist and button.', 'dara-core' ),
+			'title'       => __( 'Image & checklist', 'dara-pro' ),
+			'description' => __( 'Image with a badge, text, checklist and button.', 'dara-pro' ),
 			'icon'        => 'yes-alt',
 			'requires'    => '',
 			'controls'    => array(
-				'why_image'       => array( 'image', __( 'Image', 'dara-core' ) ),
+				'why_image'       => array( 'image', __( 'Image', 'dara-pro' ) ),
 				'why_eyebrow'     => array( 'text', $eyebrow ),
 				'why_title'       => array( 'text', $title ),
 				'why_text'        => array( 'textarea', $text ),
-				'why_points'      => array( 'textarea', __( 'Points (one per line)', 'dara-core' ) ),
-				'why_badge_title' => array( 'text', __( 'Badge title', 'dara-core' ) ),
-				'why_badge_text'  => array( 'text', __( 'Badge text', 'dara-core' ) ),
-				'why_btn_text'    => array( 'text', __( 'Button text', 'dara-core' ) ),
-				'why_btn_url'     => array( 'text', __( 'Button link', 'dara-core' ) ),
+				'why_points'      => array( 'textarea', __( 'Points (one per line)', 'dara-pro' ) ),
+				'why_badge_title' => array( 'text', __( 'Badge title', 'dara-pro' ) ),
+				'why_badge_text'  => array( 'text', __( 'Badge text', 'dara-pro' ) ),
+				'why_btn_text'    => array( 'text', __( 'Button text', 'dara-pro' ) ),
+				'why_btn_url'     => array( 'text', __( 'Button link', 'dara-pro' ) ),
 			),
 		),
 		'agents'         => array(
-			'title'       => __( 'Agents', 'dara-core' ),
-			'description' => __( 'Your agents with call and WhatsApp buttons.', 'dara-core' ),
+			'title'       => __( 'Agents', 'dara-pro' ),
+			'description' => __( 'Your agents with call and WhatsApp buttons.', 'dara-pro' ),
 			'icon'        => 'groups',
 			'requires'    => 'dara_agent',
 			'controls'    => array(
@@ -147,8 +197,8 @@ function dara_core_blocks_config() {
 			),
 		),
 		'posts'          => array(
-			'title'       => __( 'Latest posts', 'dara-core' ),
-			'description' => __( 'Latest blog posts as cards.', 'dara-core' ),
+			'title'       => __( 'Latest posts', 'dara-pro' ),
+			'description' => __( 'Latest blog posts as cards.', 'dara-pro' ),
 			'icon'        => 'admin-post',
 			'requires'    => '',
 			'template'    => 'blog',
@@ -159,25 +209,25 @@ function dara_core_blocks_config() {
 			),
 		),
 		'mortgage'       => array(
-			'title'       => __( 'Mortgage calculator', 'dara-core' ),
-			'description' => __( 'Estimate the monthly installment from price, down payment, term and profit rate.', 'dara-core' ),
+			'title'       => __( 'Mortgage calculator', 'dara-pro' ),
+			'description' => __( 'Estimate the monthly installment from price, down payment, term and profit rate.', 'dara-pro' ),
 			'icon'        => 'calculator',
 			'requires'    => '',
 			'controls'    => array(
 				'mortgage_title' => array( 'text', $title ),
-				'mortgage_price' => array( 'amount', __( 'Default property price', 'dara-core' ) ),
+				'mortgage_price' => array( 'amount', __( 'Default property price', 'dara-pro' ) ),
 			),
 		),
 		'cta'            => array(
-			'title'       => __( 'Call to action', 'dara-core' ),
-			'description' => __( 'Colored band with buttons.', 'dara-core' ),
+			'title'       => __( 'Call to action', 'dara-pro' ),
+			'description' => __( 'Colored band with buttons.', 'dara-pro' ),
 			'icon'        => 'megaphone',
 			'requires'    => '',
 			'controls'    => array(
 				'cta_title'    => array( 'text', $title ),
 				'cta_text'     => array( 'textarea', $text ),
-				'cta_btn_text' => array( 'text', __( 'Button text', 'dara-core' ) ),
-				'cta_btn_url'  => array( 'text', __( 'Button link', 'dara-core' ) ),
+				'cta_btn_text' => array( 'text', __( 'Button text', 'dara-pro' ) ),
+				'cta_btn_url'  => array( 'text', __( 'Button link', 'dara-pro' ) ),
 			),
 		),
 	);
@@ -188,7 +238,7 @@ function dara_core_blocks_config() {
  *
  * @return array
  */
-function dara_core_block_icon_options() {
+function dara_pro_block_icon_options() {
 	$out = array();
 	foreach ( array( 'megaphone', 'key', 'chart', 'clipboard', 'home', 'building', 'apartment', 'land', 'office', 'shield', 'calendar', 'user', 'phone', 'map', 'search', 'heart' ) as $icon ) {
 		$out[ $icon ] = $icon;
@@ -199,11 +249,11 @@ function dara_core_block_icon_options() {
 /**
  * Register the block category and blocks.
  */
-function dara_core_register_blocks() {
+function dara_pro_register_blocks() {
 	if ( ! current_theme_supports( 'dara-blocks' ) ) {
 		return;
 	}
-	foreach ( dara_core_blocks_config() as $slug => $block ) {
+	foreach ( dara_pro_blocks_config() as $slug => $block ) {
 		$attributes = array();
 		foreach ( $block['controls'] as $key => $control ) {
 			switch ( $control[0] ) {
@@ -238,17 +288,17 @@ function dara_core_register_blocks() {
 					'html'     => false,
 					'align'    => false,
 					'multiple' => true,
-					'inserter' => dara_core_premium(),
+					'inserter' => dara_pro_active() && dara_pro_ok_b(),
 				),
 				'editor_script'   => 'dara-blocks',
 				'render_callback' => function ( $attrs ) use ( $slug, $block ) {
-					return dara_core_render_block( $slug, $block, $attrs );
+					return dara_pro_render_block( $slug, $block, $attrs );
 				},
 			)
 		);
 	}
 }
-add_action( 'init', 'dara_core_register_blocks' );
+add_action( 'init', 'dara_pro_register_blocks' );
 
 /**
  * Block category.
@@ -256,7 +306,7 @@ add_action( 'init', 'dara_core_register_blocks' );
  * @param array $categories Categories.
  * @return array
  */
-function dara_core_block_category( $categories ) {
+function dara_pro_block_category( $categories ) {
 	if ( ! current_theme_supports( 'dara-blocks' ) ) {
 		return $categories;
 	}
@@ -264,12 +314,12 @@ function dara_core_block_category( $categories ) {
 		$categories,
 		array(
 			'slug'  => 'dara',
-			'title' => __( 'Dara real estate', 'dara-core' ),
+			'title' => __( 'Dara real estate', 'dara-pro' ),
 		)
 	);
 	return $categories;
 }
-add_filter( 'block_categories_all', 'dara_core_block_category' );
+add_filter( 'block_categories_all', 'dara_pro_block_category' );
 
 /**
  * Render a block with its section template.
@@ -279,8 +329,8 @@ add_filter( 'block_categories_all', 'dara_core_block_category' );
  * @param array  $attrs Attributes.
  * @return string
  */
-function dara_core_render_block( $slug, $block, $attrs ) {
-	if ( $block['requires'] && ! post_type_exists( $block['requires'] ) ) {
+function dara_pro_render_block( $slug, $block, $attrs ) {
+	if ( ! dara_pro_active() || ! dara_pro_ok_b() || ( $block['requires'] && ! post_type_exists( $block['requires'] ) ) ) {
 		return '';
 	}
 	$args = array();
@@ -313,7 +363,7 @@ function dara_core_render_block( $slug, $block, $attrs ) {
 
 	if ( '' === $html && defined( 'REST_REQUEST' ) && REST_REQUEST ) {
 		/* translators: %s: block name. */
-		return '<p class="dara-block-empty">' . esc_html( sprintf( __( '%s: nothing to show yet. Add content first.', 'dara-core' ), $block['title'] ) ) . '</p>';
+		return '<p class="dara-block-empty">' . esc_html( sprintf( __( '%s: nothing to show yet. Add content first.', 'dara-pro' ), $block['title'] ) ) . '</p>';
 	}
 	return '' === $html ? '' : '<div class="dara-block dara-block--' . esc_attr( $slug ) . '">' . $html . '</div>';
 }
@@ -321,19 +371,19 @@ function dara_core_render_block( $slug, $block, $attrs ) {
 /**
  * Editor script + data for the controls.
  */
-function dara_core_blocks_editor_assets() {
+function dara_pro_blocks_editor_assets() {
 	if ( ! current_theme_supports( 'dara-blocks' ) ) {
 		return;
 	}
 	wp_register_script(
 		'dara-blocks',
-		DARA_CORE_URL . 'assets/js/blocks.js',
+		DARA_PRO_URL . 'assets/js/blocks.js',
 		array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render', 'wp-i18n' ),
-		DARA_CORE_VERSION,
+		DARA_PRO_VERSION,
 		true
 	);
 
-	$types = array( '' => __( 'All', 'dara-core' ) );
+	$types = array( '' => __( 'All', 'dara-pro' ) );
 	if ( taxonomy_exists( 'property_type' ) ) {
 		foreach ( (array) get_terms(
 			array(
@@ -348,7 +398,7 @@ function dara_core_blocks_editor_assets() {
 	}
 
 	$controls = array();
-	foreach ( dara_core_blocks_config() as $slug => $block ) {
+	foreach ( dara_pro_blocks_config() as $slug => $block ) {
 		$controls[ 'dara/' . $slug ] = array();
 		foreach ( $block['controls'] as $key => $control ) {
 			$item = array(
@@ -400,29 +450,29 @@ function dara_core_blocks_editor_assets() {
 			array(
 				'controls' => $controls,
 				'i18n'     => array(
-					'settings' => __( 'Settings', 'dara-core' ),
-					'fallback' => __( 'Empty fields use the values from Appearance > Customize > Dara theme.', 'dara-core' ),
-					'choose'   => __( 'Choose image', 'dara-core' ),
-					'replace'  => __( 'Replace image', 'dara-core' ),
-					'remove'   => __( 'Remove', 'dara-core' ),
-					'add'      => __( 'Add item', 'dara-core' ),
-					'item'     => __( 'Item', 'dara-core' ),
-					'up'       => __( 'Move up', 'dara-core' ),
-					'down'     => __( 'Move down', 'dara-core' ),
+					'settings' => __( 'Settings', 'dara-pro' ),
+					'fallback' => __( 'Empty fields use the values from Appearance > Customize > Dara theme.', 'dara-pro' ),
+					'choose'   => __( 'Choose image', 'dara-pro' ),
+					'replace'  => __( 'Replace image', 'dara-pro' ),
+					'remove'   => __( 'Remove', 'dara-pro' ),
+					'add'      => __( 'Add item', 'dara-pro' ),
+					'item'     => __( 'Item', 'dara-pro' ),
+					'up'       => __( 'Move up', 'dara-pro' ),
+					'down'     => __( 'Move down', 'dara-pro' ),
 				),
 			)
 		) . ';',
 		'before'
 	);
 }
-add_action( 'init', 'dara_core_blocks_editor_assets', 5 );
+add_action( 'init', 'dara_pro_blocks_editor_assets', 5 );
 
 /**
  * Block pattern: the full home page built from Dara blocks.
  *
  * @return string
  */
-function dara_core_home_pattern_content() {
+function dara_pro_home_pattern_content() {
 	$blocks = array( 'hero', 'properties', 'property-types', 'projects', 'services', 'why', 'posts', 'cta' );
 	return implode(
 		"\n\n",
@@ -438,28 +488,28 @@ function dara_core_home_pattern_content() {
 /**
  * Register patterns.
  */
-function dara_core_register_patterns() {
+function dara_pro_register_patterns() {
 	if ( ! function_exists( 'register_block_pattern' ) || ! current_theme_supports( 'dara-blocks' ) ) {
 		return;
 	}
-	register_block_pattern_category( 'dara', array( 'label' => __( 'Dara real estate', 'dara-core' ) ) );
+	register_block_pattern_category( 'dara', array( 'label' => __( 'Dara real estate', 'dara-pro' ) ) );
 	register_block_pattern(
 		'dara/home',
 		array(
-			'title'       => __( 'Real estate home page', 'dara-core' ),
-			'description' => __( 'Hero with search, properties, types, projects, services, why us, posts and call to action.', 'dara-core' ),
-			'categories'  => array( 'dara-core' ),
-			'content'     => dara_core_home_pattern_content(),
+			'title'       => __( 'Real estate home page', 'dara-pro' ),
+			'description' => __( 'Hero with search, properties, types, projects, services, why us, posts and call to action.', 'dara-pro' ),
+			'categories'  => array( 'dara-pro' ),
+			'content'     => dara_pro_home_pattern_content(),
 		)
 	);
 	register_block_pattern(
 		'dara/landing',
 		array(
-			'title'       => __( 'Listings landing page', 'dara-core' ),
-			'description' => __( 'Hero with search, properties for sale, properties for rent and a call to action.', 'dara-core' ),
-			'categories'  => array( 'dara-core' ),
-			'content'     => "<!-- wp:dara/hero /-->\n\n<!-- wp:dara/properties {\"purpose\":\"sale\",\"featured_title\":\"" . esc_attr__( 'Properties for sale', 'dara-core' ) . "\",\"show_chips\":false} /-->\n\n<!-- wp:dara/properties {\"purpose\":\"rent\",\"featured_title\":\"" . esc_attr__( 'Properties for rent', 'dara-core' ) . "\",\"show_chips\":false} /-->\n\n<!-- wp:dara/cta /-->",
+			'title'       => __( 'Listings landing page', 'dara-pro' ),
+			'description' => __( 'Hero with search, properties for sale, properties for rent and a call to action.', 'dara-pro' ),
+			'categories'  => array( 'dara-pro' ),
+			'content'     => "<!-- wp:dara/hero /-->\n\n<!-- wp:dara/properties {\"purpose\":\"sale\",\"featured_title\":\"" . esc_attr__( 'Properties for sale', 'dara-pro' ) . "\",\"show_chips\":false} /-->\n\n<!-- wp:dara/properties {\"purpose\":\"rent\",\"featured_title\":\"" . esc_attr__( 'Properties for rent', 'dara-pro' ) . "\",\"show_chips\":false} /-->\n\n<!-- wp:dara/cta /-->",
 		)
 	);
 }
-add_action( 'init', 'dara_core_register_patterns' );
+add_action( 'init', 'dara_pro_register_patterns' );

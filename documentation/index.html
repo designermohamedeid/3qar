@@ -47,7 +47,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <div class="layout">
 <nav aria-label="Contents">
 	<div class="brand"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5a3 3 0 0 1 6 0v5"/></svg></span>Dara</div>
-	<p class="ver">Theme 1.7.0 · Dara Core 1.4.0<br>by <a href="https://mansourahost.com">Mansoura Host</a></p>
+	<p class="ver">Theme 1.8.0 · Dara Core 1.5.0 · Dara Pro 1.0.0<br>by <a href="https://mansourahost.com">Mansoura Host</a></p>
 	<ol>
 		<li><a href="#intro">Introduction</a></li>
 		<li><a href="#requirements">Requirements</a></li>
@@ -112,6 +112,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 	<tr><td><code>Theme/dara.zip</code></td><td>The theme. Upload this in <em>Appearance → Themes → Add New → Upload</em>. Dara Core is bundled inside it.</td></tr>
 	<tr><td><code>Theme/dara-child.zip</code></td><td>Child theme, for your own CSS and template changes (optional).</td></tr>
 	<tr><td><code>Plugin/dara-core.zip</code></td><td>The Dara Core plugin, in case you prefer to install it manually.</td></tr>
+	<tr><td><code>Plugin/dara-pro.zip</code></td><td>Dara Pro: blocks, demo importer, mortgage calculator, comparison and Google Maps. Included in marketplace downloads. For direct purchases, Dara Pro is installed automatically when you activate your license.</td></tr>
 	<tr><td><code>Documentation/</code></td><td>This guide.</td></tr>
 	<tr><td><code>Licensing.txt</code></td><td>License information.</td></tr>
 </table></div>
@@ -143,6 +144,7 @@ img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
 <ol>
 	<li>Go to <em>Properties → License</em>.</li>
 	<li>Paste the key from your purchase email (<code>DARA-XXXXX-XXXXX-XXXXX-XXXXX</code>) and click <strong>Activate</strong>.</li>
+	<li><strong>Dara Pro</strong> is then downloaded and activated automatically. Your copy is built for your license, so it only works on your activated domain. Do not copy it to other sites; use <em>Reinstall Dara Pro</em> on each licensed site instead.</li>
 </ol>
 <ul>
 	<li>One key works on one live domain. <code>localhost</code> and <code>staging.</code> / <code>dev.</code> subdomains are free and don't use the key.</li>
@@ -460,6 +462,11 @@ wp dara demo remove</code></pre>
 <p>Theme updates replace the theme files, so any edits made inside <code>dara/</code> are lost. Your content and Customizer settings are kept. Put code changes in the child theme.</p>
 
 <h2 id="changelog">Changelog</h2>
+<h3>1.8.0 (theme) / 1.5.0 (Dara Core) / 1.0.0 (Dara Pro)</h3>
+<ul>
+	<li>New Dara Pro plugin: blocks, patterns, demo importer, mortgage calculator, comparison and Google Maps moved out of Dara Core and the theme.</li>
+	<li>Without Dara Pro, the home page falls back to the Customizer sections.</li>
+</ul>
 <h3>1.7.0 (theme) / 1.4.0 (Dara Core)</h3>
 <ul>
 	<li>License activation per domain with automatic updates (direct purchases).</li>

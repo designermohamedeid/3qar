@@ -178,7 +178,7 @@ while ( have_posts() ) :
 				<?php
 				$dara_price_raw = (float) get_post_meta( $dara_id, '_dara_price', true );
 				if ( dara_mod( 'mortgage_show' ) && 'rent' !== $dara_purpose && $dara_price_raw > 0 ) {
-					get_template_part( 'template-parts/property/mortgage', null, array( 'price' => $dara_price_raw ) );
+					dara_mortgage( array( 'price' => $dara_price_raw ) );
 				}
 				?>
 

@@ -18,7 +18,7 @@ function dls_products() {
 		array(
 			'dara' => array(
 				'name'     => 'Dara',
-				'packages' => array( 'dara', 'dara-core' ),
+				'packages' => array( 'dara', 'dara-core', 'dara-pro' ),
 			),
 		)
 	);
@@ -34,6 +34,7 @@ function dls_tables() {
 	return (object) array(
 		'licenses'    => $wpdb->prefix . 'dls_licenses',
 		'activations' => $wpdb->prefix . 'dls_activations',
+		'downloads'   => $wpdb->prefix . 'dls_downloads',
 	);
 }
 
@@ -76,6 +77,21 @@ function dls_install() {
 			PRIMARY KEY  (id),
 			UNIQUE KEY license_domain (license_id,domain),
 			KEY domain (domain)
+		) $charset;"
+	);
+	dbDelta(
+		"CREATE TABLE {$t->downloads} (
+			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			build_id char(8) NOT NULL,
+			license_id bigint(20) unsigned NOT NULL,
+			package varchar(40) NOT NULL,
+			version varchar(20) NOT NULL DEFAULT '',
+			domain varchar(190) NOT NULL DEFAULT '',
+			ip varchar(64) NOT NULL DEFAULT '',
+			created_at datetime NOT NULL,
+			PRIMARY KEY  (id),
+			UNIQUE KEY build_id (build_id),
+			KEY license_id (license_id)
 		) $charset;"
 	);
 	if ( ! get_option( 'dls_sign_secret' ) && ! defined( 'DLS_SIGN_SECRET' ) ) {
@@ -128,12 +144,22 @@ function dls_public_key() {
  * @return array { payload: base64 JSON, signature: base64 }
  */
 function dls_sign( array $payload ) {
-	$secret = defined( 'DLS_SIGN_SECRET' ) ? DLS_SIGN_SECRET : get_option( 'dls_sign_secret' );
-	$json   = wp_json_encode( $payload, JSON_UNESCAPED_SLASHES );
+	$json = wp_json_encode( $payload, JSON_UNESCAPED_SLASHES );
 	return array(
 		'payload'   => base64_encode( $json ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
-		'signature' => base64_encode( sodium_crypto_sign_detached( $json, base64_decode( $secret ) ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions
+		'signature' => dls_sign_raw( $json ),
 	);
+}
+
+/**
+ * Base64 Ed25519 signature of a string.
+ *
+ * @param string $message Message.
+ * @return string
+ */
+function dls_sign_raw( $message ) {
+	$secret = defined( 'DLS_SIGN_SECRET' ) ? DLS_SIGN_SECRET : get_option( 'dls_sign_secret' );
+	return base64_encode( sodium_crypto_sign_detached( $message, base64_decode( $secret ) ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions
 }
 
 /**

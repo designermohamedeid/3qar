@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara 1.7.0\n"
+"Project-Id-Version: Dara 1.8.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: 404.php:20 page-templates/compare.php:47
+#: 404.php:20
 msgid "Browse properties"
 msgstr ""
 
@@ -138,9 +138,9 @@ msgstr ""
 msgid "Call us"
 msgstr ""
 
-#: footer.php:134 page-templates/compare.php:237 page-templates/contact.php:28
-#: single-dara_agent.php:63 single-dara_property.php:246
-#: template-parts/cards/agent.php:50 template-parts/home/cta.php:20
+#: footer.php:134 page-templates/contact.php:28 single-dara_agent.php:63
+#: single-dara_property.php:246 template-parts/cards/agent.php:50
+#: template-parts/home/cta.php:20
 msgid "WhatsApp"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Add one more property to compare"
 msgstr ""
 
-#: inc/assets.php:70 page-templates/compare.php:148
+#: inc/assets.php:70
 msgid "Remove"
 msgstr ""
 
@@ -454,7 +454,7 @@ msgstr ""
 msgid "Show designer credit"
 msgstr ""
 
-#: inc/customizer.php:133 template-parts/property/mortgage.php:39
+#: inc/customizer.php:133
 msgid "Mortgage calculator"
 msgstr ""
 
@@ -577,33 +577,51 @@ msgstr ""
 msgid "Agents"
 msgstr ""
 
-#: inc/plugin-installer.php:56
+#: inc/plugin-installer.php:74
+msgid "Install and activate Dara Pro"
+msgstr ""
+
+#: inc/plugin-installer.php:76
 msgid "Upload Dara Core"
 msgstr ""
 
-#: inc/plugin-installer.php:58
+#: inc/plugin-installer.php:78
 msgid "Install and activate Dara Core"
 msgstr ""
 
-#: inc/plugin-installer.php:58
+#: inc/plugin-installer.php:78
 msgid "Activate Dara Core"
 msgstr ""
 
-#: inc/plugin-installer.php:64
+#: inc/plugin-installer.php:80
+msgid "Install and activate Dara Core and Dara Pro"
+msgstr ""
+
+#: inc/plugin-installer.php:87
+msgid "Finish setting up Dara."
+msgstr ""
+
+#: inc/plugin-installer.php:87
 msgid "Dara needs the Dara Core plugin."
 msgstr ""
 
-#: inc/plugin-installer.php:65
+#: inc/plugin-installer.php:88
+msgid ""
+"Dara Pro adds the blocks, demo importer, mortgage calculator, comparison and"
+" Google Maps."
+msgstr ""
+
+#: inc/plugin-installer.php:88
 msgid ""
 "It adds properties, projects, agents, search, lead forms, blocks and the "
 "demo importer."
 msgstr ""
 
-#: inc/plugin-installer.php:77
+#: inc/plugin-installer.php:100
 msgid "Sorry, you are not allowed to install plugins."
 msgstr ""
 
-#: inc/plugin-installer.php:99
+#: inc/plugin-installer.php:124
 msgid ""
 "Dara Core could not be installed. Upload plugins/dara-core.zip from Plugins "
 "> Add New."
@@ -832,151 +850,18 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:633
+#: inc/template-tags.php:611
 #, php-format
 msgid "Compare %s"
 msgstr ""
 
-#: inc/template-tags.php:642
+#: inc/template-tags.php:620
 msgid "Compare"
 msgstr ""
 
-#: page-templates/compare.php:45
-msgid "No properties to compare yet"
+#: page-templates/compare.php:18
+msgid "Property comparison needs the Dara Pro plugin."
 msgstr ""
-
-#: page-templates/compare.php:46
-msgid "Tap the compare button on up to 4 properties, then come back here."
-msgstr ""
-
-#: page-templates/compare.php:111
-msgid "Best"
-msgstr ""
-
-#: page-templates/compare.php:119
-msgid "Share comparison"
-msgstr ""
-
-#: page-templates/compare.php:120 single-dara_property.php:68
-msgid "Print"
-msgstr ""
-
-#: page-templates/compare.php:126
-msgid "Property comparison"
-msgstr ""
-
-#: page-templates/compare.php:154 page-templates/compare.php:156
-#: single-dara_project.php:174 template-parts/home/hero.php:104
-msgid "Price"
-msgstr ""
-
-#: page-templates/compare.php:163
-msgid "Price per m²"
-msgstr ""
-
-#: page-templates/compare.php:169 template-parts/property/filters.php:37
-msgid "Purpose"
-msgstr ""
-
-#: page-templates/compare.php:175 page-templates/list-property.php:59
-msgid "Details"
-msgstr ""
-
-#: page-templates/compare.php:178 single-dara_project.php:171
-msgid "Type"
-msgstr ""
-
-#: page-templates/compare.php:179 single-dara_project.php:120
-#: single-dara_project.php:225 template-parts/home/hero.php:82
-msgid "Location"
-msgstr ""
-
-#: page-templates/compare.php:180 single-dara_project.php:172
-#: template-parts/cards/property.php:26
-msgid "Area"
-msgstr ""
-
-#: page-templates/compare.php:181 single-dara_project.php:173
-#: template-parts/cards/property.php:24 template-parts/home/hero.php:120
-#: template-parts/property/filters.php:84
-msgid "Bedrooms"
-msgstr ""
-
-#: page-templates/compare.php:182 template-parts/cards/property.php:25
-msgid "Bathrooms"
-msgstr ""
-
-#: page-templates/compare.php:183
-msgid "Age"
-msgstr ""
-
-#: page-templates/compare.php:184
-msgid "Facing"
-msgstr ""
-
-#: page-templates/compare.php:185
-msgid "Condition"
-msgstr ""
-
-#: page-templates/compare.php:199 single-dara_project.php:183
-#: template-parts/cards/property.php:66
-msgid "m²"
-msgstr ""
-
-#: page-templates/compare.php:210 single-dara_property.php:119
-msgid "Features & amenities"
-msgstr ""
-
-#: page-templates/compare.php:216
-msgid "Yes"
-msgstr ""
-
-#: page-templates/compare.php:218
-msgid "No"
-msgstr ""
-
-#: page-templates/compare.php:225
-msgid "Contact"
-msgstr ""
-
-#: page-templates/compare.php:227
-msgid "Agent"
-msgstr ""
-
-#: page-templates/compare.php:234
-#, php-format
-msgid "Call %s"
-msgstr ""
-
-#: page-templates/compare.php:237 single-dara_property.php:30
-#, php-format
-msgid "Hello, I am interested in: %1$s %2$s"
-msgstr ""
-
-#: page-templates/compare.php:239 template-parts/forms/viewing.php:11
-msgid "Request a viewing"
-msgstr ""
-
-#: page-templates/compare.php:250
-msgid ""
-"Not sure which one to choose? Send the comparison to our team and we will "
-"help you decide."
-msgstr ""
-
-#: page-templates/compare.php:251
-msgid "Hello, please help me choose between these properties:"
-msgstr ""
-
-#: page-templates/compare.php:251
-msgid "Ask an advisor on WhatsApp"
-msgstr ""
-
-#: page-templates/compare.php:117
-#, php-format
-msgid "Comparing %s property"
-msgid_plural "Comparing %s properties"
-msgstr[0] ""
-msgstr[1] ""
 
 #: page-templates/contact.php:34
 msgid "Office"
@@ -1050,6 +935,10 @@ msgstr ""
 
 #: page-templates/list-property.php:58
 msgid "Expected price (optional)"
+msgstr ""
+
+#: page-templates/list-property.php:59
+msgid "Details"
 msgstr ""
 
 #: page-templates/list-property.php:59
@@ -1181,6 +1070,11 @@ msgstr ""
 msgid "Progress"
 msgstr ""
 
+#: single-dara_project.php:120 single-dara_project.php:225
+#: template-parts/home/hero.php:82
+msgid "Location"
+msgstr ""
+
 #: single-dara_project.php:125
 msgid "About the project"
 msgstr ""
@@ -1198,8 +1092,29 @@ msgstr ""
 msgid "Model"
 msgstr ""
 
+#: single-dara_project.php:171
+msgid "Type"
+msgstr ""
+
+#: single-dara_project.php:172 template-parts/cards/property.php:26
+msgid "Area"
+msgstr ""
+
+#: single-dara_project.php:173 template-parts/cards/property.php:24
+#: template-parts/home/hero.php:120 template-parts/property/filters.php:84
+msgid "Bedrooms"
+msgstr ""
+
+#: single-dara_project.php:174 template-parts/home/hero.php:104
+msgid "Price"
+msgstr ""
+
 #: single-dara_project.php:175
 msgid "Status"
+msgstr ""
+
+#: single-dara_project.php:183 template-parts/cards/property.php:66
+msgid "m²"
 msgstr ""
 
 #: single-dara_project.php:208
@@ -1219,6 +1134,11 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
+#: single-dara_property.php:30
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr ""
+
 #: single-dara_property.php:51 template-parts/cards/property.php:47
 msgid "Featured"
 msgstr ""
@@ -1231,6 +1151,10 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+#: single-dara_property.php:68
+msgid "Print"
+msgstr ""
+
 #: single-dara_property.php:91
 #, php-format
 msgid "All photos (%s)"
@@ -1238,6 +1162,10 @@ msgstr ""
 
 #: single-dara_property.php:112
 msgid "Description"
+msgstr ""
+
+#: single-dara_property.php:119
+msgid "Features & amenities"
 msgstr ""
 
 #: single-dara_property.php:130
@@ -1334,6 +1262,10 @@ msgid_plural "%s units"
 msgstr[0] ""
 msgstr[1] ""
 
+#: template-parts/cards/property.php:25
+msgid "Bathrooms"
+msgstr ""
+
 #: template-parts/cards/property.php:50
 #, php-format
 msgid "Save %s to favorites"
@@ -1349,6 +1281,10 @@ msgstr ""
 
 #: template-parts/content-none.php:13
 msgid "There is nothing here yet."
+msgstr ""
+
+#: template-parts/forms/viewing.php:11
+msgid "Request a viewing"
 msgstr ""
 
 #: template-parts/forms/viewing.php:16
@@ -1461,6 +1397,10 @@ msgstr ""
 msgid "Clear all"
 msgstr ""
 
+#: template-parts/property/filters.php:37
+msgid "Purpose"
+msgstr ""
+
 #: template-parts/property/filters.php:40
 msgid "Sale"
 msgstr ""
@@ -1495,67 +1435,3 @@ msgstr ""
 #: template-parts/property/filters.php:121
 msgid "Show results"
 msgstr ""
-
-#: template-parts/property/mortgage.php:35
-msgid ""
-"I would like a financing consultation. Price: {price}, down payment: {down},"
-" term: {years} years, estimated monthly installment: {monthly}."
-msgstr ""
-
-#: template-parts/property/mortgage.php:40
-msgid "Estimated monthly installment (flat rate)"
-msgstr ""
-
-#: template-parts/property/mortgage.php:40
-msgid "Estimated monthly installment (declining balance)"
-msgstr ""
-
-#: template-parts/property/mortgage.php:47
-#, php-format
-msgid "Property price (%s)"
-msgstr ""
-
-#: template-parts/property/mortgage.php:52
-#: template-parts/property/mortgage.php:79
-msgid "Down payment"
-msgstr ""
-
-#: template-parts/property/mortgage.php:58
-msgid "Term"
-msgstr ""
-
-#: template-parts/property/mortgage.php:63
-#, php-format
-msgid "Annual profit rate (%)"
-msgstr ""
-
-#: template-parts/property/mortgage.php:69
-msgid "Monthly installment"
-msgstr ""
-
-#: template-parts/property/mortgage.php:80
-msgid "Financing amount"
-msgstr ""
-
-#: template-parts/property/mortgage.php:81
-msgid "Total profit"
-msgstr ""
-
-#: template-parts/property/mortgage.php:82
-msgid "Total cost"
-msgstr ""
-
-#: template-parts/property/mortgage.php:85
-msgid "Request a financing consultation"
-msgstr ""
-
-#: template-parts/property/mortgage.php:58
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#: template-parts/property/mortgage.php:59
-#, php-format
-msgid "%s year"
-msgid_plural "%s years"
-msgstr[0] ""
-msgstr[1] ""

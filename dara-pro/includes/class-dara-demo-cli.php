@@ -2,7 +2,7 @@
 /**
  * WP-CLI: wp dara demo import|remove.
  *
- * @package DaraCore
+ * @package DaraPro
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -50,7 +50,7 @@ class Dara_Demo_CLI {
 			);
 			wp_set_current_user( $admins ? (int) $admins[0] : 0 );
 		}
-		if ( ! dara_core_premium() ) {
+		if ( ! dara_pro_active() ) {
 			WP_CLI::error( 'Demo import needs an active Dara license (Properties → License).' );
 		}
 		$lang = isset( $assoc['lang'] ) ? $assoc['lang'] : 'ar';

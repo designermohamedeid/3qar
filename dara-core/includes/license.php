@@ -350,7 +350,7 @@ function dara_license_page() {
 						$trial
 							/* translators: %d: days. */
 							? sprintf( _n( 'Trial: all features work for %d more day.', 'Trial: all features work for %d more days.', $trial, 'dara-core' ), $trial )
-							: __( 'Premium features (blocks, demo import, mortgage calculator, comparison, Google Maps) and updates are locked until you activate a license.', 'dara-core' )
+							: __( 'Dara Pro (blocks, demo import, mortgage calculator, comparison, Google Maps) and updates need an active license.', 'dara-core' )
 					);
 					?>
 				</p>
@@ -363,6 +363,7 @@ function dara_license_page() {
 					<p><code style="font-size:14px"><?php echo esc_html( substr( $data['key'], 0, 10 ) . str_repeat( '•', 10 ) . substr( $data['key'], -5 ) ); ?></code></p>
 					<p>
 						<button class="button" name="do" value="check"><?php esc_html_e( 'Check now', 'dara-core' ); ?></button>
+						<button class="button button-primary" name="do" value="pro"><?php echo esc_html( function_exists( 'dara_pro_active' ) && dara_pro_active() ? __( 'Reinstall Dara Pro', 'dara-core' ) : __( 'Install Dara Pro', 'dara-core' ) ); ?></button>
 						<button class="button button-link-delete" name="do" value="deactivate" onclick="return confirm('<?php echo esc_js( __( 'Deactivate the license on this site? You can then use it on another domain.', 'dara-core' ) ); ?>')"><?php esc_html_e( 'Deactivate on this site', 'dara-core' ); ?></button>
 					</p>
 				<?php else : ?>
@@ -393,6 +394,13 @@ function dara_license_handle() {
 		$key    = isset( $_POST['license_key'] ) ? strtoupper( preg_replace( '/[^A-Za-z0-9-]/', '', wp_unslash( $_POST['license_key'] ) ) ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$result = dara_license_call( $key, true );
 		$msg    = is_wp_error( $result ) ? $result->get_error_message() : __( 'License activated. Thank you!', 'dara-core' );
+		if ( ! is_wp_error( $result ) && current_user_can( 'install_plugins' ) ) {
+			$pro  = dara_license_install_pro();
+			$msg .= ' ' . ( is_wp_error( $pro ) ? $pro->get_error_message() : __( 'Dara Pro is installed and active.', 'dara-core' ) );
+		}
+	} elseif ( 'pro' === $do && current_user_can( 'install_plugins' ) ) {
+		$pro = dara_license_install_pro();
+		$msg = is_wp_error( $pro ) ? $pro->get_error_message() : __( 'Dara Pro is installed and active.', 'dara-core' );
 	} elseif ( 'check' === $do ) {
 		$result = dara_license_call( $data['key'], false );
 		$msg    = is_wp_error( $result ) ? $result->get_error_message() : __( 'License is active.', 'dara-core' );
@@ -478,6 +486,7 @@ function dara_license_updates( $force = false ) {
 			'packages'    => array(
 				'dara'      => $theme->exists() ? $theme->get( 'Version' ) : '0',
 				'dara-core' => DARA_CORE_VERSION,
+				'dara-pro'  => dara_license_pro_version(),
 			),
 		)
 	);
@@ -531,17 +540,23 @@ function dara_license_plugin_update( $transient ) {
 	if ( ! is_object( $transient ) || ! dara_license_enabled() ) {
 		return $transient;
 	}
-	$u    = dara_license_updates( dara_license_force_check() );
-	$file = plugin_basename( DARA_CORE_FILE );
-	if ( ! empty( $u['dara-core'] ) ) {
+	$u     = dara_license_updates( dara_license_force_check() );
+	$files = array(
+		'dara-core' => plugin_basename( DARA_CORE_FILE ),
+		'dara-pro'  => 'dara-pro/dara-pro.php',
+	);
+	foreach ( $files as $slug => $file ) {
+		if ( empty( $u[ $slug ] ) || ( 'dara-pro' === $slug && '0' === dara_license_pro_version() ) ) {
+			continue;
+		}
 		$transient->response[ $file ] = (object) array(
-			'slug'         => 'dara-core',
+			'slug'         => $slug,
 			'plugin'       => $file,
-			'new_version'  => $u['dara-core']['version'],
+			'new_version'  => $u[ $slug ]['version'],
 			'url'          => dara_core_edition()['store'],
-			'package'      => $u['dara-core']['package'],
-			'tested'       => $u['dara-core']['tested'],
-			'requires_php' => $u['dara-core']['requires_php'],
+			'package'      => $u[ $slug ]['package'],
+			'tested'       => $u[ $slug ]['tested'],
+			'requires_php' => $u[ $slug ]['requires_php'],
 		);
 	}
 	return $transient;
@@ -591,3 +606,61 @@ function dara_license_update_row( $plugin_data, $response ) {
 	}
 }
 add_action( 'in_plugin_update_message-dara-core/dara-core.php', 'dara_license_update_row', 10, 2 );
+add_action( 'in_plugin_update_message-dara-pro/dara-pro.php', 'dara_license_update_row', 10, 2 );
+
+/* ---------- Dara Pro: delivered by the license server ---------- */
+
+/**
+ * Installed Dara Pro version ('0' when not installed).
+ *
+ * @return string
+ */
+function dara_license_pro_version() {
+	if ( defined( 'DARA_PRO_VERSION' ) ) {
+		return DARA_PRO_VERSION;
+	}
+	if ( ! function_exists( 'get_plugins' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	$all = get_plugins();
+	return isset( $all['dara-pro/dara-pro.php'] ) ? $all['dara-pro/dara-pro.php']['Version'] : '0';
+}
+
+/**
+ * Download (or re-download) Dara Pro for this license and activate it.
+ *
+ * Each download is built for this license, so Pro copied from another site does not work here.
+ *
+ * @return true|WP_Error
+ */
+function dara_license_install_pro() {
+	$data = dara_license_request(
+		'update',
+		array(
+			'license_key' => dara_license_data()['key'],
+			'domain'      => dara_license_domain(),
+			'packages'    => array( 'dara-pro' => '0' ),
+		)
+	);
+	if ( is_wp_error( $data ) ) {
+		return $data;
+	}
+	$package = isset( $data['packages']['dara-pro']['package'] ) ? $data['packages']['dara-pro']['package'] : '';
+	if ( ! $package ) {
+		return new WP_Error( 'dara_pro_unavailable', __( 'Dara Pro is not available for this license yet. Contact support.', 'dara-core' ) );
+	}
+	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	if ( ! WP_Filesystem() ) {
+		return new WP_Error( 'dara_pro_fs', __( 'WordPress cannot write files on this server. Check the file permissions.', 'dara-core' ) );
+	}
+	$upgrader = new Plugin_Upgrader( new Automatic_Upgrader_Skin() );
+	$result   = $upgrader->install( $package, array( 'overwrite_package' => true ) );
+	if ( ! $result || is_wp_error( $result ) ) {
+		return is_wp_error( $result ) ? $result : new WP_Error( 'dara_pro_install', __( 'Dara Pro could not be installed.', 'dara-core' ) );
+	}
+	wp_clean_plugins_cache();
+	$active = activate_plugin( 'dara-pro/dara-pro.php' );
+	return is_wp_error( $active ) ? $active : true;
+}

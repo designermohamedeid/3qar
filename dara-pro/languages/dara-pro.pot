@@ -1,0 +1,550 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Dara Pro 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: dara-pro\n"
+
+#: dara-pro.php:49
+msgid "Dara Pro needs the Dara Core plugin."
+msgstr ""
+
+#: includes/blocks.php:74
+msgid "Small label"
+msgstr ""
+
+#: includes/blocks.php:75
+msgid "Title"
+msgstr ""
+
+#: includes/blocks.php:76
+msgid "Text"
+msgstr ""
+
+#: includes/blocks.php:77
+msgid "Number of items"
+msgstr ""
+
+#: includes/blocks.php:81
+msgid "Hero & search"
+msgstr ""
+
+#: includes/blocks.php:82
+msgid "Full-width image with title and the property search."
+msgstr ""
+
+#: includes/blocks.php:86
+msgid "Background image"
+msgstr ""
+
+#: includes/blocks.php:90
+msgid "Show property search"
+msgstr ""
+
+#: includes/blocks.php:93
+msgid "Search opens on"
+msgstr ""
+
+#: includes/blocks.php:95
+msgid "Buy"
+msgstr ""
+
+#: includes/blocks.php:96 includes/blocks.php:120
+msgid "Rent"
+msgstr ""
+
+#: includes/blocks.php:97
+msgid "New projects"
+msgstr ""
+
+#: includes/blocks.php:100
+msgid "Popular searches"
+msgstr ""
+
+#: includes/blocks.php:100
+msgid "One per line: Label | URL. Leave empty to show your top cities."
+msgstr ""
+
+#: includes/blocks.php:104
+msgid "Properties grid"
+msgstr ""
+
+#: includes/blocks.php:105
+msgid "Latest or featured properties, filterable by purpose and type."
+msgstr ""
+
+#: includes/blocks.php:113
+msgid "Only properties marked \"Featured\""
+msgstr ""
+
+#: includes/blocks.php:116 templates/compare.php:165
+msgid "Purpose"
+msgstr ""
+
+#: includes/blocks.php:118 includes/blocks.php:386
+msgid "All"
+msgstr ""
+
+#: includes/blocks.php:119
+msgid "Sale"
+msgstr ""
+
+#: includes/blocks.php:123
+msgid "Property type"
+msgstr ""
+
+#: includes/blocks.php:124
+msgid "Show type links"
+msgstr ""
+
+#: includes/blocks.php:125
+msgid "Show \"View all\" button"
+msgstr ""
+
+#: includes/blocks.php:129
+msgid "Property types"
+msgstr ""
+
+#: includes/blocks.php:130
+msgid "Tiles linking to each property type."
+msgstr ""
+
+#: includes/blocks.php:140
+msgid "Developer projects"
+msgstr ""
+
+#: includes/blocks.php:141
+msgid "Projects with completion progress on a dark band."
+msgstr ""
+
+#: includes/blocks.php:152 includes/blocks.php:161
+msgid "Services"
+msgstr ""
+
+#: includes/blocks.php:153
+msgid "Service cards with icons."
+msgstr ""
+
+#: includes/blocks.php:163
+msgid "Icon"
+msgstr ""
+
+#: includes/blocks.php:166
+msgid "Link"
+msgstr ""
+
+#: includes/blocks.php:172
+msgid "Image & checklist"
+msgstr ""
+
+#: includes/blocks.php:173
+msgid "Image with a badge, text, checklist and button."
+msgstr ""
+
+#: includes/blocks.php:177
+msgid "Image"
+msgstr ""
+
+#: includes/blocks.php:181
+msgid "Points (one per line)"
+msgstr ""
+
+#: includes/blocks.php:182
+msgid "Badge title"
+msgstr ""
+
+#: includes/blocks.php:183
+msgid "Badge text"
+msgstr ""
+
+#: includes/blocks.php:184 includes/blocks.php:229
+msgid "Button text"
+msgstr ""
+
+#: includes/blocks.php:185 includes/blocks.php:230
+msgid "Button link"
+msgstr ""
+
+#: includes/blocks.php:189
+msgid "Agents"
+msgstr ""
+
+#: includes/blocks.php:190
+msgid "Your agents with call and WhatsApp buttons."
+msgstr ""
+
+#: includes/blocks.php:200
+msgid "Latest posts"
+msgstr ""
+
+#: includes/blocks.php:201
+msgid "Latest blog posts as cards."
+msgstr ""
+
+#: includes/blocks.php:212 templates/mortgage.php:35
+msgid "Mortgage calculator"
+msgstr ""
+
+#: includes/blocks.php:213
+msgid ""
+"Estimate the monthly installment from price, down payment, term and profit "
+"rate."
+msgstr ""
+
+#: includes/blocks.php:218
+msgid "Default property price"
+msgstr ""
+
+#: includes/blocks.php:222
+msgid "Call to action"
+msgstr ""
+
+#: includes/blocks.php:223
+msgid "Colored band with buttons."
+msgstr ""
+
+#: includes/blocks.php:317 includes/blocks.php:495
+msgid "Dara real estate"
+msgstr ""
+
+#: includes/blocks.php:366
+#, php-format
+msgid "%s: nothing to show yet. Add content first."
+msgstr ""
+
+#: includes/blocks.php:453
+msgid "Settings"
+msgstr ""
+
+#: includes/blocks.php:454
+msgid "Empty fields use the values from Appearance > Customize > Dara theme."
+msgstr ""
+
+#: includes/blocks.php:455
+msgid "Choose image"
+msgstr ""
+
+#: includes/blocks.php:456
+msgid "Replace image"
+msgstr ""
+
+#: includes/blocks.php:457 templates/compare.php:144
+msgid "Remove"
+msgstr ""
+
+#: includes/blocks.php:458
+msgid "Add item"
+msgstr ""
+
+#: includes/blocks.php:459
+msgid "Item"
+msgstr ""
+
+#: includes/blocks.php:460
+msgid "Move up"
+msgstr ""
+
+#: includes/blocks.php:461
+msgid "Move down"
+msgstr ""
+
+#: includes/blocks.php:499
+msgid "Real estate home page"
+msgstr ""
+
+#: includes/blocks.php:500
+msgid ""
+"Hero with search, properties, types, projects, services, why us, posts and "
+"call to action."
+msgstr ""
+
+#: includes/blocks.php:508
+msgid "Listings landing page"
+msgstr ""
+
+#: includes/blocks.php:509
+msgid ""
+"Hero with search, properties for sale, properties for rent and a call to "
+"action."
+msgstr ""
+
+#: includes/blocks.php:511
+msgid "Properties for sale"
+msgstr ""
+
+#: includes/blocks.php:511
+msgid "Properties for rent"
+msgstr ""
+
+#: includes/demo.php:19 includes/demo.php:20 includes/demo.php:35
+msgid "Demo content"
+msgstr ""
+
+#: includes/demo.php:38
+msgid "Demo content imported. Visit your site to see it."
+msgstr ""
+
+#: includes/demo.php:38
+msgid "View site"
+msgstr ""
+
+#: includes/demo.php:40
+msgid "Demo content removed."
+msgstr ""
+
+#: includes/demo.php:44
+msgid "Demo import needs an active license."
+msgstr ""
+
+#: includes/demo.php:44
+msgid "Activate license"
+msgstr ""
+
+#: includes/demo.php:48
+msgid ""
+"Fill your site with sample properties, projects, agents, blog posts, pages, "
+"menus and home page settings so it looks like the theme demo. You can remove"
+" all of it later with one click; your own content is never touched."
+msgstr ""
+
+#: includes/demo.php:54
+msgid "Remove demo content"
+msgstr ""
+
+#: includes/demo.php:60
+msgid "Content language"
+msgstr ""
+
+#: includes/demo.php:65
+msgid "Set the demo home page and blog page in Settings > Reading"
+msgstr ""
+
+#: includes/demo.php:66
+msgid "Create and assign menus"
+msgstr ""
+
+#: includes/demo.php:67 includes/demo.php:672
+msgid "Import demo content"
+msgstr ""
+
+#: includes/demo.php:169 includes/demo.php:580
+msgid "Not allowed."
+msgstr ""
+
+#: includes/demo.php:670
+msgid ""
+"Start faster: import the demo properties, projects and pages, then replace "
+"them with your own."
+msgstr ""
+
+#: includes/features.php:132
+msgid "Property comparison needs an active Dara Pro license."
+msgstr ""
+
+#: includes/guard.php:175
+msgid "Dara Pro is locked: activate your license in Properties → License."
+msgstr ""
+
+#: includes/guard.php:176
+msgid ""
+"Dara Pro files were changed or are not from your license. Reinstall Dara Pro"
+" from Properties → License."
+msgstr ""
+
+#: templates/compare.php:41
+msgid "No properties to compare yet"
+msgstr ""
+
+#: templates/compare.php:42
+msgid "Tap the compare button on up to 4 properties, then come back here."
+msgstr ""
+
+#: templates/compare.php:43
+msgid "Browse properties"
+msgstr ""
+
+#: templates/compare.php:107
+msgid "Best"
+msgstr ""
+
+#: templates/compare.php:115
+msgid "Share comparison"
+msgstr ""
+
+#: templates/compare.php:116
+msgid "Print"
+msgstr ""
+
+#: templates/compare.php:122
+msgid "Property comparison"
+msgstr ""
+
+#: templates/compare.php:150 templates/compare.php:152
+msgid "Price"
+msgstr ""
+
+#: templates/compare.php:159
+msgid "Price per m²"
+msgstr ""
+
+#: templates/compare.php:171
+msgid "Details"
+msgstr ""
+
+#: templates/compare.php:174
+msgid "Type"
+msgstr ""
+
+#: templates/compare.php:175
+msgid "Location"
+msgstr ""
+
+#: templates/compare.php:176
+msgid "Area"
+msgstr ""
+
+#: templates/compare.php:177
+msgid "Bedrooms"
+msgstr ""
+
+#: templates/compare.php:178
+msgid "Bathrooms"
+msgstr ""
+
+#: templates/compare.php:179
+msgid "Age"
+msgstr ""
+
+#: templates/compare.php:180
+msgid "Facing"
+msgstr ""
+
+#: templates/compare.php:181
+msgid "Condition"
+msgstr ""
+
+#: templates/compare.php:195
+msgid "m²"
+msgstr ""
+
+#: templates/compare.php:206
+msgid "Features & amenities"
+msgstr ""
+
+#: templates/compare.php:212
+msgid "Yes"
+msgstr ""
+
+#: templates/compare.php:214
+msgid "No"
+msgstr ""
+
+#: templates/compare.php:221
+msgid "Contact"
+msgstr ""
+
+#: templates/compare.php:223
+msgid "Agent"
+msgstr ""
+
+#: templates/compare.php:230
+#, php-format
+msgid "Call %s"
+msgstr ""
+
+#: templates/compare.php:233
+#, php-format
+msgid "Hello, I am interested in: %1$s %2$s"
+msgstr ""
+
+#: templates/compare.php:233
+msgid "WhatsApp"
+msgstr ""
+
+#: templates/compare.php:235
+msgid "Request a viewing"
+msgstr ""
+
+#: templates/compare.php:246
+msgid ""
+"Not sure which one to choose? Send the comparison to our team and we will "
+"help you decide."
+msgstr ""
+
+#: templates/compare.php:247
+msgid "Hello, please help me choose between these properties:"
+msgstr ""
+
+#: templates/compare.php:247
+msgid "Ask an advisor on WhatsApp"
+msgstr ""
+
+#: templates/compare.php:113
+#, php-format
+msgid "Comparing %s property"
+msgid_plural "Comparing %s properties"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/mortgage.php:31
+msgid ""
+"I would like a financing consultation. Price: {price}, down payment: {down},"
+" term: {years} years, estimated monthly installment: {monthly}."
+msgstr ""
+
+#: templates/mortgage.php:36
+msgid "Estimated monthly installment (flat rate)"
+msgstr ""
+
+#: templates/mortgage.php:36
+msgid "Estimated monthly installment (declining balance)"
+msgstr ""
+
+#: templates/mortgage.php:43
+#, php-format
+msgid "Property price (%s)"
+msgstr ""
+
+#: templates/mortgage.php:48 templates/mortgage.php:75
+msgid "Down payment"
+msgstr ""
+
+#: templates/mortgage.php:54
+msgid "Term"
+msgstr ""
+
+#: templates/mortgage.php:59
+#, php-format
+msgid "Annual profit rate (%)"
+msgstr ""
+
+#: templates/mortgage.php:65
+msgid "Monthly installment"
+msgstr ""
+
+#: templates/mortgage.php:76
+msgid "Financing amount"
+msgstr ""
+
+#: templates/mortgage.php:77
+msgid "Total profit"
+msgstr ""
+
+#: templates/mortgage.php:78
+msgid "Total cost"
+msgstr ""
+
+#: templates/mortgage.php:81
+msgid "Request a financing consultation"
+msgstr ""
+
+#: templates/mortgage.php:54 templates/mortgage.php:55
+#: templates/mortgage.php:55 templates/mortgage.php:55
+#: templates/mortgage.php:55
+#, php-format
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] ""
+msgstr[1] ""
