@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Dara 1.6.0\n"
+"Project-Id-Version: Dara 1.7.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -454,7 +454,7 @@ msgstr ""
 msgid "Show designer credit"
 msgstr ""
 
-#: inc/customizer.php:133 template-parts/property/mortgage.php:35
+#: inc/customizer.php:133 template-parts/property/mortgage.php:39
 msgid "Mortgage calculator"
 msgstr ""
 
@@ -832,12 +832,12 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:624
+#: inc/template-tags.php:633
 #, php-format
 msgid "Compare %s"
 msgstr ""
 
-#: inc/template-tags.php:633
+#: inc/template-tags.php:642
 msgid "Compare"
 msgstr ""
 
@@ -1496,64 +1496,64 @@ msgstr ""
 msgid "Show results"
 msgstr ""
 
-#: template-parts/property/mortgage.php:31
+#: template-parts/property/mortgage.php:35
 msgid ""
 "I would like a financing consultation. Price: {price}, down payment: {down},"
 " term: {years} years, estimated monthly installment: {monthly}."
 msgstr ""
 
-#: template-parts/property/mortgage.php:36
+#: template-parts/property/mortgage.php:40
 msgid "Estimated monthly installment (flat rate)"
 msgstr ""
 
-#: template-parts/property/mortgage.php:36
+#: template-parts/property/mortgage.php:40
 msgid "Estimated monthly installment (declining balance)"
 msgstr ""
 
-#: template-parts/property/mortgage.php:43
+#: template-parts/property/mortgage.php:47
 #, php-format
 msgid "Property price (%s)"
 msgstr ""
 
-#: template-parts/property/mortgage.php:48
-#: template-parts/property/mortgage.php:75
+#: template-parts/property/mortgage.php:52
+#: template-parts/property/mortgage.php:79
 msgid "Down payment"
 msgstr ""
 
-#: template-parts/property/mortgage.php:54
+#: template-parts/property/mortgage.php:58
 msgid "Term"
 msgstr ""
 
-#: template-parts/property/mortgage.php:59
+#: template-parts/property/mortgage.php:63
 #, php-format
 msgid "Annual profit rate (%)"
 msgstr ""
 
-#: template-parts/property/mortgage.php:65
+#: template-parts/property/mortgage.php:69
 msgid "Monthly installment"
 msgstr ""
 
-#: template-parts/property/mortgage.php:76
+#: template-parts/property/mortgage.php:80
 msgid "Financing amount"
 msgstr ""
 
-#: template-parts/property/mortgage.php:77
+#: template-parts/property/mortgage.php:81
 msgid "Total profit"
 msgstr ""
 
-#: template-parts/property/mortgage.php:78
+#: template-parts/property/mortgage.php:82
 msgid "Total cost"
 msgstr ""
 
-#: template-parts/property/mortgage.php:81
+#: template-parts/property/mortgage.php:85
 msgid "Request a financing consultation"
 msgstr ""
 
-#: template-parts/property/mortgage.php:54
-#: template-parts/property/mortgage.php:55
-#: template-parts/property/mortgage.php:55
-#: template-parts/property/mortgage.php:55
-#: template-parts/property/mortgage.php:55
+#: template-parts/property/mortgage.php:58
+#: template-parts/property/mortgage.php:59
+#: template-parts/property/mortgage.php:59
+#: template-parts/property/mortgage.php:59
+#: template-parts/property/mortgage.php:59
 #, php-format
 msgid "%s year"
 msgid_plural "%s years"

@@ -3,7 +3,7 @@
  * Plugin Name:       Dara Core
  * Plugin URI:        https://mansourahost.com
  * Description:       Real estate engine for the Dara theme: properties, developer projects, agents, advanced search, leads (viewing requests, project interest, contact, list-your-property) and structured data.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Mansoura Host
@@ -18,11 +18,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DARA_CORE_VERSION', '1.3.0' );
+define( 'DARA_CORE_VERSION', '1.4.0' );
 define( 'DARA_CORE_FILE', __FILE__ );
 define( 'DARA_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DARA_CORE_URL', plugin_dir_url( __FILE__ ) );
 
+require DARA_CORE_DIR . 'includes/edition.php';
+require DARA_CORE_DIR . 'includes/license.php';
 require DARA_CORE_DIR . 'includes/helpers.php';
 require DARA_CORE_DIR . 'includes/post-types.php';
 require DARA_CORE_DIR . 'includes/fields.php';

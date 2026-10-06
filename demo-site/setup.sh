@@ -6,7 +6,7 @@
 #   sh setup.sh /home/USER/public_html/dara/en   en https://dara.mansourahost.com     العربية
 #
 # Arguments: <wordpress path> <ar|en> <other demo URL> <switch label> [buy URL]
-# Needs dist/dara.zip (sh bin/package.sh) next to this script's parent folder.
+# Needs dist/market/dara.zip (sh bin/package.sh) next to this script's parent folder.
 set -e
 WP_PATH=$1
 LANG_CODE=$2
@@ -14,7 +14,7 @@ OTHER_URL=$3
 LABEL=$4
 BUY_URL=${5:-}
 HERE=$(cd "$(dirname "$0")" && pwd)
-ZIP="$HERE/../dist/dara.zip"
+ZIP="$HERE/../dist/market/dara.zip"
 wp() { command wp --path="$WP_PATH" "$@"; }
 
 [ -f "$ZIP" ] || { echo "Missing $ZIP. Run: sh bin/package.sh"; exit 1; }

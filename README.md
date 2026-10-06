@@ -9,7 +9,9 @@ A fast, bilingual (Arabic RTL / English LTR) real estate WordPress theme by [Man
 | `dara-child/` | Child theme |
 | `documentation/` | User guide (English) and licensing |
 | `store-assets/` | Marketplace images: thumbnail, preview and screenshots |
-| `bin/package.sh` | Builds the sale package in `dist/` |
+| `license-server/` | License server plugin (muhamedeid.com) and WHMCS module. See its README. |
+| `demo-site/` | Live preview setup (script, demo helper plugin, guide) |
+| `bin/package.sh` | Builds `dist/direct` (licensed), `dist/market` (ThemeForest) and `dist/server` |
 
 Build the package:
 

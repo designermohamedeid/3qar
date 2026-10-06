@@ -50,6 +50,9 @@ class Dara_Demo_CLI {
 			);
 			wp_set_current_user( $admins ? (int) $admins[0] : 0 );
 		}
+		if ( ! dara_core_premium() ) {
+			WP_CLI::error( 'Demo import needs an active Dara license (Properties → License).' );
+		}
 		$lang = isset( $assoc['lang'] ) ? $assoc['lang'] : 'ar';
 		if ( ! dara_demo_run_import( $lang, empty( $assoc['skip-front'] ), empty( $assoc['skip-menus'] ) ) ) {
 			WP_CLI::error( 'Demo content is already installed. Run "wp dara demo remove" first.' );

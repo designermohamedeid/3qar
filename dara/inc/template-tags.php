@@ -600,12 +600,21 @@ function dara_mortgage_calc( $price, $down, $years, $rate, $method = 'amortized'
 }
 
 /**
+ * Premium features are available (Dara Core license or trial; always true without licensing).
+ *
+ * @return bool
+ */
+function dara_premium() {
+	return function_exists( 'dara_core_premium' ) ? dara_core_premium() : true;
+}
+
+/**
  * Compare page URL ('' when no page uses the Compare template).
  *
  * @return string
  */
 function dara_compare_url() {
-	return dara_template_url( 'page-templates/compare.php' );
+	return dara_premium() ? dara_template_url( 'page-templates/compare.php' ) : '';
 }
 
 /**

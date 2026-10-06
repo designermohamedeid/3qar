@@ -10,6 +10,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! dara_premium() ) {
+	return;
+}
+
 $dara_price  = isset( $args['price'] ) && (float) $args['price'] > 0 ? (float) $args['price'] : 1000000;
 $dara_down   = min( 90, max( 0, (int) dara_mod( 'mortgage_down' ) ) );
 $dara_max    = max( 5, min( 40, (int) dara_mod( 'mortgage_max_years' ) ) );

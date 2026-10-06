@@ -238,6 +238,7 @@ function dara_core_register_blocks() {
 					'html'     => false,
 					'align'    => false,
 					'multiple' => true,
+					'inserter' => dara_core_premium(),
 				),
 				'editor_script'   => 'dara-blocks',
 				'render_callback' => function ( $attrs ) use ( $slug, $block ) {

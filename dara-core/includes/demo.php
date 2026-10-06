@@ -40,6 +40,11 @@ function dara_demo_page() {
 		echo '<div class="notice notice-success"><p>' . esc_html__( 'Demo content removed.', 'dara-core' ) . '</p></div>';
 	}
 
+	if ( ! dara_core_premium() ) {
+		echo '<div class="notice notice-warning inline"><p>' . esc_html__( 'Demo import needs an active license.', 'dara-core' ) . ' <a class="button button-primary" href="' . esc_url( admin_url( 'edit.php?post_type=dara_property&page=dara-license' ) ) . '">' . esc_html__( 'Activate license', 'dara-core' ) . '</a></p></div></div>';
+		return;
+	}
+
 	echo '<p style="max-width:720px">' . esc_html__( 'Fill your site with sample properties, projects, agents, blog posts, pages, menus and home page settings so it looks like the theme demo. You can remove all of it later with one click; your own content is never touched.', 'dara-core' ) . '</p>';
 
 	if ( $imported ) {
@@ -186,7 +191,7 @@ add_action( 'admin_post_dara_demo_import', 'dara_demo_import' );
  * @return bool False when demo content is already installed.
  */
 function dara_demo_run_import( $lang = 'ar', $set_front = true, $set_menus = true ) {
-	if ( get_option( 'dara_demo_imported' ) ) {
+	if ( get_option( 'dara_demo_imported' ) || ! dara_core_premium() ) {
 		return false;
 	}
 	if ( function_exists( 'set_time_limit' ) ) {
