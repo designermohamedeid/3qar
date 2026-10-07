@@ -143,6 +143,12 @@ function daralicense_CreateAccount( array $params ) {
 		return isset( $r['message'] ) ? $r['message'] : 'License server error (HTTP ' . $code . ')';
 	}
 	$params['model']->serviceProperties->save( array( 'License Key' => $r['license_key'] ) );
+	// Also keep the key in the service Username, so emails can use the standard {$service_username}.
+	try {
+		\WHMCS\Database\Capsule::table( 'tblhosting' )->where( 'id', (int) $params['serviceid'] )->update( array( 'username' => $r['license_key'] ) );
+	} catch ( \Exception $e ) {
+		logModuleCall( 'daralicense', 'save username', $params['serviceid'], $e->getMessage() );
+	}
 	return 'success';
 }
 

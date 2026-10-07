@@ -32,6 +32,9 @@ add_hook(
 		} catch ( \Exception $e ) {
 			return array();
 		}
+		if ( ! $key ) {
+			$key = Capsule::table( 'tblhosting' )->where( 'id', $service_id )->value( 'username' );
+		}
 		return $key ? array( 'dara_license_key' => $key ) : array();
 	}
 );
