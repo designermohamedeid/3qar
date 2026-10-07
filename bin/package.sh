@@ -114,7 +114,7 @@ build market
 
 mkdir -p "$ROOT/dist/server"
 (cd license-server && zip -qr "$ROOT/dist/server/dara-license-server.zip" dara-license-server)
-(cd license-server/whmcs && zip -qr "$ROOT/dist/server/whmcs-daralicense.zip" modules)
+(cd license-server/whmcs && zip -qr "$ROOT/dist/server/whmcs-daralicense.zip" modules includes)
 
 rm -rf "$TMP"
 ls -la "$ROOT/dist/direct" "$ROOT/dist/market" "$ROOT/dist/server"
