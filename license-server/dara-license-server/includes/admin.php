@@ -329,7 +329,7 @@ function dls_page_releases() {
 							<option value="<?php echo esc_attr( $pkg ); ?>"><?php echo esc_html( $pkg ); ?></option>
 						<?php endforeach; ?>
 					<?php endforeach; ?>
-				</select> <p class="description">Theme: <code>dara.zip</code>. Plugin: <code>dara-core.zip</code> (from the "direct" build).</p></td></tr>
+				</select> <p class="description">Pick the package that matches the zip (from the "direct" build): <code>dara</code> = dara.zip, <code>dara-core</code> = dara-core.zip, <code>dara-pro</code> = dara-pro.zip. Version = the version inside that zip.</p></td></tr>
 				<tr><th>Version</th><td><input name="version" placeholder="1.7.0" required pattern="\d+(\.\d+){1,3}"></td></tr>
 				<tr><th>Zip file</th><td><input type="file" name="zip" accept=".zip" required></td></tr>
 				<tr><th>Tested up to (WordPress)</th><td><input name="tested" placeholder="6.8"></td></tr>
